@@ -22,3 +22,16 @@ pages:
 - Upgrade/Patch Guide:
         - 'Upgrade Gluu Server' : 'upgrade/index.md'
         - 'Patch Gluu Server' : 'upgrade/patch.md'
+
+- Administration Guide:
+        - 'oxTrust Admin Interface' : ' admin-guide/index.md'
+	- 'Authentication Protocols' : 'admin-guide/auth-protocol.md'
+	- 'Authntication Managment' : 'admin-guide/auth-management.md'
+	- 'Multi Factor Authentication' : 'admin-guide/multi-factor-auth.md'
+	- 'Manage & Configure Users' : 'admin-guide/user-group.md'
+	- 'Configure Log' : 'admin-guide/logs.md'
+	- 'Gluu for Mobile' : 'admin-guide/mobile.md'
+	- 'Self-Services for Users' : 'admin-guide/self-service.md'
+	- 'Configure OpenID Clients' : 'admin-guide/clients.md'
+	- 'Configure SAML SSO' : 'admin-guide/saml.md'
+
