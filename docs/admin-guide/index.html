@@ -545,7 +545,7 @@ Some basic information abouht the administrator interface is available in this p
 <h3 id="json-configuration">JSON Configuration<a class="headerlink" href="#json-configuration" title="Permanent link">#</a></h3>
 <p>The configuration files are accessible from the administrator interface (oxTrust). There are three tabs under the <code>JSON Configuration</code> menu
 <img alt="json-config-head" src="./../img/oxtrust/json-config-head.png" title="JSON Configuration Headers" /></p>
-<p>The oxtrust JSON configuration file is accessible from this tab and it can be edited from this page. The changes are updated by clicking on the <code>Update</code> button on the bottom of the page. The details of the file is given later in the <a href="../reference-guide/index.md">Reference Guide</a>.</p>
+<p>The oxtrust JSON configuration file is accessible from this tab and it can be edited from this page. The changes are updated by clicking on the <code>Update</code> button on the bottom of the page. </p>
 <p>The oxAuth JSON configuration page gives easy access to the different endpoints used by Gluu Server CE. This page also contains the supported response, grants and algorithms among other information. The details will follow later on this documentation.</p>
 <p>The oxTrust Import Person Configuration page contains the configuration for the file method of importing users into Gluu Server CE. The administrator can import users from a <code>xls</code> file which must be defined in this tab to import data in the LDAP attributes. The default format should contain the following fields</p>
 <h3 id="manage-authentication">Manage Authentication<a class="headerlink" href="#manage-authentication" title="Permanent link">#</a></h3>
@@ -558,10 +558,10 @@ Some basic information abouht the administrator interface is available in this p
 <h3 id="manage-registration">Manage Registration<a class="headerlink" href="#manage-registration" title="Permanent link">#</a></h3>
 <p>Gluu Server CE is shiped with the feature to register users via the user-registration endpoint. The registry feature contains a Captcha which can be disabled from this page. Additionally it is possible to enable registration configuration from attributes.</p>
 <h3 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">#</a></h3>
-<p>The attributes that are avalaible in the Gluu Server CE is found in this page. The administration can only see the active attributes when this page is accessed. The <code>Show All Attributes</code> button will show the inactive attributes too. Custom attributes can be added by clicking the <code>Add Attribute</code> button and filling up a simple form. This section is further explained in detail in other section under <a href="/admin-guide/Users/attrb.md">User Management/attributes</a></p>
+<p>The attributes that are avalaible in the Gluu Server CE is found in this page. The administration can only see the active attributes when this page is accessed. The <code>Show All Attributes</code> button will show the inactive attributes too. Custom attributes can be added by clicking the <code>Add Attribute</code> button and filling up a simple form. </p>
 <p><img alt="attribute-head" src="./../img/oxtrust/attribute-head.png" /></p>
 <h3 id="cache-refresh">Cache Refresh<a class="headerlink" href="#cache-refresh" title="Permanent link">#</a></h3>
-<p>Cache Refresh is the mechanism used by Gluu Server CE to import users from a backend LDAP/AD data source. The entire configuration is handled from this page. The <code>Cache Refresh</code> will notify the administrator of any problem with cache refresh the last time it was run. The frequency of cache refresh is also set from this page with the <code>Polling interval (minutes)</code> form. The key attributes, object class and the source attributes can be defined from the <code>Customer  BackendKey/Attributes</code> tab. The backend server address, bind DN and other information must go to the <code>Source Backend LDAP Servers</code> tab. The details about performing <a href="/admin-guide/Users/cacherefresh.md">cache refresh</a> will follow later in this guide.</p>
+<p>Cache Refresh is the mechanism used by Gluu Server CE to import users from a backend LDAP/AD data source. The entire configuration is handled from this page. The <code>Cache Refresh</code> will notify the administrator of any problem with cache refresh the last time it was run. The frequency of cache refresh is also set from this page with the <code>Polling interval (minutes)</code> form. The key attributes, object class and the source attributes can be defined from the <code>Customer  BackendKey/Attributes</code> tab. The backend server address, bind DN and other information must go to the <code>Source Backend LDAP Servers</code> tab.</p>
 <h3 id="configure-log-viewer">Configure Log Viewer<a class="headerlink" href="#configure-log-viewer" title="Permanent link">#</a></h3>
 <p>The logs for oxauth, oxtrust, cache refresh and the tomcat log can be configured from this tab. The log paths are given with the functionality to define any new log template with log file path.</p>
 <h3 id="view-log-file">View Log File<a class="headerlink" href="#view-log-file" title="Permanent link">#</a></h3>
@@ -586,9 +586,9 @@ Some basic information abouht the administrator interface is available in this p
 <p>UMA resources page also has a searchbar on the top of the page and can be used to search for resource sets. New resource sets can be added by clocking on the <code>Add Resource Set</code> button.
 <img alt="uma-resources" src="./../img/oxtrust/uma-resources.png" /></p>
 <h2 id="users">Users<a class="headerlink" href="#users" title="Permanent link">#</a></h2>
-<p>Users tab allows Gluu admin to do various task, including add admin, search users, Cache Refresh, Import users from file, User registration,SCIM, and Lock user. This tab is detailed in <a href="/admin-guide/Users/users.md">User Management</a></p>
+<p>Users tab allows Gluu admin to do various task, including add admin, search users, Import users from file.</p>
 <h2 id="personal">Personal<a class="headerlink" href="#personal" title="Permanent link">#</a></h2>
-<p>Personal tab allows the individual person to view his basic profile and modify certain fields. This section is detailed under User Management in <a href="/admin-guide/Users/personal.md">Personal</a></p>
+<p>Personal tab allows the individual person to view his basic profile and modify certain fields.</p>
           <aside class="copyright" role="note">
            Built with 
             <a href="http://www.mkdocs.org" target="_blank">MkDocs</a> using
