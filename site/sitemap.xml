@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>None/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>None/installation-guide/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/installation-guide/install/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/installation-guide/setup_py/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/installation-guide/cluster/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/upgrade/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/upgrade/update/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/admin-guide/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/logmanagment/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/uma/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/attribute/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/scim-uma/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/scim/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/backup/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/custom-script/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/certificate/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/fine-tuning/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/faq/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+</urlset>

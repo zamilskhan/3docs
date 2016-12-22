@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Custom Script in Gluu CE - Gluu Docs</title>
+      
+<link href="../../assets/stylesheets/font.css" rel="stylesheet">
+      
+      
+      
+    
+    <meta property="og:url" content="None">
+    <meta property="og:title" content="Gluu Docs">
+    <meta property="og:image" content="None/../../gluu.jpg">
+    <meta name="apple-mobile-web-app-title" content="Gluu Docs">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+      <link rel="apple-touch-icon" href="../../gluu.jpg">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/favicon-60feabe0e5.ico">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon-60feabe0e5.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../assets/fonts/icon.eot?52m981');
+      	src: url('../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../assets/stylesheets/application-f58e216493.css">
+    
+    <link rel="stylesheet" href="../../assets/stylesheets/zenburn-28d5b94970.css">
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto Sans:400,700|Source+Code+Pro">
+      <style>
+        body, input {
+          font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Source Code Pro', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+    <script src="../../assets/javascripts/modernizr-4a5cc7e01e.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class=" ">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                Administration Guide <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        Custom Script in Gluu CE
+      </div>
+    </div>
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" placeholder="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+
+  
+  <a href="https://github.com/GluuFederation/docs" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../../gluu.jpg">
+        </div>
+      
+      <div class="name">
+        <strong>Gluu Docs</strong><br>
+        version: 3.0.0
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      <ul class="repo">
+        
+        <li class="home">
+          <a href="/" title="Home">
+            <div class="home-image">
+            <i class="fa fa-home"></i> Doc Home</div>
+          </a>
+        </li>
+        
+        
+        
+        <li class="repo-download">
+          
+          <a href="https://github.com/GluuFederation/docs/archive/3.0.0.zip" target="_blank" title="Download" data-action="download">
+            <i class="icon icon-download"></i> Download
+          </a>
+        </li>
+        
+      </ul>
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Home" href="../..">
+      Home
+    </a>
+    
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Installation Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Preparing VM" href="../../installation-guide/">
+      Preparing VM
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Install Gluu Server" href="../../installation-guide/install/">
+      Install Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Setup Script Options" href="../../installation-guide/setup_py/">
+      Setup Script Options
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Cluster with CE" href="../../installation-guide/cluster/">
+      Cluster with CE
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Upgrade/Patch Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Upgrade Gluu Server" href="../../upgrade/">
+      Upgrade Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Patch Gluu Server" href="../../upgrade/update/">
+      Patch Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Administration Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="oxTrust Admin Interface" href="../">
+      oxTrust Admin Interface
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Log Management" href="../logmanagment/">
+      Log Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="UMA in Gluu Server" href="../uma/">
+      UMA in Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Attribute Management" href="../attribute/">
+      Attribute Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="SCIM protected by UMA" href="../scim-uma/">
+      SCIM protected by UMA
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="SCIM API Configuration" href="../scim/">
+      SCIM API Configuration
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Backup Gluu Server CE" href="../backup/">
+      Backup Gluu Server CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="current" title="Custom Script in Gluu CE" href="./">
+      Custom Script in Gluu CE
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Interception Script Methods" href="#interception-script-methods">
+                <b>Interception Script Methods</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="Interception Script Logs" href="#interception-script-logs">
+                <b>Interception Script Logs</b>
+              </a>
+            </li>
+            
+          
+        </ul>
+      
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Certificate Management" href="../certificate/">
+      Certificate Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Fine Tuning Gluu Server" href="../fine-tuning/">
+      Fine Tuning Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Troubleshooting & FAQ" href="../faq/">
+      Troubleshooting & FAQ
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <div class="toc">
+<ul>
+<li><a href="#custom-script-interception-script">Custom Script / Interception Script</a><ul>
+<li><a href="#interception-script-methods">Interception Script Methods</a></li>
+<li><a href="#interception-script-logs">Interception Script Logs</a></li>
+</ul>
+</li>
+<li><a href="#person-authentication">Person Authentication</a></li>
+</ul>
+</div>
+<h1 id="custom-script-interception-script">Custom Script / Interception Script<a class="headerlink" href="#custom-script-interception-script" title="Permanent link">#</a></h1>
+<p>Gluu Server is very flexible by design enabling the use of <a href="http://www.jython.org/docs/tutorial/indexprogress.html">Jython</a> interception scripts to customize behaviour. Jython was chosen because an interpreted language facilitates dynamic creation of business logic, and makes it easier to distribute this logic to a cluster of Gluu servers. Another advantage of Jython was that developers can use either Java or Python classes. Combined with the option of calling web services from Python or Java, this enables the Gluu Server to support any business-driven policy requirement.</p>
+<p>Custom Scripts can be accessed by navigating to Configuration 
+and selecting the <code>Manage Custom Scritps</code> tab.</p>
+<p><img alt="custom-script" src="../../img/custom-script/custom-script.png" /></p>
+<h2 id="interception-script-methods">Interception Script Methods<a class="headerlink" href="#interception-script-methods" title="Permanent link">#</a></h2>
+<p>There are three methods that inherit a base interface</p>
+<table>
+<thead>
+<tr>
+<th>Inherited Methods</th>
+<th>Method description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>def init(self, configurationAttributes)</td>
+<td>This method is only called once during the script initialization. It can be used for global script initialization, initiate objects etc</td>
+</tr>
+<tr>
+<td>def destroy(self, configurationAttributes)</td>
+<td>This method is called once to destroy events. It can be used to free resource and objects created in the <code>init()</code> method</td>
+</tr>
+<tr>
+<td>def getApiVersion(self)</td>
+<td>The <code>getApiVersion</code> method allows API changes in order to do transparent migration from an old script to a new API. Currently all scripts should return <code>1</code></td>
+</tr>
+</tbody>
+</table>
+<p>The <code>configurationAttributes</code> parameter is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code> with properties specified in <code>oxConfigurationProperty</code> attributes.</p>
+<p>The script manager only loads enabled scripts. Hence, after enabling a
+script, the script manager should trigger an event to either load or
+destroy a script. All scripts are stored in LDAP in the
+<code>ou=scripts,o=&lt;org_inum&gt;,o=gluu</code> branch.</p>
+<p>This is a sample entry:</p>
+<pre><code>    dn: inum=@!1111!031C.4A65,ou=scripts,o=@!1111,o=gluu
+    objectClass: oxCustomScript
+    objectClass: top
+    description: &lt;custom_script_description&gt;
+    displayName: &lt;display_name&gt;
+    gluuStatus: true
+    inum: @!1111!031C.4A65
+    oxLevel: &lt;priority&gt;
+    oxModuleProperty: {&quot;value1&quot;:&quot;module_property_name&quot;,&quot;value2&quot;:&quot;module_property_value&quot;,&quot;description&quot;:&quot;&quot;}
+    oxConfigurationProperty: {&quot;value1&quot;:&quot;configuration_property_name&quot;,&quot;value2&quot;:&quot;configuration_property_value&quot;,&quot;description&quot;:&quot;&quot;}
+    oxRevision: &lt;revision&gt;
+    oxScript: &lt;custom_script&gt;
+    oxScriptType: &lt;script_type&gt;
+    programmingLanguage: python
+</code></pre>
+
+<p>The script manager reloads scripts automatically without needing to
+restart the application once <code>oxRevision</code> is increased.</p>
+<h2 id="interception-script-logs">Interception Script Logs<a class="headerlink" href="#interception-script-logs" title="Permanent link">#</a></h2>
+<p>The log files regarding interception scripts are not stored in the
+<code>wrapper.log</code> file. The logs are separated according to the module they
+affect. The oxAuth custom script logs are stored in <code>oxauth_script.log</code>
+and the oxTrust custom script logs are stored in the
+<code>oxtrust_script.log</code>. Please refer to these log files for any errors in
+the interception scripts or following the workflow of the script.</p>
+<h1 id="person-authentication">Person Authentication<a class="headerlink" href="#person-authentication" title="Permanent link">#</a></h1>
+<p><strong>For a list of pre-written, open source Gluu authentication scripts, view our <a href="https://github.com/GluuFederation/oxAuth/tree/master/Server/integrations">server integrations</a></strong></p>
+<p>An authentication script enables you to customize the user
+authentication experience. For example, you can write a script that
+enables a two-factor authentication mechanism like Duo Security. By
+default oxAuth uses simple username/password authentication method. This
+script type allows an admin to implement more secure workflows to cover
+an organizations security requirements. It extends the base script type
+with the <code>init</code>, <code>destroy</code> and <code>getApiVersion</code> methods but also adds the
+following methods:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>isValidAuthenticationMethod(self, usageType, configurationAttributes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Description</strong></td>
+<td>This method is used to check if the authentication method is in a valid state. For example we can check there if a 3rd party mechanism is available to authenticate users. As a result it should either return <code>True</code> or <code>False</code></td>
+</tr>
+<tr>
+<td>Method Parameter</td>
+<td><code>usageType</code> is <code>org.xdi.model.AuthenticationScriptUsageType</code><br/><code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>def getAlternativeAuthenticationMethod(self, usageType, configurationAttributes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Description</strong></td>
+<td>This method is called only if the current authentication method is in an invalid state. Hence authenticator calls it only if <code>isValidAuthenticationMethod</code> returns False. As a result it should return the reserved authentication method name</td>
+</tr>
+<tr>
+<td>Method Parameter</td>
+<td><code>uageType</code> is <code>org.xdi.model.AuthenticationScriptUsageType</code><br/><code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>def authenticate(self, configurationAttributes, requestParameters, step)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Description</strong></td>
+<td>This method is the key method within the person authentication script. It checks if the user has passed the specified step or not. As a result it should either return <code>True</code> or <code>False</code></td>
+</tr>
+<tr>
+<td>Method Parameter</td>
+<td><code>requestParameters</code> is <code>java.util.Map&lt;String, String[]&gt;</code><br/><code>step</code> is java integar<br/><code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>def prepareForStep(self, configurationAttributes, requestParameters, step)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Description</strong></td>
+<td>This method can be used to prepare variables needed to render the login page and store them in an according event context. As a result it should either return <code>True</code> or <code>False</code></td>
+</tr>
+<tr>
+<td>Method Parameter</td>
+<td><code>requestParameters</code> is <code>java.util.Map&lt;String, String[]&gt;</code><br/><code>step</code> is a java integer<br/><code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>def getCountAuthenticationSteps(self, configurationAttributes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Description</strong></td>
+<td>This method should return an integer value with the number of steps in the authentication workflow</td>
+</tr>
+<tr>
+<td>Method Parameter</td>
+<td><code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>def getExtraParametersForStep(self, configurationAttributes, step)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Description</strong></td>
+<td>This method provides a way to notify the authenticator that it should store specified event context parameters event in the oxAuth session. It is needed in a few cases, for example when an authentication script redirects the user to a 3rd party authentication system and expects the workflow to resume after that. As a result it should return a java array of strings</td>
+</tr>
+<tr>
+<td>Method Parameter</td>
+<td><code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code><br/><code>step</code> is a java integer</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>def getPageForStep(self, configurationAttributes, step)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Description</strong></td>
+<td>This method allows the admin to render a required page for a specified authentication step. It should return a string value with a path to an XHTML page. If the return value is empty or null, the authenticator should render the default log in page <code>/login.xhtml</code></td>
+</tr>
+<tr>
+<td>Method Parameter</td>
+<td><code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code><br/><code>step</code> is a java integar</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>def logout(self, configurationAttributes, requestParameters)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Description</strong></td>
+<td>This method is not mandatory. It can be used in cases when you need to execute specific logout logic within the authentication script when oxAuth receives an end session request. Also, it allows oxAuth to stop processing the end session request workflow if it returns <code>False</code>. As a result it should either return <code>True</code> or <code>False</code></td>
+</tr>
+<tr>
+<td>Method Parameters</td>
+<td><code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code><br/><code>requestParameters</code> is <code>java.util.Map&lt;String, String[]&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>This script can be used in oxAuth application only.</p>
+<ul>
+<li><a href="../sample-authentication-script.py">Sample Authentication Script</a></li>
+</ul>
+          <aside class="copyright" role="note">
+           Built with 
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a> using
+            <a href="http://gitlab.testbird.io:8099/frontend/testbird-mkdocs-theme.git" target="_blank">
+              testBird-mkdocs-theme
+            </a> <br>
+            
+            Copyright &copy; 2016, Gluu, Inc.
+            
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../backup/" title="Backup Gluu Server CE">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                Backup Gluu Server CE
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../certificate/" title="Certificate Management">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                Certificate Management
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../..';
+      var repo_id  = '';
+    </script>
+    <script src="../../assets/javascripts/application-ce3999cf34.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+  </body>
+</html>

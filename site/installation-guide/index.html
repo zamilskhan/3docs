@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Preparing VM - Gluu Docs</title>
+      
+<link href="../assets/stylesheets/font.css" rel="stylesheet">
+      
+      
+      
+    
+    <meta property="og:url" content="None">
+    <meta property="og:title" content="Gluu Docs">
+    <meta property="og:image" content="None/../gluu.jpg">
+    <meta name="apple-mobile-web-app-title" content="Gluu Docs">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+      <link rel="apple-touch-icon" href="../gluu.jpg">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon-60feabe0e5.ico">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon-60feabe0e5.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../assets/fonts/icon.eot?52m981');
+      	src: url('../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../assets/stylesheets/application-f58e216493.css">
+    
+    <link rel="stylesheet" href="../assets/stylesheets/zenburn-28d5b94970.css">
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto Sans:400,700|Source+Code+Pro">
+      <style>
+        body, input {
+          font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Source Code Pro', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+    <script src="../assets/javascripts/modernizr-4a5cc7e01e.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class=" ">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                Installation Guide <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        Preparing VM
+      </div>
+    </div>
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" placeholder="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+
+  
+  <a href="https://github.com/GluuFederation/docs" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../gluu.jpg">
+        </div>
+      
+      <div class="name">
+        <strong>Gluu Docs</strong><br>
+        version: 3.0.0
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      <ul class="repo">
+        
+        <li class="home">
+          <a href="/" title="Home">
+            <div class="home-image">
+            <i class="fa fa-home"></i> Doc Home</div>
+          </a>
+        </li>
+        
+        
+        
+        <li class="repo-download">
+          
+          <a href="https://github.com/GluuFederation/docs/archive/3.0.0.zip" target="_blank" title="Download" data-action="download">
+            <i class="icon icon-download"></i> Download
+          </a>
+        </li>
+        
+      </ul>
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Home" href="..">
+      Home
+    </a>
+    
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Installation Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="current" title="Preparing VM" href="./">
+      Preparing VM
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="1.1 Port" href="#11-port">
+                <b>1.1 Port</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="1.2 Tomcat Memory Heap" href="#12-tomcat-memory-heap">
+                <b>1.2 Tomcat Memory Heap</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="1.2.1 Alter Tomcat Memory Heap" href="#121-alter-tomcat-memory-heap">
+                  <font size=2><i>1.2.1 Alter Tomcat Memory Heap</i></font>
+              </a>
+            </li>
+             
+          
+            <li class="anchor">
+              <a title="1.3 File Descriptor" href="#13-file-descriptor">
+                <b>1.3 File Descriptor</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="1.4 Cloud Specific Instructions" href="#14-cloud-specific-instructions">
+                <b>1.4 Cloud Specific Instructions</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="1.4.1 Amazon AWS" href="#141-amazon-aws">
+                  <font size=2><i>1.4.1 Amazon AWS</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="1.4.2 Microsoft Azure" href="#142-microsoft-azure">
+                  <font size=2><i>1.4.2 Microsoft Azure</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="1.4.3 Linode VM" href="#143-linode-vm">
+                  <font size=2><i>1.4.3 Linode VM</i></font>
+              </a>
+            </li>
+             
+          
+        </ul>
+      
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Install Gluu Server" href="install/">
+      Install Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Setup Script Options" href="setup_py/">
+      Setup Script Options
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Cluster with CE" href="cluster/">
+      Cluster with CE
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Upgrade/Patch Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Upgrade Gluu Server" href="../upgrade/">
+      Upgrade Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Patch Gluu Server" href="../upgrade/update/">
+      Patch Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Administration Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="oxTrust Admin Interface" href="../admin-guide/">
+      oxTrust Admin Interface
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Log Management" href="../admin-guide/logmanagment/">
+      Log Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="UMA in Gluu Server" href="../admin-guide/uma/">
+      UMA in Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Attribute Management" href="../admin-guide/attribute/">
+      Attribute Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="SCIM protected by UMA" href="../admin-guide/scim-uma/">
+      SCIM protected by UMA
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="SCIM API Configuration" href="../admin-guide/scim/">
+      SCIM API Configuration
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Backup Gluu Server CE" href="../admin-guide/backup/">
+      Backup Gluu Server CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Custom Script in Gluu CE" href="../admin-guide/custom-script/">
+      Custom Script in Gluu CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Certificate Management" href="../admin-guide/certificate/">
+      Certificate Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Fine Tuning Gluu Server" href="../admin-guide/fine-tuning/">
+      Fine Tuning Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Troubleshooting & FAQ" href="../admin-guide/faq/">
+      Troubleshooting & FAQ
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <h1 id="1-preparing-vm-for-gluu-server-installation">1 Preparing VM for Gluu Server Installation<a class="headerlink" href="#1-preparing-vm-for-gluu-server-installation" title="Permanent link">#</a></h1>
+<p>Gluu Server Community Edition (CE) resource allocation depends on the backend data size. The requirements below are a bare minimum for Gluu CE to function properly. It is strongly recommended to allocate more resource for bigger backend data size.</p>
+<table>
+<thead>
+<tr>
+<th>CPU Unit</th>
+<th>RAM</th>
+<th>Disk Space</th>
+<th>Processor Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>4GB</td>
+<td>40GB</td>
+<td>64 Bit</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The processor type must be 64 bit for Gluu Server to function</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Insufficient memory may cause unexpected errors and bugs which will require adjusting the resources for a smooth performance.</p>
+</div>
+<h2 id="11-port">1.1 Port<a class="headerlink" href="#11-port" title="Permanent link">#</a></h2>
+<p>The following ports open for the Gluu Server to run. Please keep the ports open before installing Gluu Server.</p>
+<table>
+<thead>
+<tr>
+<th>Port Number</th>
+<th>Protocol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>80</td>
+<td>tcp</td>
+</tr>
+<tr>
+<td>443</td>
+<td>tcp</td>
+</tr>
+</tbody>
+</table>
+<h2 id="12-tomcat-memory-heap">1.2 Tomcat Memory Heap<a class="headerlink" href="#12-tomcat-memory-heap" title="Permanent link">#</a></h2>
+<p>The minimum recommended heap for tomcat server is 3GB for a test instance of Gluu Server Community Edition (CE). This estimate is based on the minumum RAM requirements. It is best to keep this ratio when tomcat memory is allocated in production environments as the size will depend on the available RAM; as an example, a 6GB tomcat memory heap in a production server with 8 GB ram is ideal for a small organization running Gluu CE.</p>
+<h3 id="121-alter-tomcat-memory-heap">1.2.1 Alter Tomcat Memory Heap<a class="headerlink" href="#121-alter-tomcat-memory-heap" title="Permanent link">#</a></h3>
+<p>The tomcat heap memory is set from the <code>setup.py</code> script prompt. 
+<img alt="tomcat-prompt" src="./../img/oxtrust/tomcat-prompt.png" /></p>
+<p>This property can also altered from the <code>/opt/tomcat/conf/gluuTomcatWrapper.conf</code> file inside the Gluu Server chroot container setting <code>wrapper.java.initmemory</code> and <code>wrapper.java.maxmemory</code> properties.
+Use the following command to open the gluuTomcatWrapper file</p>
+<pre><code># vi /opt/tomcat/conf/gluuTomcatWrapper.conf
+</code></pre>
+
+<p>Please change the values in following parameters. This example is taken from a CentOS installation of Gluu Server.</p>
+<pre><code># Initial Java Heap Size (in MB)
+wrapper.java.initmemory=512
+
+# Maximum Java Heap Size (in MB)
+wrapper.java.maxmemory=1536
+</code></pre>
+
+<h2 id="13-file-descriptor">1.3 File Descriptor<a class="headerlink" href="#13-file-descriptor" title="Permanent link">#</a></h2>
+<p>Gluu recommends setting the <code>file descriptors</code> to 65k for Gluu Server CE. The following steps will help set the <code>file descriptor</code> limit.</p>
+<ul>
+<li>Edit the <code>/etc/security/limits.conf</code> file.</li>
+<li>Add the following lines in the <code>limits.conf</code> file. Please replace the <code>username</code> with the user that will install Gluu Server.</li>
+</ul>
+<pre><code>* soft nofile 65536
+* hard nofile 262144
+</code></pre>
+
+<ul>
+<li>Edit the <code>/etc/pam.d/login</code> by adding the line:</li>
+</ul>
+<pre><code>session required pam_limits.so
+</code></pre>
+
+<ul>
+<li>Use the system file limit to increase the file descriptor limit to 65535. The system file limit is set in <code>/proc/sys/fs/file-max</code>.</li>
+</ul>
+<pre><code>echo 65535 &gt; /proc/sys/fs/file-max
+</code></pre>
+
+<ul>
+<li>Use the <code>ulimit</code> command to set the file descriptor limit to the hard limit specified in <code>/etc/security/limits.conf</code>.</li>
+</ul>
+<pre><code>ulimit -n unlimited
+</code></pre>
+
+<ul>
+<li>Restart your system.</li>
+</ul>
+<h2 id="14-cloud-specific-instructions">1.4 Cloud Specific Instructions<a class="headerlink" href="#14-cloud-specific-instructions" title="Permanent link">#</a></h2>
+<h3 id="141-amazon-aws">1.4.1 Amazon AWS<a class="headerlink" href="#141-amazon-aws" title="Permanent link">#</a></h3>
+<p>Amazon AWS provides a public and private IP address to its clouds. While
+running the <code>/install/community-edition-setup/setup.py</code> script, use the
+Private IP address.</p>
+<h3 id="142-microsoft-azure">1.4.2 Microsoft Azure<a class="headerlink" href="#142-microsoft-azure" title="Permanent link">#</a></h3>
+<p>Accessing the Gluu Server on Azure can be a little bit tricky because of
+the Public/Private IP. Azure assigns a new Public/Private IP
+addresses each time the server is started. </p>
+<h4 id="1421-setting-up-vm">1.4.2.1 Setting up VM<a class="headerlink" href="#1421-setting-up-vm" title="Permanent link">#</a></h4>
+<ol>
+<li>
+<p>Log into Windows Azure Administrative Panel</p>
+</li>
+<li>
+<p>Click on <code>Virtual Machines</code> tab, and click <code>Create a Virtual Machine</code> link</p>
+</li>
+<li>
+<p>From the menu, choose <code>Compute</code> --&gt; <code>Virtual Machine</code> --&gt; <code>From Gallery</code> branch.</p>
+</li>
+<li>
+<p>Choose Ubuntu Server 14.04 LTS or CentOS 6.7. Remember to set selinux
+   to permissive if you choose CentOS.</p>
+</li>
+<li>
+<p>Provide a name for the VM in the <code>Virtual Machine Name</code> field and use
+<code>Standard</code> for <code>Tier</code>.</p>
+</li>
+<li>
+<p>Select at least <code>A2</code> variant equipped with 3.5GB RAM in the <code>Size</code>
+dropdown menu.</p>
+</li>
+<li>
+<p>Provide an username to connect via ssh, and define an according
+   access password, or upload a certificate for an authentification
+   without passwords. Then, click <code>Next</code>.</p>
+</li>
+<li>
+<p>Create a new cloud service and select <code>None</code> for <code>Availability Set</code>
+   option.
+        * Endpoints Section: This is where the port forwarding is set so
+      that the internal IP address could be selectively reachable from
+      the outside world. By default, only ssh tcp port 22 is there. The
+      public ports for http and https (tcp ports 80 and 443) have to be
+      added and mapped to the same private ports. If the cloud mappings
+      are flagged conflicting, proceed without setting them. Remember to
+      set them after the creation of the VM. Then, click <code>Next</code>.</p>
+</li>
+<li>
+<p>Choose not to install <code>VM Agent</code> and click the <code>tick</code> button to
+   finalize the VM.</p>
+</li>
+<li>
+<p>Go to the <code>Dashboard</code> tab of VM Management Panel and copy the <code>DNS
+    Name</code>. This is the name that is used to access the Gluu Server.</p>
+</li>
+<li>
+<p>SSH into the VM and install the Gluu Server. See our <a href="install/">Installation Guide</a> for
+    installation instructions.</p>
+</li>
+</ol>
+<h4 id="1422-setuppy-configuration">1.4.2.2 Setup.py Configuration<a class="headerlink" href="#1422-setuppy-configuration" title="Permanent link">#</a></h4>
+<p>This section describes what to put in the prompt when <code>setup.py</code> is run
+after installing Gluu Server.</p>
+<ul>
+<li>
+<p>IP Address: Do not change the default IP address; just press <code>enter</code>.</p>
+</li>
+<li>
+<p>hostname: Use the DNS name that was copied from the `VM Management Panel.</p>
+</li>
+<li>
+<p>Update hostname: Choose to update hostname for Ubuntu, but do not
+  change if you are running CentOS.
+        * For CentOS, manually update the file <code>/etc/sysconfig/networking</code>, and add the full DNS name.</p>
+</li>
+<li>
+<p>Now the chosen DNS name can be used to access the Gluu Server.</p>
+</li>
+</ul>
+<h3 id="143-linode-vm">1.4.3 Linode VM<a class="headerlink" href="#143-linode-vm" title="Permanent link">#</a></h3>
+<p>The Linode Virtual Machines (VM) use a custom kernel which is not supported by Gluu Server, therefore the kernel must be updated before Gluu Server can be installed in Linode VM. The following steps will guide you through kernel update in the Linode VM.</p>
+<ul>
+<li>Check for the current version of the kernel. If the output contains <code>-Linode</code>, then proceed</li>
+</ul>
+<pre><code># uname -a
+</code></pre>
+
+<ul>
+<li>Run the following command to update the kernel</li>
+</ul>
+<pre><code># apt-get install linux-image-virtual grub2
+</code></pre>
+
+<ul>
+<li>Modify <code>grub</code> file in the <code>/etc/default/</code> folder</li>
+</ul>
+<pre><code># vim /etc/default/grub
+</code></pre>
+
+<ul>
+<li>Ensure that the following lines are present in the grub file</li>
+</ul>
+<pre><code>GRUB_TIMEOUT=10
+GRUB_CMDLINE_LINUX=&quot;console=ttyS0,19200n8&quot;
+GRUB_DISABLE_LINUX_UUID=true
+GRUB_SERIAL_COMMAND=&quot;serial --speed=19200 --unit=0 --word=8 --parity=no --stop=1&quot;
+</code></pre>
+
+<ul>
+<li>Finally run the following commands to update <code>grub</code> and reboot</li>
+</ul>
+<pre><code># update-grub
+# reboot
+</code></pre>
+          <aside class="copyright" role="note">
+           Built with 
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a> using
+            <a href="http://gitlab.testbird.io:8099/frontend/testbird-mkdocs-theme.git" target="_blank">
+              testBird-mkdocs-theme
+            </a> <br>
+            
+            Copyright &copy; 2016, Gluu, Inc.
+            
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href=".." title="Home">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                Home
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="install/" title="Install Gluu Server">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                Install Gluu Server
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '..';
+      var repo_id  = '';
+    </script>
+    <script src="../assets/javascripts/application-ce3999cf34.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+  </body>
+</html>
