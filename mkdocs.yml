@@ -44,7 +44,7 @@ pages:
     #- 'Service Integration in Gluu CE' : 'admin-guide/integrate.md'
     #- 'Plugin Integration' : 'admin-guide/plugin.md'
     - 'Backup Gluu Server CE' : 'admin-guide/backup.md'
-    #- 'Custom Script in Gluu CE' : 'admin-guide/custom-script.md'
+    - 'Custom Script in Gluu CE' : 'admin-guide/custom-script.md'
     - 'Certificate Management' : 'admin-guide/certificate.md'
     - 'Fine Tuning Gluu Server' : 'admin-guide/fine-tuning.md'
     - 'Troubleshooting & FAQ' : 'admin-guide/faq.md'
