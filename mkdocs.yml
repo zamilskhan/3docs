@@ -28,7 +28,7 @@ pages:
     - 'Authentication Protocols' : 'admin-guide/auth-protocol.md'
     - 'Authntication Managment' : 'admin-guide/auth-management.md'
     - 'Multi Factor Authentication' : 'admin-guide/multi-factor-auth.md'
-    # - 'Manage & Configure Users' : 'admin-guide/user-group.md'
+    - 'Manage & Configure Users' : 'admin-guide/user-group.md'
     - 'Log Management' : 'admin-guide/logmanagment.md'
     #- 'Gluu for Mobile' : 'admin-guide/mobile.md'
     # - 'Self-Services for Users' : 'admin-guide/self-service.md'
