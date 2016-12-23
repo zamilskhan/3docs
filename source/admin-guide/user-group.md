@@ -266,11 +266,12 @@ the people to sign-up for an account on the Gluu Server. This service is
 disabled by default. The `User Registration` custom script  is used to enable the 
 registration feature.
 
-> Note: When possible, we recommend handling user registration in your app locally, then pushing the information to the Gluu Server via [SCIM 2.0](../api/scim-2.0.md). This will give you much more control and flexibility in defining the exact registration process. Also,
+!!! Note
+    When possible, we recommend handling user registration in your app locally, then pushing the information to the Gluu Server via SCIM 2.0. This will give you much more control and flexibility in defining the exact registration process. Also,
 frequently oxTrust is not Internet facing--it was primarily designed as an interface for admins.
 
 ### oxTrust Configuration
-Navigate to the [custom scripts](../customize/script.md) section of the Admin Panel. Click on the [configuration](../oxtrust/configuration.md) menu and then  `Manage Custom Scripts`.
+Navigate to the custom scripts section of the Admin Panel. Click on the `Configuration menu and then  `Manage Custom Scripts`.
 
 ![image](../img/admin-guide/user/config-manage-script_menu.png)
 
