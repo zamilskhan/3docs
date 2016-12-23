@@ -42,7 +42,7 @@ pages:
     - 'Gluu Server APIs' : 'admin-guide/api.md'
     - 'SCIM API Configuration' : 'admin-guide/scim.md'
     #- 'Service Integration in Gluu CE' : 'admin-guide/integrate.md'
-    #- 'Plugin Integration' : 'admin-guide/plugin.md'
+    - 'Plugin Integration' : 'admin-guide/plugin.md'
     - 'Backup Gluu Server CE' : 'admin-guide/backup.md'
     - 'Custom Script in Gluu CE' : 'admin-guide/custom-script.md'
     - 'Certificate Management' : 'admin-guide/certificate.md'
