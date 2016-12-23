@@ -54,7 +54,7 @@ and the oxTrust custom script logs are stored in the
 `oxtrust_script.log`. Please refer to these log files for any errors in
 the interception scripts or following the workflow of the script.
 
-# Person Authentication
+## Person Authentication
 **For a list of pre-written, open source Gluu authentication scripts, view our [server integrations](https://github.com/GluuFederation/oxAuth/tree/master/Server/integrations)**
 
 An authentication script enables you to customize the user
@@ -109,3 +109,183 @@ following methods:
 This script can be used in oxAuth application only.
 
 - [Sample Authentication Script](./sample-authentication-script.py)
+
+## Certificate Authentication
+Gluu Server CE offers a person authentication module enabling Certificate Authentication.
+The image below contains the design diagram for this module.
+
+![image](./docs/Cert%20design.jpg)
+
+The script has a few properties:
+
+|	Property	|Description|	Allowed Values			|example|
+|-------|--------------|------------|-----------------|
+|chain_cert_file_path	|mandatory property pointing to certificate chains in [pem][pem] format	|file path| /etc/certs/chain_cert.pem	|
+|map_user_cert		|specifies if the script should map new user to local account		|true/false| true|
+|use_generic_validator	|enable/disable specific certificate validation				|true/false| false|
+|use_path_validator	|enable/disable specific certificate validation				|true/false| true|
+|use_oscp_validator|enable/disable specific certificate validation				|true/false| false|
+|use_crl_validator|enable/disable specific certificate validation				|true/false| false|
+|crl_max_response_size	|specifies the maximum allowed size of [CRL][crl] response		| Integer > 0| 2|
+
+- [Sample Certificate Authentication Script](./UserCertExternalAuthenticator.py)
+# Update User
+
+oxTrust allows an admin to add and modify users which belong to groups.
+In order to simplify this process and apply repeating actions, oxTrust
+supports an Update User script. In this script it is possible to modify
+a person entry before it is stored in LDAP.
+
+This script type adds only one method to the base script type:
+
+|Method|def updateUser(self, user, persisted, configurationAttributes)|
+|---|---|
+|**Description**|This method updates the user|
+|Method Parameter|`user` is `org.gluu.oxtrust.model.GluuCustomPerson`<br/>persisted is a boolean value to specify the operation type: add/modify<br/>`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`|
+
+This script can be used in an oxTrust application only.
+
+- [Sample Update User Script](./sample-update-user-script.py)
+
+# User Registration
+
+oxTrust allows users to perform self-registration. In order to
+control/validate user registrations there is the user registration
+script type.
+
+This script type adds three methods to the base script type:
+
+
+|Methods|def initRegistration(self, user, requestParameters, configurationAttributes)<br/>def preRegistration(self, user, requestParameters, configurationAttributes)<br/>def postRegistration(self, user, requestParameters, configurationAttributes)|
+|---|---|
+|**Description**|This method enables/disables user account based on the custom property's value|
+|Method Parameters|`user` is `org.gluu.oxtrust.model.GluuCustomPerson`<br/>`requestParameters` is `java.util.Map<String, String[]>`<br/>`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`|
+|Custom Property|`enable_user`--> defaults to `false`|
+|Description|It controls whether or not this user account will be ready for loggin into the Gluu Server CE instance|
+
+The methods are executed in the following order:
+
+|Order|Method|Expected Return|
+|-----|------|-----------|
+|First|initRegistration()|True/False|
+|Second|preRegistration()|True/False|
+|Third|postRegistration()|True/False|
+
+First oxTrust executes the `initRegistration` method to do an initial
+user entry update. The `preRegistration` method is called before storing
+the user entry in LDAP. Hence in this script it is possible to validate
+the user entry. The `postRegistration` method is called after
+successfully storing the user entry in LDAP. In this method, for
+example, the script can send an e-mail or send notifications to other
+organization systems about the new user entry.
+
+- [Sample User Registration Script](./sample-user-registration-script.py)
+
+# Client Registration
+
+oxAuth implements the [OpenID Connect dynamic client
+registration](https://openid.net/specs/openid-connect-registration-1_0.html)
+specification. All new clients have the same default access scopes and
+attributes except password and client ID. The Client Registration script
+allows an admin to modify this limitation. In this script it is possible
+to get a registration request, analyze it, and apply customizations to
+registered clients. For example, a script can give access to specified
+scopes if `redirect_uri` belongs to a specified service or domain.
+
+This script type adds only one method to the base script type:
+
+|Method|def updateClient(self, registerRequest, client, configurationAttributes)|
+|---|---|
+|**Method Parameter**|`registerRequest` is `org.xdi.oxauth.client.RegisterRequest`<br/>`client` is `org.xdi.oxauth.model.registration.Client`<br/>`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`|
+
+This script can be used in an oxAuth application only.
+
+- [Sample Client Registration Script](./sample-client-registration-script.py)
+
+
+# Dynamic Scopes
+The dynamic scope custom script allows the parsing of token returned from `user_info endpoint` into 
+LDAP attributes. The `id_token` is returned from `user_info endpoint` and the values are dynamically placed 
+in the LDAP attributes in Gluu Server.
+
+- [Sample Dynamic Scope Script](./sample-dynamic-script.py) 
+
+# ID Generator
+
+By default oxAuth/oxTrust uses an internal method to generate unique
+identifiers for new person/client, etc. entries. In most cases the
+format of the ID is:
+
+`'!' + idType.getInum() + '!' + four_random_HEX_characters + '.' + four_random_HEX_characters.`
+
+The ID generation script enables an admin to implement custom ID
+generation rules.
+
+This script type adds only one method to the base script type:
+
+|Method|def generateId(self, appId, idType, idPrefix, configurationAttributes)|
+|---|---|
+|**Method Parameter**|`appId` is application ID<br/>`idType` is ID Type<br/>`idPrefix` is ID Prefix<br/>`user` is `org.gluu.oxtrust.model.GluuCustomPerson`<br/>`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`|
+
+This script can be used in an oxTrust application only.
+
+- [Sample ID Generation Script](./sample-id-generation.py)
+
+# Cache Refresh
+
+In order to integrate an interception script with an existing
+authentication server oxTrust provides a mechanism called Cache
+Refresh to copy user data to the local LDAP server. During this process it is possible
+to specify key attribute(s) and specify attribute name transformations.
+There are also cases when it can be used to overwrite attribute values
+or to add new attributes based on other attribute values.
+
+This script type adds only one method to the base script type:
+
+|Method|def updateUser(self, user, configurationAttributes)|
+|---|---|
+|**Method Parameter**|`user` is `org.gluu.oxtrust.model.GluuCustomPerson`<br/>`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`|
+
+This script can be used in an oxTrust application only.
+
+- [Sample Cache Refresh Script](./sample-cache-refresh-script.py)
+
+
+# UMA Authorization Policies
+
+This is a special script for UMA. It allows an admin to protect UMA
+scopes with policies. It is possible to add more than one UMA policy to
+an UMA scope. On requesting access to a specified resource, the
+application should call specified UMA policies in order to grant or deny
+access.
+
+This script type adds only one method to the base script type:
+
+|Method|def authorize(self, authorizationContext, configurationAttributes)|
+|---|---|
+|**Method Parameter**|`authorizationContext` is `org.xdi.oxauth.service.uma.authorization.AuthorizationContext`<br/>`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`|
+
+This script can be used in an oxAuth application only.
+
+- [Sample Authorization Script](./sample-uma-authorization-script.py)
+
+
+# Application Session Management
+
+This script allows an admin to notify 3rd party systems about requests
+to end an OAuth session. This method is triggered by an oxAuth call to
+the `end_session` endpoint. It's possible to add multiple scripts with
+this type. The application should call all of them according to the
+level.
+
+This script type adds only one method to the base script type:
+
+|Method|def endSession(self, httpRequest, authorizationGrant, configurationAttributes)|
+|---|---|
+|**Method Parameter**|`httpRequest` is `javax.servlet.http.HttpServletRequest`<br/>`authorizationGrant` is `org.xdi.oxauth.model.common.AuthorizationGrant`<br/>`configurationAttributes` is `java.util.Map<String, SimpleCustomProperty>`|
+
+This script can be used in an oxAuth application only.
+
+- [Sample Application Session Management Script](./sample-application-session-script.py)
+
+[pem]: https://en.wikipedia.org/wiki/Privacy-enhanced_Electronic_Mail "Privacy-enhanced Electronic Mail"
