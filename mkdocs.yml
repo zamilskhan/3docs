@@ -34,7 +34,7 @@ pages:
     # - 'Self-Services for Users' : 'admin-guide/self-service.md'
     - 'Configure OpenID Clients' : 'admin-guide/clients.md'
     - 'Configure SAML SSO' : 'admin-guide/saml.md'
-    - 'OAuth 2.0 Grants' : 'admin-guide/oauth2.md'
+    - 'OAuth2 Grants' : 'admin-guide/oauth2.md'
     # - 'OpenID Connect Flows' : 'admin-guide/openid-connect.md'
     - 'UMA in Gluu Server' : 'admin-guide/uma.md'
     - 'Attribute Management' : 'admin-guide/attribute.md'
