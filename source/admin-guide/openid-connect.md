@@ -1,7 +1,7 @@
 [TOC]
 
 # Overview
-OpenID Connect is an authentication layer built on OAuth 2.0. OpenID Connect 1.0 is a specific implementation of OAuth 2.0 where the identity provider holds the protected resources that the third-party application needs to access on behalf of a person. This resource is the UserInfo, information about the authenticated end user expressed in a standard format. OpenID Connect allows relying parties to verify the identity of the person and obtain user information. 
+OpenID Connect is an authentication layer built on OAuth 2.0. OpenID Connect is a specific implementation of OAuth 2.0 where the identity provider holds protected resources that a third-party application needs to access on behalf of a person. OpenID Connect allows relying parties to verify the identity of, and obtain information about a person requesting to access the applications protected resources. 
 
 # Jargon
 In OpenID Connect the key entities include:
