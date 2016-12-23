@@ -23,6 +23,12 @@ The relying party can verify claims about the identity of the end user, and log 
 # OpenID Connect Support in the Gluu Server
 The Gluu Server is a [fully certified OpenID Connect Provider (OP)](http://openid.net/certification/). As an OpenID Provider, the Gluu Server enables OpenID Connect relying parties (clients) to discover its capabilities, handle both dynamic and static registration of relying parties, respond to relying party requests with authorization codes, access tokens, and user information according to the Authorization Code and Implicit flows of OpenID Connect, and manages sessions.
 
+## OpenID Connect Authorization Code Flow
+The OpenID Connect Authorization Code Flow specifies how the relying party interacts with the OpenID Provider based on use of the OAuth 2.0 authorization grant. 
+
+## OpenID Connect Implicit Flow
+The OpenID Connect Implicit Flow specifies how the relying party interacts with the OpenID Provider based on use of the OAuth 2.0 implicit grant. 
+
 ## Discovery 
 
 The first thing you want to know about any OAuth 2.0 API is where are the
@@ -269,6 +275,9 @@ OpenIdConfigurationResponse response = client.execOpenIdConfiguration();
 ```
 
 See [org.xdi.oxauth.ws.rs.ConfigurationRestWebServiceHttpTest](https://github.com/GluuFederation/oxAuth/blob/master/Client/src/test/java/org/xdi/oxauth/ws/rs/ConfigurationRestWebServiceHttpTest.java)
+
+## OpenID Connect Relying Party Registration
+Relying parties can register with the Gluu Server both statically, by the Gluu Server admin, and dynamically, as specified by OpenID Connect Discovery. To allow dynamic registration, you register an initial OAuth 2.0 client that other relying parties can use to get access tokens for registration. You can also enable OpenID Connect relying parties to register dynamically without having to provide an access token. If dynamic registration is enabled, make sure to limit or throttle registrations as it could be used as a form of DDOS.
 
 ### Algorithm
 oxAuth supports various types of signature and encryption
