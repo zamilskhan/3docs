@@ -472,6 +472,7 @@
 <li><a href="#openid-connect-authorization-code-flow">OpenID Connect Authorization Code Flow</a></li>
 <li><a href="#openid-connect-implicit-flow">OpenID Connect Implicit Flow</a></li>
 <li><a href="#discovery">Discovery</a><ul>
+<li><a href="#sample-discovery-request">Sample Discovery Request</a></li>
 <li><a href="#algorithm">Algorithm</a></li>
 </ul>
 </li>
@@ -520,17 +521,18 @@
 <h2 id="openid-connect-implicit-flow">OpenID Connect Implicit Flow<a class="headerlink" href="#openid-connect-implicit-flow" title="Permanent link">#</a></h2>
 <p>The OpenID Connect Implicit Flow specifies how the relying party interacts with the OpenID Provider based on use of the OAuth 2.0 implicit grant. </p>
 <h2 id="discovery">Discovery<a class="headerlink" href="#discovery" title="Permanent link">#</a></h2>
-<p>The first thing you want to know about any OAuth 2.0 API is where are the
-endpoints (i.e. what are the URIs where you call the APIs).
+<p>The first thing you want to know about any OAuth 2.0 API is where the
+endpoints are (i.e. what are the URIs where you call the APIs).
 OpenID Connect provides a very simple mechanism to accomplish this: 
 <a href="http://openid.net/specs/openid-connect-discovery-1_0.html">OpenID Connect Discovery</a>.</p>
 <p>In order for an OpenID Connect Relying Party to utilize OpenID Connect
 services for an End-User, the RP needs to know where the OpenID Provider is.
-OpenID Connect uses WebFinger <a href="http://en.wikipedia.org/wiki/WebFinger">WebFinger</a>
+OpenID Connect uses <a href="http://en.wikipedia.org/wiki/WebFinger">WebFinger</a>
 to locate the OpenID Provider for an End-User.</p>
 <p>Once the OpenID Provider has been identified, the configuration information
 for the OP is retrieved from a well-known location as a JSON document,
 including its OAuth 2.0 endpoint locations.</p>
+<h3 id="sample-discovery-request">Sample Discovery Request<a class="headerlink" href="#sample-discovery-request" title="Permanent link">#</a></h3>
 <p>If you want to try a discovery request, you can make the following
 WebFinger request to discover the Issuer location:</p>
 <pre><code>GET /.well-known/webfinger?resource=https%3A%2F%2Fidp.gluu.org&amp;rel=http%3A%2F%2Fopenid.net%2Fspecs%2Fconnect%2F1.0%2Fissuer HTTP/1.1
@@ -549,7 +551,7 @@ Content-Type: application/jrd+json
 </code></pre>
 
 <p>Using the Issuer location discovered, the OpenID Provider's configuration information can be retrieved.</p>
-<p>The RP makes the following request to the Issuer https://<domain>/.well-known/openid-configuration to obtain its
+<p>The RP makes the following request to the Issuer <code>https://&lt;domain&gt;/.well-known/openid-configuration</code> to obtain its
 Configuration information:</p>
 <pre><code>GET /.well-known/openid-configuration HTTP/1.1
 Host: idp.gluu.org

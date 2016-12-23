@@ -114,7 +114,7 @@ This script can be used in oxAuth application only.
 Gluu Server CE offers a person authentication module enabling Certificate Authentication.
 The image below contains the design diagram for this module.
 
-![image](../img/admin-guide/custom-script/cert-design.jpg)
+![image](../img/custom-script/cert-design.jpg)
 
 The script has a few properties:
 
