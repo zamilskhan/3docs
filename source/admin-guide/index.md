@@ -24,7 +24,7 @@ These sections are detailed below with screenshots.
 
 ![organization-config-head](../img/oxtrust/organization-config-head.png "Organization Configuration")
 
-**System Configuration**
+#### System Configuration
 ![system-config-options](../img/oxtrust/system-config-options.png)
 
 - Self-Service Password Reset: the admin can enable or disable the ability for users to reset their own passwords via email. In order for password reset to work, the admin must fill out the appropriate details in the [SMTP Server Configuration](#smtp-server-configuration) tab.
@@ -34,13 +34,13 @@ These sections are detailed below with screenshots.
 - User can edit profile: Enable this feature if you want to give people the ability to edit their own personal information in the Gluu Server. In most cases this option should be left disabled since oxTrut is typically not Internet facing, or the best place to have users interact with their information. For any reasonably large deployment, it is recommended to build a standalone profile app for users to self-service their information. 
 - Contact Email: Provide a good email for the Gluu Server admininstrator. This email will be presented on any error pages. 
 
-**SMTP Server Configuration**
+#### SMTP Server Configuration
 ![smtp-config](../img/oxtrust/smtp-config.png "SMTP Configuration")
 
 This tab allows you to add a mail server which can be used by the Gluu Server to send notifications like password reset emails. All fields in this page are manadory. The configuration can be tested before confirmation. The fields are self-explanatory and simple such as hostname, user, password, ssl-requirement, authentication requirement, sending name and address.
 
 
-**OxTrust Settings**
+#### OxTrust Settings
 ![oxtrust-settings](../img/oxtrust/oxtrust-settings.png "OxTrust Settings")
 
 The oxTrust Settings tab provides some basic information about the administration interface. The administrator can find the oxTrust build date and number, change the organization name, logo and favicon settings, as well as set the name of the administrator group for Gluu Server. Users added in the administrator group will have administrator access in Gluu Server where they will be able to view and manage all interfaces in oxTrust.
