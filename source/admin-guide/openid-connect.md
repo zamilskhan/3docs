@@ -12,13 +12,11 @@ The end user wants to login to an application using an existing account at an Op
 
 - The *Relying Party (RP)* (OAuth 2.0 client) needs access to the end user's protected user information.
 
-For example, an online mail application needs to know which end user is accessing the application in order to present the correct inbox.
-
-As another example, an online shopping site needs to know which end user is accessing the site in order to present the right offerings, account, and shopping cart.
+For example, an online chat application like Slack needs to know who is accessing the application in order to present the correct user account and contacts. 
 
 - The *OpenID Provider (OP)* (OAuth 2.0 authorization server and also resource server) that holds the user information and grants access.
 
-The Gluu Server is an OpenID Provider. The OP holds information about the user and allows the end user or the organization (depending on the configuration) to consent to providing the RP with access to user information. OpenID Connect defines a unique identification for an account (subject identifier + issuer identifier), and the RP can use this as a key to its own user profile. 
+The Gluu Server is an OpenID Provider. The OP holds information about the user and allows the end user or the organization (depending on configuration) to consent to providing the RP with access to user information. OpenID Connect defines a unique identification for an account (subject identifier + issuer identifier), and the RP can use this as a key to its own user profile. 
 
 In OpenID Connect, the relying party can verify claims about the identity of the end user, and log the user out at the end of a session. OpenID Connect also makes it possible to discover the OpenID Provider for an end user, and to register relying party client applications dynamically. OpenID connect services are built on OAuth 2.0, JSON Web Token (JWT), WebFinger and Well-Known URIs.
 
