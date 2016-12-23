@@ -62,7 +62,55 @@
     </url>
         
     <url>
+     <loc>None/admin-guide/auth-protocol/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/auth-management/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/multi-factor-auth/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/user-group/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>None/admin-guide/logmanagment/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/clients/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/saml/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/oauth2/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/openid/</loc>
      <lastmod>2016-12-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -86,7 +134,19 @@
     </url>
         
     <url>
+     <loc>None/admin-guide/api/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>None/admin-guide/scim/</loc>
+     <lastmod>2016-12-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/integrate/</loc>
      <lastmod>2016-12-23</lastmod>
      <changefreq>daily</changefreq>
     </url>

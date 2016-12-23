@@ -182,8 +182,8 @@ Got the metadata? Great, we are ready to move forward.
 
 * Create Trust Relationship for Google Apps: 
 
-   * How to create a trust relationship can be found [here](./outbound-saml.md#how-to-create-trust-relationship). We need to follow the "File" method for Google Apps trust relationship.
-    * Required attributes: Generally a nameID attributes is required. [Here](https://gluu.org/docs/customize/attributes/#custom-nameid) is how you can create custom nameID in Gluu Server. 
+   * How to create a trust relationship can be found [here](saml.md). We need to follow the "File" method for Google Apps trust relationship.
+    * Required attributes: Generally a nameID attributes is required. 
     * Relying Party Configuration: Yes, SAML2SSO should be configured. 
         * includeAttributeStatement: check
         * assertionLifetime: default 
@@ -304,7 +304,7 @@ Set-MsolDomainAuthentication -DomainName $dom -FederationBrandName $dom -Authent
 ### Gluu Server Configuration
 ### Custom Attributes
 The configuration begins by creating a few custom attributes named `IDPEmail`, `ImmutableID` and `objectguid`.
-Please see [this doc](../customize/attributes.md) to create custom attributes.
+Please see [this doc](./attribute.md) to create custom attributes.
 
 1. `IDPEmail` Custom Attribute
 ![image](../img/admin-guide/integrate/idpemail.png)
@@ -476,7 +476,7 @@ Further documentation is available at the Salesforce.com site.
 
 ### Prepare Gluu Server
 
-* How to create SAML trust relationship is available [here](../integrate/outbound-saml.md). 
+* How to create SAML trust relationship is available [here](./saml.md). 
 * Grab Salesforce.com metadata from the Salesforce.com website. There is
   an option named 'Download Metadata':
   * Modify Salesforce.com metadata a bit:
@@ -638,4 +638,3 @@ Add below snippets in 'attribute-resolver.xml.vm' ( location: /opt/tomcat/conf/s
     </resolver:AttributeDefinition>
 ```
 - Restart tomcat
-
