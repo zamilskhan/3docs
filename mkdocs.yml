@@ -28,7 +28,7 @@ pages:
     - 'Authntication Managment' : 'admin-guide/auth-management.md'
     - 'Configuring Multi Factor Authentication' : 'admin-guide/multi-factor-auth.md'
     - 'Manage & Configure Users' : 'admin-guide/user-group.md'
-    - 'Log Management' : 'admin-guide/logmanagment.md'
+    - 'Log Management' : 'admin-guide/logs.md'
     #- 'Gluu for Mobile' : 'admin-guide/mobile.md'
     # - 'Self-Services for Users' : 'admin-guide/self-service.md'
     - 'Configure and Manage OpenID Clients' : 'admin-guide/clients.md'
