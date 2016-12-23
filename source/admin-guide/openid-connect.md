@@ -297,8 +297,10 @@ Relying parties can register with the Gluu Server both statically, by the Gluu S
 
 ## Session management
 
-Logout is a catch-22. There is no perfect answer to logout that
-satisfies all the requirements of all the domains on the Internet. For
+OpenID Connect lets the relying party track whether the end user is logged in at the provider, and also initiate end user logout at the provider. The specification has the relying party monitor session state using an invisible iframe and communicate status using the HTML 5 postMessage API.
+
+However, be forewarned that there is no perfect answer to logout that
+satisfies all requirements for all domains on the Internet. For
 example, large OpenID Providers, like Google, need a totally stateless
 implementation--Google cannot track sessions on the server side for
 every browser on the Internet. But in smaller domains, server side
@@ -318,8 +320,8 @@ logout callbacks of the clients. This way, the browser could call the
 logout uris (not the server).
 
 The Gluu Server is very flexible, and supports both server side session
-management, and stateless session management. For server side business
-logout, the domain admin can use Custom Logout scripts. This can be
+management, and stateless session management. For server side
+logout, the domain admin can use [Custom Logout scripts](./custom-script.md#application-session-management). This can be
 useful to clean up sessions in a legacy SSO system (i.e. SiteMinder), or
 perhaps in a portal.
 
