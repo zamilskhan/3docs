@@ -62,7 +62,7 @@ button. The flow is _Add Member --> Search the name/email of the user
 ## Cache Refresh
 Cache Refresh is the process of connecting an existing backend LDAP server, like Microsoft Active Directory, with the Gluu Server's local LDAP server. Synching people and attributes from a backend server into the Gluu Server speeds up authentication transactions. It is possible to perform attribute transformations, changing the name of attributes, or even using an interception script to change the values. Transformations are stored in the Gluu LDAP service. 
 
-![Cache Refresh Menu](../img/admin-guide/user/admin_cache_menu.png "admin cache")
+![Cache Refresh Menu](/img/admin-guide/user/admin_cache_menu.png)
 
 * _Last Run:_ The date and time of the latest cache refresh cycle
   completion is shown here.
@@ -75,10 +75,10 @@ Cache Refresh is the process of connecting an existing backend LDAP server, like
   been rejected by the Gluu Server during the update. If there are any
   rejections, please contact Gluu Support for clarification and help.
 
-![Last Run](../img/admin-guide/user/admin_cache_lastrun.png)
+![Last Run](/img/admin-guide/user/admin_cache_lastrun.png)
 
 ### Customer Backend Key and Attributes
-![Customer Backend Key](../img/admin-guide/user/admin_cache_backend.png)
+![Customer Backend Key](/img/admin-guide/user/admin_cache_backend.png)
 
 * _Key Attribute:_ This is the unique key attribute of backend Active
   Directory/LDAP Server such as SAMAccountname for any Active Directory.
@@ -95,7 +95,7 @@ filtering mechanism can be used such as "sn=*" whereas the value of this
 field ensures that every user must contain an attribute named SN.
 
 ### Source Backend LDAP Servers
-![Source Backend](../img/admin-guide/user/admin_cache_sourcebackend.png)
+![Source Backend](/img/admin-guide/user/admin_cache_sourcebackend.png)
 
 This section allows the Gluu Server to connect to the backend Active
 Directory/LDAP server of the organization.
