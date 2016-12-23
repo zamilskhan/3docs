@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>SCIM protected by UMA - Gluu Docs</title>
+      
+<link href="../../assets/stylesheets/font.css" rel="stylesheet">
+      
+      
+      
+    
+    <meta property="og:url" content="None">
+    <meta property="og:title" content="Gluu Docs">
+    <meta property="og:image" content="None/../../gluu.jpg">
+    <meta name="apple-mobile-web-app-title" content="Gluu Docs">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+      <link rel="apple-touch-icon" href="../../gluu.jpg">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/favicon-60feabe0e5.ico">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon-60feabe0e5.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../assets/fonts/icon.eot?52m981');
+      	src: url('../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../assets/stylesheets/application-f58e216493.css">
+    
+    <link rel="stylesheet" href="../../assets/stylesheets/zenburn-28d5b94970.css">
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto Sans:400,700|Source+Code+Pro">
+      <style>
+        body, input {
+          font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Source Code Pro', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+    <script src="../../assets/javascripts/modernizr-4a5cc7e01e.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class=" ">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                Administration Guide <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        SCIM protected by UMA
+      </div>
+    </div>
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" placeholder="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+
+  
+  <a href="https://github.com/GluuFederation/docs" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../../gluu.jpg">
+        </div>
+      
+      <div class="name">
+        <strong>Gluu Docs</strong><br>
+        version: 3.0.0
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      <ul class="repo">
+        
+        <li class="home">
+          <a href="/" title="Home">
+            <div class="home-image">
+            <i class="fa fa-home"></i> Doc Home</div>
+          </a>
+        </li>
+        
+        
+        
+        <li class="repo-download">
+          
+          <a href="https://github.com/GluuFederation/docs/archive/3.0.0.zip" target="_blank" title="Download" data-action="download">
+            <i class="icon icon-download"></i> Download
+          </a>
+        </li>
+        
+      </ul>
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Home" href="../..">
+      Home
+    </a>
+    
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Installation Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Preparing VM" href="../../installation-guide/">
+      Preparing VM
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Install Gluu Server" href="../../installation-guide/install/">
+      Install Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Setup Script Options" href="../../installation-guide/setup_py/">
+      Setup Script Options
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Cluster with CE" href="../../installation-guide/cluster/">
+      Cluster with CE
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Upgrade/Patch Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Upgrade Gluu Server" href="../../upgrade/">
+      Upgrade Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Patch Gluu Server" href="../../upgrade/update/">
+      Patch Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Administration Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Gluu Server UI" href="../">
+      Gluu Server UI
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Authentication Protocols" href="../auth-protocol/">
+      Authentication Protocols
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Authentication Management" href="../auth-management/">
+      Authentication Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Configuring Multi-Factor Authentication" href="../multi-factor-auth/">
+      Configuring Multi-Factor Authentication
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Manage & Configure Users" href="../user-group/">
+      Manage & Configure Users
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Log Management" href="../logs/">
+      Log Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Configure and Manage OpenID Clients" href="../clients/">
+      Configure and Manage OpenID Clients
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Configure and Manage SAML SSO" href="../saml/">
+      Configure and Manage SAML SSO
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="OAuth2 Grants" href="../oauth2/">
+      OAuth2 Grants
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="OpenID Connect" href="../openid-connect/">
+      OpenID Connect
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="UMA" href="../uma/">
+      UMA
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Attribute Management" href="../attribute/">
+      Attribute Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="current" title="SCIM protected by UMA" href="./">
+      SCIM protected by UMA
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Installation" href="#installation">
+                <b>Installation</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="Configuration" href="#configuration">
+                <b>Configuration</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="Testing SCIM UMA" href="#testing-scim-uma">
+                <b>Testing SCIM UMA</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="SCIM 2.0 Test Mode (v2.4.4+)" href="#scim-20-test-mode-v244">
+                <b>SCIM 2.0 Test Mode (v2.4.4+)</b>
+              </a>
+            </li>
+            
+          
+        </ul>
+      
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Gluu Server APIs" href="../api/">
+      Gluu Server APIs
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="SCIM API Configuration" href="../scim/">
+      SCIM API Configuration
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Service Integration in Gluu CE" href="../integrate/">
+      Service Integration in Gluu CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Plugin Integration" href="../plugin/">
+      Plugin Integration
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Backup Gluu Server CE" href="../backup/">
+      Backup Gluu Server CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Custom Script in Gluu CE" href="../custom-script/">
+      Custom Script in Gluu CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Certificate Management" href="../certificate/">
+      Certificate Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Fine Tuning Gluu Server" href="../fine-tuning/">
+      Fine Tuning Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Troubleshooting & FAQ" href="../faq/">
+      Troubleshooting & FAQ
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <div class="toc">
+<ul>
+<li><a href="#overview">Overview</a><ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#testing-scim-uma">Testing SCIM UMA</a></li>
+<li><a href="#scim-20-test-mode-v244">SCIM 2.0 Test Mode (v2.4.4+)</a></li>
+</ul>
+</li>
+<li><a href="#notes">Notes</a></li>
+</ul>
+</div>
+<h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h1>
+<p>Gluu Server supports only UMA protection for SCIM endpoints from version 2.4.0 onwards. 
+A machine based authorization method is used to obtain the access tokens. SCIM/UMA is built
+into the Gluu Server CE and does not require any special package or installation. Please checkout 
+<a href="../../installation-guide/">Installation Guide</a> for installation instructions.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h2>
+<ul>
+<li>Install Gluu Server CE following the <a href="../../installation-guide/">Installation Guide</a> and 
+remember to install <code>Asimba</code> while running the setup script.  The setup script prepares the 
+configuration necessary for SCIM UMA RS endpoints and SCIM UMA RP client 
+and <a href="https://github.com/GluuFederation/community-edition-setup/blob/master/templates/scim.ldif">this template</a> 
+is used. </li>
+</ul>
+<p><strong>Note:</strong> The JWKS for RS and RP clients are put into the <code>./output/scim.ldif</code> file ready for SCIM configuration.
+The <code>setup.properties.file</code> contains the RS and RP JWKS in Base64 format.</p>
+<ul>
+<li>
+<p>Use the following command to extract OpenID SCIM RS and RP Client ID
+<code>cat setup.properties.last | grep "scim_rs_client_id\|scim_rp_client_id"</code></p>
+</li>
+<li>
+<p>The UMA SCIM client requires JWKS, so the setup script extracts the JWKS from <code>setup.properties.last</code> and puts it into the <code>./output/scim-rp.jks</code> file.</p>
+</li>
+</ul>
+<p><strong><em>NOTE:</em> For versions before v2.4.4, the JWKS is put in the <code>./output/scim-rp-openid-keys.json</code> file instead.</strong></p>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h2>
+<ul>
+<li>Enable SCIM from Organization Configuration</li>
+</ul>
+<p><img alt="image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/enable-scim.png" /></p>
+<ul>
+<li>oxTrust SCIM UMA configuration is automatically updated while running the <code>setup.py</code> and the correct values are setup 
+in the <a href="https://github.com/GluuFederation/community-edition-setup/blob/master/templates/oxtrust-config.json#L122">oxtrust-config.json</a> file.</li>
+</ul>
+<pre><code>  &quot;umaIssuer&quot;:&quot;https://%(hostname)s&quot;,
+  &quot;umaClientId&quot;:&quot;%(scim_rs_client_id)s&quot;,
+  &quot;umaClientKeyId&quot;:&quot;&quot;,
+  &quot;umaResourceId&quot;:&quot;1447184268430&quot;,
+  &quot;umaScope&quot;:&quot;https://%(hostname)s/oxauth/seam/resource/restv1/uma/scopes/scim_access&quot;,
+  &quot;umaClientKeyStoreFile&quot;:&quot;%(scim_rs_client_jks_fn)s&quot;,
+  &quot;umaClientKeyStorePassword&quot;:&quot;%(scim_rs_client_jks_pass_encoded)s&quot;,
+</code></pre>
+
+<ul>
+<li><code>umaClientKeyId</code> can be updated with the <code>alias</code> from <code>scim-rp.jks</code> file; if it is not updated, the first key from the file is used automatically.</li>
+</ul>
+<h2 id="testing-scim-uma">Testing SCIM UMA<a class="headerlink" href="#testing-scim-uma" title="Permanent link">#</a></h2>
+<p>The following is a sample code that can be run to test the configured SCIM UMA Gluu CE. It uses <a href="https://github.com/GluuFederation/SCIM-Client">SCIM-Client</a>, a Java library also developed by Gluu intended for client applications.</p>
+<ul>
+<li>If you are using Maven, below is how to add SCIM-Client to your project:</li>
+</ul>
+<pre><code>&lt;repositories&gt;
+  &lt;repository&gt;
+    &lt;id&gt;gluu&lt;/id&gt;
+    &lt;name&gt;Gluu repository&lt;/name&gt;
+    &lt;url&gt;http://ox.gluu.org/maven&lt;/url&gt;
+  &lt;/repository&gt;
+&lt;/repositories&gt;
+...
+&lt;dependency&gt;
+  &lt;groupId&gt;gluu.scim.client&lt;/groupId&gt;
+  &lt;artifactId&gt;SCIM-Client&lt;/artifactId&gt;
+  &lt;version&gt;${scim.client.version}&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<ul>
+<li>
+<p>Starting with Release v2.4.2, an SCIM-Client must be used on a matching Gluu CE. For example, if you are running CE v2.4.4, you must also use SCIM-Client v2.4.4.</p>
+</li>
+<li>
+<p>Add your domain's SSL certificate to the JRE's <code>cacerts</code> certificate key store where your client application will run. There are lots of articles around the Web on how to do this.</p>
+</li>
+<li>
+<p>Supply the UMA parameters and run the code. <strong><em>NOTE:</em> If you have re-installed Gluu CE, please note that the UMA parameters / JWKS files are also regenerated. You must then rebuild your client code with <code>target</code> or <code>tmp</code> folders possibly cleared beforehand to avoid conflicts.</strong></p>
+</li>
+</ul>
+<pre><code>
+package gluu.scim.client.dev.local;
+
+import gluu.scim.client.ScimClient;
+import gluu.scim.client.ScimResponse;
+import gluu.scim2.client.Scim2Client;
+
+import java.io.IOException;
+
+import javax.ws.rs.core.MediaType;
+import javax.xml.bind.JAXBException;
+
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+
+public class TestScimClient {
+
+    private static void testScim1Uma(String domain, String umaMetaDataUrl, String umaAatClientId, String umaAatClientJksPath, String umaAatClientJksPassword, String umaAatClientKeyId) throws IOException, JsonGenerationException, JsonMappingException, JAXBException {
+
+        final ScimClient scimClient = ScimClient.umaInstance(domain, umaMetaDataUrl, umaAatClientId, umaAatClientJksPath, umaAatClientJksPassword, umaAatClientKeyId);
+
+        ScimResponse response = scimClient.personSearch(&quot;uid&quot;, &quot;admin&quot;, MediaType.APPLICATION_JSON);
+        System.out.println(&quot;SCIM1 &quot; + response.getResponseBodyString());
+    }
+
+    private static void testScim2Uma(String domain, String umaMetaDataUrl, String umaAatClientId, String umaAatClientJksPath, String umaAatClientJksPassword, String umaAatClientKeyId) throws IOException, JsonGenerationException, JsonMappingException, JAXBException {
+
+        final Scim2Client scim2Client = Scim2Client.umaInstance(domain, umaMetaDataUrl, umaAatClientId, umaAatClientJksPath, umaAatClientJksPassword, umaAatClientKeyId);
+
+        String filter = &quot;userName eq \&quot;admin\&quot;&quot;;
+        ScimResponse response = scim2Client.searchUsers(filter, 1, 1, &quot;&quot;, &quot;&quot;, null);
+        System.out.println(&quot;SCIM2: &quot; + response.getResponseBodyString());
+    }
+
+    public static void main(String[] args) throws IOException, JAXBException {
+
+        final String domain = &quot;https://c67.gluu.info/identity/seam/resource/restv1&quot;;
+        final String umaMetaDataUrl = &quot;https://c67.gluu.info/.well-known/uma-configuration&quot;;
+        final String umaAatClientId = &quot;@!A410.188A.95DD.EA5A!0001!3A1E.BAA5!0008!5870.A795&quot;;
+
+        final String umaAatClientJksPath = &quot;D:\\Development\\test_data\\scim\\scim-rp.jks&quot;;
+        final String umaAatClientJksPassword = &quot;secret&quot;;
+        final String umaAatClientKeyId = &quot;&quot;;
+
+        testScim1Uma(domain, umaMetaDataUrl, umaAatClientId, umaAatClientJksPath, umaAatClientJksPassword, umaAatClientKeyId);
+        testScim2Uma(domain, umaMetaDataUrl, umaAatClientId, umaAatClientJksPath, umaAatClientJksPassword, umaAatClientKeyId);
+    }
+}
+
+</code></pre>
+
+<h2 id="scim-20-test-mode-v244">SCIM 2.0 Test Mode (v2.4.4+)<a class="headerlink" href="#scim-20-test-mode-v244" title="Permanent link">#</a></h2>
+<p>Starting with CE v2.4.4, the "test mode" configuration will help developers test the SCIM 2.0 endpoints easier. Instead of UMA + SCIM-Client, in test mode a long-lived OAuth2 access token issued by the Gluu server is used to authorize with the SCIM 2.0 endpoints.</p>
+<p>To enable test mode, do the following:</p>
+<ul>
+<li>Login to the oxTrust GUI and go to "Configuration" -&gt; "JSON Configuration" -&gt; "OxTrust Configuration", then locate the property <code>scimTestMode</code>.</li>
+</ul>
+<p><img alt="image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/scim-test-mode-false.png" /></p>
+<ul>
+<li>Set it to <code>true</code>, then click the "Save Configuration" button. The Gluu server will then create a long-lived OAuth2 access token with a validity period of one year. Doing this will also switch the authentication scheme from UMA to OAuth2 Access Token.</li>
+<li>Click again "JSON Configuration" -&gt; "OxTrust Configuration" in the left navigation pane. This will retrieve the access token and be displayed in the <code>scimTestModeAccessToken</code> property.</li>
+</ul>
+<p><img alt="image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/scim-test-mode-true.png" /></p>
+<ul>
+<li>If the access token has expired, just repeat the previous steps to create a new one.</li>
+</ul>
+<p>The access token can then be used as the query string parameter <code>access_token</code> in accessing the SCIM 2.0 endpoints, for example:</p>
+<p><img alt="image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/scim-test-mode-example.png" /></p>
+<p>You can verify the current authentication scheme of the SCIM 2.0 endpoints by browsing its <code>ServiceProviderConfig</code>:</p>
+<p><img alt="image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/scim-test-mode-config.png" /></p>
+<p>To exit test mode, just set <code>scimTestMode</code> back to <code>false</code> then click the "Save Configuration" button. This will switch the authentication scheme from OAuth2 Access Token to UMA. If you try using your access token again, you will now get the <code>403 Unauthorized</code> error:</p>
+<p><img alt="image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/scim-test-mode-403.png" /></p>
+<h1 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h1>
+<p>UMA is protected with SCIM in Gluu Server Community Edition (CE). The usage of UMA requires HTTP GET and HTTP POST requests. Before testing, the Client making the requests must be added/registered in Gluu CE. The UMA configuration is available @ <code>https://hostname/.well-known/uma-configuration</code>. The request to authorization endpoint must accompanied with  application/json content type. </p>
+<p>The example below shows the parameters used in a real-life use case  where the UMA RPT Token is authorized in oxAuth.</p>
+<pre><code>    public RptAuthorizationResponse requestRptPermissionAuthorization(@HeaderParam(&quot;Authorization&quot;) String authorization,
+            @HeaderParam(&quot;Host&quot;) String amHost, RptAuthorizationRequest rptAuthorizationRequest);
+</code></pre>
+
+<p>If the default openID SCIM Client is not used, the <code>inum</code> must be added to the UMA Authorization Policy Custom Script.</p>
+          <aside class="copyright" role="note">
+           Built with 
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a> using
+            <a href="http://gitlab.testbird.io:8099/frontend/testbird-mkdocs-theme.git" target="_blank">
+              testBird-mkdocs-theme
+            </a> <br>
+            
+            Copyright &copy; 2016, Gluu, Inc.
+            
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../attribute/" title="Attribute Management">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                Attribute Management
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../api/" title="Gluu Server APIs">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                Gluu Server APIs
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../..';
+      var repo_id  = '';
+    </script>
+    <script src="../../assets/javascripts/application-ce3999cf34.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+  </body>
+</html>

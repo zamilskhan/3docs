@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
       
-        <title>Patch Gluu Server - Gluu Docs</title>
+        <title>UMA - Gluu Docs</title>
       
 <link href="../../assets/stylesheets/font.css" rel="stylesheet">
       
@@ -90,12 +90,12 @@
           <span class="path">
             
               
-                Upgrade/Patch Guide <i class="icon icon-link"></i>
+                Administration Guide <i class="icon icon-link"></i>
               
             
           </span>
         
-        Patch Gluu Server
+        UMA
       </div>
     </div>
     <div class="button button-search" role="button" aria-label="Search">
@@ -222,7 +222,7 @@
       
         
   <li>
-    <a class="" title="Upgrade Gluu Server" href="../">
+    <a class="" title="Upgrade Gluu Server" href="../../upgrade/">
       Upgrade Gluu Server
     </a>
     
@@ -231,39 +231,9 @@
       
         
   <li>
-    <a class="current" title="Patch Gluu Server" href="./">
+    <a class="" title="Patch Gluu Server" href="../../upgrade/update/">
       Patch Gluu Server
     </a>
-    
-      
-        
-      
-      
-        <ul>
-          
-            <li class="anchor">
-              <a title="Check version of installed Gluu CE server." href="#check-version-of-installed-gluu-ce-server">
-                <b>Check version of installed Gluu CE server.</b>
-              </a>
-            </li>
-            
-          
-            <li class="anchor">
-              <a title="Backup" href="#backup">
-                <b>Backup</b>
-              </a>
-            </li>
-            
-          
-            <li class="anchor">
-              <a title="Install Update Package" href="#install-update-package">
-                <b>Install Update Package</b>
-              </a>
-            </li>
-            
-          
-        </ul>
-      
     
   </li>
                   
@@ -279,7 +249,7 @@
       
         
   <li>
-    <a class="" title="Gluu Server UI" href="../../admin-guide/">
+    <a class="" title="Gluu Server UI" href="../">
       Gluu Server UI
     </a>
     
@@ -288,7 +258,7 @@
       
         
   <li>
-    <a class="" title="Authentication Protocols" href="../../admin-guide/auth-protocol/">
+    <a class="" title="Authentication Protocols" href="../auth-protocol/">
       Authentication Protocols
     </a>
     
@@ -297,7 +267,7 @@
       
         
   <li>
-    <a class="" title="Authentication Management" href="../../admin-guide/auth-management/">
+    <a class="" title="Authentication Management" href="../auth-management/">
       Authentication Management
     </a>
     
@@ -306,7 +276,7 @@
       
         
   <li>
-    <a class="" title="Configuring Multi-Factor Authentication" href="../../admin-guide/multi-factor-auth/">
+    <a class="" title="Configuring Multi-Factor Authentication" href="../multi-factor-auth/">
       Configuring Multi-Factor Authentication
     </a>
     
@@ -315,7 +285,7 @@
       
         
   <li>
-    <a class="" title="Manage & Configure Users" href="../../admin-guide/user-group/">
+    <a class="" title="Manage & Configure Users" href="../user-group/">
       Manage & Configure Users
     </a>
     
@@ -324,7 +294,7 @@
       
         
   <li>
-    <a class="" title="Log Management" href="../../admin-guide/logs/">
+    <a class="" title="Log Management" href="../logs/">
       Log Management
     </a>
     
@@ -333,7 +303,7 @@
       
         
   <li>
-    <a class="" title="Configure and Manage OpenID Clients" href="../../admin-guide/clients/">
+    <a class="" title="Configure and Manage OpenID Clients" href="../clients/">
       Configure and Manage OpenID Clients
     </a>
     
@@ -342,7 +312,7 @@
       
         
   <li>
-    <a class="" title="Configure and Manage SAML SSO" href="../../admin-guide/saml/">
+    <a class="" title="Configure and Manage SAML SSO" href="../saml/">
       Configure and Manage SAML SSO
     </a>
     
@@ -351,7 +321,7 @@
       
         
   <li>
-    <a class="" title="OAuth2 Grants" href="../../admin-guide/oauth2/">
+    <a class="" title="OAuth2 Grants" href="../oauth2/">
       OAuth2 Grants
     </a>
     
@@ -360,7 +330,7 @@
       
         
   <li>
-    <a class="" title="OpenID Connect" href="../../admin-guide/openid-connect/">
+    <a class="" title="OpenID Connect" href="../openid-connect/">
       OpenID Connect
     </a>
     
@@ -369,16 +339,56 @@
       
         
   <li>
-    <a class="" title="UMA" href="../../admin-guide/uma/">
+    <a class="current" title="UMA" href="./">
       UMA
     </a>
+    
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="6.1 Resource Registration" href="#61-resource-registration">
+                <b>6.1 Resource Registration</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="6.2 Scopes" href="#62-scopes">
+                <b>6.2 Scopes</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="6.2.1 Add Scope" href="#621-add-scope">
+                  <font size=2><i>6.2.1 Add Scope</i></font>
+              </a>
+            </li>
+             
+          
+            <li class="anchor">
+              <a title="6.3 UMA Policies" href="#63-uma-policies">
+                <b>6.3 UMA Policies</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="6.3.1 UMA Policy Algorithm" href="#631-uma-policy-algorithm">
+                  <font size=2><i>6.3.1 UMA Policy Algorithm</i></font>
+              </a>
+            </li>
+             
+          
+        </ul>
+      
     
   </li>
                   
       
         
   <li>
-    <a class="" title="Attribute Management" href="../../admin-guide/attribute/">
+    <a class="" title="Attribute Management" href="../attribute/">
       Attribute Management
     </a>
     
@@ -387,7 +397,7 @@
       
         
   <li>
-    <a class="" title="SCIM protected by UMA" href="../../admin-guide/scim-uma/">
+    <a class="" title="SCIM protected by UMA" href="../scim-uma/">
       SCIM protected by UMA
     </a>
     
@@ -396,7 +406,7 @@
       
         
   <li>
-    <a class="" title="Gluu Server APIs" href="../../admin-guide/api/">
+    <a class="" title="Gluu Server APIs" href="../api/">
       Gluu Server APIs
     </a>
     
@@ -405,7 +415,7 @@
       
         
   <li>
-    <a class="" title="SCIM API Configuration" href="../../admin-guide/scim/">
+    <a class="" title="SCIM API Configuration" href="../scim/">
       SCIM API Configuration
     </a>
     
@@ -414,7 +424,7 @@
       
         
   <li>
-    <a class="" title="Service Integration in Gluu CE" href="../../admin-guide/integrate/">
+    <a class="" title="Service Integration in Gluu CE" href="../integrate/">
       Service Integration in Gluu CE
     </a>
     
@@ -423,7 +433,7 @@
       
         
   <li>
-    <a class="" title="Plugin Integration" href="../../admin-guide/plugin/">
+    <a class="" title="Plugin Integration" href="../plugin/">
       Plugin Integration
     </a>
     
@@ -432,7 +442,7 @@
       
         
   <li>
-    <a class="" title="Backup Gluu Server CE" href="../../admin-guide/backup/">
+    <a class="" title="Backup Gluu Server CE" href="../backup/">
       Backup Gluu Server CE
     </a>
     
@@ -441,7 +451,7 @@
       
         
   <li>
-    <a class="" title="Custom Script in Gluu CE" href="../../admin-guide/custom-script/">
+    <a class="" title="Custom Script in Gluu CE" href="../custom-script/">
       Custom Script in Gluu CE
     </a>
     
@@ -450,7 +460,7 @@
       
         
   <li>
-    <a class="" title="Certificate Management" href="../../admin-guide/certificate/">
+    <a class="" title="Certificate Management" href="../certificate/">
       Certificate Management
     </a>
     
@@ -459,7 +469,7 @@
       
         
   <li>
-    <a class="" title="Fine Tuning Gluu Server" href="../../admin-guide/fine-tuning/">
+    <a class="" title="Fine Tuning Gluu Server" href="../fine-tuning/">
       Fine Tuning Gluu Server
     </a>
     
@@ -468,7 +478,7 @@
       
         
   <li>
-    <a class="" title="Troubleshooting & FAQ" href="../../admin-guide/faq/">
+    <a class="" title="Troubleshooting & FAQ" href="../faq/">
       Troubleshooting & FAQ
     </a>
     
@@ -489,68 +499,119 @@
       <article class="article">
         <div class="wrapper">
           
-          <h1 id="gluu-server-update-package">Gluu Server Update Package<a class="headerlink" href="#gluu-server-update-package" title="Permanent link">#</a></h1>
-<p>Gluu Server update packages are released to fix urgent issues, with low 
-impact on deployment. Normally these involve updates to the java code,
-effected replacing the <code>war</code> file. These are installed using 
-<code>yum</code> or <code>apt-get</code> command.</p>
-<h2 id="check-version-of-installed-gluu-ce-server">Check version of installed Gluu CE server.<a class="headerlink" href="#check-version-of-installed-gluu-ce-server" title="Permanent link">#</a></h2>
+            <h1>UMA</h1>
+          
+          <p>This section describes the adminisration of UMA in Gluu Server CE. The UMA administration is accessible from the oxTrust administrator interface.</p>
+<p><img alt="menu" src="../../img/uma/menu.png" /></p>
+<h2 id="61-resource-registration">6.1 Resource Registration<a class="headerlink" href="#61-resource-registration" title="Permanent link">#</a></h2>
+<p>The resources protected by UMA must be registered in oxTrust. The following propterties describe a resource:</p>
 <ul>
-<li>Version of the server can be found from the name of the installed home Gluu directory</li>
-<li>Below is an alternate method to determine the version of the installed CE server.</li>
+<li>name</li>
+<li>scopes</li>
+<li>type</li>
+<li>icon_uri</li>
 </ul>
-<p><code>oxTrust version: cat /opt/tomcat/webapps/identity/META-INF/MANIFEST.MF</code>
- <code>oxAuth version: cat /opt/tomcat/webapps/oxauth/META-INF/MANIFEST.MF</code></p>
-<p><img alt="image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/gluu-verify-version.png" /></p>
-<h2 id="backup">Backup<a class="headerlink" href="#backup" title="Permanent link">#</a></h2>
-<p>It is highly recommended to stop the Gluu Server, and <code>tar</code> 
-folder <code>/opt/gluu-server-2.4.4</code> to ensure speedy recovery from any 
-unexpected hiccup. If the organization has any other contingency plans,
-that is ok too.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Please make sure that there is enough disk space to tar the entire 
-Gluu Server, at least 4GB of Disk Space is recommended.</p>
+<p>The resource type can be a string, URI or any other supported value type supported by Gluu Server CE. The properties shown above are not concrete, and it is possible that a resource may contain custom properties. An example of the resource JSON is given beow:</p>
+<pre><code>{
+&quot;name&quot;:&quot;scim_access&quot;,
+&quot;icon_uri&quot;:&quot;https:\/\/centos.gluu.info\/identity\/uma\/scope\/file\/scim_access&quot;
+}
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Resource JSON may contain custom properties.</p>
 </div>
-<p>Use the following commands to tar the Gluu Server folder from the host
-OS:</p>
-<pre><code># service gluu-server-2.4.4 stop
-# tar cvf gluu244-backup.tar /opt/gluu-server-2.4.4/
-</code></pre>
-
-<h2 id="install-update-package">Install Update Package<a class="headerlink" href="#install-update-package" title="Permanent link">#</a></h2>
-<p>Gluu Server update packages are available from the Gluu Repository.
-Make sure to stop Gluu Server before installing and finalizing the 
-update package.</p>
+<p><img alt="uma-resources" src="../../img/uma/uma-resources.png" /></p>
+<p>The search bar can be used to search for any existing resource within Gluu Server. New resoruces can be added by clicking on the <code>Add Resource Set</code> button. The following screenshot shows the page that will appear up on clicking the add resource button.</p>
+<p><img alt="add-resource-set" src="../../img/uma/add-resource-set.png" /></p>
+<p>The properties of a resource is visible in this page. There are two additional buttons that allows the administrator to add specific resource or scope as well. By default, Gluu Server is shipped with SCIM resources protected by UMA.</p>
+<p><img alt="add-resource" src="../../img/uma/add-resource.png" /></p>
+<p><img alt="add-scope" src="../../img/uma/add-scope.png" /></p>
+<h2 id="62-scopes">6.2 Scopes<a class="headerlink" href="#62-scopes" title="Permanent link">#</a></h2>
+<p>The scopes in UMA are bount to resource sets and used by policies to check whether the specified user has access to the resource. The scopes are described in JSON and has the following properties:</p>
 <ul>
-<li><strong>CentOS 6.x/7.2, RHEL 6/7:</strong> </li>
+<li>name</li>
+<li>icon_uri</li>
 </ul>
-<pre><code># yum update
-# service gluu-server-2.4.4 stop
-# yum install gluu-updater-2.4.4
-
+<p>An example  of the scope JSON is given below:</p>
+<pre><code>{
+  &quot;name&quot;: &quot;Add photo&quot;,
+  &quot;icon_uri&quot;: &quot;http://www.gluu.org/icons/add_photo_scope.png&quot;
+}
 </code></pre>
 
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Scope JSON may contain custom properties.</p>
+</div>
+<p>There are three (3) types of scopes in UMA:</p>
+<ol>
+<li><code>internal</code>: the scope is hosted within oxAuth in Gluu Server CE</li>
+<li><code>external</code>: the scope is hosted in a different server</li>
+<li><code>external_auto</code>: the scope is hosted in a different server, but it is added to Gluu Server CE during the resource registration</li>
+</ol>
+<p>There is no URI for an internal scope because it sits within oxAuth in the Gluu Server. The UMA URL is represented in the format</p>
+<pre><code>UMA URL=uma_scopes_endpoint+&quot;/&quot;+oxId;
+</code></pre>
+
+<p>The following is an example of an UMA URL:</p>
+<pre><code>https://gluu.org/uma/scopes/view
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The scope endpoint has to be present in UMA configuration to make it discoverable.</p>
+</div>
+<p>The <code>ldif</code> for both external and internal scope is given below:</p>
+<p><strong>External sample ldif</strong></p>
+<pre><code>dn: inum=@!1111!8990!BF80,ou=scopes,ou=uma,o=@!1111,o=gluu
+displayName: View
+inum: @!1111!8990!BF80
+objectClass: oxAuthUmaScopeDescription
+objectClass: top
+oxType: external
+oxUrl: http://photoz.example.com/dev/scopes/view
+</code></pre>
+
+<p><strong>Internal sample ldif</strong></p>
+<pre><code>dn: inum=@!1111!8990!BF80,ou=scopes,ou=uma,o=@!1111,o=gluu
+displayName: View
+inum: @!1111!8990!BF80
+objectClass: oxAuthUmaScopeDescription
+objectClass: top
+oxType: internal
+oxId: View
+oxIconUrl: http://seed.gluu.org/uma/icons/view_scope.png
+</code></pre>
+
+<h3 id="621-add-scope">6.2.1 Add Scope<a class="headerlink" href="#621-add-scope" title="Permanent link">#</a></h3>
+<p>This section defines the process of defining UMA scopes from oxTrust. The scopes are accessed from the <code>Scopes</code> page under <code>UMA</code> from the oxTrust menu.</p>
+<p><img alt="uma-scopes" src="../../img/uma/uma-scopes.png" /></p>
+<p>The search bar can be used to look for available scopes. New scopes are added by clicking on the <code>Add Scope Description</code> button which will bring up the interface shown below.</p>
+<p><img alt="uma-scopes" src="../../img/uma/scopes-add.png" /></p>
+<p>Additionally there is an option to add authorization policy with the new scope.</p>
+<h2 id="63-uma-policies">6.3 UMA Policies<a class="headerlink" href="#63-uma-policies" title="Permanent link">#</a></h2>
+<p>UMA policies protect UMA Resources via scopes. Gluu Server evaluates all policies, identified by scopes, to grant access to resources. There are three (3) main properties of a policy:</p>
+<ol>
+<li>scopes: policy protects resources by scopes</li>
+<li>authorization script: script that is evaluated in order to grant/deny access</li>
+<li>name: a human readable name to the UMA policy</li>
+</ol>
+<p>The following section outlines how to define UMA policies from the Custom Script menu. The Custom Script page is accessed from the Configuration Menu.</p>
+<p><img alt="custom-script-menu" src="../../img/oxtrust/custom-script-menu.png" />
+<img alt="auth-policy" src="../../img/uma/auth-policy.png" /></p>
+<h3 id="631-uma-policy-algorithm">6.3.1 UMA Policy Algorithm<a class="headerlink" href="#631-uma-policy-algorithm" title="Permanent link">#</a></h3>
+<p>The UMA Policy alrorithm has two rules that are followed. These rules must be followed while writing UMA policy using the custom script feature of Gluu Server.</p>
 <ul>
-<li><strong>Ubuntu Server 14.04/16.04, Debian 8:</strong> </li>
+<li>
+<p>UMA Policy protects resources based on scopes. If a scope is protected by a policy, then the policy script must reutrn <code>true</code> in order to authorize access during RPT authorization.</p>
+</li>
+<li>
+<p>Multiple policies can protect a single scope. In such a case, all the policies must retun <code>true</code> to authorize access else aceess will be denied.</p>
+</li>
 </ul>
-<pre><code># apt-get update
-# service gluu-server-2.4.4 stop
-# apt-get install gluu-updater-2.4.4
-
-</code></pre>
-
-<p>After the update package is installed, use the following commands to 
-finalize the installation by running the update script. </p>
-<pre><code># service gluu-server-2.4.4 start
-# service gluu-server-2.4.4 login
-# cd /opt/upd/2.4.4.sp2/bin
-# ./update_war.sh
-</code></pre>
-
-<p>Upon successful update, check the version again to confirm on the update.</p>
-<p><strong> NOTE: It is recommended to wait for few minutes while the changes take place and 
-Gluu Server CE can be used.</strong></p>
+<p><img alt="policy-algorithm" src="../../img/uma/policy-algorithm.jpg" /> </p>
           <aside class="copyright" role="note">
            Built with 
             <a href="http://www.mkdocs.org" target="_blank">MkDocs</a> using
@@ -567,7 +628,7 @@ Gluu Server CE can be used.</strong></p>
   <nav class="pagination" aria-label="Footer">
     <div class="previous">
       
-        <a href="../" title="Upgrade Gluu Server">
+        <a href="../openid-connect/" title="OpenID Connect">
           <span class="direction">
             Previous
           </span>
@@ -577,7 +638,7 @@ Gluu Server CE can be used.</strong></p>
             </div>
             <div class="stretch">
               <div class="title">
-                Upgrade Gluu Server
+                OpenID Connect
               </div>
             </div>
           </div>
@@ -586,14 +647,14 @@ Gluu Server CE can be used.</strong></p>
     </div>
     <div class="next">
       
-        <a href="../../admin-guide/" title="Gluu Server UI">
+        <a href="../attribute/" title="Attribute Management">
           <span class="direction">
             Next
           </span>
           <div class="page">
             <div class="stretch">
               <div class="title">
-                Gluu Server UI
+                Attribute Management
               </div>
             </div>
             <div class="button button-next" role="button" aria-label="Next">
