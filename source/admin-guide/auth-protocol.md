@@ -2,7 +2,11 @@
 
 Gluu Server supports Security Assertion Markup Language (SAML) and OpenID Connect protocols to authenticate users against Service Providers (SPs) and Requesting Parties (RPs). There are two different flows of SAML known as outbound SAML and inbound SAML, both supported out-of-the-box in Gluu Server Community Edition (Gluu CE).
 
-## 1.1 SAML
+
+## SAML
+=======
+## SAML
+
 ![image](https://www.oasis-open.org/committees/download.php/29723/draft-saml-logo-03.png)
 
 Security Assertion Markup Language (SAML) is an authentication and authorization protocol that defines the transaction process for XML-encoded assertions about authentication, authorization and attributes. The protocol is goverened by [Security Assertion Markup Language Core
@@ -14,7 +18,11 @@ Trust Relationship creation is mandatory in both flows; however, the inbound flo
 
 ![wikipedia image](https://upload.wikimedia.org/wikipedia/en/0/04/Saml2-browser-sso-redirect-post.png)
 
-## 1.2 OpenID Connect
+
+## OpenID Connect
+=======
+## OpenID Connect
+
 ![image](http://wiki.openid.net/f/openid-logo-wordmark.png)
 
 [OpenID Connect](http://openid.net/connect "Connect") is a standard profile of OAuth2 which defines a protocol to enable any website, mobile application to verify the identity of the user accessing its resources through an authorization server or identity server. The protocol is API friendly and works through endpoints making it easy for applications to use it. 
@@ -23,7 +31,11 @@ OpenID Connect specification consists of different documents which outline diffe
 
 ![openid.net image](http://openid.net/wordpress-content/uploads/2014/02/OpenIDConnect-Map-4Feb2014.png)
 
-### 1.2.1 Terminology
+
+### Terminology
+=======
+### Terminology
+
 
 - Claim: Information about the entity
 - ID Token: JSON Web Token (JWT) that contains claims about the authentication
@@ -32,7 +44,11 @@ OpenID Connect specification consists of different documents which outline diffe
 - Relying Party (RP): OAuth 2.0 Client application that requires authentication and claims from an OpenID Provider(OP)
 - UserInfo Endpoint: An URL using https that returns authorization for the user from the OP to the RP
 
-### 1.2.2 Discovery
+
+### Discovery
+=======
+### Discovery
+
 OpenID Connect provides a simple mechanism to notify about the available endpoints. This is difined in the [OpenID Connect Discovery Specification](http://openid.net/specs/openid-connect-discovery-1_0.html "OpenID Connect Discovery). 
 
 In order for an OpenID Connect Relying Party (RP) to utilize OpenID Connect services for an End-User, the RP needs to know where the OpenID Provider is. OpenID Connect uses WebFinger to locate the OpenID Provider for an End-User.
@@ -55,16 +71,32 @@ Content-Type: application/jrd+json
 }
 ```
 
-## 1.3 User-Managed Access (UMA)
+
+## User-Managed Access (UMA)
+![image](http://kantarainitiative.org/confluence/download/attachments/17760302/UMA-logo.png)
+
+UMA is an oAuth based protocol to "enable a resource owner to control the authorization of data sharing and other protected-resource access made between online services on the owner's behalf or with the owner's authorization by an autonomous requesting party"[1][].
+
+
+### Enterprise UMA
+The Gluu Server implements UMA in a way that enables the protection of any web resource. Through the oxTrust interface, the server admin can write [custom authorization interception scripts][2] which may contain logic to grant (or forbid) access. The diagram below shows an overview of the UMA Authorization workflow.
+
+![overview](../img/uma/overview.png "UMA Auth Overview")
+
+### Terminology
+
+=======
+## User-Managed Access (UMA)
 ![image](http://kantarainitiative.org/confluence/download/attachments/17760302/UMA-logo.png)
 
 UMA is an oAuth based protocol to "enable a resource owner to control the authorization of data sharing and other protected-resource access made between online services on the owner’s behalf or with the owner’s authorization by an autonomous requesting party"[1][].
 
-### 1.3.1 Enterprise UMA
+### Enterprise UMA
 The Gluu Server implements UMA in a way that enables the protection of any web resource. Through the oxTrust interface, the server admin can write [custom authorization interception scripts][2] which may contain logic to grant (or forbid) access. The diagram below shows an overview of the UMA Authorization workflow.
 
 ![overview](../img/uma/overview.png "UMA Auth Overview")
-### 1.3.2 Terminology
+### Terminology
+
 - Resource Server (RS): Where the resources are held. 
 - Authorization Server (AS): A server that governs access based on resource owner policies. 
 - Requesting Party (RP): An end-user, or a corporation or other legal person, that uses a client to seek access to a protected resource. The requesting party may or may not be the same party as the resource owner. 
@@ -73,18 +105,32 @@ The Gluu Server implements UMA in a way that enables the protection of any web r
 - Requesting Party Token (RPT): the token that a client presents to a resource server when trying to access a protected resource. 
 - Authorization API Token (AAT): An entity seeking authorization API access MUST have the scope "uma_authorization". An access token with at least this scope is called an authorization API token (AAT) and an entity that can acquire an access token with this scope is by definition a client.
 
-### 1.3.3 UMA Workflow
+
+### UMA Workflow
+=======
+### UMA Workflow
+
 The complete workflow sequence is shown in the diagram below. However there are two different authorization workflow given below for authorization and authorization token.
 
 ![auth-complete](../img/uma/auth-complete.png "UMA Complete Auth Workflow")
 
-#### 1.3.3.1 Authorization
+
+#### Authorization
 ![auth](../img/uma/auth.png "UMA Authorization Workflow")
 
-#### 1.3.3.2 Authorization Token
+#### Authorization Token
 ![auth-token](../img/uma/auth-token.png "UMA Authorization Token Workflow")
 
-### 1.3.4 Discovery
+### Discovery
+=======
+#### Authorization
+![auth](../img/uma/auth.png "UMA Authorization Workflow")
+
+#### Authorization Token
+![auth-token](../img/uma/auth-token.png "UMA Authorization Token Workflow")
+
+### Discovery
+
 Gluu Server CE provides an endpoint for discovering information about UMA Provider configuration. A resource server or client can perform an HTTP GET on `https://<hostname>/.well-known/uma-configuration` to retrieve a JSON object indicating the UMA Provider configuration.
 
 The following is an example of a GET request to the UMA configuration discovery endpoint:
@@ -128,19 +174,32 @@ The following is an example of a GET request to the UMA configuration discovery 
 [1]:http://kantarainitiative.org/confluence/display/uma/Charter "UMA Charter"
 [2]: ../index.md "Custom Scripts"
 
-## 1.4 OAuth2.0 
+
+## OAuth2.0 
+=======
+## OAuth2.0 
+
 ![image](https://oauth.net/images/oauth-2-sm.png)
 
 OAuth2.0 is the next version in the OAuth protocol focusing on simplicity with specific authorization flows for different platforms. The core specification is called the [OAuth 2.0 Authorization Framework](https://tools.ietf.org/html/rfc6749). OAuth introduces an authorization layer and separates the role of the client from the resource owner. The resource is accessed using access tokens instead of credentials.
 
+
+### Terminology
+=======
 ### 1.4.1 Terminology
+
 - Resource Owner (RO): Entity that owns and controls the access to any resource
 - Resource Server (RS): Where the resources are held
 - Client: Any application/web-site that requests access to the protected resource stored in any RS.
 - Authorization Server: The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization
 
-### 1.4.2 Workflows
-#### 1.4.2.1 Client Credentials Grant
+
+### Workflows
+#### Client Credentials Grant
+=======
+### Workflows
+####  Credentials Grant
+
 The Client Credentials Grant allows [RO][] to use username and password as an authorization grant to obtain an access token. This flow is only encouraged when there is high degree of trust between [RO][] and the client and no other grant types are not available.
 
 Although this grant requires direct client access to the [RO][] credentials it is used for a single request for an access token. This grant type can eliminate the need for the client to store the [RO][] credentials for future use, by exchanging the credentials with a long-lived access token or refresh token.
@@ -189,8 +248,14 @@ Cache-Control: no-store, private
 Pragma: no-cache
 {"access_token":"c769d7ff-c476-42ab-b531-fe2f60b2f5cc","token_type":"bearer","expires_in":3600}|
 
-#### 1.4.2.2 Resource Owner Password Credential Grant
+
+#### Resource Owner Password Credential Grant
+
+This grant allows the usage of [RO][] password credentials as an authorization grant to obtain an access token. This grant is encouraged in a high trust situation as well. The diagram below depicts the flow.
+=======
+#### Resource Owner Password Credential Grant
 This grant allows the usage of [RO][] password credentials as an authorization grant to obtain an access token. This grant is encouraged in a high trust situation as well. The diagram below shows the flow
+
 
 ![password-credential-grant](../img/oauth2/password-credential-grant.png)
 
@@ -198,7 +263,11 @@ The steps of the flow are:
 1. User presents their credentials to the application in addition to a username and password.
 2. If the client credentials are successfully authenticated, an access token is returned to the client
 
+
+This flow should be sparingly used bacause the password for the [RO][] is exposed to the appilcation/client. It is recommended only for first-party "official"  applications released by the API provider, and not opened up to wider third-party developer communities. If a user is asked to toe their password into "official" applications, they may become acustomed to doing so and becom evulneralbe to phishing attempts by other apps. In order to mitigat this concern, developers and IT administrators should clearly educate their users how they should dertermine which apps are "official" and which are not.
+
 This flow should be sparingly used becase the password for the [RO][] is exposed to the application/client. It is recommended only for first-party “official” applications released by the API provider, and not opened up to wider third-party developer communities. If a user is asked to type their password into “official” applications, they may become accustomed to doing so and become vulnerable to phishing attempts by other apps. In order to mitigate this concern, developers and IT administrators should clearly educate their users how they should determine which apps are “official” and which are not.
+
 
 The following is an example showing the messages between the client and the authorization server, also the example shows code fragments using the oxAuth-Client.jar API to interact with the authorization server.
 
@@ -219,6 +288,7 @@ String refreshToken = response.getRefreshToken(); // aba91bd9-aa10-4fca-952b-50a
 
 The message sent to the authorization server is
 
+
 |Request|
 |-------|
 |POST /oxauth/seam/resource/restv1/oxauth/token HTTP/1.1
@@ -235,15 +305,29 @@ Cache-Control: no-store, private
 Pragma: no-cache
 {"access_token":"26d55e4b-6c61-40ea-9763-3282f5db0f0e","token_type":"bearer","expires_in":3599,"refresh_token":"aba91bd9-aa10-4fca-952b-50a9a9afac28","scope":"openid","id_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc2VlZC5nbHV1Lm9yZyIsInVzZXJfaWQiOiJtaWtlIiwiYXVkIjoiQCExMTExITAwMDghRkY4MSEyRDM5IiwiZXhwIjoxMzM5MTk2ODgxMzAzLCJveEludW0iOiJAITExMTEhMDAwMCFENEU3Iiwib3hWYWxpZGF0aW9uVVJJIjoiaHR0cHM6XC9cL3NlZWQuZ2x1dS5vcmdcL294YXV0aFwvc2VhbVwvcmVzb3VyY2VcL3Jlc3R2MVwvb3hhdXRoXC9jaGVja19zZXNzaW9uIiwib3hPcGVuSURDb25uZWN0VmVyc2lvbiI6Im9wZW5pZGNvbm5lY3QtMS4wIn0.SzWfJsmlz62qTRw1lEJZ8PygY9eRupgmsbXLCQwPVDQ"}|
 
-##### 1.4.2.2.1 Security Properties
+##### Security Properties
+
+There are some security benefits to using this flow against authenticating API calls with a user name and password (via HTTP Basic access authentication or similar) although the application has access to the resource owner's password. With Basic authentication, an application needs to have continuous access to the user's password in orfer to make API calls. If the user wants to revoke the access of the client, he must change the password and re-enter the password in all the applications that are allowed access to the resource.
+
+However, if the oAuth Resource owner Password flow is used, the application only needs access to the user's credentials once: on first use when the credentials are exchanged for an access token. This means there is no requirement for the app to store these credentials within the application or on the device, and revoking access is easy as well.
+
+##### User Experience
+The user experience for this flow is identical to typical password-based access requests. 
+The application asks the user for their username and password and the user provides the information. The application then makes either a server-side or client-side request to the API provider's aiuthorization server. 
+Without any user-facing interface changes. If the API provider does not issue a refresh_token and the issued access_token is short-lived, the application will likely store the username and password for future authentication attempts. Unfortunately, this defeats some of the benefit of this flow.
+
+#### Gluu OAuth2 Access Management
+=======
+##### Security Properties
 There are some security benefits to using this flow against authenticating API calls with a username and password (via HTTP Basic access authentication or similar) although the application has access to the resource owner's password. With Basic authentication, an application needs to have continuous access to the user’s password in order to make API calls. If the user wants to revoke the access of the client, he must change the password and re-enter the password in all the applications that are allowed access to the resource.
 
 However, if the OAuth Resource Owner Password flow is used, the application only needs access to the user’s credentials once: on first use when the credentials are exchanged for an access token. This means there’s no requirement for the app to store these credentials within the application or on the device, and revoking access is easy as well.
 
-##### 1.4.2.2.2 User Experience
+##### User Experience
 The user experience for this flow is identical to typical password-based access requests. The application asks the user for their username and password and the user provides the information. The application then makes either a server-side or client-side request to the API provider’s authorization server, without any user-facing interface changes. If the API provider does not issue a refresh_token and the issued access_token is short-lived, the application will likely store the username and password for future authentication attempts. Unfortunately, this defeats some of the benefit of this flow.
 
-#### 1.4.2.3 Gluu OAuth2 Access Management
+#### Gluu OAuth2 Access Management
+
 This flow uses Gluu Access Token (GAT) for access management. The flow needs a profile enabling a client to obtain a token from the [AS][] by explicitly specifyting the requested scopes. The diagram below shows the overview of the flow.
 
 ![gat](../img/oauth2/gat.png)
@@ -292,7 +376,11 @@ GAT: true
 [GAT]: ./index.md#423-gluu-oauth2-access-management "Gluu Access Token"
 [AS]: ./index.md#41-terminology "Authorization Server"
 
-## 1.5 SCIM
+
+## SCIM
+=======
+## SCIM
+
 SCIM stands for System for Cross-domain Identity Management which is a specification to manage users in a cloud environment. Gluu Server supports SCIM version 1.0 and 2.0 out of the box. The following diagram shows the SCIM model from the [SCIM Website](http://www.simplecloud.info/).
 
 ![scim-model](../img/scim/scim-model.png)
@@ -302,7 +390,11 @@ The SCIM Specifications are available from the SCIM Website. There are two speci
 1. [SCIM 2.0 Core Specifications](https://tools.ietf.org/html/rfc7643)
 2. [SCIM 2.0 Protocol Specification](https://tools.ietf.org/html/rfc7644)
 
-### 1.5.1 Terminology
+
+### Terminology
+=======
+### Terminology
+
 The SCIM specification defines some basic terms that are used in the document. The basic terms like attribute, [SP][] are same across all the protocols. A few confusing ones are listed below from the [SCIM 2.0 Specs](https://tools.ietf.org/html/rfc7643).
 
 - Resource:  An artifact that is managed by a service provider and that
