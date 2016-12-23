@@ -334,6 +334,7 @@ surprised by the behavior when you put your application into production.
 
   - Go to https://seed.gluu.org/oxauth-rp
   - Or deploy `oxAuth-rp.war`
+
 ### Authorization Endpoint
 
 #### Request Authorization and receive the Authorization Code and ID Token
@@ -391,3 +392,6 @@ surprised by the behavior when you put your application into production.
 
 ![](../img/admin-guide/openid/checksession.png "Screenshot of oxAuth-RP Check Session iFrame")
 
+# Implementing OpenID Connect in your application
+
+Use [oxd](https://oxd.gluu.org). 
