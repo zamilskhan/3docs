@@ -1,26 +1,26 @@
 [TOC]
 
 # Overview
-[OpenID Connect](http://openid.net/connect) ("Connect") is a standard
-profile of OAuth2 which defines a protocol to enable a website or mobile
-application to send a person to a domain for authentication and required
-attributes (e.g. email address, first name, last name, etc.). OpenID Connect
-also provides some of the plumbing around authentication to automate how
-this happens. If a person is visiting a website for the first time, the
-process that OpenID Connect defines is 100% bootstrapable by the
-website. This is really critical for Internet scalability. To visit
-someone's website, or to send someone an email, you do not need to get
-the system administrators involved. Connect provides the same type of
-scalable infrastructure for authentication and authorization, and promises to define a base level domain
-identification.
+OpenID Connect is an authentication layer built on OAuth 2.0. OpenID Connect 1.0 is a specific implementation of OAuth 2.0 where the identity provider holds the protected resources that the third-party application needs to access on behalf of a person. This resource is the UserInfo, information about the authenticated end user expressed in a standard format. OpenID Connect allows relying parties to verify the identity of the person and obtain user information. 
 
-## Jargon (taxonomy)
+# Jargon
+In OpenID Connect the key entities include:
 
-If you are familiar with SAML, there are many parallels in OpenID
-Connect, but the jargon (or "taxonomy") is different. For example,
-instead of attributes, we have "user claims". Instead of Service
-Provider (SP), we have "client". Instead of Identity Provider (IdP), it
-is an OpenID Provider (OP).
+- The *end user* (OAuth 2.0 resource owner) whose user information the application needs to access.
+
+The end user wants to login to an application using an existing account at an OpenID Connect identity provider (OP).
+
+- The *Relying Party (RP)* (OAuth 2.0 client) needs access to the end user's protected user information.
+
+For example, an online mail application needs to know which end user is accessing the application in order to present the correct inbox.
+
+As another example, an online shopping site needs to know which end user is accessing the site in order to present the right offerings, account, and shopping cart.
+
+- The *OpenID Provider (OP)* (OAuth 2.0 authorization server and also resource server) that holds the user information and grants access.
+
+The Gluu Server is an OpenID Provider. The OP holds information about the user and allows the end user or the organization (depending on the configuration) to consent to providing the RP with access to user information. OpenID Connect defines a unique identification for an account (subject identifier + issuer identifier), and the RP can use this as a key to its own user profile. 
+
+In OpenID Connect, the relying party can verify claims about the identity of the end user, and log the user out at the end of a session. OpenID Connect also makes it possible to discover the OpenID Provider for an end user, and to register relying party client applications dynamically. OpenID connect services are built on OAuth 2.0, JSON Web Token (JWT), WebFinger and Well-Known URIs.
 
 ## Discovery 
 
