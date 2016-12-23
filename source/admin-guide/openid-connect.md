@@ -6,24 +6,27 @@ OpenID Connect is an authentication layer built on OAuth 2.0. OpenID Connect is 
 # Jargon
 In OpenID Connect the key entities include:
 
-- The *end user* (OAuth 2.0 resource owner) whose user information the application needs to access.
+- The *end user* (a.k.a. OAuth 2.0 resource owner) whose user information the application needs to access.
 
 The end user wants to login to an application using an existing account at an OpenID Connect identity provider (OP).
 
-- The *Relying Party (RP)* (OAuth 2.0 client) needs access to the end user's protected user information.
+- The *Relying Party (RP)* (a.k.a. OAuth 2.0 client) needs access to the end user's protected user information.
 
-For example, an online chat application like Slack needs to know who is accessing the application in order to present the correct user account and contacts. 
+For example, an online chat application needs to know who is accessing the application in order to present the correct user account and contacts. 
 
-- The *OpenID Provider (OP)* (OAuth 2.0 authorization server and also resource server) that holds the user information and grants access.
+- The *OpenID Provider (OP)* (a.k.a. OAuth 2.0 authorization server and also resource server) that holds the user information and grants access.
 
 The Gluu Server is an OpenID Provider. The OP holds information about the user and allows the end user or the organization (depending on configuration) to consent to providing the RP with access to user information. OpenID Connect defines a unique identification for an account (subject identifier + issuer identifier), and the RP can use this as a key to its own user profile. 
 
-In OpenID Connect, the relying party can verify claims about the identity of the end user, and log the user out at the end of a session. OpenID Connect also makes it possible to discover the OpenID Provider for an end user, and to register relying party client applications dynamically. OpenID connect services are built on OAuth 2.0, JSON Web Token (JWT), WebFinger and Well-Known URIs.
+The relying party can verify claims about the identity of the end user, and log the user out at the end of a session. OpenID Connect also makes it possible to discover the OpenID Provider for an end user, and to register relying party client applications dynamically. OpenID connect services are built on OAuth 2.0, JSON Web Token (JWT), WebFinger and Well-Known URIs.
+
+# OpenID Connect Support in the Gluu Server
+The Gluu Server is a [fully certified OpenID Connect Provider (OP)](http://openid.net/certification/). As an OpenID Provider, the Gluu Server enables OpenID Connect relying parties (clients) to discover its capabilities, handle both dynamic and static registration of relying parties, respond to relying party requests with authorization codes, access tokens, and user information according to the Authorization Code and Implicit flows of OpenID Connect, and manages sessions.
 
 ## Discovery 
 
-The first thing you want to know about any OAuth2 API is where are the
-endpoints (i.e. what are the uris where you call the APIs).
+The first thing you want to know about any OAuth 2.0 API is where are the
+endpoints (i.e. what are the URIs where you call the APIs).
 OpenID Connect provides a very simple mechanism to accomplish this: 
 [OpenID Connect Discovery](http://openid.net/specs/openid-connect-discovery-1_0.html).
 
