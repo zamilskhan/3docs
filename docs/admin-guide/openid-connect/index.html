@@ -768,8 +768,9 @@ supports other algorithms that are listed below.</p>
 <h2 id="openid-connect-relying-party-registration">OpenID Connect Relying Party Registration<a class="headerlink" href="#openid-connect-relying-party-registration" title="Permanent link">#</a></h2>
 <p>Relying parties can register with the Gluu Server both statically, by the Gluu Server admin, and dynamically, as specified by OpenID Connect Discovery. To allow dynamic registration, you register an initial OAuth 2.0 client that other relying parties can use to get access tokens for registration. You can also enable OpenID Connect relying parties to register dynamically without having to provide an access token. If dynamic registration is enabled, make sure to limit or throttle registrations as it could be used as a form of DDOS.</p>
 <h2 id="session-management">Session management<a class="headerlink" href="#session-management" title="Permanent link">#</a></h2>
-<p>Logout is a catch-22. There is no perfect answer to logout that
-satisfies all the requirements of all the domains on the Internet. For
+<p>OpenID Connect lets the relying party track whether the end user is logged in at the provider, and also initiate end user logout at the provider. The specification has the relying party monitor session state using an invisible iframe and communicate status using the HTML 5 postMessage API.</p>
+<p>However, be forewarned that there is no perfect answer to logout that
+satisfies all requirements for all domains on the Internet. For
 example, large OpenID Providers, like Google, need a totally stateless
 implementation--Google cannot track sessions on the server side for
 every browser on the Internet. But in smaller domains, server side
@@ -787,8 +788,8 @@ Connect logout API would return <code>IMG</code> HTML tags to the browser with t
 logout callbacks of the clients. This way, the browser could call the
 logout uris (not the server).</p>
 <p>The Gluu Server is very flexible, and supports both server side session
-management, and stateless session management. For server side business
-logout, the domain admin can use Custom Logout scripts. This can be
+management, and stateless session management. For server side
+logout, the domain admin can use <a href="../custom-script/#application-session-management">Custom Logout scripts</a>. This can be
 useful to clean up sessions in a legacy SSO system (i.e. SiteMinder), or
 perhaps in a portal.</p>
 <p>The key for logout is to understand the limitations of logout, and to
