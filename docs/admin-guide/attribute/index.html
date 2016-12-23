@@ -353,8 +353,56 @@
     </a>
     
       
+        
+      
       
         <ul>
+          
+            <li class="anchor">
+              <a title="SAML Attributes" href="#saml-attributes">
+                <b>SAML Attributes</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="oxTrust Attribute Management" href="#oxtrust-attribute-management">
+                  <font size=2><i>oxTrust Attribute Management</i></font>
+              </a>
+            </li>
+             
+          
+            <li class="anchor">
+              <a title="OpenID Scopes" href="#openid-scopes">
+                <b>OpenID Scopes</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="Add Scope" href="#add-scope">
+                  <font size=2><i>Add Scope</i></font>
+              </a>
+            </li>
+             
+          
+            <li class="anchor">
+              <a title="Custom NameID" href="#custom-nameid">
+                <b>Custom NameID</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="Defining NameID" href="#defining-nameid">
+                  <font size=2><i>Defining NameID</i></font>
+              </a>
+            </li>
+             
+          
+            <li class="anchor">
+              <a title="Manual Schema Management" href="#manual-schema-management">
+                <b>Manual Schema Management</b>
+              </a>
+            </li>
+            
           
         </ul>
       
@@ -475,23 +523,36 @@
       <article class="article">
         <div class="wrapper">
           
-            <h1>Attribute Management</h1>
-          
-          <p>An <em>Active</em> attribute list can be seen from the Configuration &gt;
-Attributes section.</p>
-<p><img alt="Attribute Menu" src="../../img/admin-guide/attribute/admin_attribute_menu.png" /></p>
-<p>The Gluu Server has a large LDAP tree which includes all standard
-attributes. It is not necessary for all of them to be <em>Active</em>. The
-active LDAP trees can be sorted using the <em>Show only Active Attributes</em>
-link.</p>
-<p><img alt="Show Active Attribute" src="../../img/admin-guide/attribute/admin_attribute_show.png" /></p>
-<p>The Gluu Server administrator can make changes, such as changing the
-status to active/inactive, to an attribute after clicking on it.</p>
-<p><img alt="Attributes" src="../../img/admin-guide/attribute/admin_attribute_attribute.png" /></p>
+          <div class="toc">
+<ul>
+<li><a href="#attribute-management">Attribute Management</a><ul>
+<li><a href="#saml-attributes">SAML Attributes</a><ul>
+<li><a href="#oxtrust-attribute-management">oxTrust Attribute Management</a></li>
+</ul>
+</li>
+<li><a href="#openid-scopes">OpenID Scopes</a><ul>
+<li><a href="#add-scope">Add Scope</a></li>
+</ul>
+</li>
+<li><a href="#custom-nameid">Custom NameID</a><ul>
+<li><a href="#defining-nameid">Defining NameID</a></li>
+</ul>
+</li>
+<li><a href="#manual-schema-management">Manual Schema Management</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="attribute-management">Attribute Management<a class="headerlink" href="#attribute-management" title="Permanent link">#</a></h1>
+<h2 id="saml-attributes">SAML Attributes<a class="headerlink" href="#saml-attributes" title="Permanent link">#</a></h2>
+<p>LDAP attributes, SAML attributes, OpenID Connect user claims--whatever you call them--many organizations have business-specific information about people that needs to be shared with applications. For simplicity, this article will refer to them as "attributes." Existing standard schemas like the LDAP <a href="https://www.ietf.org/rfc/rfc2798.txt">inetOrgPerson</a> standard, or the <a href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">OpenID Connect user claims</a> define attributes like first name, last name and email address. Where possible, we recommend you use standard attributes that are already defined in the Gluu Server. But what if there is an attribute that is just not in any standard schema? This article will explain what you need to do to configure the Gluu Server to
+support your new attributes, and give you some advice along the way with regard to best practices. We will use fictional Company Acme Inc., which has requirements for "acmeCustNumber" and "acmeStateLicenseNumber".</p>
+<h3 id="oxtrust-attribute-management">oxTrust Attribute Management<a class="headerlink" href="#oxtrust-attribute-management" title="Permanent link">#</a></h3>
 <p>Additional attributes can be added from the Gluu Server GUI, oxTrust, by
 clicking the <strong>Add Attribute</strong> button. Then, the following screen will
 appear:</p>
-<p><img alt="Add Attribute Screen" src="../../img/admin-guide/attribute/admin_attribute_add.png" /></p>
+<p><img alt="image" src="../../img/admin-guide/attribute/admin_attribute_menu.png" />
+<img alt="Add Attribute Screen" src="../../img/admin-guide/attribute/admin_attribute_add.png" /></p>
 <ul>
 <li>
 <p><em>Name:</em> This field defines the name of the custom attribute which must
@@ -509,12 +570,12 @@ appear:</p>
 <li>
 <p><em>Type:</em> The attribute type should be selected from the drop-down menu.
   There are four attribute types supported by Gluu:</p>
-</li>
+<ol>
 <li>Text</li>
 <li>Numeric</li>
 <li>Photo</li>
-<li>
-<p>Date</p>
+<li>Date</li>
+</ol>
 </li>
 <li>
 <p><em>Edit Type:</em> This field controls which type of an user is allowed to edit
@@ -544,6 +605,142 @@ appear:</p>
   the attribute in IdP.</p>
 </li>
 </ul>
+<p>Where are these attributes stored? During installation, the Gluu Server creates
+a default objectclass specific for your organization. If you view
+<code>/opt/opendj/config/schema/100-user.ldif</code>, you'll see an objectclass called
+something like <code>ox-43A94B45403D3B0A00010D87EAF2</code> (where this number is your 
+organization identifier.) Any objects you add through the UI will be added to this
+objectclass. In the JSON configuration for oxTrust, you'll see two properties: 
+<code>personObjectClassTypes</code> and <code>personCustomObjectClass</code> where this objectclass is
+referenced. Also, you'll see the display name for this objectclass referenced in 
+the <code>personObjectClassDisplayNames</code> property (default value is "custom"). </p>
+<h2 id="openid-scopes">OpenID Scopes<a class="headerlink" href="#openid-scopes" title="Permanent link">#</a></h2>
+<p><img alt="scopemenu" src="../../img/openid/scopemenu.png" /></p>
+<p>The SAML counterpart to scopes is attributes which is released to service providers, or in this case Relying Party. 
+OpenID Connect uses OAuth2 scopes to "group" attributes. For example, we
+could have a scope called "address" that includes the street, city,
+state, and country user claims. </p>
+<p><img alt="scopes" src="../../img/openid/scopes.png" /></p>
+<h3 id="add-scope">Add Scope<a class="headerlink" href="#add-scope" title="Permanent link">#</a></h3>
+<p>The Gluu Server administrator can easily add more scopes in the GUI.</p>
+<p><img alt="add-scope" src="../../img/openid/add-scope.png" /></p>
+<p>Click <em>Add Scope</em> and you will be presented with the following screen:</p>
+<p><img alt="scope-adding" src="../../img/openid/scope-adding.png" /></p>
+<p>The following fields are available for input.</p>
+<ul>
+<li>Display Name</li>
+<li>Description</li>
+<li>Scope Type</li>
+<li>Default Scope</li>
+<li>Claims</li>
+</ul>
+<p><em>Default Scope:</em> When a client uses dynamic
+client registration, the OpenID Connect specification says that the
+<code>openid</code> scope should always be released, which contains an identifier
+for that person, normally the username. If you want to release another
+scope automatically, set the Default Scope to <code>true</code> for that scope. You
+can always explicitly release a scope to a certain client later on, but
+this will require some manual intervention by the domain administrator.</p>
+<p><em>Claims:</em> The administrator can add claims in the scope by clicking on <code>Add Claim</code> button. The following screen shall appear on clicking the button.
+<img alt="add-claim" src="../../img/openid/add-scope-in-claim.png" /></p>
+<h2 id="custom-nameid">Custom NameID<a class="headerlink" href="#custom-nameid" title="Permanent link">#</a></h2>
+<p>Gluu Server comes with the <code>transientID</code> attribute which is the default <code>NameID</code>.
+If there are other <code>NameID</code> requirements, it is possible to create them as well.
+The custom attribute must be created in oxTrust first before defining it as the <code>NameID</code>.
+Please see the <a href="#using-oxtrust">oxTrust custom attribute guide</a> to create the custom attribute in oxTrust.</p>
+<h3 id="defining-nameid">Defining NameID<a class="headerlink" href="#defining-nameid" title="Permanent link">#</a></h3>
+<p>The template file for <code>NameID</code> definitions are located in the <code>attribute-resolver.xml.vm</code> file under <code>/opt/tomcat/conf/shibboleth2/</code>.
+The example below adds <code>testcustomattribute</code> as <code>NameID</code> based on UID attribute. The following are put into the <code>attribute-resolver.xml.vm</code> file.</p>
+<ul>
+<li>Add declaration for the new attribute</li>
+</ul>
+<pre><code>if( ! ($attribute.name.equals('transientId') or $attribute.name.equals('testcustomattribute') ) )
+</code></pre>
+
+<ul>
+<li>Add definition for the new attribute</li>
+</ul>
+<pre><code> &lt;resolver:AttributeDefinition id=&quot;testcustomattribute&quot; xsi:type=&quot;Simple&quot;
+                              xmlns=&quot;urn:mace:shibboleth:2.0:resolver:ad&quot;
+                              sourceAttributeID=&quot;uid&quot;&gt;
+
+        &lt;resolver:Dependency ref=&quot;siteLDAP&quot;/&gt;
+        &lt;resolver:AttributeEncoder xsi:type=&quot;SAML2StringNameID&quot;
+                                xmlns=&quot;urn:mace:shibboleth:2.0:attribute:encoder&quot;
+                                nameFormat=&quot;urn:oasis:names:tc:SAML:2.0:nameid-format:persistent&quot; /&gt;
+&lt;/resolver:AttributeDefinition&gt; 
+</code></pre>
+
+<ul>
+<li>Restart tomcat service</li>
+</ul>
+<h2 id="manual-schema-management">Manual Schema Management<a class="headerlink" href="#manual-schema-management" title="Permanent link">#</a></h2>
+<p>Let's say you have a lot of attributes to register. Or you want a more
+repeatable process for adding schema to the Gluu Server. This next section
+will document a slightly more geeky way to do automate the process.</p>
+<p>First of all, you should create a custom schema file, which you will copy 
+to <code>/opt/opendj/config/schema</code> each time you configure a new Gluu Server.
+Use your organization name, for example something like 102-acme.ldif. 
+For more information about creating custom schema in OpenDJ, see the 
+[ForgeRock OpenDJ Admin Guide]
+(https://backstage.forgerock.com/#!/docs/opendj/2.6/admin-guide/chap-schema). 
+You should consider prefixing the name of your attributes and objectclasses
+with your organization. For example, instead of using <code>spamId</code> use <code>acmeSpamId</code>.
+Restart your LDAP server to make sure the schema is correct. If it's not, the
+OpenDJ server will not start.</p>
+<p>Now you have the objectclass and attributes in OpenDJ, but the Gluu Server
+still does not know about them. You're going to have to "register" these 
+attributes. Each attribute that you want to make available must have a 
+corresponding LDAP entry under <code>ou=attributes,o=&lt;org-inum&gt;,o=gluu</code>. If 
+you browse your LDAP server after performing a Gluu Server base installation, 
+you will see that many commonly used attributes are already there. When an 
+LDAP entry exists for your attribute, it is considered to be "registered". 
+Note in this example, we are using @!1111 as the organization id, which will
+be much longer in a real installation.</p>
+<p>There are two ways you can register an attribute. If you are an LDAP
+geek, you can just create an LDIF file with the correct information, and
+load it in the LDAP server that is storing your configuration. If you
+want to quickly spool up new Gluu Servers, this is probably the quickest
+way to handle it.</p>
+<pre><code>dn: inum=@!1111!0005!2B29,ou=attributes,o=@!1111,o=gluu
+objectClass: top
+objectClass: gluuAttribute
+inum: @!1111!0005!2B29
+description: How a person would want their name to be presented in writing.
+displayName: Display Name
+urn: urn:mace:dir:attribute-def:displayName
+gluuAttributeName: displayName
+gluuAttributeOrigin: gluuPerson
+gluuAttributeType: string
+gluuAttributeEditType: user
+gluuAttributeEditType: admin
+gluuAttributeViewType: user
+gluuAttributeViewType: admin
+gluuStatus: active
+</code></pre>
+<p>A few things to note: </p>
+<ol>
+<li>For the <code>inum</code>, after <code>0005!</code> use a unique identifier--normally a four digit hex number.</li>
+<li>If you are using SAML, you will need to make sure that each attribute has a unique <code>urn</code>.
+  If you don't like <code>urn</code> format, you can use a dns style name here. It supposed to be globally unique. </li>
+<li>Make sure <code>gluuStatus</code> is active</li>
+<li>Set the appropriate description and displayName if possible.</li>
+</ol>
+<p>Once you have this ldif file, you should make sure you use <code>ldapmodify</code> to load it after the during
+your Gluu Server installation process. </p>
+<p>If you also want to automate loading your custom OpenID scopes, just remember that these
+scopes reference the DN of the attributes. For example: </p>
+<pre><code>dn: inum=@!1111!0009!341A,ou=scopes,o=@!1111,o=gluu
+objectClass: oxAuthCustomScope
+objectClass: top
+defaultScope: false
+description: myScope
+displayName: myScope
+inum: @!43A9.4B45.403D.3B0A!0001!0D87.EAF2!0009!341A
+oxAuthClaim: inum=@!1111!0005!2B29,ou=attributes,o=@!1111,o=gluu
+oxAuthClaim: inum=@!1111!0005!29DA,ou=attributes,o=@!1111,o=gluu
+</code></pre>
+<p>So you may want to also create an ldif file for each scope, and also load this at installation time.</p>
           <aside class="copyright" role="note">
            Built with 
             <a href="http://www.mkdocs.org" target="_blank">MkDocs</a> using
