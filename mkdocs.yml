@@ -41,9 +41,7 @@ pages:
     - 'SCIM protected by UMA' : 'admin-guide/scim-uma.md'
     - 'Gluu Server APIs' : 'admin-guide/api.md'
     - 'SCIM API Configuration' : 'admin-guide/scim.md'
-    - 'Service Integration in Gluu CE' : 'admin-guide/integrate.md'
-    - 'Plugin Integration' : 'admin-guide/plugin.md'
-    - 'Service Integration in Gluu CE' : 'admin-guide/integrate.md'
+    - 'Service Integration in Gluu CE' : 'admin-guide/integrate.md
     - 'Plugin Integration' : 'admin-guide/plugin.md'
     - 'Backup Gluu Server CE' : 'admin-guide/backup.md'
     - 'Custom Script in Gluu CE' : 'admin-guide/custom-script.md'
