@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Manage & Configure Users - Gluu Docs</title>
+      
+<link href="../../assets/stylesheets/font.css" rel="stylesheet">
+      
+      
+      
+    
+    <meta property="og:url" content="None">
+    <meta property="og:title" content="Gluu Docs">
+    <meta property="og:image" content="None/../../gluu.jpg">
+    <meta name="apple-mobile-web-app-title" content="Gluu Docs">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+      <link rel="apple-touch-icon" href="../../gluu.jpg">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/favicon-60feabe0e5.ico">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon-60feabe0e5.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../assets/fonts/icon.eot?52m981');
+      	src: url('../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../assets/stylesheets/application-f58e216493.css">
+    
+    <link rel="stylesheet" href="../../assets/stylesheets/zenburn-28d5b94970.css">
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto Sans:400,700|Source+Code+Pro">
+      <style>
+        body, input {
+          font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Source Code Pro', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+    <script src="../../assets/javascripts/modernizr-4a5cc7e01e.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class=" ">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                Administration Guide <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        Manage & Configure Users
+      </div>
+    </div>
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" placeholder="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+
+  
+  <a href="https://github.com/GluuFederation/docs" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../../gluu.jpg">
+        </div>
+      
+      <div class="name">
+        <strong>Gluu Docs</strong><br>
+        version: 3.0.0
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      <ul class="repo">
+        
+        <li class="home">
+          <a href="/" title="Home">
+            <div class="home-image">
+            <i class="fa fa-home"></i> Doc Home</div>
+          </a>
+        </li>
+        
+        
+        
+        <li class="repo-download">
+          
+          <a href="https://github.com/GluuFederation/docs/archive/3.0.0.zip" target="_blank" title="Download" data-action="download">
+            <i class="icon icon-download"></i> Download
+          </a>
+        </li>
+        
+      </ul>
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Home" href="../..">
+      Home
+    </a>
+    
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Installation Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Preparing VM" href="../../installation-guide/">
+      Preparing VM
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Install Gluu Server" href="../../installation-guide/install/">
+      Install Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Setup Script Options" href="../../installation-guide/setup_py/">
+      Setup Script Options
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Cluster with CE" href="../../installation-guide/cluster/">
+      Cluster with CE
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Upgrade/Patch Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Upgrade Gluu Server" href="../../upgrade/">
+      Upgrade Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Patch Gluu Server" href="../../upgrade/update/">
+      Patch Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Administration Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="oxTrust Admin Interface" href="../">
+      oxTrust Admin Interface
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Authentication Protocols" href="../auth-protocol/">
+      Authentication Protocols
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Authntication Managment" href="../auth-management/">
+      Authntication Managment
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Multi Factor Authentication" href="../multi-factor-auth/">
+      Multi Factor Authentication
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="current" title="Manage & Configure Users" href="./">
+      Manage & Configure Users
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Local User Management" href="#local-user-management">
+                <b>Local User Management</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="People" href="#people">
+                  <font size=2><i>People</i></font>
+              </a>
+            </li>
+             
+          
+            <li class="anchor">
+              <a title="Groups" href="#groups">
+                <b>Groups</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="Cache Refresh" href="#cache-refresh">
+                <b>Cache Refresh</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="Customer Backend Key and Attributes" href="#customer-backend-key-and-attributes">
+                  <font size=2><i>Customer Backend Key and Attributes</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="Source Backend LDAP Servers" href="#source-backend-ldap-servers">
+                  <font size=2><i>Source Backend LDAP Servers</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="Inum LDAP Server" href="#inum-ldap-server">
+                  <font size=2><i>Inum LDAP Server</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="Attributes Mapping" href="#attributes-mapping">
+                  <font size=2><i>Attributes Mapping</i></font>
+              </a>
+            </li>
+             
+          
+            <li class="anchor">
+              <a title="Import People from file" href="#import-people-from-file">
+                <b>Import People from file</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="File Scructure" href="#file-scructure">
+                  <font size=2><i>File Scructure</i></font>
+              </a>
+            </li>
+             
+          
+            <li class="anchor">
+              <a title="Register User" href="#register-user">
+                <b>Register User</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="oxTrust Configuration" href="#oxtrust-configuration">
+                  <font size=2><i>oxTrust Configuration</i></font>
+              </a>
+            </li>
+             
+          
+            <li class="anchor">
+              <a title="User Registration" href="#user-registration">
+                <b>User Registration</b>
+              </a>
+            </li>
+            
+          
+        </ul>
+      
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Log Management" href="../logmanagment/">
+      Log Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Configure OpenID Clients" href="../clients/">
+      Configure OpenID Clients
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Configure SAML SSO" href="../saml/">
+      Configure SAML SSO
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="OAuth2 Grants" href="../oauth2/">
+      OAuth2 Grants
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="OpenID Connect" href="../openid/">
+      OpenID Connect
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="UMA in Gluu Server" href="../uma/">
+      UMA in Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Attribute Management" href="../attribute/">
+      Attribute Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="SCIM protected by UMA" href="../scim-uma/">
+      SCIM protected by UMA
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Gluu Server APIs" href="../api/">
+      Gluu Server APIs
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="SCIM API Configuration" href="../scim/">
+      SCIM API Configuration
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Service Integration in Gluu CE" href="../integrate/">
+      Service Integration in Gluu CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Backup Gluu Server CE" href="../backup/">
+      Backup Gluu Server CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Custom Script in Gluu CE" href="../custom-script/">
+      Custom Script in Gluu CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Certificate Management" href="../certificate/">
+      Certificate Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Fine Tuning Gluu Server" href="../fine-tuning/">
+      Fine Tuning Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Troubleshooting & FAQ" href="../faq/">
+      Troubleshooting & FAQ
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <div class="toc">
+<ul>
+<li><a href="#user-management-in-gluu-server">User Management in Gluu Server</a><ul>
+<li><a href="#local-user-management">Local User Management</a><ul>
+<li><a href="#people">People</a></li>
+</ul>
+</li>
+<li><a href="#groups">Groups</a></li>
+<li><a href="#cache-refresh">Cache Refresh</a><ul>
+<li><a href="#customer-backend-key-and-attributes">Customer Backend Key and Attributes</a></li>
+<li><a href="#source-backend-ldap-servers">Source Backend LDAP Servers</a></li>
+<li><a href="#inum-ldap-server">Inum LDAP Server</a></li>
+<li><a href="#attributes-mapping">Attributes Mapping</a></li>
+</ul>
+</li>
+<li><a href="#import-people-from-file">Import People from file</a><ul>
+<li><a href="#file-scructure">File Scructure</a></li>
+</ul>
+</li>
+<li><a href="#register-user">Register User</a><ul>
+<li><a href="#oxtrust-configuration">oxTrust Configuration</a></li>
+</ul>
+</li>
+<li><a href="#user-registration">User Registration</a></li>
+</ul>
+</li>
+<li><a href="#scim-20-user-adddelete">SCIM 2.0 User Add/Delete</a><ul>
+<li><a href="#add-user">Add User</a><ul>
+<li><a href="#required-parameters">Required Parameters</a></li>
+<li><a href="#json-string">JSON String</a></li>
+<li><a href="#user-object">User Object</a></li>
+</ul>
+</li>
+<li><a href="#delete-user">Delete User</a><ul>
+<li><a href="#required-parameter">Required Parameter</a></li>
+</ul>
+</li>
+<li><a href="#user-extensions">User Extensions</a></li>
+</ul>
+</li>
+<li><a href="#lock-user-in-gluu-server">Lock User in Gluu Server</a><ul>
+<li><a href="#create-custom-attribute">Create Custom Attribute</a></li>
+<li><a href="#script-installation">Script Installation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="user-management-in-gluu-server">User Management in Gluu Server<a class="headerlink" href="#user-management-in-gluu-server" title="Permanent link">#</a></h1>
+<p>To keep the Gluu Server up-to-date with the latest user claims, your
+organization can either "push" or "pull" identity data. In the "pull"
+mode, otherwise known as LDAP Synchronization or Cache Refresh, the Gluu
+Server can use an existing LDAP identity source like Microsoft Active
+Directory as the authoritative source of identity information. If you
+"push" identities to the Gluu Server, you can use the JSON/REST SCIM
+API. Local user management can also be performed inside oxTrust. Each
+method is detailed below.</p>
+<h2 id="local-user-management">Local User Management<a class="headerlink" href="#local-user-management" title="Permanent link">#</a></h2>
+<p>In oxTrust, you can add, edit and manage people, groups and user
+attributes and claims to ensure the proper information is released about
+the right people.</p>
+<h3 id="people">People<a class="headerlink" href="#people" title="Permanent link">#</a></h3>
+<p>To manage people, navigate to User &gt; Manage People, as shown in the
+screenshot below.</p>
+<p><img alt="people" src="../../img/admin-guide/user/manage_people.png" /></p>
+<p>From this interface you can add users and search for specific users.
+Because the user database can potentially be very large, a value is
+required in the search field. In other words, you can not click search
+with a blank entry to populate all users. If you need to see all users,
+this would be best performed manually within the Gluu OpenDJ server.
+Upon performing a user search, a list will be populated with all users
+that match the search, as shown in the screenshot below.</p>
+<p><img alt="Search Users" src="../../img/admin-guide/user/admin_users_searchadmin.png" /></p>
+<p>To edit a user, simply click on any of the hyperlinks associated with
+that user and you will be taken to a user management interface where you
+can modify that specific attributes relating to that user as displayed
+below.</p>
+<p><img alt="Manage Users" src="../../img/admin-guide/user/admin_users_edituser.png" /></p>
+<h2 id="groups">Groups<a class="headerlink" href="#groups" title="Permanent link">#</a></h2>
+<p>Out of the box, the Gluu Server includes one group: Gluu Server manager
+group, named: “gluuManager”. Groups can be added and populated as
+needed. By using the <em>Manage Groups</em> feature, the Gluu Server
+Administrator can add, delete or modify any group or user within a
+group. The list of available groups can be viewed by hitting the
+<em>Search</em> button with a blank search box.
+<img alt="Manage User Groups" src="../../img/admin-guide/user/admin_users_managegroups.png" /></p>
+<p>The Gluu Server Administrator can modify information such as Display
+Name, Group Owner, Visibility type etc. The Server Administrator can
+also add or delete users within existing groups. The group information
+is represented as shown below.
+<img alt="View group information" src="../../img/admin-guide/user/admin_users_groupinfo.png" /></p>
+<p>If any member of the Organization is required to be added in any
+specific group, this can be achieved be clicking on the Add Member
+button. The flow is <em>Add Member --&gt; Search the name/email of the user
+--&gt; Select the user --&gt; Click OK --&gt; Update.</em>
+<img alt="Add Member" src="../../img/admin-guide/user/admin_users_addmember.png" /></p>
+<h2 id="cache-refresh">Cache Refresh<a class="headerlink" href="#cache-refresh" title="Permanent link">#</a></h2>
+<p>Cache Refresh is the process of connecting an existing backend LDAP server, like Microsoft Active Directory, with the Gluu Server's local LDAP server. Synching people and attributes from a backend server into the Gluu Server speeds up authentication transactions. It is possible to perform attribute transformations, changing the name of attributes, or even using an interception script to change the values. Transformations are stored in the Gluu LDAP service. </p>
+<p><img alt="Cache Refresh Menu" src="../../img/admin-guide/user/admin_cache_menu.png" title="admin cache" /></p>
+<ul>
+<li>
+<p><em>Last Run:</em> The date and time of the latest cache refresh cycle
+  completion is shown here.</p>
+</li>
+<li>
+<p><em>Updates at the Last Run:</em> This shows the total number of users who
+  have been updated in the last Cache Refresh cycle. For example an user
+  who has any of his attribute updated will show up here.</p>
+</li>
+<li>
+<p><em>Problem at the Last Run:</em> This shows the number of users who have
+  been rejected by the Gluu Server during the update. If there are any
+  rejections, please contact Gluu Support for clarification and help.</p>
+</li>
+</ul>
+<p><img alt="Last Run" src="../../img/admin-guide/user/admin_cache_lastrun.png" /></p>
+<h3 id="customer-backend-key-and-attributes">Customer Backend Key and Attributes<a class="headerlink" href="#customer-backend-key-and-attributes" title="Permanent link">#</a></h3>
+<p><img alt="Customer Backend Key" src="../../img/admin-guide/user/admin_cache_backend.png" /></p>
+<ul>
+<li>
+<p><em>Key Attribute:</em> This is the unique key attribute of backend Active
+  Directory/LDAP Server such as SAMAccountname for any Active Directory.</p>
+</li>
+<li>
+<p><em>Object Class:</em> This contains the Object Classes of the backend Active
+  Directory/LDAP which has permission to talk to Gluu Server Cache Refresh
+  such as person, organizationalPerson, user etc.</p>
+</li>
+<li>
+<p><em>Source Attribute:</em> This contains the list of attributes which will be
+  pulled and read by the Gluu Server.</p>
+</li>
+<li>
+<p><em>Custom LDAP Filter:</em> If there is any custom search required, this
+filtering mechanism can be used such as "sn=*" whereas the value of this
+field ensures that every user must contain an attribute named SN.</p>
+</li>
+</ul>
+<h3 id="source-backend-ldap-servers">Source Backend LDAP Servers<a class="headerlink" href="#source-backend-ldap-servers" title="Permanent link">#</a></h3>
+<p><img alt="Source Backend" src="../../img/admin-guide/user/admin_cache_sourcebackend.png" /></p>
+<p>This section allows the Gluu Server to connect to the backend Active
+Directory/LDAP server of the organization.</p>
+<ul>
+<li>
+<p><em>Name:</em> Please input <strong>source</strong> as the value.</p>
+</li>
+<li>
+<p><em>Use Anonymous Bind:</em> Some customers do now allow username/password
+  connections to their backend server. Enable this option if this applies
+  to your organization.</p>
+</li>
+<li>
+<p><em>Bind DN:</em> This contains the username to connect to the backend
+  server. You need to use full DN here. As for example,
+  <em>cn=gluu,dc=company,dc=org</em>.</p>
+</li>
+<li>
+<p><em>Use SSL:</em> Use this feature if the backend server allows SSL
+  connectivity.</p>
+</li>
+<li>
+<p><em>Max Connections:</em> This value defines the maximum number of
+  connections that are allowed to read the backend Active Directory/LDAP
+  server. It is recommended to keep the value of 2 or 3.</p>
+</li>
+<li>
+<p><em>Server:</em> This contains the backend Active Directory/LDAP server
+  hostname with port i.e. backend.organization.com:389. If organization
+  has a failover server, click <strong>Add Server</strong> and add more hostnames with
+  port.</p>
+</li>
+<li>
+<p><em>Base DN:</em> This contains the location of the Active Directory/LDAP
+  tree from where the Gluu Server shall read the user information.</p>
+</li>
+<li>
+<p><em>Enabled:</em> This check-box is used to save and push the changes. Do not
+  use this unless the server administrator has entered all the required
+  values.</p>
+</li>
+<li>
+<p><em>Change Bind Password:</em> This can be used for a new password or to
+  change any existing password.</p>
+</li>
+</ul>
+<p>If your organization has a multiple Active Directory/LDAP server, click
+on <strong>Add source LDAP server</strong> and add the additional server information.
+Please remember that a <em>failover server</em> is not a new server.</p>
+<h3 id="inum-ldap-server">Inum LDAP Server<a class="headerlink" href="#inum-ldap-server" title="Permanent link">#</a></h3>
+<p><img alt="Inum LDAP Server" src="../../img/admin-guide/user/admin_cache_inum.png" /></p>
+<p>This section of the application allows the server administrator to
+connect to the internal LDAP of the Gluu Server. As Gluu Server
+administrator, you do not need to insert anything here in this section
+as new Gluu Server versions automatically populates this for you (unless
+you try to manually configure it anyway).</p>
+<ul>
+<li>
+<p><em>Refresh Method:</em> The Gluu Server allows the Server Administrator to
+  apply two types of Cache Refresh mechanism--(i) VDS Method and (ii) Copy
+  Method.</p>
+</li>
+<li>
+<p><em>VDS Method:</em> Any organization with a database like <em>mysql</em> can use
+  the VDS method. This option can be enabled via the drop-down menu in
+  Refresh Method option.</p>
+</li>
+</ul>
+<p><img alt="Refresh VDS" src="../../img/admin-guide/user/admin_cache_refresh_vds.png" /></p>
+<ol>
+<li><em>Copy Method:</em> If the organization has any kind of Active
+  Directory/LDAP server, they are strongly recommended to use the <em>Copy
+  Method</em> from the drop-down menu.</li>
+</ol>
+<p><img alt="Refresh Copy" src="../../img/admin-guide/user/admin_cache_refresh_copy.png" /></p>
+<h3 id="attributes-mapping">Attributes Mapping<a class="headerlink" href="#attributes-mapping" title="Permanent link">#</a></h3>
+<p>When the Copy method is selected, a section for Attribute mapping will
+be exposed. In this section, the Gluu Server Administrator can map any
+attribute from the backend Active Directory/LDAP to the LDAP cache of
+the Gluu Server.</p>
+<p><img alt="Attribute Mapping" src="../../img/admin-guide/user/admin_cache_mapattribute.png" /></p>
+<p>In the source attribute to destination attribute mapping field, you can
+enter the source attribute value on the left, and the destination
+attribute on the right. In other words, you can specify what the
+attribute is on the backend in the left field, and what it should be
+rendered as when it comes through the Gluu Server in the right field.</p>
+<p>The Administrator can select any Cache Refresh Method according to the
+backend Active Directory/LDAP server, but there are some essential
+values for both types of cache refresh method. The values are given
+below.</p>
+<ul>
+<li>
+<p><em>Pooling Interval (Minutes):</em> This is the interval value for running
+    the Cache Refresh mechanism in the Gluu Server. It is recommended to 
+    be kept higher than 15 minutes.</p>
+</li>
+<li>
+<p><em>Script File Name:</em> The Gluu Server cache refresh can accept any
+    kind of Jython Script which might help to calculate any custom/complex
+    attribute i.e. eduPersonScopedAffiliation. For more information please
+    contact Gluu Support.</p>
+</li>
+<li>
+<p><em>Snapshot Folder:</em> Every cycle of of Gluu Server Cache Refresh cycle
+    saves an overall snapshot and problem-list record on a specified
+    location. This is where the Gluu Server Administrator can specify the
+    location. You can easily decide whether cache refresh synchronizes all
+    users or not. Generally the rejected users are enclosed in the
+    problem-list file. An overall report is displayed at the top of the
+    cache refresh page with headings <strong>Updated at the last run</strong> and
+    <strong>Problems at the last run</strong>.</p>
+</li>
+<li>
+<p><em>Snapshot Count:</em> This defines the total number of snapshots that
+    are allowed to be saved in the hard drive of the VM. It is recommended
+    to be kept to 20 snapshots.</p>
+</li>
+</ul>
+<p>Latest Gluu Servers (including Community Edition) introduced two
+upgraded sections here.</p>
+<ul>
+<li>
+<p><em>Server IP Address:</em> Include the IP of your Gluu Server here. This
+    feature helps to run Cache Refresh mechanism perfectly in a clustered
+    environment.</p>
+</li>
+<li>
+<p><em>Removed Script File Name location:</em> New version of the Gluu Server
+    allows the administrator to manage your custom scripts with more
+    interactive section under configuration named Manage Custom Scripts.</p>
+</li>
+<li>
+<p><em>Update:</em> This button is used to push the changes in the Gluu
+    Server. Hit this button only when the values have been entered,
+    completely.</p>
+</li>
+<li>
+<p><em>Update and Validate Script:</em> This button is used to test the
+    operation and integrity of any custom script such as a Jython Script.</p>
+</li>
+</ul>
+<h2 id="import-people-from-file">Import People from file<a class="headerlink" href="#import-people-from-file" title="Permanent link">#</a></h2>
+<p><img alt="image" src="../../img/admin-guide/user/import-people_menu.png" /></p>
+<p>Gluu Server allows the administrator to add users from files. This can be accessed from the <code>Import People</code> button from the <code>Users</code> menu.</p>
+<p><img alt="image" src="../../img/admin-guide/user/import-people_add.png" /></p>
+<ul>
+<li>Click on the <code>Add</code> button to select the file from which the users will be imported. This feature has been tested with a <code>xls</code> file.</li>
+</ul>
+<p><img alt="image" src="../../img/admin-guide/user/import-people_validate.png" /></p>
+<ul>
+<li>The file needs to be validated before it can be imported. Click on the <code>Validate</code> button.</li>
+</ul>
+<p><img alt="import" src="../../img/admin-guide/user/import-people_import.png" /></p>
+<ul>
+<li>Click on the <code>Import</code> button to complete the import of users.</li>
+</ul>
+<h3 id="file-scructure">File Scructure<a class="headerlink" href="#file-scructure" title="Permanent link">#</a></h3>
+<p>The file needs to contain the following fields from which the user data will be pulled. Please remember to use the exact spelling as shown here.</p>
+<ul>
+<li>
+<p>Username</p>
+</li>
+<li>
+<p>First Name</p>
+</li>
+<li>
+<p>Last Name</p>
+</li>
+<li>
+<p>Email</p>
+</li>
+</ul>
+<h2 id="register-user">Register User<a class="headerlink" href="#register-user" title="Permanent link">#</a></h2>
+<p>Self-Registration is done by users on a self-service basis. Since
+oxTrust user registration cannot add users to a backend LDAP or Active
+Directory server, self-registration will only be effective if GluuLDAP
+is used for authentication of users.</p>
+<p>BY default a a limited number of attribute is present in default
+self-registration form. If more attributes are needed they can be added
+in Registration Management of Organization Configuration
+The oxTrust component provides a very basic user registration service for 
+the people to sign-up for an account on the Gluu Server. This service is 
+disabled by default. The <code>User Registration</code> custom script  is used to enable the 
+registration feature.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When possible, we recommend handling user registration in your app locally, then pushing the information to the Gluu Server via SCIM 2.0. This will give you much more control and flexibility in defining the exact registration process. Also,</p>
+</div>
+<p>frequently oxTrust is not Internet facing--it was primarily designed as an interface for admins.</p>
+<h3 id="oxtrust-configuration">oxTrust Configuration<a class="headerlink" href="#oxtrust-configuration" title="Permanent link">#</a></h3>
+<p>Navigate to the custom scripts section of the Admin Panel. Click on the <code>Configuration menu and then</code>Manage Custom Scripts`.</p>
+<p><img alt="image" src="../../img/admin-guide/user/config-manage-script_menu.png" /></p>
+<p>The tabs near the top of the page can be used to navigate to different custom scripts. We are concerned about 
+the <code>User Registration</code> tab.</p>
+<p><img alt="image" src="../../img/admin-guide/user/config-manage-script_menu1.png" /></p>
+<p>Set the <code>enable_user</code> value to to <code>true</code> so that the user can login as soon as 
+the registration is complete, which sets the default status value. You may want to leave this to <code>false</code> if you 
+want to manually review user registrations before allowing them.</p>
+<p><img alt="image" src="../../img/admin-guide/user/config-manage-script_enable.png" /></p>
+<p>Click <code>Enable</code> checkbox at the bottom of the page.</p>
+<p><img alt="image" src="../../img/admin-guide/user/config-manage-script_check.png" /></p>
+<h2 id="user-registration">User Registration<a class="headerlink" href="#user-registration" title="Permanent link">#</a></h2>
+<p>The users can register through the user registration link usually available at <code>&lt;hostname&gt;/identity/register</code>.</p>
+<p><img alt="image" src="../../img/admin-guide/user/config-manage-script_enable.png" /></p>
+<h1 id="scim-20-user-adddelete">SCIM 2.0 User Add/Delete<a class="headerlink" href="#scim-20-user-adddelete" title="Permanent link">#</a></h1>
+<p>This section outlines how to add/remove user from Gluu Server CE using <a href="https://github.com/GluuFederation/SCIM-Client">SCIM-Client</a>.</p>
+<h2 id="add-user">Add User<a class="headerlink" href="#add-user" title="Permanent link">#</a></h2>
+<p>There are two methods to add users:</p>
+<ol>
+<li><a href="#json-string">JSON Sting</a></li>
+<li><a href="#user-object">User Object</a></li>
+</ol>
+<h3 id="required-parameters">Required Parameters<a class="headerlink" href="#required-parameters" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userName</td>
+<td>The intended username for the end-user</td>
+</tr>
+<tr>
+<td>givenName</td>
+<td>The first name of the end-user</td>
+</tr>
+<tr>
+<td>familyName</td>
+<td>The last name of the end-user</td>
+</tr>
+<tr>
+<td>displayName</td>
+<td>The formatted first name followed by last name</td>
+</tr>
+<tr>
+<td><em>groups</em></td>
+<td>Optional parameter if the user is added to any specific group</td>
+</tr>
+</tbody>
+</table>
+<h3 id="json-string">JSON String<a class="headerlink" href="#json-string" title="Permanent link">#</a></h3>
+<p>The user is added using a JSON object string using the required parameters; however it is possible to add more parameters. The following is an example of a JSON string used to add a user.</p>
+<pre><code>        Scim2Client client = Scim2Client.umaInstance(domain, umaMetaDataUrl, umaAatClientId, umaAatClientJksPath, umaAatClientJksPassword, umaAatClientKeyId);
+        String createJson = {&quot;schemas&quot;:[&quot;urn:ietf:params:scim:schemas:core:2.0:User&quot;],&quot;externalId&quot;:&quot;12345&quot;,&quot;userName&quot;:&quot;newUser&quot;,&quot;name&quot;:{&quot;givenName&quot;:&quot;json&quot;,&quot;familyName&quot;:&quot;json&quot;,&quot;middleName&quot;:&quot;N/A&quot;,&quot;honorificPrefix&quot;:&quot;&quot;,&quot;honorificSuffix&quot;:&quot;&quot;},&quot;displayName&quot;:&quot;json json&quot;,&quot;nickName&quot;:&quot;json&quot;,&quot;profileUrl&quot;:&quot;http://www.gluu.org/&quot;,&quot;emails&quot;:[{&quot;value&quot;:&quot;json@gluu.org&quot;,&quot;type&quot;:&quot;work&quot;,&quot;primary&quot;:&quot;true&quot;},{&quot;value&quot;:&quot;json2@gluu.org&quot;,&quot;type&quot;:&quot;home&quot;,&quot;primary&quot;:&quot;false&quot;}],&quot;addresses&quot;:[{&quot;type&quot;:&quot;work&quot;,&quot;streetAddress&quot;:&quot;621 East 6th Street Suite 200&quot;,&quot;locality&quot;:&quot;Austin&quot;,&quot;region&quot;:&quot;TX&quot;,&quot;postalCode&quot;:&quot;78701&quot;,&quot;country&quot;:&quot;US&quot;,&quot;formatted&quot;:&quot;621 East 6th Street Suite 200  Austin , TX 78701 US&quot;,&quot;primary&quot;:&quot;true&quot;}],&quot;phoneNumbers&quot;:[{&quot;value&quot;:&quot;646-345-2346&quot;,&quot;type&quot;:&quot;work&quot;}],&quot;ims&quot;:[{&quot;value&quot;:&quot;nynytest_user&quot;,&quot;type&quot;:&quot;Skype&quot;}],&quot;userType&quot;:&quot;CEO&quot;,&quot;title&quot;:&quot;CEO&quot;,&quot;preferredLanguage&quot;:&quot;en-us&quot;,&quot;locale&quot;:&quot;en_US&quot;,&quot;active&quot;:&quot;true&quot;,&quot;password&quot;:&quot;secret&quot;,&quot;groups&quot;:[{&quot;display&quot;:&quot;Gluu Test Group&quot;,&quot;value&quot;:&quot;@!9B22.5F33.7D8D.B890!0001!880B.F95A!0003!60B7&quot;}],&quot;roles&quot;:[{&quot;value&quot;:&quot;Owner&quot;}],&quot;entitlements&quot;:[{&quot;value&quot;:&quot;full access&quot;}],&quot;x509Certificates&quot;:[{&quot;value&quot;:&quot;cert-12345&quot;}]}
+        ScimResponse response = client.createPersonString(createJson, MediaType.APPLICATION_JSON);
+</code></pre>
+
+<h3 id="user-object">User Object<a class="headerlink" href="#user-object" title="Permanent link">#</a></h3>
+<p>The following code snippet uses the User object.</p>
+<pre><code>        User user = new User();
+
+        Name name = new Name();
+        name.setGivenName(&quot;Given Name&quot;);
+        name.setMiddleName(&quot;Middle Name&quot;);
+        name.setFamilyName(&quot;Family Name&quot;);
+        user.setName(name);
+
+        user.setActive(true);
+
+        user.setUserName(&quot;newUser_&quot; +  + new Date().getTime());
+        user.setPassword(&quot;secret&quot;);
+        user.setDisplayName(&quot;Display Name&quot;);
+        user.setNickName(&quot;Nickname&quot;);
+        user.setProfileUrl(&quot;&quot;);
+        user.setLocale(&quot;en&quot;);
+        user.setPreferredLanguage(&quot;US_en&quot;);
+
+        List&lt;Email&gt; emails = new ArrayList&lt;Email&gt;();
+        Email email = new Email();
+        email.setPrimary(true);
+        email.setValue(&quot;a@b.com&quot;);
+        email.setDisplay(&quot;a@b.com&quot;);
+        email.setType(Email.Type.WORK);
+        email.setReference(&quot;&quot;);
+        emails.add(email);
+        user.setEmails(emails);
+
+        List&lt;PhoneNumber&gt; phoneNumbers = new ArrayList&lt;PhoneNumber&gt;();
+        PhoneNumber phoneNumber = new PhoneNumber();
+        phoneNumber.setPrimary(true);
+        phoneNumber.setValue(&quot;123-456-7890&quot;);
+        phoneNumber.setDisplay(&quot;123-456-7890&quot;);
+        phoneNumber.setType(PhoneNumber.Type.WORK);
+        phoneNumber.setReference(&quot;&quot;);
+        phoneNumbers.add(phoneNumber);
+        user.setPhoneNumbers(phoneNumbers);
+
+        List&lt;Address&gt; addresses = new ArrayList&lt;Address&gt;();
+        Address address = new Address();
+        address.setPrimary(true);
+        address.setValue(&quot;test&quot;);
+        address.setDisplay(&quot;My Address&quot;);
+        address.setType(Address.Type.WORK);
+        address.setReference(&quot;&quot;);
+        address.setStreetAddress(&quot;My Street&quot;);
+        address.setLocality(&quot;My Locality&quot;);
+        address.setPostalCode(&quot;12345&quot;);
+        address.setRegion(&quot;My Region&quot;);
+        address.setCountry(&quot;My Country&quot;);
+        address.setFormatted(&quot;My Formatted Address&quot;);
+        addresses.add(address);
+        user.setAddresses(addresses);
+
+        ScimResponse response = client.createUser(user, new String[]{});
+        System.out.println(&quot;response body = &quot; + response.getResponseBodyString());
+
+        assertEquals(response.getStatusCode(), 201, &quot;Could not add user, status != 201&quot;);
+
+        User userCreated = Util.toUser(response, client.getUserExtensionSchema());
+        String id = userCreated.getId();
+</code></pre>
+
+<h2 id="delete-user">Delete User<a class="headerlink" href="#delete-user" title="Permanent link">#</a></h2>
+<p>To delete a user only the id (the LDAP <code>inum</code>) is needed.</p>
+<pre><code>        ScimResponse response = client.deletePerson(id);
+        assertEquals(response.getStatusCode(), 200, &quot;User could not be deleted, status != 200&quot;);
+</code></pre>
+
+<h3 id="required-parameter">Required Parameter<a class="headerlink" href="#required-parameter" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>The LDAP <code>inum</code> of the user to be deleted</td>
+</tr>
+</tbody>
+</table>
+<h2 id="user-extensions">User Extensions<a class="headerlink" href="#user-extensions" title="Permanent link">#</a></h2>
+<p>SCIM 2.0 User Extensions implementation in Gluu server is very simple. Just set the custom attribute's <code>SCIM Attribute</code> parameter to <code>true</code> in oxTrust GUI and it will be recognized as a User extension. It is a must to create new custom attributes to be used as User extensions for a cleaner implementation.</p>
+<p><img alt="image" src="../../img/admin-guide/user/scim-attribute.png" /></p>
+<p>You can verify the User extensions via the <code>Schema</code> endpoint:</p>
+<p><code>&lt;domain root&gt;/identity/seam/resource/restv1/scim/v2/Schemas/urn:ietf:params:scim:schemas:extension:gluu:2.0:User</code></p>
+<p><img alt="image" src="../../img/admin-guide/user/scim-custom-first.png" /></p>
+<p>Now for the actual code, you can refer to the unit tests in SCIM-Client:</p>
+<ul>
+<li><a href="../../src/test/java/gluu/scim2/client/UserExtensionsObjectTest.java">UserExtensionsObjectTest</a></li>
+<li><a href="../../src/test/java/gluu/scim2/client/UserExtensionsJsonTest.java">UserExtensionsJsonTest</a></li>
+</ul>
+<h1 id="lock-user-in-gluu-server">Lock User in Gluu Server<a class="headerlink" href="#lock-user-in-gluu-server" title="Permanent link">#</a></h1>
+<p>This section deals with the locking of user after 4 failed login attempts. This feature requires using the interception script to achieve the goal. The login attempts are stored in a custom attribute which needs to be created first.</p>
+<h2 id="create-custom-attribute">Create Custom Attribute<a class="headerlink" href="#create-custom-attribute" title="Permanent link">#</a></h2>
+<p>The custom attribute <code>oxCountInvalidLogin</code> will track the unsuccessful login attempts by any user. Please create that attribute from the oxTrust Admin GUI.</p>
+<ul>
+<li>
+<p>Click on the add user button under <strong>Configuration</strong>
+<img alt="image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/admin_config_attribute_add.png" /></p>
+</li>
+<li>
+<p>Please fill up the form as shown in the screenshot below
+<img alt="image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/custom_attribute.png" /></p>
+</li>
+<li>
+<p>Click the <strong>Update</strong> button and the custom attribute is added in the Gluu Server</p>
+</li>
+</ul>
+<h2 id="script-installation">Script Installation<a class="headerlink" href="#script-installation" title="Permanent link">#</a></h2>
+<ul>
+<li>
+<p>Go to Manage Custom Scripts
+<img alt="image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_menu.png" /></p>
+</li>
+<li>
+<p>Click on the Person Authenticaiton tab
+<img alt="image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_person.png" /></p>
+</li>
+<li>
+<p>Click on the Add custon script configuration button
+<img alt="image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_add.png" /></p>
+</li>
+<li>
+<p>Fill up the form with the following information:
+<img alt="image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config_script_update1.png" /></p>
+<ol>
+<li>
+<p>Name: LockAccount</p>
+</li>
+<li>
+<p>Description: Basic Lock Account</p>
+</li>
+<li>
+<p>Programming Language: Python</p>
+</li>
+<li>
+<p>Level: 1</p>
+</li>
+<li>
+<p>Location Type: Ldap</p>
+</li>
+<li>
+<p>Usage Type: Both methods</p>
+</li>
+<li>
+<p>Custom property(key/value)</p>
+</li>
+<li>
+<p>invalid_login_count_attribute: oxCountInvalidLogin</p>
+</li>
+<li>
+<p>maximum_invalid_login_attemps: 4</p>
+</li>
+<li>
+<p>Script: <a href="https://github.com/GluuFederation/oxAuth/blob/master/Server/integrations/basic.lock.account/BasicLockAccountExternalAuthenticator.py">Lock User Account Script</a></p>
+</li>
+<li>
+<p>Enable the script by ticking the check box 
+<img alt="image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_enable.png" /></p>
+</li>
+<li>
+<p>Click Update 
+<img alt="image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/config-script_update.png" /></p>
+</li>
+<li>
+<p>Change Default Authentication Method to LockAccount
+<img alt="image" src="https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/lock_user_method.png" /></p>
+</li>
+</ol>
+</li>
+</ul>
+          <aside class="copyright" role="note">
+           Built with 
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a> using
+            <a href="http://gitlab.testbird.io:8099/frontend/testbird-mkdocs-theme.git" target="_blank">
+              testBird-mkdocs-theme
+            </a> <br>
+            
+            Copyright &copy; 2016, Gluu, Inc.
+            
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../multi-factor-auth/" title="Multi Factor Authentication">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                Multi Factor Authentication
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../logmanagment/" title="Log Management">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                Log Management
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../..';
+      var repo_id  = '';
+    </script>
+    <script src="../../assets/javascripts/application-ce3999cf34.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+  </body>
+</html>
