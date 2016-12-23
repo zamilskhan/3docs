@@ -22,7 +22,6 @@ pages:
 - Upgrade/Patch Guide:
         - 'Upgrade Gluu Server' : 'upgrade/index.md'
         - 'Patch Gluu Server' : 'upgrade/update.md'
-
 - Administration Guide:
     - 'Administrating Gluu oxTrust UI' : 'admin-guide/index.md'
     - 'Authentication Protocols' : 'admin-guide/auth-protocol.md'
