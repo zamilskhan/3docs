@@ -30,7 +30,7 @@ These sections are detailed below with screenshots.
 - Self-Service Password Reset: the admin can enable or disable the ability for users to reset their own passwords via email. In order for password reset to work, the admin must fill out the appropriate details in the [SMTP Server Configuration](#smtp-server-configuration) tab.
 - SCIM Support: If your applications use SCIM for managing identities, this option should be enabled. 
 - DNS Server(s): If the organization uses a custom DNS the address should be updated in this field.
-- Maximum Log Size: 
+- Maximum Log Size: Logs are generated for all services that were installed during Gluu Server deployment (e.g. Shibboleth, oxAuth, oxTrust, etc.). In this field you can set the maximum size (in mb) of the log file. We recommend keeping this under X mb.
 - User can edit profile: Enable this feature if you want to give people the ability to edit their own personal information in the Gluu Server. In most cases this option should be left disabled since oxTrut is typically not Internet facing, or the best place to have users interact with their information. For any reasonably large deployment, it is recommended to build a standalone profile app for users to self-service their information. 
 - Contact Email: Provide a good email for the Gluu Server admininstrator. This email will be presented on any error pages. 
 
