@@ -31,20 +31,21 @@ The OpenID Connect Implicit Flow specifies how the relying party interacts with 
 
 ## Discovery 
 
-The first thing you want to know about any OAuth 2.0 API is where are the
-endpoints (i.e. what are the URIs where you call the APIs).
+The first thing you want to know about any OAuth 2.0 API is where the
+endpoints are (i.e. what are the URIs where you call the APIs).
 OpenID Connect provides a very simple mechanism to accomplish this: 
 [OpenID Connect Discovery](http://openid.net/specs/openid-connect-discovery-1_0.html).
 
 In order for an OpenID Connect Relying Party to utilize OpenID Connect
 services for an End-User, the RP needs to know where the OpenID Provider is.
-OpenID Connect uses WebFinger [WebFinger](http://en.wikipedia.org/wiki/WebFinger)
+OpenID Connect uses [WebFinger](http://en.wikipedia.org/wiki/WebFinger)
 to locate the OpenID Provider for an End-User.
 
 Once the OpenID Provider has been identified, the configuration information
 for the OP is retrieved from a well-known location as a JSON document,
 including its OAuth 2.0 endpoint locations.
 
+### Sample Discovery Request
 If you want to try a discovery request, you can make the following
 WebFinger request to discover the Issuer location:
 
