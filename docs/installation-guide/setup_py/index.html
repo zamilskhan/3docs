@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Setup Script Options - Gluu Docs</title>
+      
+<link href="../../assets/stylesheets/font.css" rel="stylesheet">
+      
+      
+      
+    
+    <meta property="og:url" content="None">
+    <meta property="og:title" content="Gluu Docs">
+    <meta property="og:image" content="None/../../gluu.jpg">
+    <meta name="apple-mobile-web-app-title" content="Gluu Docs">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+      <link rel="apple-touch-icon" href="../../gluu.jpg">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/favicon-60feabe0e5.ico">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon-60feabe0e5.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../assets/fonts/icon.eot?52m981');
+      	src: url('../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../assets/stylesheets/application-f58e216493.css">
+    
+    <link rel="stylesheet" href="../../assets/stylesheets/zenburn-28d5b94970.css">
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto Sans:400,700|Source+Code+Pro">
+      <style>
+        body, input {
+          font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Source Code Pro', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+    <script src="../../assets/javascripts/modernizr-4a5cc7e01e.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class=" ">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                Installation Guide <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        Setup Script Options
+      </div>
+    </div>
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" placeholder="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+
+  
+  <a href="https://github.com/GluuFederation/docs" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../../gluu.jpg">
+        </div>
+      
+      <div class="name">
+        <strong>Gluu Docs</strong><br>
+        version: 3.0.0
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      <ul class="repo">
+        
+        <li class="home">
+          <a href="/" title="Home">
+            <div class="home-image">
+            <i class="fa fa-home"></i> Doc Home</div>
+          </a>
+        </li>
+        
+        
+        
+        <li class="repo-download">
+          
+          <a href="https://github.com/GluuFederation/docs/archive/3.0.0.zip" target="_blank" title="Download" data-action="download">
+            <i class="icon icon-download"></i> Download
+          </a>
+        </li>
+        
+      </ul>
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Home" href="../..">
+      Home
+    </a>
+    
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Installation Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Preparing VM" href="../">
+      Preparing VM
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Install Gluu Server" href="../install/">
+      Install Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="current" title="Setup Script Options" href="./">
+      Setup Script Options
+    </a>
+    
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="2.5.1 Setup Prompt" href="#251-setup-prompt">
+                <b>2.5.1 Setup Prompt</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="2.5.2 Script Command Line Options" href="#252-script-command-line-options">
+                <b>2.5.2 Script Command Line Options</b>
+              </a>
+            </li>
+            
+          
+        </ul>
+      
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Cluster with CE" href="../cluster/">
+      Cluster with CE
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Upgrade/Patch Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Upgrade Gluu Server" href="../../upgrade/">
+      Upgrade Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Patch Gluu Server" href="../../upgrade/update/">
+      Patch Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Administration Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="oxTrust Admin Interface" href="../../admin-guide/">
+      oxTrust Admin Interface
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Log Management" href="../../admin-guide/logmanagment/">
+      Log Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="UMA in Gluu Server" href="../../admin-guide/uma/">
+      UMA in Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Attribute Management" href="../../admin-guide/attribute/">
+      Attribute Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="SCIM protected by UMA" href="../../admin-guide/scim-uma/">
+      SCIM protected by UMA
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="SCIM API Configuration" href="../../admin-guide/scim/">
+      SCIM API Configuration
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Backup Gluu Server CE" href="../../admin-guide/backup/">
+      Backup Gluu Server CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Custom Script in Gluu CE" href="../../admin-guide/custom-script/">
+      Custom Script in Gluu CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Certificate Management" href="../../admin-guide/certificate/">
+      Certificate Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Fine Tuning Gluu Server" href="../../admin-guide/fine-tuning/">
+      Fine Tuning Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Troubleshooting & FAQ" href="../../admin-guide/faq/">
+      Troubleshooting & FAQ
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+            <h1>Setup Script Options</h1>
+          
+          <h3 id="251-setup-prompt">2.5.1 Setup Prompt<a class="headerlink" href="#251-setup-prompt" title="Permanent link">#</a></h3>
+<p>The <code>setup.py</code> script will bring up a prompt to provide information for certificate as well as the IP Address and the hostname for the Gluu Server. The prompt is given below.</p>
+<pre><code>Enter IP Address [192.168.122.60] :
+Enter hostname [localhost] : centos.gluu.info
+Enter your city or locality : Austin
+Enter your state or province two letter code : TX
+Enter two letter Country Code : US
+Enter Organization Name : Gluu
+Enter email address for support at your organization : support@gluu.org
+Enter maximum RAM for tomcat in MB [3072] :
+Optional: enter password for oxTrust and LDAP superuser [hlE3vzf0hMdD] :
+Install oxAuth OAuth2 Authorization Server? [Yes] :
+Install oxTrust Admin UI? [Yes] :
+Install Gluu OpenDJ LDAP Server? [Yes] :
+Install Apache HTTPD Server [Yes] :
+Install Shibboleth SAML IDP? [No] :
+Install Asimba SAML Proxy? [No] :
+Install CAS? [No] :
+Install oxAuth RP? [No] :
+</code></pre>
+
+<p>It is recommended to use <code>hostname.domain</code> structure for hostname and refrain from using <code>127.x.x.x</code> for IP address. 
+If you are not using a resolvable DNS host, you will need to add the hostname to your hosts file on the server which is running your browser. Login with the default user name <code>admin</code> and the password printed back in the confirmation (also contained in <code>setup.properties.last</code> (use the Unix command <code>grep --color -i pass</code> to find the according line quickly) and look for the LDAP password which is the same as the admin password.</p>
+<p>Make sure you remove or encrypt setup.properties.last It has the clear text passwords for everything: <em>LDAP, admin user, keystores, and 3DES salt</em>. If something goes wrong, check <code>setup.log</code> for a detailed step-by-step of the installation. As an alternative you may check the file <code>setup_errors.log</code> to just see the errors (or stderr output from the scripts).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Use a FQDN (fully qualified domain name) as hostname and refrain from using 127.0.0.1 as IP address</p>
+</div>
+<h3 id="252-script-command-line-options">2.5.2 Script Command Line Options<a class="headerlink" href="#252-script-command-line-options" title="Permanent link">#</a></h3>
+<p>The <code>setup.py</code> script can be used to configure your Gluu Server and to add initial data
+for oxAuth and oxTrust to start. If <code>setup.properties</code> is found
+in this folder, these properties will automatically be used instead of
+the interactive setup.</p>
+<p>The administrator can use the following command line options to include additional components:</p>
+<ul>
+<li><strong>-a</strong> install Asimba</li>
+<li><strong>-c</strong> install CAS</li>
+<li><strong>-d</strong> specify the directory where community-edition-setup is located. Defaults to '.'</li>
+<li><strong>-f</strong> specify <code>setup.properties</code> file</li>
+<li><strong>-h</strong> invoke this help</li>
+<li><strong>-l</strong> install LDAP</li>
+<li><strong>-n</strong> no interactive prompt before install starts. Run with <code>-f</code></li>
+<li><strong>-N</strong> no Apache httpd server</li>
+<li><strong>-s</strong> install the Shibboleth IDP</li>
+<li><strong>-u</strong> update hosts file with IP address/hostname</li>
+<li><strong>-w</strong> get the development head war files</li>
+</ul>
+<p>Example Command: <code># ./setup.py -cas</code> This command will install Gluu Server with CAS, Asimba and Shibboleth IDP.</p>
+          <aside class="copyright" role="note">
+           Built with 
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a> using
+            <a href="http://gitlab.testbird.io:8099/frontend/testbird-mkdocs-theme.git" target="_blank">
+              testBird-mkdocs-theme
+            </a> <br>
+            
+            Copyright &copy; 2016, Gluu, Inc.
+            
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../install/" title="Install Gluu Server">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                Install Gluu Server
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../cluster/" title="Cluster with CE">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                Cluster with CE
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../..';
+      var repo_id  = '';
+    </script>
+    <script src="../../assets/javascripts/application-ce3999cf34.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+  </body>
+</html>

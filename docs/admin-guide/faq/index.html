@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Troubleshooting & FAQ - Gluu Docs</title>
+      
+<link href="../../assets/stylesheets/font.css" rel="stylesheet">
+      
+      
+      
+    
+    <meta property="og:url" content="None">
+    <meta property="og:title" content="Gluu Docs">
+    <meta property="og:image" content="None/../../gluu.jpg">
+    <meta name="apple-mobile-web-app-title" content="Gluu Docs">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+      <link rel="apple-touch-icon" href="../../gluu.jpg">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/favicon-60feabe0e5.ico">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon-60feabe0e5.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../assets/fonts/icon.eot?52m981');
+      	src: url('../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../assets/stylesheets/application-f58e216493.css">
+    
+    <link rel="stylesheet" href="../../assets/stylesheets/zenburn-28d5b94970.css">
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto Sans:400,700|Source+Code+Pro">
+      <style>
+        body, input {
+          font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Source Code Pro', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+    <script src="../../assets/javascripts/modernizr-4a5cc7e01e.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class=" ">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                Administration Guide <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        Troubleshooting & FAQ
+      </div>
+    </div>
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" placeholder="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+
+  
+  <a href="https://github.com/GluuFederation/docs" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../../gluu.jpg">
+        </div>
+      
+      <div class="name">
+        <strong>Gluu Docs</strong><br>
+        version: 3.0.0
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      <ul class="repo">
+        
+        <li class="home">
+          <a href="/" title="Home">
+            <div class="home-image">
+            <i class="fa fa-home"></i> Doc Home</div>
+          </a>
+        </li>
+        
+        
+        
+        <li class="repo-download">
+          
+          <a href="https://github.com/GluuFederation/docs/archive/3.0.0.zip" target="_blank" title="Download" data-action="download">
+            <i class="icon icon-download"></i> Download
+          </a>
+        </li>
+        
+      </ul>
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Home" href="../..">
+      Home
+    </a>
+    
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Installation Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Preparing VM" href="../../installation-guide/">
+      Preparing VM
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Install Gluu Server" href="../../installation-guide/install/">
+      Install Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Setup Script Options" href="../../installation-guide/setup_py/">
+      Setup Script Options
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Cluster with CE" href="../../installation-guide/cluster/">
+      Cluster with CE
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Upgrade/Patch Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Upgrade Gluu Server" href="../../upgrade/">
+      Upgrade Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Patch Gluu Server" href="../../upgrade/update/">
+      Patch Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Administration Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="oxTrust Admin Interface" href="../">
+      oxTrust Admin Interface
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Log Management" href="../logmanagment/">
+      Log Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="UMA in Gluu Server" href="../uma/">
+      UMA in Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Attribute Management" href="../attribute/">
+      Attribute Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="SCIM protected by UMA" href="../scim-uma/">
+      SCIM protected by UMA
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="SCIM API Configuration" href="../scim/">
+      SCIM API Configuration
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Backup Gluu Server CE" href="../backup/">
+      Backup Gluu Server CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Custom Script in Gluu CE" href="../custom-script/">
+      Custom Script in Gluu CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Certificate Management" href="../certificate/">
+      Certificate Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Fine Tuning Gluu Server" href="../fine-tuning/">
+      Fine Tuning Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="current" title="Troubleshooting & FAQ" href="./">
+      Troubleshooting & FAQ
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="How to change the hostname/IP address/listening port of Gluu Server" href="#how-to-change-the-hostnameip-addresslistening-port-of-gluu-server">
+                <b>How to change the hostname/IP address/listening port of Gluu Server</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="How to set the port to something other than 443" href="#how-to-set-the-port-to-something-other-than-443">
+                <b>How to set the port to something other than 443</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="How to customize IDP to ask for Email instead of username" href="#how-to-customize-idp-to-ask-for-email-instead-of-username">
+                <b>How to customize IDP to ask for Email instead of username</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="How to add additional roles to oxTrust and change permissions for existing ones" href="#how-to-add-additional-roles-to-oxtrust-and-change-permissions-for-existing-ones">
+                <b>How to add additional roles to oxTrust and change permissions for existing ones</b>
+              </a>
+            </li>
+            
+          
+        </ul>
+      
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <div class="toc">
+<ul>
+<li><a href="#general-faq">General FAQ</a><ul>
+<li><a href="#how-to-change-the-hostnameip-addresslistening-port-of-gluu-server">How to change the hostname/IP address/listening port of Gluu Server</a></li>
+<li><a href="#how-to-set-the-port-to-something-other-than-443">How to set the port to something other than 443</a></li>
+<li><a href="#how-to-customize-idp-to-ask-for-email-instead-of-username">How to customize IDP to ask for Email instead of username</a></li>
+<li><a href="#how-to-add-additional-roles-to-oxtrust-and-change-permissions-for-existing-ones">How to add additional roles to oxTrust and change permissions for existing ones</a></li>
+</ul>
+</li>
+<li><a href="#troubleshooting-guide">Troubleshooting Guide</a><ul>
+<li><a href="#dns-names-not-resolving">DNS names not resolving</a></li>
+<li><a href="#dns-names-not-resolving_1">DNS names not resolving!</a></li>
+<li><a href="#forgot-the-admin-password">Forgot the admin password!</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="general-faq">General FAQ<a class="headerlink" href="#general-faq" title="Permanent link">#</a></h1>
+<h2 id="how-to-change-the-hostnameip-addresslistening-port-of-gluu-server">How to change the hostname/IP address/listening port of Gluu Server<a class="headerlink" href="#how-to-change-the-hostnameip-addresslistening-port-of-gluu-server" title="Permanent link">#</a></h2>
+<p>It is not recommended to change the hostname or IP address or the listening port of any installed Gluu Server instance. The hostname and the IP address is used in many settings stored in LDAP configuration entries, Apache/Jetty configuration and into the custom authentication script. It is strongly recommended to use a fresh install in a new VM. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please use static IP address with reverse proxy or load balancer or simple port forwarding.</p>
+</div>
+<h2 id="how-to-set-the-port-to-something-other-than-443">How to set the port to something other than 443<a class="headerlink" href="#how-to-set-the-port-to-something-other-than-443" title="Permanent link">#</a></h2>
+<p>Ports other than 443 are not supported as the port is used by Apache Web Server. In theory, the change must reflect in the SAML and OpenID Connect metadata and still there might be errors.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please use a virtual ethernet interface and a different IP address on your server</p>
+</div>
+<h2 id="how-to-customize-idp-to-ask-for-email-instead-of-username">How to customize IDP to ask for Email instead of username<a class="headerlink" href="#how-to-customize-idp-to-ask-for-email-instead-of-username" title="Permanent link">#</a></h2>
+<p>In oxTrust navigate to the Manage Authentication tab within the Configuration section. By default the Primary Key and Local Key are set to <code>uid</code>. Set those va    lues to <code>mail</code> and now your Gluu Server will expect email as the identifier instead of username.</p>
+<p><img alt="change2mail" src="../../img/admin-guide/faq/change2mail.png" /></p>
+<p>Now you will want to update your IDP login page to display <code>Email Address</code> as the requested identifier. In order to do that you need to modify the <code>login.xhtm    l</code> file, which is located in <code>/opt/tomcat/webapps/oxauth/</code>. Insert <code>Email Address</code> as the value for <code>outputLabel</code>; this snippet is under the <code>dialog</code> class. S    ee the screenshot below.</p>
+<p><img alt="update-login" src="../../img/admin-guide/faq/update-login.png" /></p>
+<h2 id="how-to-add-additional-roles-to-oxtrust-and-change-permissions-for-existing-ones">How to add additional roles to oxTrust and change permissions for existing ones<a class="headerlink" href="#how-to-add-additional-roles-to-oxtrust-and-change-permissions-for-existing-ones" title="Permanent link">#</a></h2>
+<p>The additional role requires the implementation of dynamic rules in Jboss SEAM and then uitlize them in oxTrust as the available <em>manager</em> and <em>user</em> roles are defined within the <code>securit.drl</code> hard-coded into oxTrust. The file checks for the <em>maanger</em> group membership and adds the role to the web context. This is currently out of the scope of support. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>oxTrust is a tool for administrators and it must nto be used as a user facing application.</p>
+</div>
+<h1 id="troubleshooting-guide">Troubleshooting Guide<a class="headerlink" href="#troubleshooting-guide" title="Permanent link">#</a></h1>
+<h2 id="dns-names-not-resolving">DNS names not resolving<a class="headerlink" href="#dns-names-not-resolving" title="Permanent link">#</a></h2>
+<p>It is possible that even after configuring everything there is a <code>DNS</code> resolve error in Gluu Server.
+The reason is the <code>DNS</code> used inside the chroot container; the <code>dns</code> used by the container is the Google DNS servers 
+and the <code>DNS</code> for the host OS is not used. Therefore to fix this issue:</p>
+<ul>
+<li>Change the DNS inside the container by editing the <code>/etc/resolv.conf</code> file and adding the DNS used by your organization</li>
+</ul>
+<h2 id="dns-names-not-resolving_1">DNS names not resolving!<a class="headerlink" href="#dns-names-not-resolving_1" title="Permanent link">#</a></h2>
+<p>It is possible that even after configuring everything there is a <code>DNS</code> resolve error in Gluu Server.
+The reason is the <code>DNS</code> used inside the chroot container; the <code>dns</code> used by the container is the Google DNS servers 
+and the <code>DNS</code> for the host OS is not used. Therefore to fix this issue:</p>
+<ul>
+<li>Change the DNS inside the container by editing the <code>/etc/resolv.conf</code> file and adding the DNS used by your organization</li>
+</ul>
+<h2 id="forgot-the-admin-password">Forgot the admin password!<a class="headerlink" href="#forgot-the-admin-password" title="Permanent link">#</a></h2>
+<p>Gluu Server stores the admin password in the file <code>/install/community-edition-setup/setup.properties.last</code> under the
+property <code>ldapPass</code>. Retrieve the data using the following command:</p>
+<pre><code># grep ldapPass= /install/community-edition-setup/*.last
+</code></pre>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is strongly recommended to remove the file from any production environment or encrypt the file</p>
+</div>
+          <aside class="copyright" role="note">
+           Built with 
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a> using
+            <a href="http://gitlab.testbird.io:8099/frontend/testbird-mkdocs-theme.git" target="_blank">
+              testBird-mkdocs-theme
+            </a> <br>
+            
+            Copyright &copy; 2016, Gluu, Inc.
+            
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../fine-tuning/" title="Fine Tuning Gluu Server">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                Fine Tuning Gluu Server
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../..';
+      var repo_id  = '';
+    </script>
+    <script src="../../assets/javascripts/application-ce3999cf34.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+  </body>
+</html>
