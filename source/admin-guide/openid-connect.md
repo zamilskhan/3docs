@@ -67,7 +67,7 @@ Content-Type: application/jrd+json
 
 Using the Issuer location discovered, the OpenID Provider's configuration information can be retrieved.
 
-The RP makes the following request to the Issuer https://<domain>/.well-known/openid-configuration to obtain its
+The RP makes the following request to the Issuer `https://<domain>/.well-known/openid-configuration` to obtain its
 Configuration information:
 
 ```
