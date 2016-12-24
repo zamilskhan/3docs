@@ -249,8 +249,13 @@
       
         
   <li>
+<<<<<<< HEAD:docs/admin-guide/openid/index.html
     <a class="" title="Administrating Gluu oxTrust UI" href="../">
       Administrating Gluu oxTrust UI
+=======
+    <a class="" title="Gluu Server UI" href="../">
+      Gluu Server UI
+>>>>>>> 161b5dc7faa3ba94045c37badf83d2dcfd5ed474:docs/admin-guide/openid-connect/index.html
     </a>
     
   </li>
@@ -267,8 +272,8 @@
       
         
   <li>
-    <a class="" title="Authntication Managment" href="../auth-management/">
-      Authntication Managment
+    <a class="" title="Authentication Management" href="../auth-management/">
+      Authentication Management
     </a>
     
   </li>
@@ -276,8 +281,8 @@
       
         
   <li>
-    <a class="" title="Configuring Multi Factor Authentication" href="../multi-factor-auth/">
-      Configuring Multi Factor Authentication
+    <a class="" title="Configuring Multi-Factor Authentication" href="../multi-factor-auth/">
+      Configuring Multi-Factor Authentication
     </a>
     
   </li>
@@ -294,7 +299,7 @@
       
         
   <li>
-    <a class="" title="Log Management" href="../logmanagment/">
+    <a class="" title="Log Management" href="../logs/">
       Log Management
     </a>
     
@@ -337,62 +342,6 @@
       
         
       
-      
-        <ul>
-          
-            <li class="anchor">
-              <a title="Jargon (taxonomy)" href="#jargon-taxonomy">
-                <b>Jargon (taxonomy)</b>
-              </a>
-            </li>
-            
-          
-            <li class="anchor">
-              <a title="Discovery" href="#discovery">
-                <b>Discovery</b>
-              </a>
-            </li>
-            
-              <li class="anchor">
-              <a title="Algorithm" href="#algorithm">
-                  <font size=2><i>Algorithm</i></font>
-              </a>
-            </li>
-             
-          
-            <li class="anchor">
-              <a title="Session management" href="#session-management">
-                <b>Session management</b>
-              </a>
-            </li>
-            
-          
-            <li class="anchor">
-              <a title="Testing with oxAuth RP" href="#testing-with-oxauth-rp">
-                <b>Testing with oxAuth RP</b>
-              </a>
-            </li>
-            
-              <li class="anchor">
-              <a title="Authorization Endpoint" href="#authorization-endpoint">
-                  <font size=2><i>Authorization Endpoint</i></font>
-              </a>
-            </li>
-             
-              <li class="anchor">
-              <a title="UserInfo Endpoint" href="#userinfo-endpoint">
-                  <font size=2><i>UserInfo Endpoint</i></font>
-              </a>
-            </li>
-             
-              <li class="anchor">
-              <a title="OpenID Connect Session Management" href="#openid-connect-session-management">
-                  <font size=2><i>OpenID Connect Session Management</i></font>
-              </a>
-            </li>
-             
-          
-        </ul>
       
     
   </li>
@@ -520,6 +469,7 @@
       <article class="article">
         <div class="wrapper">
           
+<<<<<<< HEAD:docs/admin-guide/openid/index.html
           <h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h1>
 <p><a href="http://openid.net/connect">OpenID Connect</a> ("Connect") is a standard
 profile of OAuth2 which defines a protocol to enable a website or mobile
@@ -539,18 +489,77 @@ Connect, but the jargon (or "taxonomy") is different. For example,
 instead of attributes, we have "user claims". Instead of Service
 Provider (SP), we have "client". Instead of Identity Provider (IdP), it
 is an OpenID Provider (OP).</p>
+=======
+          <div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#jargon">Jargon</a></li>
+<li><a href="#openid-connect-support-in-the-gluu-server">OpenID Connect Support in the Gluu Server</a><ul>
+<li><a href="#openid-connect-authorization-code-flow">OpenID Connect Authorization Code Flow</a></li>
+<li><a href="#openid-connect-implicit-flow">OpenID Connect Implicit Flow</a></li>
+<li><a href="#discovery">Discovery</a><ul>
+<li><a href="#sample-discovery-request">Sample Discovery Request</a></li>
+<li><a href="#algorithm">Algorithm</a></li>
+</ul>
+</li>
+<li><a href="#openid-connect-relying-party-registration">OpenID Connect Relying Party Registration</a></li>
+<li><a href="#session-management">Session management</a></li>
+<li><a href="#testing-with-oxauth-rp">Testing with oxAuth RP</a><ul>
+<li><a href="#authorization-endpoint">Authorization Endpoint</a><ul>
+<li><a href="#request-authorization-and-receive-the-authorization-code-and-id-token">Request Authorization and receive the Authorization Code and ID Token</a></li>
+<li><a href="#request-access-token-using-the-authorization-code">Request Access Token using the Authorization Code</a></li>
+<li><a href="#request-new-access-token-using-the-refresh-token">Request new Access Token using the Refresh Token</a></li>
+</ul>
+</li>
+<li><a href="#userinfo-endpoint">UserInfo Endpoint</a></li>
+<li><a href="#openid-connect-session-management">OpenID Connect Session Management</a><ul>
+<li><a href="#end-session-endpoint">End Session Endpoint</a></li>
+<li><a href="#check-session-iframe">Check Session iFrame</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h1>
+<p>OpenID Connect is an authentication layer built on OAuth 2.0. OpenID Connect is a specific implementation of OAuth 2.0 where the identity provider holds protected resources that a third-party application needs to access on behalf of a person. OpenID Connect allows relying parties to verify the identity of, and obtain information about a person requesting to access the applications protected resources. </p>
+<h1 id="jargon">Jargon<a class="headerlink" href="#jargon" title="Permanent link">#</a></h1>
+<p>In OpenID Connect the key entities include:</p>
+<ul>
+<li>The <em>end user</em> (a.k.a. OAuth 2.0 resource owner) whose user information the application needs to access.</li>
+</ul>
+<p>The end user wants to login to an application using an existing account at an OpenID Connect identity provider (OP).</p>
+<ul>
+<li>The <em>Relying Party (RP)</em> (a.k.a. OAuth 2.0 client) needs access to the end user's protected user information.</li>
+</ul>
+<p>For example, an online chat application needs to know who is accessing the application in order to present the correct user account and contacts. </p>
+<ul>
+<li>The <em>OpenID Provider (OP)</em> (a.k.a. OAuth 2.0 authorization server and also resource server) that holds the user information and grants access.</li>
+</ul>
+<p>The Gluu Server is an OpenID Provider. The OP holds information about the user and allows the end user or the organization (depending on configuration) to consent to providing the RP with access to user information. OpenID Connect defines a unique identification for an account (subject identifier + issuer identifier), and the RP can use this as a key to its own user profile. </p>
+<p>The relying party can verify claims about the identity of the end user, and log the user out at the end of a session. OpenID Connect also makes it possible to discover the OpenID Provider for an end user, and to register relying party client applications dynamically. OpenID connect services are built on OAuth 2.0, JSON Web Token (JWT), WebFinger and Well-Known URIs.</p>
+<h1 id="openid-connect-support-in-the-gluu-server">OpenID Connect Support in the Gluu Server<a class="headerlink" href="#openid-connect-support-in-the-gluu-server" title="Permanent link">#</a></h1>
+<p>The Gluu Server is a <a href="http://openid.net/certification/">fully certified OpenID Connect Provider (OP)</a>. As an OpenID Provider, the Gluu Server enables OpenID Connect relying parties (clients) to discover its capabilities, handle both dynamic and static registration of relying parties, respond to relying party requests with authorization codes, access tokens, and user information according to the Authorization Code and Implicit flows of OpenID Connect, and manages sessions.</p>
+<h2 id="openid-connect-authorization-code-flow">OpenID Connect Authorization Code Flow<a class="headerlink" href="#openid-connect-authorization-code-flow" title="Permanent link">#</a></h2>
+<p>The OpenID Connect Authorization Code Flow specifies how the relying party interacts with the OpenID Provider based on use of the OAuth 2.0 authorization grant. </p>
+<h2 id="openid-connect-implicit-flow">OpenID Connect Implicit Flow<a class="headerlink" href="#openid-connect-implicit-flow" title="Permanent link">#</a></h2>
+<p>The OpenID Connect Implicit Flow specifies how the relying party interacts with the OpenID Provider based on use of the OAuth 2.0 implicit grant. </p>
+>>>>>>> 161b5dc7faa3ba94045c37badf83d2dcfd5ed474:docs/admin-guide/openid-connect/index.html
 <h2 id="discovery">Discovery<a class="headerlink" href="#discovery" title="Permanent link">#</a></h2>
-<p>The first thing you want to know about any OAuth2 API is where are the
-endpoints (i.e. what are the uris where you call the APIs).
+<p>The first thing you want to know about any OAuth 2.0 API is where the
+endpoints are (i.e. what are the URIs where you call the APIs).
 OpenID Connect provides a very simple mechanism to accomplish this: 
 <a href="http://openid.net/specs/openid-connect-discovery-1_0.html">OpenID Connect Discovery</a>.</p>
 <p>In order for an OpenID Connect Relying Party to utilize OpenID Connect
 services for an End-User, the RP needs to know where the OpenID Provider is.
-OpenID Connect uses WebFinger <a href="http://en.wikipedia.org/wiki/WebFinger">WebFinger</a>
+OpenID Connect uses <a href="http://en.wikipedia.org/wiki/WebFinger">WebFinger</a>
 to locate the OpenID Provider for an End-User.</p>
 <p>Once the OpenID Provider has been identified, the configuration information
 for the OP is retrieved from a well-known location as a JSON document,
 including its OAuth 2.0 endpoint locations.</p>
+<h3 id="sample-discovery-request">Sample Discovery Request<a class="headerlink" href="#sample-discovery-request" title="Permanent link">#</a></h3>
 <p>If you want to try a discovery request, you can make the following
 WebFinger request to discover the Issuer location:</p>
 <pre><code>GET /.well-known/webfinger?resource=https%3A%2F%2Fidp.gluu.org&amp;rel=http%3A%2F%2Fopenid.net%2Fspecs%2Fconnect%2F1.0%2Fissuer HTTP/1.1
@@ -569,7 +578,7 @@ Content-Type: application/jrd+json
 </code></pre>
 
 <p>Using the Issuer location discovered, the OpenID Provider's configuration information can be retrieved.</p>
-<p>The RP makes the following request to the Issuer https://<domain>/.well-known/openid-configuration to obtain its
+<p>The RP makes the following request to the Issuer <code>https://&lt;domain&gt;/.well-known/openid-configuration</code> to obtain its
 Configuration information:</p>
 <pre><code>GET /.well-known/openid-configuration HTTP/1.1
 Host: idp.gluu.org
@@ -785,9 +794,12 @@ supports other algorithms that are listed below.</p>
 <p><em>Available Signature Algorithms:</em> none, HS256, HS384, HS512, RS256, RS384, RS512, ES256, ES384, ES512.</p>
 <p><em>Encryption, Key Encryption Algorithms:</em> RSA1_5, RSA-OAEP, A128KW, A256KW.</p>
 <p><em>Block Encryption Algorithms:</em> A128CBC+HS256, A256CBC+HS612, A128GCM, A256GCM,</p>
+<h2 id="openid-connect-relying-party-registration">OpenID Connect Relying Party Registration<a class="headerlink" href="#openid-connect-relying-party-registration" title="Permanent link">#</a></h2>
+<p>Relying parties can register with the Gluu Server both statically, by the Gluu Server admin, and dynamically, as specified by OpenID Connect Discovery. To allow dynamic registration, you register an initial OAuth 2.0 client that other relying parties can use to get access tokens for registration. You can also enable OpenID Connect relying parties to register dynamically without having to provide an access token. If dynamic registration is enabled, make sure to limit or throttle registrations as it could be used as a form of DDOS.</p>
 <h2 id="session-management">Session management<a class="headerlink" href="#session-management" title="Permanent link">#</a></h2>
-<p>Logout is a catch-22. There is no perfect answer to logout that
-satisfies all the requirements of all the domains on the Internet. For
+<p>OpenID Connect lets the relying party track whether the end user is logged in at the provider, and also initiate end user logout at the provider. The specification has the relying party monitor session state using an invisible iframe and communicate status using the HTML 5 postMessage API.</p>
+<p>However, be forewarned that there is no perfect answer to logout that
+satisfies all requirements for all domains on the Internet. For
 example, large OpenID Providers, like Google, need a totally stateless
 implementation--Google cannot track sessions on the server side for
 every browser on the Internet. But in smaller domains, server side
@@ -805,8 +817,8 @@ Connect logout API would return <code>IMG</code> HTML tags to the browser with t
 logout callbacks of the clients. This way, the browser could call the
 logout uris (not the server).</p>
 <p>The Gluu Server is very flexible, and supports both server side session
-management, and stateless session management. For server side business
-logout, the domain admin can use Custom Logout scripts. This can be
+management, and stateless session management. For server side
+logout, the domain admin can use <a href="../custom-script/#application-session-management">Custom Logout scripts</a>. This can be
 useful to clean up sessions in a legacy SSO system (i.e. SiteMinder), or
 perhaps in a portal.</p>
 <p>The key for logout is to understand the limitations of logout, and to

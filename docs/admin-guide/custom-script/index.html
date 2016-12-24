@@ -249,8 +249,13 @@
       
         
   <li>
+<<<<<<< HEAD
     <a class="" title="Administrating Gluu oxTrust UI" href="../">
       Administrating Gluu oxTrust UI
+=======
+    <a class="" title="Gluu Server UI" href="../">
+      Gluu Server UI
+>>>>>>> 161b5dc7faa3ba94045c37badf83d2dcfd5ed474
     </a>
     
   </li>
@@ -267,8 +272,8 @@
       
         
   <li>
-    <a class="" title="Authntication Managment" href="../auth-management/">
-      Authntication Managment
+    <a class="" title="Authentication Management" href="../auth-management/">
+      Authentication Management
     </a>
     
   </li>
@@ -276,8 +281,8 @@
       
         
   <li>
-    <a class="" title="Configuring Multi Factor Authentication" href="../multi-factor-auth/">
-      Configuring Multi Factor Authentication
+    <a class="" title="Configuring Multi-Factor Authentication" href="../multi-factor-auth/">
+      Configuring Multi-Factor Authentication
     </a>
     
   </li>
@@ -294,7 +299,7 @@
       
         
   <li>
-    <a class="" title="Log Management" href="../logmanagment/">
+    <a class="" title="Log Management" href="../logs/">
       Log Management
     </a>
     
@@ -330,7 +335,7 @@
       
         
   <li>
-    <a class="" title="OpenID Connect" href="../openid/">
+    <a class="" title="OpenID Connect" href="../openid-connect/">
       OpenID Connect
     </a>
     
@@ -435,6 +440,20 @@
             </li>
             
           
+            <li class="anchor">
+              <a title="Person Authentication" href="#person-authentication">
+                <b>Person Authentication</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="Certificate Authentication" href="#certificate-authentication">
+                <b>Certificate Authentication</b>
+              </a>
+            </li>
+            
+          
         </ul>
       
     
@@ -482,7 +501,30 @@
       <article class="article">
         <div class="wrapper">
           
+<<<<<<< HEAD
           <h1 id="custom-script-interception-script">Custom Script / Interception Script<a class="headerlink" href="#custom-script-interception-script" title="Permanent link">#</a></h1>
+=======
+          <div class="toc">
+<ul>
+<li><a href="#custom-script-interception-script">Custom Script / Interception Script</a><ul>
+<li><a href="#interception-script-methods">Interception Script Methods</a></li>
+<li><a href="#interception-script-logs">Interception Script Logs</a></li>
+<li><a href="#person-authentication">Person Authentication</a></li>
+<li><a href="#certificate-authentication">Certificate Authentication</a></li>
+</ul>
+</li>
+<li><a href="#update-user">Update User</a></li>
+<li><a href="#user-registration">User Registration</a></li>
+<li><a href="#client-registration">Client Registration</a></li>
+<li><a href="#dynamic-scopes">Dynamic Scopes</a></li>
+<li><a href="#id-generator">ID Generator</a></li>
+<li><a href="#cache-refresh">Cache Refresh</a></li>
+<li><a href="#uma-authorization-policies">UMA Authorization Policies</a></li>
+<li><a href="#application-session-management">Application Session Management</a></li>
+</ul>
+</div>
+<h1 id="custom-script-interception-script">Custom Script / Interception Script<a class="headerlink" href="#custom-script-interception-script" title="Permanent link">#</a></h1>
+>>>>>>> 161b5dc7faa3ba94045c37badf83d2dcfd5ed474
 <p>Gluu Server is very flexible by design enabling the use of <a href="http://www.jython.org/docs/tutorial/indexprogress.html">Jython</a> interception scripts to customize behaviour. Jython was chosen because an interpreted language facilitates dynamic creation of business logic, and makes it easier to distribute this logic to a cluster of Gluu servers. Another advantage of Jython was that developers can use either Java or Python classes. Combined with the option of calling web services from Python or Java, this enables the Gluu Server to support any business-driven policy requirement.</p>
 <p>Custom Scripts can be accessed by navigating to Configuration 
 and selecting the <code>Manage Custom Scritps</code> tab.</p>
@@ -542,7 +584,7 @@ affect. The oxAuth custom script logs are stored in <code>oxauth_script.log</cod
 and the oxTrust custom script logs are stored in the
 <code>oxtrust_script.log</code>. Please refer to these log files for any errors in
 the interception scripts or following the workflow of the script.</p>
-<h1 id="person-authentication">Person Authentication<a class="headerlink" href="#person-authentication" title="Permanent link">#</a></h1>
+<h2 id="person-authentication">Person Authentication<a class="headerlink" href="#person-authentication" title="Permanent link">#</a></h2>
 <p><strong>For a list of pre-written, open source Gluu authentication scripts, view our <a href="https://github.com/GluuFederation/oxAuth/tree/master/Server/integrations">server integrations</a></strong></p>
 <p>An authentication script enables you to customize the user
 authentication experience. For example, you can write a script that
@@ -699,6 +741,301 @@ following methods:</p>
 <p>This script can be used in oxAuth application only.</p>
 <ul>
 <li><a href="../sample-authentication-script.py">Sample Authentication Script</a></li>
+</ul>
+<h2 id="certificate-authentication">Certificate Authentication<a class="headerlink" href="#certificate-authentication" title="Permanent link">#</a></h2>
+<p>Gluu Server CE offers a person authentication module enabling Certificate Authentication.
+The image below contains the design diagram for this module.</p>
+<p><img alt="image" src="../../img/custom-script/cert-design.jpg" /></p>
+<p>The script has a few properties:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Allowed Values</th>
+<th>example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chain_cert_file_path</td>
+<td>mandatory property pointing to certificate chains in <a href="https://en.wikipedia.org/wiki/Privacy-enhanced_Electronic_Mail" title="Privacy-enhanced Electronic Mail">pem</a> format</td>
+<td>file path</td>
+<td>/etc/certs/chain_cert.pem</td>
+</tr>
+<tr>
+<td>map_user_cert</td>
+<td>specifies if the script should map new user to local account</td>
+<td>true/false</td>
+<td>true</td>
+</tr>
+<tr>
+<td>use_generic_validator</td>
+<td>enable/disable specific certificate validation</td>
+<td>true/false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>use_path_validator</td>
+<td>enable/disable specific certificate validation</td>
+<td>true/false</td>
+<td>true</td>
+</tr>
+<tr>
+<td>use_oscp_validator</td>
+<td>enable/disable specific certificate validation</td>
+<td>true/false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>use_crl_validator</td>
+<td>enable/disable specific certificate validation</td>
+<td>true/false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>crl_max_response_size</td>
+<td>specifies the maximum allowed size of [CRL][crl] response</td>
+<td>Integer &gt; 0</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a href="../UserCertExternalAuthenticator.py">Sample Certificate Authentication Script</a></li>
+</ul>
+<h1 id="update-user">Update User<a class="headerlink" href="#update-user" title="Permanent link">#</a></h1>
+<p>oxTrust allows an admin to add and modify users which belong to groups.
+In order to simplify this process and apply repeating actions, oxTrust
+supports an Update User script. In this script it is possible to modify
+a person entry before it is stored in LDAP.</p>
+<p>This script type adds only one method to the base script type:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>def updateUser(self, user, persisted, configurationAttributes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Description</strong></td>
+<td>This method updates the user</td>
+</tr>
+<tr>
+<td>Method Parameter</td>
+<td><code>user</code> is <code>org.gluu.oxtrust.model.GluuCustomPerson</code><br/>persisted is a boolean value to specify the operation type: add/modify<br/><code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>This script can be used in an oxTrust application only.</p>
+<ul>
+<li><a href="../sample-update-user-script.py">Sample Update User Script</a></li>
+</ul>
+<h1 id="user-registration">User Registration<a class="headerlink" href="#user-registration" title="Permanent link">#</a></h1>
+<p>oxTrust allows users to perform self-registration. In order to
+control/validate user registrations there is the user registration
+script type.</p>
+<p>This script type adds three methods to the base script type:</p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>def initRegistration(self, user, requestParameters, configurationAttributes)<br/>def preRegistration(self, user, requestParameters, configurationAttributes)<br/>def postRegistration(self, user, requestParameters, configurationAttributes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Description</strong></td>
+<td>This method enables/disables user account based on the custom property's value</td>
+</tr>
+<tr>
+<td>Method Parameters</td>
+<td><code>user</code> is <code>org.gluu.oxtrust.model.GluuCustomPerson</code><br/><code>requestParameters</code> is <code>java.util.Map&lt;String, String[]&gt;</code><br/><code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code></td>
+</tr>
+<tr>
+<td>Custom Property</td>
+<td><code>enable_user</code>--&gt; defaults to <code>false</code></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>It controls whether or not this user account will be ready for loggin into the Gluu Server CE instance</td>
+</tr>
+</tbody>
+</table>
+<p>The methods are executed in the following order:</p>
+<table>
+<thead>
+<tr>
+<th>Order</th>
+<th>Method</th>
+<th>Expected Return</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First</td>
+<td>initRegistration()</td>
+<td>True/False</td>
+</tr>
+<tr>
+<td>Second</td>
+<td>preRegistration()</td>
+<td>True/False</td>
+</tr>
+<tr>
+<td>Third</td>
+<td>postRegistration()</td>
+<td>True/False</td>
+</tr>
+</tbody>
+</table>
+<p>First oxTrust executes the <code>initRegistration</code> method to do an initial
+user entry update. The <code>preRegistration</code> method is called before storing
+the user entry in LDAP. Hence in this script it is possible to validate
+the user entry. The <code>postRegistration</code> method is called after
+successfully storing the user entry in LDAP. In this method, for
+example, the script can send an e-mail or send notifications to other
+organization systems about the new user entry.</p>
+<ul>
+<li><a href="../sample-user-registration-script.py">Sample User Registration Script</a></li>
+</ul>
+<h1 id="client-registration">Client Registration<a class="headerlink" href="#client-registration" title="Permanent link">#</a></h1>
+<p>oxAuth implements the <a href="https://openid.net/specs/openid-connect-registration-1_0.html">OpenID Connect dynamic client
+registration</a>
+specification. All new clients have the same default access scopes and
+attributes except password and client ID. The Client Registration script
+allows an admin to modify this limitation. In this script it is possible
+to get a registration request, analyze it, and apply customizations to
+registered clients. For example, a script can give access to specified
+scopes if <code>redirect_uri</code> belongs to a specified service or domain.</p>
+<p>This script type adds only one method to the base script type:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>def updateClient(self, registerRequest, client, configurationAttributes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Method Parameter</strong></td>
+<td><code>registerRequest</code> is <code>org.xdi.oxauth.client.RegisterRequest</code><br/><code>client</code> is <code>org.xdi.oxauth.model.registration.Client</code><br/><code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>This script can be used in an oxAuth application only.</p>
+<ul>
+<li><a href="../sample-client-registration-script.py">Sample Client Registration Script</a></li>
+</ul>
+<h1 id="dynamic-scopes">Dynamic Scopes<a class="headerlink" href="#dynamic-scopes" title="Permanent link">#</a></h1>
+<p>The dynamic scope custom script allows the parsing of token returned from <code>user_info endpoint</code> into 
+LDAP attributes. The <code>id_token</code> is returned from <code>user_info endpoint</code> and the values are dynamically placed 
+in the LDAP attributes in Gluu Server.</p>
+<ul>
+<li><a href="../sample-dynamic-script.py">Sample Dynamic Scope Script</a> </li>
+</ul>
+<h1 id="id-generator">ID Generator<a class="headerlink" href="#id-generator" title="Permanent link">#</a></h1>
+<p>By default oxAuth/oxTrust uses an internal method to generate unique
+identifiers for new person/client, etc. entries. In most cases the
+format of the ID is:</p>
+<p><code>'!' + idType.getInum() + '!' + four_random_HEX_characters + '.' + four_random_HEX_characters.</code></p>
+<p>The ID generation script enables an admin to implement custom ID
+generation rules.</p>
+<p>This script type adds only one method to the base script type:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>def generateId(self, appId, idType, idPrefix, configurationAttributes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Method Parameter</strong></td>
+<td><code>appId</code> is application ID<br/><code>idType</code> is ID Type<br/><code>idPrefix</code> is ID Prefix<br/><code>user</code> is <code>org.gluu.oxtrust.model.GluuCustomPerson</code><br/><code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>This script can be used in an oxTrust application only.</p>
+<ul>
+<li><a href="../sample-id-generation.py">Sample ID Generation Script</a></li>
+</ul>
+<h1 id="cache-refresh">Cache Refresh<a class="headerlink" href="#cache-refresh" title="Permanent link">#</a></h1>
+<p>In order to integrate an interception script with an existing
+authentication server oxTrust provides a mechanism called Cache
+Refresh to copy user data to the local LDAP server. During this process it is possible
+to specify key attribute(s) and specify attribute name transformations.
+There are also cases when it can be used to overwrite attribute values
+or to add new attributes based on other attribute values.</p>
+<p>This script type adds only one method to the base script type:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>def updateUser(self, user, configurationAttributes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Method Parameter</strong></td>
+<td><code>user</code> is <code>org.gluu.oxtrust.model.GluuCustomPerson</code><br/><code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>This script can be used in an oxTrust application only.</p>
+<ul>
+<li><a href="../sample-cache-refresh-script.py">Sample Cache Refresh Script</a></li>
+</ul>
+<h1 id="uma-authorization-policies">UMA Authorization Policies<a class="headerlink" href="#uma-authorization-policies" title="Permanent link">#</a></h1>
+<p>This is a special script for UMA. It allows an admin to protect UMA
+scopes with policies. It is possible to add more than one UMA policy to
+an UMA scope. On requesting access to a specified resource, the
+application should call specified UMA policies in order to grant or deny
+access.</p>
+<p>This script type adds only one method to the base script type:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>def authorize(self, authorizationContext, configurationAttributes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Method Parameter</strong></td>
+<td><code>authorizationContext</code> is <code>org.xdi.oxauth.service.uma.authorization.AuthorizationContext</code><br/><code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>This script can be used in an oxAuth application only.</p>
+<ul>
+<li><a href="../sample-uma-authorization-script.py">Sample Authorization Script</a></li>
+</ul>
+<h1 id="application-session-management">Application Session Management<a class="headerlink" href="#application-session-management" title="Permanent link">#</a></h1>
+<p>This script allows an admin to notify 3rd party systems about requests
+to end an OAuth session. This method is triggered by an oxAuth call to
+the <code>end_session</code> endpoint. It's possible to add multiple scripts with
+this type. The application should call all of them according to the
+level.</p>
+<p>This script type adds only one method to the base script type:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>def endSession(self, httpRequest, authorizationGrant, configurationAttributes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Method Parameter</strong></td>
+<td><code>httpRequest</code> is <code>javax.servlet.http.HttpServletRequest</code><br/><code>authorizationGrant</code> is <code>org.xdi.oxauth.model.common.AuthorizationGrant</code><br/><code>configurationAttributes</code> is <code>java.util.Map&lt;String, SimpleCustomProperty&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>This script can be used in an oxAuth application only.</p>
+<ul>
+<li><a href="../sample-application-session-script.py">Sample Application Session Management Script</a></li>
 </ul>
           <aside class="copyright" role="note">
            Built with 

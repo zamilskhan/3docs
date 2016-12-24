@@ -16,10 +16,11 @@ Install oxAuth OAuth2 Authorization Server? [Yes] :
 Install oxTrust Admin UI? [Yes] :
 Install Gluu OpenDJ LDAP Server? [Yes] :
 Install Apache HTTPD Server [Yes] :
-Install Shibboleth SAML IDP? [No] :
-Install Asimba SAML Proxy? [No] :
-Install CAS? [No] :
-Install oxAuth RP? [No] :
+Install Shibboleth SAML IDP? [Yes] :
+Install Asimba SAML Proxy? [Yes] :
+Install CAS? [Yes] :
+Install oxAuth RP? [Yes] :
+Install Passport? [Yes] :
 ```
 
 It is recommended to use `hostname.domain` structure for hostname and refrain from using `127.x.x.x` for IP address. 

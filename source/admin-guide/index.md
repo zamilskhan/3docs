@@ -2,34 +2,47 @@
 The administration interface (oxTrust) is accessible from the `hostname` provided in the prompt from the setup script. After the installation is complete, log in to the web-based interface with the username `admin` and the `LDAP superuser` password. 
 
 ## Welcome Page
-The administrator is taken to the welcome page if the username and the password is correct. Some basic information about the VM/server is displayed in the welcome screen. The version is displayed on top followed by free memory,disk space. The health of the VM/server can be easily determined from the welcome page. There is a photo icon on the right hand top side of the page which can be used to navigate to the user-profile and logging out of Gluu Server CE.
+Upon login the administrator is taken to the oxTrust dashboard where some basic information about the VM/server is displayed. The version is shown on top followed by free memory and disk space. The health of the VM/server can also be determined from the dashboard. There is a photo icon on the upper right side of the page which can be used to navigate to the user profile page and log out of the Gluu Server.
 ![welcome-page.png](../img/oxtrust/welcome-page.png "Welcome to Gluu Server")
 
-The menu on the left side of the welcome page is used to navigate the admin interface for Gluu Server. The menu has separate buttons for SAML, OpenID Connect and UMA. The user-management menu is found under `Users` and the user-profile is under `Personal`.
+The menu on the left side can be used to navigate the admin interface. The menu includes links to manage configuration, SAML, OpenID Connect, UMA, and users.
 
 ## Configuration
 ![configuration-menu](../img/oxtrust/configuration-menu.png "Organization Menu")
 
-The configuration tab contians the tools to configure Gluu Server CE. This section is dedicated to all tuning and tinkering except integration tools.
-The configuration menu is divided in to other sections which are revealed on click. The administrator can manage authentication, registration, attributes, cache-refresh,logs etc. from this menu.
+The configuration tab contians options to configure the Gluu Server. From this tab the administrator can manage authentication, registration, attributes, cache-refresh (LDAP synchronization), logs and more.
 
 ### Organization Configuration
-There are three sections in the organization configuration page which are [System Configuration](#system-configuration), [SMTP Server Configuration](#smtp-server-configuration) and [OxTrust Settings](#oxtrust-settings). These sections are detailed below with screenshots.
+There are three sections in the organization configuration page:  
+   
+- [System Configuration](#system-configuration)      
+- [SMTP Server Configuration](#smtp-server-configuration)       
+- [OxTrust Settings](#oxtrust-settings).       
+
+These sections are detailed below with screenshots.
 
 ![organization-config-head](../img/oxtrust/organization-config-head.png "Organization Configuration")
 
-**System Configuration**
-Gluu Server CE is shipped with a built-in `White Pages` feature which can be enabled from the system configuration page. This page also contains the options to enable `Self-Service Password Reset` which allows the Gluu Server users to reset their password via email. This options depends on the [SMTP Server Configuration](#smtp-server-configuration), also available under the organization configuration page. Additionally the `SCIM Support` can be enabled from the System Configuration page. If the organization uses any custom `DNS Server(s)`, the address should be updated from the System Configuration interface.
+#### System Configuration
 ![system-config-options](../img/oxtrust/system-config-options.png)
 
-**SMTP Server Configuration**
-The mail server used by the Gluu Server to send notification to the pre-selected email address is configured in this page/panel. All the fields in this page are manadory and the configuration can be tested before confirmation. The fields are self-explanatory and simple such as hostname, user, password, ssl-requirement, authentication requirement, sending name and address.
+- Self-Service Password Reset: the admin can enable or disable the ability for users to reset their own passwords via email. In order for password reset to work, the admin must fill out the appropriate details in the [SMTP Server Configuration](#smtp-server-configuration) tab.
+- SCIM Support: If your applications use SCIM for managing identities, this option should be enabled. 
+- DNS Server(s): If the organization uses a custom DNS the address should be updated in this field.
+- Maximum Log Size: Logs are generated for all services that were installed during Gluu Server deployment (e.g. Shibboleth, oxAuth, oxTrust, etc.). In this field you can set the maximum size (in mb) of the log file. We recommend keeping this under X mb.
+- User can edit profile: Enable this feature if you want to give people the ability to edit their own personal information in the Gluu Server. In most cases this option should be left disabled since oxTrut is typically not Internet facing, or the best place to have users interact with their information. For any reasonably large deployment, it is recommended to build a standalone profile app for users to self-service their information. 
+- Contact Email: Provide a good email for the Gluu Server admininstrator. This email will be presented on any error pages. 
+
+#### SMTP Server Configuration
 ![smtp-config](../img/oxtrust/smtp-config.png "SMTP Configuration")
 
-**OxTrust Settings**
-Some basic information abouht the administrator interface is available in this page. The administrator can find out the oxTrust build date and number by accessing the oxTrust settings page. The administrator can change the organization name, logo and favicon settings from this page as well. Finally oxTrust Settings page contains the name of the administrator group for Gluu Server. The users added in this group will have administrator access in Gluu Server where they will be able to maintain/configure the server.
+This tab allows you to add a mail server which can be used by the Gluu Server to send notifications like password reset emails. All fields in this page are manadory. The configuration can be tested before confirmation. The fields are self-explanatory and simple such as hostname, user, password, ssl-requirement, authentication requirement, sending name and address.
 
+
+#### OxTrust Settings
 ![oxtrust-settings](../img/oxtrust/oxtrust-settings.png "OxTrust Settings")
+
+The oxTrust Settings tab provides some basic information about the administration interface. The administrator can find the oxTrust build date and number, change the organization name, logo and favicon settings, as well as set the name of the administrator group for Gluu Server. Users added in the administrator group will have administrator access in Gluu Server where they will be able to view and manage all interfaces in oxTrust.
 
 ### JSON Configuration
 The configuration files are accessible from the administrator interface (oxTrust). There are three tabs under the `JSON Configuration` menu

@@ -249,8 +249,13 @@
       
         
   <li>
+<<<<<<< HEAD
     <a class="" title="Administrating Gluu oxTrust UI" href="../">
       Administrating Gluu oxTrust UI
+=======
+    <a class="" title="Gluu Server UI" href="../">
+      Gluu Server UI
+>>>>>>> 161b5dc7faa3ba94045c37badf83d2dcfd5ed474
     </a>
     
   </li>
@@ -267,8 +272,8 @@
       
         
   <li>
-    <a class="" title="Authntication Managment" href="../auth-management/">
-      Authntication Managment
+    <a class="" title="Authentication Management" href="../auth-management/">
+      Authentication Management
     </a>
     
   </li>
@@ -276,8 +281,8 @@
       
         
   <li>
-    <a class="" title="Configuring Multi Factor Authentication" href="../multi-factor-auth/">
-      Configuring Multi Factor Authentication
+    <a class="" title="Configuring Multi-Factor Authentication" href="../multi-factor-auth/">
+      Configuring Multi-Factor Authentication
     </a>
     
   </li>
@@ -294,7 +299,7 @@
       
         
   <li>
-    <a class="" title="Log Management" href="../logmanagment/">
+    <a class="" title="Log Management" href="../logs/">
       Log Management
     </a>
     
@@ -330,7 +335,7 @@
       
         
   <li>
-    <a class="" title="OpenID Connect" href="../openid/">
+    <a class="" title="OpenID Connect" href="../openid-connect/">
       OpenID Connect
     </a>
     
@@ -548,10 +553,41 @@
       <article class="article">
         <div class="wrapper">
           
+<<<<<<< HEAD
           <h1 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h1>
 <h2 id="general-faq">General FAQ<a class="headerlink" href="#general-faq" title="Permanent link">#</a></h2>
 <h3 id="logs">Logs<a class="headerlink" href="#logs" title="Permanent link">#</a></h3>
 <p>When it comes to troubleshooting issues in the Gluu Server--from service hiccups to outages--your <a href="../logmanagment/">server logs</a> are the best place to gather relevant information.</p>
+=======
+          <div class="toc">
+<ul>
+<li><a href="#faq">FAQ</a><ul>
+<li><a href="#general-faq">General FAQ</a><ul>
+<li><a href="#logs">Logs</a></li>
+<li><a href="#how-to-change-the-hostnameip-addresslistening-port-of-gluu-server">How to change the hostname/IP address/listening port of Gluu Server</a></li>
+<li><a href="#how-to-set-the-port-to-something-other-than-443">How to set the port to something other than 443</a></li>
+<li><a href="#how-to-customize-idp-to-ask-for-email-instead-of-username">How to customize IDP to ask for Email instead of username</a></li>
+<li><a href="#how-to-add-additional-roles-to-oxtrust-and-change-permissions-for-existing-ones">How to add additional roles to oxTrust and change permissions for existing ones</a></li>
+</ul>
+</li>
+<li><a href="#troubleshooting-guide">Troubleshooting Guide</a><ul>
+<li><a href="#add-admin-for-gluu-server">Add admin for Gluu server</a></li>
+<li><a href="#connectivity-issues">Connectivity Issues?</a></li>
+<li><a href="#dns-names-not-resolving">DNS names not resolving!</a></li>
+<li><a href="#forgot-the-admin-password">Forgot the admin password!</a></li>
+<li><a href="#revert-authentication-method">Revert Authentication Method</a></li>
+<li><a href="#no-admin-access-after-cache-refresh">No admin access after Cache Refresh?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h1>
+<h2 id="general-faq">General FAQ<a class="headerlink" href="#general-faq" title="Permanent link">#</a></h2>
+<h3 id="logs">Logs<a class="headerlink" href="#logs" title="Permanent link">#</a></h3>
+<p>When it comes to troubleshooting issues in the Gluu Server--from service hiccups to outages--your <a href="../logs/">server logs</a> are the best place to gather relevant information.</p>
+>>>>>>> 161b5dc7faa3ba94045c37badf83d2dcfd5ed474
 <h3 id="how-to-change-the-hostnameip-addresslistening-port-of-gluu-server">How to change the hostname/IP address/listening port of Gluu Server<a class="headerlink" href="#how-to-change-the-hostnameip-addresslistening-port-of-gluu-server" title="Permanent link">#</a></h3>
 <p>It is not recommended to change the hostname or IP address or the listening port of any installed Gluu Server instance. The hostname and the IP address is used in many settings stored in LDAP configuration entries, Apache/Jetty configuration and into the custom authentication script. It is strongly recommended to use a fresh install in a new VM. </p>
 <div class="admonition note">

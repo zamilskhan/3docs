@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
       
-        <title>Configuring Multi Factor Authentication - Gluu Docs</title>
+        <title>Configuring Multi-Factor Authentication - Gluu Docs</title>
       
 <link href="../../assets/stylesheets/font.css" rel="stylesheet">
       
@@ -95,7 +95,7 @@
             
           </span>
         
-        Configuring Multi Factor Authentication
+        Configuring Multi-Factor Authentication
       </div>
     </div>
     <div class="button button-search" role="button" aria-label="Search">
@@ -249,8 +249,13 @@
       
         
   <li>
+<<<<<<< HEAD
     <a class="" title="Administrating Gluu oxTrust UI" href="../">
       Administrating Gluu oxTrust UI
+=======
+    <a class="" title="Gluu Server UI" href="../">
+      Gluu Server UI
+>>>>>>> 161b5dc7faa3ba94045c37badf83d2dcfd5ed474
     </a>
     
   </li>
@@ -267,8 +272,8 @@
       
         
   <li>
-    <a class="" title="Authntication Managment" href="../auth-management/">
-      Authntication Managment
+    <a class="" title="Authentication Management" href="../auth-management/">
+      Authentication Management
     </a>
     
   </li>
@@ -276,8 +281,8 @@
       
         
   <li>
-    <a class="current" title="Configuring Multi Factor Authentication" href="./">
-      Configuring Multi Factor Authentication
+    <a class="current" title="Configuring Multi-Factor Authentication" href="./">
+      Configuring Multi-Factor Authentication
     </a>
     
       
@@ -520,7 +525,7 @@
       
         
   <li>
-    <a class="" title="Log Management" href="../logmanagment/">
+    <a class="" title="Log Management" href="../logs/">
       Log Management
     </a>
     
@@ -556,7 +561,7 @@
       
         
   <li>
-    <a class="" title="OpenID Connect" href="../openid/">
+    <a class="" title="OpenID Connect" href="../openid-connect/">
       OpenID Connect
     </a>
     
@@ -685,7 +690,74 @@
       <article class="article">
         <div class="wrapper">
           
+<<<<<<< HEAD
           <h1 id="multi-factor-authentication">Multi Factor Authentication<a class="headerlink" href="#multi-factor-authentication" title="Permanent link">#</a></h1>
+=======
+          <div class="toc">
+<ul>
+<li><a href="#multi-factor-authentication">Multi Factor Authentication</a><ul>
+<li><a href="#duo-security">DUO Security</a><ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#configure-duo-account">Configure DUO Account</a></li>
+<li><a href="#configure-ce-chroot">Configure CE Chroot</a></li>
+<li><a href="#configure-oxtrust">Configure oxTrust</a></li>
+</ul>
+</li>
+<li><a href="#u2f">U2F</a><ul>
+<li><a href="#overview_1">Overview</a></li>
+<li><a href="#installation">Installation</a><ul>
+<li><a href="#configure-oxtrust_1">Configure oxTrust</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#oxpush2">oxPush2</a><ul>
+<li><a href="#overview_2">Overview</a></li>
+<li><a href="#configure-oxtrust_2">Configure oxTrust</a></li>
+</ul>
+</li>
+<li><a href="#wikid-authentication">Wikid Authentication</a><ul>
+<li><a href="#overview_3">Overview</a></li>
+<li><a href="#installation_1">Installation</a></li>
+<li><a href="#configure-ce-chroot_1">Configure CE Chroot</a></li>
+<li><a href="#token-client">Token Client</a></li>
+<li><a href="#configure-oxtrust_3">Configure oxTrust</a></li>
+</ul>
+</li>
+<li><a href="#certificate-authentication">Certificate Authentication</a><ul>
+<li><a href="#configure-oxtrust_4">Configure oxTrust</a></li>
+</ul>
+</li>
+<li><a href="#configure-google">Configure Google</a><ul>
+<li><a href="#configure-oxtrust_5">Configure oxTrust</a></li>
+<li><a href="#testing">Testing</a></li>
+</ul>
+</li>
+<li><a href="#twilio-multi-factor-authentication-otp-using-custom-script">Twilio multi-factor Authentication - OTP using custom script</a><ul>
+<li><a href="#writing-a-custom-authentication-script">Writing a Custom Authentication Script</a></li>
+<li><a href="#custom-script-location">Custom Script Location</a></li>
+<li><a href="#suggested-development-environment">Suggested Development Environment</a></li>
+<li><a href="#samples-and-documentation">Samples and Documentation</a></li>
+<li><a href="#implement-methods">Implement methods</a></li>
+<li><a href="#methods">Methods</a></li>
+<li><a href="#saving-the-value-in-ldap-and-passing-values-between-two-steps">Saving the value in LDAP and Passing values between two steps</a><ul>
+<li><a href="#saving-values">Saving Values:</a></li>
+<li><a href="#retriving-and-passing-values-between-the-authentication-steps">Retriving and passing values between the authentication steps:</a></li>
+</ul>
+</li>
+<li><a href="#custom-properties">Custom Properties</a></li>
+<li><a href="#returning-a-message-to-the-user">Returning a message to the user</a></li>
+<li><a href="#adding-libraries">Adding Libraries</a></li>
+<li><a href="#testing_1">Testing</a></li>
+<li><a href="#reverting-authentication-method">Reverting Authentication Method</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="multi-factor-authentication">Multi Factor Authentication<a class="headerlink" href="#multi-factor-authentication" title="Permanent link">#</a></h1>
+>>>>>>> 161b5dc7faa3ba94045c37badf83d2dcfd5ed474
 <p>Using the  Gluu Server, you can define the business logic for complex multi-step authentication workflows, providing SSO for people using smart cards, tokens, mobile or biometric authentication mechanisms. You don't have to chose one multi-factor authentication technology. You can have multiple authentication mechanisms active at the same time--Web or mobile clients can request a certain authentication type by using standard OpenID Connect request parameters.</p>
 <p>A number of multi-factor authentication scripts are shipped in the Gluu Server by default, including support for FIDO U2F tokens, Gluu's free mobile two-factor application <a href="https://super.gluu.org">Super Gluu</a>, certificate authentication, and Duo Security. </p>
 <h2 id="duo-security">DUO Security<a class="headerlink" href="#duo-security" title="Permanent link">#</a></h2>
@@ -1449,7 +1521,7 @@ method can be used to revert back the older authentication method. </p>
   <nav class="pagination" aria-label="Footer">
     <div class="previous">
       
-        <a href="../auth-management/" title="Authntication Managment">
+        <a href="../auth-management/" title="Authentication Management">
           <span class="direction">
             Previous
           </span>
@@ -1459,7 +1531,7 @@ method can be used to revert back the older authentication method. </p>
             </div>
             <div class="stretch">
               <div class="title">
-                Authntication Managment
+                Authentication Management
               </div>
             </div>
           </div>
