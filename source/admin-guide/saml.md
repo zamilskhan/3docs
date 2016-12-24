@@ -1,4 +1,4 @@
-[TOC]
+# SAML
 ## Outbound SAML
 Outbound SAML can also be called SP-initiated Single Sign On (SSO) or traditional SAML. In an outbound SAML transaction, the SP redirects the user to the designated Identity Provider (IDP) for authentication and authorization. The IDP will ask for the username and password for the user and up on successful authentication, the user is sent back to the SP logged in. The requirement for the IDP is a trust relationship (TR) set up beforehand with the SP. The next section covers how to set up a TR in Gluu Server.
 
@@ -12,18 +12,18 @@ Trust Relationship requires the infomation listed below.
 - [Required attribute of website](#required-attribute-of-website)
 - [SSO testing endpoint of website](#sso-testing-endpoint-of-website)
 
-#### Metadata of the SP
+### Metadata of the SP
 Metadata is a XML file which has configuration data used to provision any website (SP) or IDP (Gluu Server) to communicate with each other. It is interchangeable between the IDP and the SP.
 
 Websites (SP) can provide metadata via URL or as a separate file.
 
-#### Required Attributes
+### Required Attributes
 Every organization has their own policy to release/share attributes with
 any IDP or SP. The oxTrust GUI supports both preconfigured and custom attribute
 Release to the SP. The administrator only needs to click on the desired 
 attribute and it will be released to the SP.
 
-#### SSO Testing Endpoint
+### SSO Testing Endpoint
 Every website (SP) should have both a staging and a production URI
 endpoint which can be checked for SSO, where the user will access to log
 into that SP.
@@ -48,7 +48,7 @@ into that SP.
 * _Released_: The attributes that are required for the SP must be in this pane. The required attributes can be selected from the left side pane with the heading “Release Additional Attributes”.
 The TR is added by clicking on the `Add` button located in the lower left side of the page.
 
-#### Relying Party Configuration
+### Relying Party Configuration
 The Relying Party must be configured for some SPs. The relying party configuration is accessible on the TR Creation page. The checkbox `Configure specific Relying Party` must be checked.
 
 ![enable-relying-party.png](../img/saml/enable-relying-party.png)
@@ -57,7 +57,7 @@ The checkbox will result in a link which can be accessed to configure relying pa
 
 ![tr-relying-party](../img/saml/tr-relying-party.png)
 
-#### Federation Configuration
+### Federation Configuration
 If the SP is part of any identity federation such as InCommon Federation, then the administrator must add the federation as a SP in Gluu Server. This will allow the administrator to add SPs under the federation easily from a TR. The requirement of a federation TR created using the general TR is a must. The example below shows an administrator adding a TR for InCommon Federation.
 
 ![federationTR](../img/saml/federationTR.png)
@@ -84,7 +84,7 @@ i![asimba-overview](../img/asimba/overview.png)
 !!! Note
     Description of SAML Authentication Module is available here: https://github.com/GluuFederation/oxAuth/tree/master/Server/integrations/saml
 
-#### Specific Setup Details
+### Specific Setup Details
 The Gluu Server setup with the hostname `https://test.gluu.org` must be setup with Asimba. This is done by typing `yes` to the [setup script prompt](../installation-guide/setup_py.md).
 
 ![asimba-install](../img/asimba/asimba-install.png)

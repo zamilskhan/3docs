@@ -249,8 +249,8 @@
       
         
   <li>
-    <a class="" title="oxTrust Admin Interface" href="../">
-      oxTrust Admin Interface
+    <a class="" title="Administrating Gluu oxTrust UI" href="../">
+      Administrating Gluu oxTrust UI
     </a>
     
   </li>
@@ -263,8 +263,99 @@
     </a>
     
       
-        
       
+        <ul>
+          
+            <li class="anchor">
+              <a title="SAML" href="#saml">
+                <b>SAML</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="OpenID Connect" href="#openid-connect">
+                <b>OpenID Connect</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="Terminology" href="#terminology">
+                  <font size=2><i>Terminology</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="Discovery" href="#discovery">
+                  <font size=2><i>Discovery</i></font>
+              </a>
+            </li>
+             
+          
+            <li class="anchor">
+              <a title="User-Managed Access (UMA)" href="#user-managed-access-uma">
+                <b>User-Managed Access (UMA)</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="Enterprise UMA" href="#enterprise-uma">
+                  <font size=2><i>Enterprise UMA</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="Terminology" href="#terminology_1">
+                  <font size=2><i>Terminology</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="UMA Workflow" href="#uma-workflow">
+                  <font size=2><i>UMA Workflow</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="Discovery" href="#discovery_1">
+                  <font size=2><i>Discovery</i></font>
+              </a>
+            </li>
+             
+          
+            <li class="anchor">
+              <a title="OAuth2.0" href="#oauth20">
+                <b>OAuth2.0</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="Terminology" href="#terminology_2">
+                  <font size=2><i>Terminology</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="Workflows" href="#workflows">
+                  <font size=2><i>Workflows</i></font>
+              </a>
+            </li>
+             
+          
+            <li class="anchor">
+              <a title="SCIM" href="#scim">
+                <b>SCIM</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="Terminology" href="#terminology_3">
+                  <font size=2><i>Terminology</i></font>
+              </a>
+            </li>
+             
+          
+        </ul>
       
     
   </li>
@@ -407,15 +498,6 @@
       
         
   <li>
-    <a class="" title="Service Integration in Gluu CE" href="../integrate/">
-      Service Integration in Gluu CE
-    </a>
-    
-  </li>
-                  
-      
-        
-  <li>
     <a class="" title="Backup Gluu Server CE" href="../backup/">
       Backup Gluu Server CE
     </a>
@@ -473,81 +555,10 @@
       <article class="article">
         <div class="wrapper">
           
-          <div class="toc">
-<ul>
-<li><a href="#saml">SAML</a></li>
-<li><a href="#saml_1">SAML</a></li>
-<li><a href="#openid-connect">OpenID Connect</a></li>
-<li><a href="#openid-connect_1">OpenID Connect</a><ul>
-<li><a href="#terminology">Terminology</a></li>
-<li><a href="#terminology_1">Terminology</a></li>
-<li><a href="#discovery">Discovery</a></li>
-<li><a href="#discovery_1">Discovery</a></li>
-</ul>
-</li>
-<li><a href="#user-managed-access-uma">User-Managed Access (UMA)</a><ul>
-<li><a href="#enterprise-uma">Enterprise UMA</a></li>
-<li><a href="#terminology_2">Terminology</a></li>
-</ul>
-</li>
-<li><a href="#user-managed-access-uma_1">User-Managed Access (UMA)</a><ul>
-<li><a href="#enterprise-uma_1">Enterprise UMA</a></li>
-<li><a href="#terminology_3">Terminology</a></li>
-<li><a href="#uma-workflow">UMA Workflow</a></li>
-<li><a href="#uma-workflow_1">UMA Workflow</a><ul>
-<li><a href="#authorization">Authorization</a></li>
-<li><a href="#authorization-token">Authorization Token</a></li>
-</ul>
-</li>
-<li><a href="#discovery_2">Discovery</a><ul>
-<li><a href="#authorization_1">Authorization</a></li>
-<li><a href="#authorization-token_1">Authorization Token</a></li>
-</ul>
-</li>
-<li><a href="#discovery_3">Discovery</a></li>
-</ul>
-</li>
-<li><a href="#oauth20">OAuth2.0</a></li>
-<li><a href="#oauth20_1">OAuth2.0</a><ul>
-<li><a href="#terminology_4">Terminology</a></li>
-<li><a href="#141-terminology">1.4.1 Terminology</a></li>
-<li><a href="#workflows">Workflows</a><ul>
-<li><a href="#client-credentials-grant">Client Credentials Grant</a></li>
-</ul>
-</li>
-<li><a href="#workflows_1">Workflows</a><ul>
-<li><a href="#credentials-grant">Credentials Grant</a></li>
-<li><a href="#resource-owner-password-credential-grant">Resource Owner Password Credential Grant</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#this-grant-allows-the-usage-of-ro-password-credentials-as-an-authorization-grant-to-obtain-an-access-token-this-grant-is-encouraged-in-a-high-trust-situation-as-well-the-diagram-below-depicts-the-flow">This grant allows the usage of RO password credentials as an authorization grant to obtain an access token. This grant is encouraged in a high trust situation as well. The diagram below depicts the flow.</a><ul>
-<li><a href="#resource-owner-password-credential-grant_1">Resource Owner Password Credential Grant</a><ul>
-<li><a href="#security-properties">Security Properties</a></li>
-<li><a href="#user-experience">User Experience</a></li>
-</ul>
-</li>
-<li><a href="#gluu-oauth2-access-management">Gluu OAuth2 Access Management</a><ul>
-<li><a href="#security-properties_1">Security Properties</a></li>
-<li><a href="#user-experience_1">User Experience</a></li>
-</ul>
-</li>
-<li><a href="#gluu-oauth2-access-management_1">Gluu OAuth2 Access Management</a></li>
-<li><a href="#scim">SCIM</a></li>
-<li><a href="#scim_1">SCIM</a><ul>
-<li><a href="#terminology_5">Terminology</a></li>
-<li><a href="#terminology_6">Terminology</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<p>Gluu Server supports Security Assertion Markup Language (SAML) and OpenID Connect protocols to authenticate users against Service Providers (SPs) and Requesting Parties (RPs). There are two different flows of SAML known as outbound SAML and inbound SAML, both supported out-of-the-box in Gluu Server Community Edition (Gluu CE).</p>
+            <h1>Authentication Protocols</h1>
+          
+          <p>Gluu Server supports Security Assertion Markup Language (SAML) and OpenID Connect protocols to authenticate users against Service Providers (SPs) and Requesting Parties (RPs). There are two different flows of SAML known as outbound SAML and inbound SAML, both supported out-of-the-box in Gluu Server Community Edition (Gluu CE).</p>
 <h2 id="saml">SAML<a class="headerlink" href="#saml" title="Permanent link">#</a></h2>
-<p>=======</p>
-<h2 id="saml_1">SAML<a class="headerlink" href="#saml_1" title="Permanent link">#</a></h2>
 <p><img alt="image" src="https://www.oasis-open.org/committees/download.php/29723/draft-saml-logo-03.png" /></p>
 <p>Security Assertion Markup Language (SAML) is an authentication and authorization protocol that defines the transaction process for XML-encoded assertions about authentication, authorization and attributes. The protocol is goverened by <a href="https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf" title="SAML 2.0 Core">Security Assertion Markup Language Core
 (SAML) V2.0</a>. The goal of this protocol is to exchange authentication and authorization data between Service Providers (SP) and the Identity Provider (IDP).
@@ -556,15 +567,11 @@ Gluu Server supports both inbound and outbound flow of SAML transaction. The oxT
 Trust Relationship creation is mandatory in both flows; however, the inbound flow also acts as a SAML proxy. The details about how to setup a Trust Relationship and how to setup SAML proxy follows later in this documentation. The image below is taken from wikipedia, showing a SAML transaction workflow.</p>
 <p><img alt="wikipedia image" src="https://upload.wikimedia.org/wikipedia/en/0/04/Saml2-browser-sso-redirect-post.png" /></p>
 <h2 id="openid-connect">OpenID Connect<a class="headerlink" href="#openid-connect" title="Permanent link">#</a></h2>
-<p>=======</p>
-<h2 id="openid-connect_1">OpenID Connect<a class="headerlink" href="#openid-connect_1" title="Permanent link">#</a></h2>
 <p><img alt="image" src="http://wiki.openid.net/f/openid-logo-wordmark.png" /></p>
 <p><a href="http://openid.net/connect" title="Connect">OpenID Connect</a> is a standard profile of OAuth2 which defines a protocol to enable any website, mobile application to verify the identity of the user accessing its resources through an authorization server or identity server. The protocol is API friendly and works through endpoints making it easy for applications to use it. </p>
 <p>OpenID Connect specification consists of different documents which outline different aspects of the protocol. The basic implementation requires the <a href="http://openid.net/specs/openid-connect-core-1_0.html" title="Core Specification">OpenID Connect Core Specification</a>. The figure below taken from the <a href="http://openid.net/" title="openid.net">OpenID Connect website</a> shows the overview of the protocol and the different parts of the specification.</p>
 <p><img alt="openid.net image" src="http://openid.net/wordpress-content/uploads/2014/02/OpenIDConnect-Map-4Feb2014.png" /></p>
 <h3 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">#</a></h3>
-<p>=======</p>
-<h3 id="terminology_1">Terminology<a class="headerlink" href="#terminology_1" title="Permanent link">#</a></h3>
 <ul>
 <li>Claim: Information about the entity</li>
 <li>ID Token: JSON Web Token (JWT) that contains claims about the authentication</li>
@@ -574,8 +581,6 @@ Trust Relationship creation is mandatory in both flows; however, the inbound flo
 <li>UserInfo Endpoint: An URL using https that returns authorization for the user from the OP to the RP</li>
 </ul>
 <h3 id="discovery">Discovery<a class="headerlink" href="#discovery" title="Permanent link">#</a></h3>
-<p>=======</p>
-<h3 id="discovery_1">Discovery<a class="headerlink" href="#discovery_1" title="Permanent link">#</a></h3>
 <p>OpenID Connect provides a simple mechanism to notify about the available endpoints. This is difined in the <a href="http://openid.net/specs/openid-connect-discovery-1_0.html &quot;OpenID Connect Discovery">OpenID Connect Discovery Specification</a>. </p>
 <p>In order for an OpenID Connect Relying Party (RP) to utilize OpenID Connect services for an End-User, the RP needs to know where the OpenID Provider is. OpenID Connect uses WebFinger to locate the OpenID Provider for an End-User.
 Once the OpenID Provider has been identified, the configuration information for the OP is retrieved from a well-known location as a JSON document, including its OAuth 2.0 endpoint locations.
@@ -597,19 +602,11 @@ Content-Type: application/jrd+json
 
 <h2 id="user-managed-access-uma">User-Managed Access (UMA)<a class="headerlink" href="#user-managed-access-uma" title="Permanent link">#</a></h2>
 <p><img alt="image" src="http://kantarainitiative.org/confluence/download/attachments/17760302/UMA-logo.png" /></p>
-<p>UMA is an oAuth based protocol to "enable a resource owner to control the authorization of data sharing and other protected-resource access made between online services on the owner's behalf or with the owner's authorization by an autonomous requesting party"<a href="http://kantarainitiative.org/confluence/display/uma/Charter" title="UMA Charter">1</a>.</p>
+<p>UMA is an oAuth based protocol to "enable a resource owner to control the authorization of data sharing and other protected-resource access made between online services on the owner’s behalf or with the owner’s authorization by an autonomous requesting party"<a href="http://kantarainitiative.org/confluence/display/uma/Charter" title="UMA Charter">1</a>.</p>
 <h3 id="enterprise-uma">Enterprise UMA<a class="headerlink" href="#enterprise-uma" title="Permanent link">#</a></h3>
 <p>The Gluu Server implements UMA in a way that enables the protection of any web resource. Through the oxTrust interface, the server admin can write <a href="../.." title="Custom Scripts">custom authorization interception scripts</a> which may contain logic to grant (or forbid) access. The diagram below shows an overview of the UMA Authorization workflow.</p>
 <p><img alt="overview" src="../../img/uma/overview.png" title="UMA Auth Overview" /></p>
-<h3 id="terminology_2">Terminology<a class="headerlink" href="#terminology_2" title="Permanent link">#</a></h3>
-<p>=======</p>
-<h2 id="user-managed-access-uma_1">User-Managed Access (UMA)<a class="headerlink" href="#user-managed-access-uma_1" title="Permanent link">#</a></h2>
-<p><img alt="image" src="http://kantarainitiative.org/confluence/download/attachments/17760302/UMA-logo.png" /></p>
-<p>UMA is an oAuth based protocol to "enable a resource owner to control the authorization of data sharing and other protected-resource access made between online services on the owner’s behalf or with the owner’s authorization by an autonomous requesting party"<a href="http://kantarainitiative.org/confluence/display/uma/Charter" title="UMA Charter">1</a>.</p>
-<h3 id="enterprise-uma_1">Enterprise UMA<a class="headerlink" href="#enterprise-uma_1" title="Permanent link">#</a></h3>
-<p>The Gluu Server implements UMA in a way that enables the protection of any web resource. Through the oxTrust interface, the server admin can write <a href="../.." title="Custom Scripts">custom authorization interception scripts</a> which may contain logic to grant (or forbid) access. The diagram below shows an overview of the UMA Authorization workflow.</p>
-<p><img alt="overview" src="../../img/uma/overview.png" title="UMA Auth Overview" /></p>
-<h3 id="terminology_3">Terminology<a class="headerlink" href="#terminology_3" title="Permanent link">#</a></h3>
+<h3 id="terminology_1">Terminology<a class="headerlink" href="#terminology_1" title="Permanent link">#</a></h3>
 <ul>
 <li>Resource Server (RS): Where the resources are held. </li>
 <li>Authorization Server (AS): A server that governs access based on resource owner policies. </li>
@@ -620,21 +617,13 @@ Content-Type: application/jrd+json
 <li>Authorization API Token (AAT): An entity seeking authorization API access MUST have the scope "uma_authorization". An access token with at least this scope is called an authorization API token (AAT) and an entity that can acquire an access token with this scope is by definition a client.</li>
 </ul>
 <h3 id="uma-workflow">UMA Workflow<a class="headerlink" href="#uma-workflow" title="Permanent link">#</a></h3>
-<p>=======</p>
-<h3 id="uma-workflow_1">UMA Workflow<a class="headerlink" href="#uma-workflow_1" title="Permanent link">#</a></h3>
 <p>The complete workflow sequence is shown in the diagram below. However there are two different authorization workflow given below for authorization and authorization token.</p>
 <p><img alt="auth-complete" src="../../img/uma/auth-complete.png" title="UMA Complete Auth Workflow" /></p>
 <h4 id="authorization">Authorization<a class="headerlink" href="#authorization" title="Permanent link">#</a></h4>
 <p><img alt="auth" src="../../img/uma/auth.png" title="UMA Authorization Workflow" /></p>
 <h4 id="authorization-token">Authorization Token<a class="headerlink" href="#authorization-token" title="Permanent link">#</a></h4>
 <p><img alt="auth-token" src="../../img/uma/auth-token.png" title="UMA Authorization Token Workflow" /></p>
-<h3 id="discovery_2">Discovery<a class="headerlink" href="#discovery_2" title="Permanent link">#</a></h3>
-<p>=======</p>
-<h4 id="authorization_1">Authorization<a class="headerlink" href="#authorization_1" title="Permanent link">#</a></h4>
-<p><img alt="auth" src="../../img/uma/auth.png" title="UMA Authorization Workflow" /></p>
-<h4 id="authorization-token_1">Authorization Token<a class="headerlink" href="#authorization-token_1" title="Permanent link">#</a></h4>
-<p><img alt="auth-token" src="../../img/uma/auth-token.png" title="UMA Authorization Token Workflow" /></p>
-<h3 id="discovery_3">Discovery<a class="headerlink" href="#discovery_3" title="Permanent link">#</a></h3>
+<h3 id="discovery_1">Discovery<a class="headerlink" href="#discovery_1" title="Permanent link">#</a></h3>
 <p>Gluu Server CE provides an endpoint for discovering information about UMA Provider configuration. A resource server or client can perform an HTTP GET on <code>https://&lt;hostname&gt;/.well-known/uma-configuration</code> to retrieve a JSON object indicating the UMA Provider configuration.</p>
 <p>The following is an example of a GET request to the UMA configuration discovery endpoint:</p>
 <pre><code>{
@@ -675,13 +664,9 @@ Content-Type: application/jrd+json
 <p>The UMA Response  may contain custom properties which are uniquely named for convenience and disguishing between standard &amp; custom properties.</p>
 </div>
 <h2 id="oauth20">OAuth2.0<a class="headerlink" href="#oauth20" title="Permanent link">#</a></h2>
-<p>=======</p>
-<h2 id="oauth20_1">OAuth2.0<a class="headerlink" href="#oauth20_1" title="Permanent link">#</a></h2>
 <p><img alt="image" src="https://oauth.net/images/oauth-2-sm.png" /></p>
 <p>OAuth2.0 is the next version in the OAuth protocol focusing on simplicity with specific authorization flows for different platforms. The core specification is called the <a href="https://tools.ietf.org/html/rfc6749">OAuth 2.0 Authorization Framework</a>. OAuth introduces an authorization layer and separates the role of the client from the resource owner. The resource is accessed using access tokens instead of credentials.</p>
-<h3 id="terminology_4">Terminology<a class="headerlink" href="#terminology_4" title="Permanent link">#</a></h3>
-<p>=======</p>
-<h3 id="141-terminology">1.4.1 Terminology<a class="headerlink" href="#141-terminology" title="Permanent link">#</a></h3>
+<h3 id="terminology_2">Terminology<a class="headerlink" href="#terminology_2" title="Permanent link">#</a></h3>
 <ul>
 <li>Resource Owner (RO): Entity that owns and controls the access to any resource</li>
 <li>Resource Server (RS): Where the resources are held</li>
@@ -689,9 +674,6 @@ Content-Type: application/jrd+json
 <li>Authorization Server: The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization</li>
 </ul>
 <h3 id="workflows">Workflows<a class="headerlink" href="#workflows" title="Permanent link">#</a></h3>
-<h4 id="client-credentials-grant">Client Credentials Grant<a class="headerlink" href="#client-credentials-grant" title="Permanent link">#</a></h4>
-<p>=======</p>
-<h3 id="workflows_1">Workflows<a class="headerlink" href="#workflows_1" title="Permanent link">#</a></h3>
 <h4 id="credentials-grant">Credentials Grant<a class="headerlink" href="#credentials-grant" title="Permanent link">#</a></h4>
 <p>The Client Credentials Grant allows <a href="../#41-terminology" title="Resource Owner">RO</a> to use username and password as an authorization grant to obtain an access token. This flow is only encouraged when there is high degree of trust between <a href="../#41-terminology" title="Resource Owner">RO</a> and the client and no other grant types are not available.</p>
 <p>Although this grant requires direct client access to the <a href="../#41-terminology" title="Resource Owner">RO</a> credentials it is used for a single request for an access token. This grant type can eliminate the need for the client to store the <a href="../#41-terminology" title="Resource Owner">RO</a> credentials for future use, by exchanging the credentials with a long-lived access token or refresh token.</p>
@@ -765,15 +747,12 @@ TokenType tokenType response.getTokenType(); // bearer
 </tbody>
 </table>
 <h4 id="resource-owner-password-credential-grant">Resource Owner Password Credential Grant<a class="headerlink" href="#resource-owner-password-credential-grant" title="Permanent link">#</a></h4>
-<h1 id="this-grant-allows-the-usage-of-ro-password-credentials-as-an-authorization-grant-to-obtain-an-access-token-this-grant-is-encouraged-in-a-high-trust-situation-as-well-the-diagram-below-depicts-the-flow">This grant allows the usage of <a href="../#41-terminology" title="Resource Owner">RO</a> password credentials as an authorization grant to obtain an access token. This grant is encouraged in a high trust situation as well. The diagram below depicts the flow.<a class="headerlink" href="#this-grant-allows-the-usage-of-ro-password-credentials-as-an-authorization-grant-to-obtain-an-access-token-this-grant-is-encouraged-in-a-high-trust-situation-as-well-the-diagram-below-depicts-the-flow" title="Permanent link">#</a></h1>
-<h4 id="resource-owner-password-credential-grant_1">Resource Owner Password Credential Grant<a class="headerlink" href="#resource-owner-password-credential-grant_1" title="Permanent link">#</a></h4>
 <p>This grant allows the usage of <a href="../#41-terminology" title="Resource Owner">RO</a> password credentials as an authorization grant to obtain an access token. This grant is encouraged in a high trust situation as well. The diagram below shows the flow</p>
 <p><img alt="password-credential-grant" src="../../img/oauth2/password-credential-grant.png" /></p>
 <p>The steps of the flow are:
 1. User presents their credentials to the application in addition to a username and password.
 2. If the client credentials are successfully authenticated, an access token is returned to the client</p>
 <p>This flow should be sparingly used bacause the password for the <a href="../#41-terminology" title="Resource Owner">RO</a> is exposed to the appilcation/client. It is recommended only for first-party "official"  applications released by the API provider, and not opened up to wider third-party developer communities. If a user is asked to toe their password into "official" applications, they may become acustomed to doing so and becom evulneralbe to phishing attempts by other apps. In order to mitigat this concern, developers and IT administrators should clearly educate their users how they should dertermine which apps are "official" and which are not.</p>
-<p>This flow should be sparingly used becase the password for the <a href="../#41-terminology" title="Resource Owner">RO</a> is exposed to the application/client. It is recommended only for first-party “official” applications released by the API provider, and not opened up to wider third-party developer communities. If a user is asked to type their password into “official” applications, they may become accustomed to doing so and become vulnerable to phishing attempts by other apps. In order to mitigate this concern, developers and IT administrators should clearly educate their users how they should determine which apps are “official” and which are not.</p>
 <p>The following is an example showing the messages between the client and the authorization server, also the example shows code fragments using the oxAuth-Client.jar API to interact with the authorization server.</p>
 <pre><code>// Parameters
 String tokenUrl = &quot;https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/token&quot;;
@@ -838,19 +817,11 @@ String refreshToken = response.getRefreshToken(); // aba91bd9-aa10-4fca-952b-50a
 </tr>
 </tbody>
 </table>
-<h5 id="security-properties">Security Properties<a class="headerlink" href="#security-properties" title="Permanent link">#</a></h5>
-<p>There are some security benefits to using this flow against authenticating API calls with a user name and password (via HTTP Basic access authentication or similar) although the application has access to the resource owner's password. With Basic authentication, an application needs to have continuous access to the user's password in orfer to make API calls. If the user wants to revoke the access of the client, he must change the password and re-enter the password in all the applications that are allowed access to the resource.</p>
-<p>However, if the oAuth Resource owner Password flow is used, the application only needs access to the user's credentials once: on first use when the credentials are exchanged for an access token. This means there is no requirement for the app to store these credentials within the application or on the device, and revoking access is easy as well.</p>
-<h5 id="user-experience">User Experience<a class="headerlink" href="#user-experience" title="Permanent link">#</a></h5>
-<p>The user experience for this flow is identical to typical password-based access requests. 
-The application asks the user for their username and password and the user provides the information. The application then makes either a server-side or client-side request to the API provider's aiuthorization server. 
-Without any user-facing interface changes. If the API provider does not issue a refresh_token and the issued access_token is short-lived, the application will likely store the username and password for future authentication attempts. Unfortunately, this defeats some of the benefit of this flow.</p>
 <h4 id="gluu-oauth2-access-management">Gluu OAuth2 Access Management<a class="headerlink" href="#gluu-oauth2-access-management" title="Permanent link">#</a></h4>
-<p>=======</p>
-<h5 id="security-properties_1">Security Properties<a class="headerlink" href="#security-properties_1" title="Permanent link">#</a></h5>
+<h5 id="security-properties">Security Properties<a class="headerlink" href="#security-properties" title="Permanent link">#</a></h5>
 <p>There are some security benefits to using this flow against authenticating API calls with a username and password (via HTTP Basic access authentication or similar) although the application has access to the resource owner's password. With Basic authentication, an application needs to have continuous access to the user’s password in order to make API calls. If the user wants to revoke the access of the client, he must change the password and re-enter the password in all the applications that are allowed access to the resource.</p>
 <p>However, if the OAuth Resource Owner Password flow is used, the application only needs access to the user’s credentials once: on first use when the credentials are exchanged for an access token. This means there’s no requirement for the app to store these credentials within the application or on the device, and revoking access is easy as well.</p>
-<h5 id="user-experience_1">User Experience<a class="headerlink" href="#user-experience_1" title="Permanent link">#</a></h5>
+<h5 id="user-experience">User Experience<a class="headerlink" href="#user-experience" title="Permanent link">#</a></h5>
 <p>The user experience for this flow is identical to typical password-based access requests. The application asks the user for their username and password and the user provides the information. The application then makes either a server-side or client-side request to the API provider’s authorization server, without any user-facing interface changes. If the API provider does not issue a refresh_token and the issued access_token is short-lived, the application will likely store the username and password for future authentication attempts. Unfortunately, this defeats some of the benefit of this flow.</p>
 <h4 id="gluu-oauth2-access-management_1">Gluu OAuth2 Access Management<a class="headerlink" href="#gluu-oauth2-access-management_1" title="Permanent link">#</a></h4>
 <p>This flow uses Gluu Access Token (GAT) for access management. The flow needs a profile enabling a client to obtain a token from the <a href="../#41-terminology" title="Authorization Server">AS</a> by explicitly specifyting the requested scopes. The diagram below shows the overview of the flow.</p>
@@ -926,8 +897,6 @@ GAT: true
 </tbody>
 </table>
 <h2 id="scim">SCIM<a class="headerlink" href="#scim" title="Permanent link">#</a></h2>
-<p>=======</p>
-<h2 id="scim_1">SCIM<a class="headerlink" href="#scim_1" title="Permanent link">#</a></h2>
 <p>SCIM stands for System for Cross-domain Identity Management which is a specification to manage users in a cloud environment. Gluu Server supports SCIM version 1.0 and 2.0 out of the box. The following diagram shows the SCIM model from the <a href="http://www.simplecloud.info/">SCIM Website</a>.</p>
 <p><img alt="scim-model" src="../../img/scim/scim-model.png" /></p>
 <p>The SCIM Specifications are available from the SCIM Website. There are two specifications in SCIM 2.0:</p>
@@ -935,9 +904,7 @@ GAT: true
 <li><a href="https://tools.ietf.org/html/rfc7643">SCIM 2.0 Core Specifications</a></li>
 <li><a href="https://tools.ietf.org/html/rfc7644">SCIM 2.0 Protocol Specification</a></li>
 </ol>
-<h3 id="terminology_5">Terminology<a class="headerlink" href="#terminology_5" title="Permanent link">#</a></h3>
-<p>=======</p>
-<h3 id="terminology_6">Terminology<a class="headerlink" href="#terminology_6" title="Permanent link">#</a></h3>
+<h3 id="terminology_3">Terminology<a class="headerlink" href="#terminology_3" title="Permanent link">#</a></h3>
 <p>The SCIM specification defines some basic terms that are used in the document. The basic terms like attribute, [SP][] are same across all the protocols. A few confusing ones are listed below from the <a href="https://tools.ietf.org/html/rfc7643">SCIM 2.0 Specs</a>.</p>
 <ul>
 <li>
@@ -972,7 +939,7 @@ GAT: true
   <nav class="pagination" aria-label="Footer">
     <div class="previous">
       
-        <a href="../" title="oxTrust Admin Interface">
+        <a href="../" title="Administrating Gluu oxTrust UI">
           <span class="direction">
             Previous
           </span>
@@ -982,7 +949,7 @@ GAT: true
             </div>
             <div class="stretch">
               <div class="title">
-                oxTrust Admin Interface
+                Administrating Gluu oxTrust UI
               </div>
             </div>
           </div>

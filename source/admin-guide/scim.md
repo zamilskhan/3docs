@@ -1,5 +1,4 @@
-[TOC]
-
+# SCIM
 Gluu Server Community Edition supports System for Cross-domain Identity Management (SCIM) Version 1.0 and 2.0 out of the box, operated using HTTP `GET` and `POST` commands. SCIM uses a REST API for operations which are disabled by default. The support for SCIM must be enabled from the oxTrust admin interface. 
 SCIM is enabled from the Organization Configuration in the oxTrust administration interface. Please navigate to `Organization Configuration` --> `System Configuration`.
 
@@ -9,7 +8,7 @@ Please navigate down the page to find `SCIM Support` in the `SYstem Configuratio
 
 ![enable](../img/scim/enable.png)
 
-# SCIM Endpoints
+## SCIM Endpoints
 SCIM uses REST API for the operations which are covered in short in this section. There are two versions of the SCIM API each with its own specification. This usage of SCIM requires advanced level knowledge of HTTP GET and POST commands and not recommended for entry level users.
 
 The SCIM 1.1 is governed by the [SCIM:Protocol 1.1](http://www.simplecloud.info/specs/draft-scim-api-01.html) document and SCIM 2.0 is governed by the [SCIM:Core Schema](https://tools.ietf.org/html/rfc7643) & [SCIM:Protocol](https://tools.ietf.org/html/rfc7644). As it is mentioned before, the specifications define an API, the operations are performed through endpoints. There are three endpoints that are available in Gluu Server SCIM:
@@ -94,7 +93,7 @@ The following table details the request parameters:
 |Authorization|string   |header  |
 |body         |BulkRequest|body  |
 
-##### Definitions
+### Definitions
 The definitions for the bulk operation is covered in the tables below. The parametes below are all optional.
 
 |BulkOperation|  |BulkRequest|  |BulkResponse| |
@@ -109,7 +108,7 @@ The definitions for the bulk operation is covered in the tables below. The param
 |data|object|
 |response|object|
 
-#### Response Codes
+### Response Codes
 This sections defines the response codes for the requests sent to the SCIM endpoints.
 
 |Status Code	|Reason		|Description		|
@@ -138,7 +137,7 @@ The detailed SCIM 2.0 Specifications are available at:
 
 ### Definitions
 
-#### <a name="/definitions/Address">Address</a>
+<a name="/definitions/Address">Address</a>
 
 <table border="1">
     <tr>
@@ -220,7 +219,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/BulkOperation">BulkOperation</a>
+<a name="/definitions/BulkOperation">BulkOperation</a>
 
 <table border="1">
     <tr>
@@ -288,7 +287,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/BulkRequest">BulkRequest</a>
+<a name="/definitions/BulkRequest">BulkRequest</a>
 
 <table border="1">
     <tr>
@@ -321,7 +320,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/BulkResponse">BulkResponse</a>
+<a name="/definitions/BulkResponse">BulkResponse</a>
 
 <table border="1">
     <tr>
@@ -347,7 +346,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/Email">Email</a>
+<a name="/definitions/Email">Email</a>
 
 <table border="1">
     <tr>
@@ -401,7 +400,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/Entitlement">Entitlement</a>
+<a name="/definitions/Entitlement">Entitlement</a>
 
 <table border="1">
     <tr>
@@ -455,7 +454,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/Group">Group</a>
+<a name="/definitions/Group">Group</a>
 
 <table border="1">
     <tr>
@@ -509,7 +508,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/GroupRef">GroupRef</a>
+<a name="/definitions/GroupRef">GroupRef</a>
 
 <table border="1">
     <tr>
@@ -549,7 +548,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/Im">Im</a>
+<a name="/definitions/Im">Im</a>
 
 <table border="1">
     <tr>
@@ -603,7 +602,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/ListResponse">ListResponse</a>
+<a name="/definitions/ListResponse">ListResponse</a>
 
 <table border="1">
     <tr>
@@ -650,7 +649,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/MemberRef">MemberRef</a>
+<a name="/definitions/MemberRef">MemberRef</a>
 
 <table border="1">
     <tr>
@@ -697,7 +696,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/Meta">Meta</a>
+<a name="/definitions/Meta">Meta</a>
 
 <table border="1">
     <tr>
@@ -751,7 +750,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/Name">Name</a>
+<a name="/definitions/Name">Name</a>
 
 <table border="1">
     <tr>
@@ -805,7 +804,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/PhoneNumber">PhoneNumber</a>
+<a name="/definitions/PhoneNumber">PhoneNumber</a>
 
 <table border="1">
     <tr>
@@ -859,7 +858,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/Photo">Photo</a>
+<a name="/definitions/Photo">Photo</a>
 
 <table border="1">
     <tr>
@@ -913,7 +912,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/Resource">Resource</a>
+<a name="/definitions/Resource">Resource</a>
 
 <table border="1">
     <tr>
@@ -953,7 +952,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/Role">Role</a>
+<a name="/definitions/Role">Role</a>
 
 <table border="1">
     <tr>
@@ -1007,7 +1006,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/Type">Type</a>
+<a name="/definitions/Type">Type</a>
 
 <table border="1">
     <tr>
@@ -1019,7 +1018,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/User">User</a>
+<a name="/definitions/User">User</a>
 
 <table border="1">
     <tr>
@@ -1206,7 +1205,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/X509Certificate">X509Certificate</a>
+<a name="/definitions/X509Certificate">X509Certificate</a>
 
 <table border="1">
     <tr>
@@ -1260,7 +1259,7 @@ The detailed SCIM 2.0 Specifications are available at:
     </tr>
 </table>
 
-#### <a name="/definitions/ScimPersonSearch">ScimPersonSearch</a>
+<a name="/definitions/ScimPersonSearch">ScimPersonSearch</a>
 
 <table border="1">
     <tr>

@@ -1,4 +1,3 @@
-[TOC]
 # User Management in Gluu Server
 To keep the Gluu Server up-to-date with the latest user claims, your
 organization can either "push" or "pull" identity data. In the "pull"

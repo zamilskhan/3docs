@@ -1,8 +1,9 @@
+# UMA
 This section describes the adminisration of UMA in Gluu Server CE. The UMA administration is accessible from the oxTrust administrator interface.
 
 ![menu](../img/uma/menu.png)
 
-## 6.1 Resource Registration
+## Resource Registration
 The resources protected by UMA must be registered in oxTrust. The following propterties describe a resource:
 
 - name
@@ -34,7 +35,7 @@ The properties of a resource is visible in this page. There are two additional b
 
 ![add-scope](../img/uma/add-scope.png)
 
-## 6.2 Scopes
+## Scopes
 The scopes in UMA are bount to resource sets and used by policies to check whether the specified user has access to the resource. The scopes are described in JSON and has the following properties:
 
 - name
@@ -98,7 +99,7 @@ oxId: View
 oxIconUrl: http://seed.gluu.org/uma/icons/view_scope.png
 ```
 
-### 6.2.1 Add Scope
+### Add Scope
 This section defines the process of defining UMA scopes from oxTrust. The scopes are accessed from the `Scopes` page under `UMA` from the oxTrust menu.
 
 ![uma-scopes](../img/uma/uma-scopes.png)
@@ -109,7 +110,7 @@ The search bar can be used to look for available scopes. New scopes are added by
 
 Additionally there is an option to add authorization policy with the new scope.
 
-## 6.3 UMA Policies
+## UMA Policies
 UMA policies protect UMA Resources via scopes. Gluu Server evaluates all policies, identified by scopes, to grant access to resources. There are three (3) main properties of a policy:
 
 1. scopes: policy protects resources by scopes
@@ -121,7 +122,7 @@ The following section outlines how to define UMA policies from the Custom Script
 ![custom-script-menu](../img/oxtrust/custom-script-menu.png)
 ![auth-policy](../img/uma/auth-policy.png)
 
-### 6.3.1 UMA Policy Algorithm
+### UMA Policy Algorithm
 The UMA Policy alrorithm has two rules that are followed. These rules must be followed while writing UMA policy using the custom script feature of Gluu Server.
 
 - UMA Policy protects resources based on scopes. If a scope is protected by a policy, then the policy script must reutrn `true` in order to authorize access during RPT authorization.

@@ -249,8 +249,8 @@
       
         
   <li>
-    <a class="" title="oxTrust Admin Interface" href="../">
-      oxTrust Admin Interface
+    <a class="" title="Administrating Gluu oxTrust UI" href="../">
+      Administrating Gluu oxTrust UI
     </a>
     
   </li>
@@ -386,20 +386,39 @@
         <ul>
           
             <li class="anchor">
+              <a title="SCIM Endpoints" href="#scim-endpoints">
+                <b>SCIM Endpoints</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
               <a title="SCIM 1.1" href="#scim-11">
                 <b>SCIM 1.1</b>
               </a>
             </li>
             
               <li class="anchor">
-              <a title="Endpoint: User & Group" href="#endpoint-user-group">
-                  <font size=2><i>Endpoint: User & Group</i></font>
+              <a title="Endpoint: User &amp; Group" href="#endpoint-user-group">
+                  <font size=2><i>Endpoint: User &amp; Group</i></font>
               </a>
             </li>
              
               <li class="anchor">
               <a title="Endpoint: Bulk" href="#endpoint-bulk">
                   <font size=2><i>Endpoint: Bulk</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="Definitions" href="#definitions">
+                  <font size=2><i>Definitions</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="Response Codes" href="#response-codes">
+                  <font size=2><i>Response Codes</i></font>
               </a>
             </li>
              
@@ -467,15 +486,6 @@
       
         
   <li>
-    <a class="" title="Service Integration in Gluu CE" href="../integrate/">
-      Service Integration in Gluu CE
-    </a>
-    
-  </li>
-                  
-      
-        
-  <li>
     <a class="" title="Backup Gluu Server CE" href="../backup/">
       Backup Gluu Server CE
     </a>
@@ -533,136 +543,13 @@
       <article class="article">
         <div class="wrapper">
           
-          <div class="toc">
-<ul>
-<li><a href="#scim-endpoints">SCIM Endpoints</a><ul>
-<li><a href="#scim-11">SCIM 1.1</a><ul>
-<li><a href="#endpoint-user-group">Endpoint: User &amp; Group</a><ul>
-<li><a href="#example">Example</a></li>
-</ul>
-</li>
-<li><a href="#endpoint-bulk">Endpoint: Bulk</a><ul>
-<li><a href="#definitions">Definitions</a></li>
-<li><a href="#response-codes">Response Codes</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#scim-20">SCIM 2.0</a><ul>
-<li><a href="#scim-20-endpoints">SCIM 2.0 Endpoints</a></li>
-<li><a href="#definitions_1">Definitions</a><ul>
-<li><a href="#address"><a name="/definitions/Address">Address</a></a></li>
-<li><a href="#bulkoperation"><a name="/definitions/BulkOperation">BulkOperation</a></a></li>
-<li><a href="#bulkrequest"><a name="/definitions/BulkRequest">BulkRequest</a></a></li>
-<li><a href="#bulkresponse"><a name="/definitions/BulkResponse">BulkResponse</a></a></li>
-<li><a href="#email"><a name="/definitions/Email">Email</a></a></li>
-<li><a href="#entitlement"><a name="/definitions/Entitlement">Entitlement</a></a></li>
-<li><a href="#group"><a name="/definitions/Group">Group</a></a></li>
-<li><a href="#groupref"><a name="/definitions/GroupRef">GroupRef</a></a></li>
-<li><a href="#im"><a name="/definitions/Im">Im</a></a></li>
-<li><a href="#listresponse"><a name="/definitions/ListResponse">ListResponse</a></a></li>
-<li><a href="#memberref"><a name="/definitions/MemberRef">MemberRef</a></a></li>
-<li><a href="#meta"><a name="/definitions/Meta">Meta</a></a></li>
-<li><a href="#name"><a name="/definitions/Name">Name</a></a></li>
-<li><a href="#phonenumber"><a name="/definitions/PhoneNumber">PhoneNumber</a></a></li>
-<li><a href="#photo"><a name="/definitions/Photo">Photo</a></a></li>
-<li><a href="#resource"><a name="/definitions/Resource">Resource</a></a></li>
-<li><a href="#role"><a name="/definitions/Role">Role</a></a></li>
-<li><a href="#type"><a name="/definitions/Type">Type</a></a></li>
-<li><a href="#user"><a name="/definitions/User">User</a></a></li>
-<li><a href="#x509certificate"><a name="/definitions/X509Certificate">X509Certificate</a></a></li>
-<li><a href="#scimpersonsearch"><a name="/definitions/ScimPersonSearch">ScimPersonSearch</a></a></li>
-</ul>
-</li>
-<li><a href="#user-endpoint">User Endpoint</a><ul>
-<li><a href="#url">URL</a></li>
-<li><a href="#get">GET</a></li>
-<li><a href="#security">Security</a></li>
-<li><a href="#request">Request</a></li>
-<li><a href="#parameters">Parameters</a></li>
-<li><a href="#response">Response</a></li>
-<li><a href="#post">POST</a></li>
-<li><a href="#security_1">Security</a></li>
-<li><a href="#request_1">Request</a></li>
-<li><a href="#parameters_1">Parameters</a></li>
-<li><a href="#response_1">Response</a></li>
-<li><a href="#url_1">URL</a></li>
-<li><a href="#get_1">GET</a></li>
-<li><a href="#security_2">Security</a></li>
-<li><a href="#request_2">Request</a></li>
-<li><a href="#parameters_2">Parameters</a></li>
-<li><a href="#response_2">Response</a></li>
-<li><a href="#put">PUT</a></li>
-<li><a href="#security_3">Security</a></li>
-<li><a href="#request_3">Request</a></li>
-<li><a href="#parameters_3">Parameters</a></li>
-<li><a href="#response_3">Response</a></li>
-<li><a href="#delete">DELETE</a></li>
-<li><a href="#security_4">Security</a></li>
-<li><a href="#request_4">Request</a></li>
-<li><a href="#parameters_4">Parameters</a></li>
-<li><a href="#response_4">Response</a></li>
-<li><a href="#url_2">URL</a></li>
-<li><a href="#post_1">POST</a></li>
-<li><a href="#security_5">Security</a></li>
-<li><a href="#request_5">Request</a></li>
-<li><a href="#parameters_5">Parameters</a></li>
-<li><a href="#response_5">Response</a></li>
-</ul>
-</li>
-<li><a href="#group-endpoint">Group Endpoint</a><ul>
-<li><a href="#url_3">URL</a></li>
-<li><a href="#get_2">GET</a></li>
-<li><a href="#security_6">Security</a></li>
-<li><a href="#request_6">Request</a></li>
-<li><a href="#parameters_6">Parameters</a></li>
-<li><a href="#response_6">Response</a></li>
-<li><a href="#post_2">POST</a></li>
-<li><a href="#security_7">Security</a></li>
-<li><a href="#request_7">Request</a></li>
-<li><a href="#parameters_7">Parameters</a></li>
-<li><a href="#response_7">Response</a></li>
-<li><a href="#url_4">URL</a></li>
-<li><a href="#get_3">GET</a></li>
-<li><a href="#security_8">Security</a></li>
-<li><a href="#request_8">Request</a></li>
-<li><a href="#parameters_8">Parameters</a></li>
-<li><a href="#response_8">Response</a></li>
-<li><a href="#put_1">PUT</a></li>
-<li><a href="#security_9">Security</a></li>
-<li><a href="#request_9">Request</a></li>
-<li><a href="#parameters_9">Parameters</a></li>
-<li><a href="#response_9">Response</a></li>
-<li><a href="#delete_1">DELETE</a></li>
-<li><a href="#security_10">Security</a></li>
-<li><a href="#request_10">Request</a></li>
-<li><a href="#parameters_10">Parameters</a></li>
-<li><a href="#response_10">Response</a></li>
-</ul>
-</li>
-<li><a href="#bulk-operation-endpoint">Bulk Operation Endpoint</a><ul>
-<li><a href="#url_5">URL</a></li>
-<li><a href="#post_3">POST</a></li>
-<li><a href="#security_11">Security</a></li>
-<li><a href="#request_11">Request</a><ul>
-<li><a href="#parameters_11">Parameters</a></li>
-</ul>
-</li>
-<li><a href="#response_11">Response</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
+          <h1 id="scim">SCIM<a class="headerlink" href="#scim" title="Permanent link">#</a></h1>
 <p>Gluu Server Community Edition supports System for Cross-domain Identity Management (SCIM) Version 1.0 and 2.0 out of the box, operated using HTTP <code>GET</code> and <code>POST</code> commands. SCIM uses a REST API for operations which are disabled by default. The support for SCIM must be enabled from the oxTrust admin interface. 
 SCIM is enabled from the Organization Configuration in the oxTrust administration interface. Please navigate to <code>Organization Configuration</code> --&gt; <code>System Configuration</code>.</p>
 <p><img alt="organization-menu" src="../../img/oxtrust/organization-menu.png" /></p>
 <p>Please navigate down the page to find <code>SCIM Support</code> in the <code>SYstem Configuration</code> page and select <code>Enabled</code>.</p>
 <p><img alt="enable" src="../../img/scim/enable.png" /></p>
-<h1 id="scim-endpoints">SCIM Endpoints<a class="headerlink" href="#scim-endpoints" title="Permanent link">#</a></h1>
+<h2 id="scim-endpoints">SCIM Endpoints<a class="headerlink" href="#scim-endpoints" title="Permanent link">#</a></h2>
 <p>SCIM uses REST API for the operations which are covered in short in this section. There are two versions of the SCIM API each with its own specification. This usage of SCIM requires advanced level knowledge of HTTP GET and POST commands and not recommended for entry level users.</p>
 <p>The SCIM 1.1 is governed by the <a href="http://www.simplecloud.info/specs/draft-scim-api-01.html">SCIM:Protocol 1.1</a> document and SCIM 2.0 is governed by the <a href="https://tools.ietf.org/html/rfc7643">SCIM:Core Schema</a> &amp; <a href="https://tools.ietf.org/html/rfc7644">SCIM:Protocol</a>. As it is mentioned before, the specifications define an API, the operations are performed through endpoints. There are three endpoints that are available in Gluu Server SCIM:</p>
 <ol>
@@ -791,7 +678,7 @@ Content-Type:  application/json
 </tr>
 </tbody>
 </table>
-<h5 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">#</a></h5>
+<h3 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">#</a></h3>
 <p>The definitions for the bulk operation is covered in the tables below. The parametes below are all optional.</p>
 <table>
 <thead>
@@ -879,7 +766,7 @@ Content-Type:  application/json
 </tr>
 </tbody>
 </table>
-<h4 id="response-codes">Response Codes<a class="headerlink" href="#response-codes" title="Permanent link">#</a></h4>
+<h3 id="response-codes">Response Codes<a class="headerlink" href="#response-codes" title="Permanent link">#</a></h3>
 <p>This sections defines the response codes for the requests sent to the SCIM endpoints.</p>
 <table>
 <thead>
@@ -946,7 +833,7 @@ Content-Type:  application/json
 <li><a href="#bulk-operation-endpoint">Bulk Operation Endpoint</a></li>
 </ul>
 <h3 id="definitions_1">Definitions<a class="headerlink" href="#definitions_1" title="Permanent link">#</a></h3>
-<h4 id="address"><a name="/definitions/Address">Address</a><a class="headerlink" href="#address" title="Permanent link">#</a></h4>
+<p><a name="/definitions/Address">Address</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -1027,7 +914,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="bulkoperation"><a name="/definitions/BulkOperation">BulkOperation</a><a class="headerlink" href="#bulkoperation" title="Permanent link">#</a></h4>
+<p><a name="/definitions/BulkOperation">BulkOperation</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -1094,7 +981,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="bulkrequest"><a name="/definitions/BulkRequest">BulkRequest</a><a class="headerlink" href="#bulkrequest" title="Permanent link">#</a></h4>
+<p><a name="/definitions/BulkRequest">BulkRequest</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -1126,7 +1013,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="bulkresponse"><a name="/definitions/BulkResponse">BulkResponse</a><a class="headerlink" href="#bulkresponse" title="Permanent link">#</a></h4>
+<p><a name="/definitions/BulkResponse">BulkResponse</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -1151,7 +1038,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="email"><a name="/definitions/Email">Email</a><a class="headerlink" href="#email" title="Permanent link">#</a></h4>
+<p><a name="/definitions/Email">Email</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -1204,7 +1091,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="entitlement"><a name="/definitions/Entitlement">Entitlement</a><a class="headerlink" href="#entitlement" title="Permanent link">#</a></h4>
+<p><a name="/definitions/Entitlement">Entitlement</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -1257,7 +1144,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="group"><a name="/definitions/Group">Group</a><a class="headerlink" href="#group" title="Permanent link">#</a></h4>
+<p><a name="/definitions/Group">Group</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -1310,7 +1197,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="groupref"><a name="/definitions/GroupRef">GroupRef</a><a class="headerlink" href="#groupref" title="Permanent link">#</a></h4>
+<p><a name="/definitions/GroupRef">GroupRef</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -1349,7 +1236,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="im"><a name="/definitions/Im">Im</a><a class="headerlink" href="#im" title="Permanent link">#</a></h4>
+<p><a name="/definitions/Im">Im</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -1402,7 +1289,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="listresponse"><a name="/definitions/ListResponse">ListResponse</a><a class="headerlink" href="#listresponse" title="Permanent link">#</a></h4>
+<p><a name="/definitions/ListResponse">ListResponse</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -1448,7 +1335,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="memberref"><a name="/definitions/MemberRef">MemberRef</a><a class="headerlink" href="#memberref" title="Permanent link">#</a></h4>
+<p><a name="/definitions/MemberRef">MemberRef</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -1494,7 +1381,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="meta"><a name="/definitions/Meta">Meta</a><a class="headerlink" href="#meta" title="Permanent link">#</a></h4>
+<p><a name="/definitions/Meta">Meta</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -1547,7 +1434,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="name"><a name="/definitions/Name">Name</a><a class="headerlink" href="#name" title="Permanent link">#</a></h4>
+<p><a name="/definitions/Name">Name</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -1600,7 +1487,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="phonenumber"><a name="/definitions/PhoneNumber">PhoneNumber</a><a class="headerlink" href="#phonenumber" title="Permanent link">#</a></h4>
+<p><a name="/definitions/PhoneNumber">PhoneNumber</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -1653,7 +1540,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="photo"><a name="/definitions/Photo">Photo</a><a class="headerlink" href="#photo" title="Permanent link">#</a></h4>
+<p><a name="/definitions/Photo">Photo</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -1706,7 +1593,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="resource"><a name="/definitions/Resource">Resource</a><a class="headerlink" href="#resource" title="Permanent link">#</a></h4>
+<p><a name="/definitions/Resource">Resource</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -1745,7 +1632,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="role"><a name="/definitions/Role">Role</a><a class="headerlink" href="#role" title="Permanent link">#</a></h4>
+<p><a name="/definitions/Role">Role</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -1798,7 +1685,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="type"><a name="/definitions/Type">Type</a><a class="headerlink" href="#type" title="Permanent link">#</a></h4>
+<p><a name="/definitions/Type">Type</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -1809,7 +1696,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="user"><a name="/definitions/User">User</a><a class="headerlink" href="#user" title="Permanent link">#</a></h4>
+<p><a name="/definitions/User">User</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -1995,7 +1882,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="x509certificate"><a name="/definitions/X509Certificate">X509Certificate</a><a class="headerlink" href="#x509certificate" title="Permanent link">#</a></h4>
+<p><a name="/definitions/X509Certificate">X509Certificate</a></p>
 <table border="1">
     <tr>
         <th>name</th>
@@ -2048,7 +1935,7 @@ Content-Type:  application/json
     </tr>
 </table>
 
-<h4 id="scimpersonsearch"><a name="/definitions/ScimPersonSearch">ScimPersonSearch</a><a class="headerlink" href="#scimpersonsearch" title="Permanent link">#</a></h4>
+<p><a name="/definitions/ScimPersonSearch">ScimPersonSearch</a></p>
 <table border="1">
     <tr>
         <th>name</th>

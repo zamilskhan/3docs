@@ -1,5 +1,3 @@
-[TOC]
-
 # Fine Tuning Gluu Server
 Gluu Server has a stateless architecture, it scales quite easy. However
 to get high-performant server it must be tuned accordingly.

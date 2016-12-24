@@ -1,4 +1,3 @@
-[TOC]
 # FAQ
 ## General FAQ
 ### Logs

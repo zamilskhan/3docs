@@ -249,8 +249,8 @@
       
         
   <li>
-    <a class="" title="oxTrust Admin Interface" href="../">
-      oxTrust Admin Interface
+    <a class="" title="Administrating Gluu oxTrust UI" href="../">
+      Administrating Gluu oxTrust UI
     </a>
     
   </li>
@@ -317,6 +317,8 @@
     </a>
     
       
+        
+      
       
         <ul>
           
@@ -333,8 +335,38 @@
             </li>
              
               <li class="anchor">
+              <a title="Metadata of the SP" href="#metadata-of-the-sp">
+                  <font size=2><i>Metadata of the SP</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="Required Attributes" href="#required-attributes">
+                  <font size=2><i>Required Attributes</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="SSO Testing Endpoint" href="#sso-testing-endpoint">
+                  <font size=2><i>SSO Testing Endpoint</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
               <a title="Create a Trust Relationship" href="#create-a-trust-relationship">
                   <font size=2><i>Create a Trust Relationship</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="Relying Party Configuration" href="#relying-party-configuration">
+                  <font size=2><i>Relying Party Configuration</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="Federation Configuration" href="#federation-configuration">
+                  <font size=2><i>Federation Configuration</i></font>
               </a>
             </li>
              
@@ -348,6 +380,12 @@
               <li class="anchor">
               <a title="Required Setup" href="#required-setup">
                   <font size=2><i>Required Setup</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="Specific Setup Details" href="#specific-setup-details">
+                  <font size=2><i>Specific Setup Details</i></font>
               </a>
             </li>
              
@@ -465,15 +503,6 @@
       
         
   <li>
-    <a class="" title="Service Integration in Gluu CE" href="../integrate/">
-      Service Integration in Gluu CE
-    </a>
-    
-  </li>
-                  
-      
-        
-  <li>
     <a class="" title="Backup Gluu Server CE" href="../backup/">
       Backup Gluu Server CE
     </a>
@@ -531,37 +560,7 @@
       <article class="article">
         <div class="wrapper">
           
-            <h1>Configure and Manage SAML SSO</h1>
-          
-          <div class="toc">
-<ul>
-<li><a href="#outbound-saml">Outbound SAML</a><ul>
-<li><a href="#trust-relationship-requirements">Trust Relationship Requirements</a><ul>
-<li><a href="#metadata-of-the-sp">Metadata of the SP</a></li>
-<li><a href="#required-attributes">Required Attributes</a></li>
-<li><a href="#sso-testing-endpoint">SSO Testing Endpoint</a></li>
-</ul>
-</li>
-<li><a href="#create-a-trust-relationship">Create a Trust Relationship</a><ul>
-<li><a href="#relying-party-configuration">Relying Party Configuration</a></li>
-<li><a href="#federation-configuration">Federation Configuration</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#inbound-saml">Inbound SAML</a><ul>
-<li><a href="#required-setup">Required Setup</a><ul>
-<li><a href="#specific-setup-details">Specific Setup Details</a></li>
-</ul>
-</li>
-<li><a href="#custom-script-configuration">Custom Script Configuration</a></li>
-<li><a href="#adding-idp-in-asimba-server">Adding IDP in Asimba Server</a></li>
-<li><a href="#adding-sp-requestor-in-asimba-server">Adding SP Requestor in Asimba Server</a></li>
-<li><a href="#test-asimba-with-saml-proxy">Test Asimba with SAML Proxy</a></li>
-</ul>
-</li>
-</ul>
-</div>
+          <h1 id="saml">SAML<a class="headerlink" href="#saml" title="Permanent link">#</a></h1>
 <h2 id="outbound-saml">Outbound SAML<a class="headerlink" href="#outbound-saml" title="Permanent link">#</a></h2>
 <p>Outbound SAML can also be called SP-initiated Single Sign On (SSO) or traditional SAML. In an outbound SAML transaction, the SP redirects the user to the designated Identity Provider (IDP) for authentication and authorization. The IDP will ask for the username and password for the user and up on successful authentication, the user is sent back to the SP logged in. The requirement for the IDP is a trust relationship (TR) set up beforehand with the SP. The next section covers how to set up a TR in Gluu Server.</p>
 <div class="admonition note">
@@ -575,15 +574,15 @@
 <li><a href="#required-attribute-of-website">Required attribute of website</a></li>
 <li><a href="#sso-testing-endpoint-of-website">SSO testing endpoint of website</a></li>
 </ul>
-<h4 id="metadata-of-the-sp">Metadata of the SP<a class="headerlink" href="#metadata-of-the-sp" title="Permanent link">#</a></h4>
+<h3 id="metadata-of-the-sp">Metadata of the SP<a class="headerlink" href="#metadata-of-the-sp" title="Permanent link">#</a></h3>
 <p>Metadata is a XML file which has configuration data used to provision any website (SP) or IDP (Gluu Server) to communicate with each other. It is interchangeable between the IDP and the SP.</p>
 <p>Websites (SP) can provide metadata via URL or as a separate file.</p>
-<h4 id="required-attributes">Required Attributes<a class="headerlink" href="#required-attributes" title="Permanent link">#</a></h4>
+<h3 id="required-attributes">Required Attributes<a class="headerlink" href="#required-attributes" title="Permanent link">#</a></h3>
 <p>Every organization has their own policy to release/share attributes with
 any IDP or SP. The oxTrust GUI supports both preconfigured and custom attribute
 Release to the SP. The administrator only needs to click on the desired 
 attribute and it will be released to the SP.</p>
-<h4 id="sso-testing-endpoint">SSO Testing Endpoint<a class="headerlink" href="#sso-testing-endpoint" title="Permanent link">#</a></h4>
+<h3 id="sso-testing-endpoint">SSO Testing Endpoint<a class="headerlink" href="#sso-testing-endpoint" title="Permanent link">#</a></h3>
 <p>Every website (SP) should have both a staging and a production URI
 endpoint which can be checked for SSO, where the user will access to log
 into that SP.</p>
@@ -610,12 +609,12 @@ into that SP.</p>
 <li><em>Released</em>: The attributes that are required for the SP must be in this pane. The required attributes can be selected from the left side pane with the heading “Release Additional Attributes”.
 The TR is added by clicking on the <code>Add</code> button located in the lower left side of the page.</li>
 </ul>
-<h4 id="relying-party-configuration">Relying Party Configuration<a class="headerlink" href="#relying-party-configuration" title="Permanent link">#</a></h4>
+<h3 id="relying-party-configuration">Relying Party Configuration<a class="headerlink" href="#relying-party-configuration" title="Permanent link">#</a></h3>
 <p>The Relying Party must be configured for some SPs. The relying party configuration is accessible on the TR Creation page. The checkbox <code>Configure specific Relying Party</code> must be checked.</p>
 <p><img alt="enable-relying-party.png" src="../../img/saml/enable-relying-party.png" /></p>
 <p>The checkbox will result in a link which can be accessed to configure relying party for the TR. The image below shows the relying party config panel from which the administrator can add the specific option.</p>
 <p><img alt="tr-relying-party" src="../../img/saml/tr-relying-party.png" /></p>
-<h4 id="federation-configuration">Federation Configuration<a class="headerlink" href="#federation-configuration" title="Permanent link">#</a></h4>
+<h3 id="federation-configuration">Federation Configuration<a class="headerlink" href="#federation-configuration" title="Permanent link">#</a></h3>
 <p>If the SP is part of any identity federation such as InCommon Federation, then the administrator must add the federation as a SP in Gluu Server. This will allow the administrator to add SPs under the federation easily from a TR. The requirement of a federation TR created using the general TR is a must. The example below shows an administrator adding a TR for InCommon Federation.</p>
 <p><img alt="federationTR" src="../../img/saml/federationTR.png" /></p>
 <p>Once this is done, the SPs under the federation can be added by selecting the Federation from the <code>Federation Name</code> drop down menu and selecting the entity-id for the SP.</p>
@@ -651,7 +650,7 @@ i<img alt="asimba-overview" src="../../img/asimba/overview.png" /></p>
 <p class="admonition-title">Note</p>
 <p>Description of SAML Authentication Module is available here: https://github.com/GluuFederation/oxAuth/tree/master/Server/integrations/saml</p>
 </div>
-<h4 id="specific-setup-details">Specific Setup Details<a class="headerlink" href="#specific-setup-details" title="Permanent link">#</a></h4>
+<h3 id="specific-setup-details">Specific Setup Details<a class="headerlink" href="#specific-setup-details" title="Permanent link">#</a></h3>
 <p>The Gluu Server setup with the hostname <code>https://test.gluu.org</code> must be setup with Asimba. This is done by typing <code>yes</code> to the <a href="../../installation-guide/setup_py/">setup script prompt</a>.</p>
 <p><img alt="asimba-install" src="../../img/asimba/asimba-install.png" /></p>
 <h3 id="custom-script-configuration">Custom Script Configuration<a class="headerlink" href="#custom-script-configuration" title="Permanent link">#</a></h3>

@@ -1,4 +1,3 @@
-[TOC]
 # Configure Log Viewer
 
 The Gluu Server has the facility to read log files using the GUI. The

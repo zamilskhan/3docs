@@ -1,5 +1,3 @@
-[TOC]
-
 #How to back up Gluu CE Server
 
 Gluu CE Server Back up can be performed using below methods.

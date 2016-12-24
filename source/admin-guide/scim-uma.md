@@ -1,11 +1,10 @@
-[TOC]
 # Overview
 Gluu Server supports only UMA protection for SCIM endpoints from version 2.4.0 onwards. 
 A machine based authorization method is used to obtain the access tokens. SCIM/UMA is built
 into the Gluu Server CE and does not require any special package or installation. Please checkout 
 [Installation Guide](../installation-guide/index.md) for installation instructions.
 
-##Installation
+## Installation
 
 * Install Gluu Server CE following the [Installation Guide](../installation-guide/index.md) and 
 remember to install `Asimba` while running the setup script.  The setup script prepares the 
@@ -27,7 +26,7 @@ The `setup.properties.file` contains the RS and RP JWKS in Base64 format.
 
 * Enable SCIM from Organization Configuration
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/enable-scim.png)
+![image](/img/scim/enable-scim.png)
 
 * oxTrust SCIM UMA configuration is automatically updated while running the `setup.py` and the correct values are setup 
 in the [oxtrust-config.json](https://github.com/GluuFederation/community-edition-setup/blob/master/templates/oxtrust-config.json#L122) file.
@@ -129,26 +128,26 @@ To enable test mode, do the following:
 
 * Login to the oxTrust GUI and go to "Configuration" -> "JSON Configuration" -> "OxTrust Configuration", then locate the property `scimTestMode`.
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/scim-test-mode-false.png)
+![image](/img/scim/scim-test-mode-false.png)
 
 * Set it to `true`, then click the "Save Configuration" button. The Gluu server will then create a long-lived OAuth2 access token with a validity period of one year. Doing this will also switch the authentication scheme from UMA to OAuth2 Access Token.
 * Click again "JSON Configuration" -> "OxTrust Configuration" in the left navigation pane. This will retrieve the access token and be displayed in the `scimTestModeAccessToken` property.
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/scim-test-mode-true.png)
+![image](/img/scim/scim-test-mode-true.png)
 
 * If the access token has expired, just repeat the previous steps to create a new one.
  
 The access token can then be used as the query string parameter `access_token` in accessing the SCIM 2.0 endpoints, for example:
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/scim-test-mode-example.png)
+![image](/img/scim/scim-test-mode-example.png)
 
 You can verify the current authentication scheme of the SCIM 2.0 endpoints by browsing its `ServiceProviderConfig`:
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/scim-test-mode-config.png)
+![image](/img/scim/scim-test-mode-config.png)
 
 To exit test mode, just set `scimTestMode` back to `false` then click the "Save Configuration" button. This will switch the authentication scheme from OAuth2 Access Token to UMA. If you try using your access token again, you will now get the `403 Unauthorized` error:
 
-![image](https://raw.githubusercontent.com/GluuFederation/docs/master/sources/img/2.4/scim-test-mode-403.png)
+![image](/img/scim/scim-test-mode-403.png)
 
 # Notes
 UMA is protected with SCIM in Gluu Server Community Edition (CE). The usage of UMA requires HTTP GET and HTTP POST requests. Before testing, the Client making the requests must be added/registered in Gluu CE. The UMA configuration is available @ `https://hostname/.well-known/uma-configuration`. The request to authorization endpoint must accompanied with  application/json content type. 

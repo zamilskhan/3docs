@@ -249,8 +249,8 @@
       
         
   <li>
-    <a class="" title="oxTrust Admin Interface" href="../">
-      oxTrust Admin Interface
+    <a class="" title="Administrating Gluu oxTrust UI" href="../">
+      Administrating Gluu oxTrust UI
     </a>
     
   </li>
@@ -344,38 +344,40 @@
     </a>
     
       
+        
+      
       
         <ul>
           
             <li class="anchor">
-              <a title="6.1 Resource Registration" href="#61-resource-registration">
-                <b>6.1 Resource Registration</b>
+              <a title="Resource Registration" href="#resource-registration">
+                <b>Resource Registration</b>
               </a>
             </li>
             
           
             <li class="anchor">
-              <a title="6.2 Scopes" href="#62-scopes">
-                <b>6.2 Scopes</b>
+              <a title="Scopes" href="#scopes">
+                <b>Scopes</b>
               </a>
             </li>
             
               <li class="anchor">
-              <a title="6.2.1 Add Scope" href="#621-add-scope">
-                  <font size=2><i>6.2.1 Add Scope</i></font>
+              <a title="Add Scope" href="#add-scope">
+                  <font size=2><i>Add Scope</i></font>
               </a>
             </li>
              
           
             <li class="anchor">
-              <a title="6.3 UMA Policies" href="#63-uma-policies">
-                <b>6.3 UMA Policies</b>
+              <a title="UMA Policies" href="#uma-policies">
+                <b>UMA Policies</b>
               </a>
             </li>
             
               <li class="anchor">
-              <a title="6.3.1 UMA Policy Algorithm" href="#631-uma-policy-algorithm">
-                  <font size=2><i>6.3.1 UMA Policy Algorithm</i></font>
+              <a title="UMA Policy Algorithm" href="#uma-policy-algorithm">
+                  <font size=2><i>UMA Policy Algorithm</i></font>
               </a>
             </li>
              
@@ -442,15 +444,6 @@
       
         
   <li>
-    <a class="" title="Service Integration in Gluu CE" href="../integrate/">
-      Service Integration in Gluu CE
-    </a>
-    
-  </li>
-                  
-      
-        
-  <li>
     <a class="" title="Backup Gluu Server CE" href="../backup/">
       Backup Gluu Server CE
     </a>
@@ -508,11 +501,10 @@
       <article class="article">
         <div class="wrapper">
           
-            <h1>UMA</h1>
-          
-          <p>This section describes the adminisration of UMA in Gluu Server CE. The UMA administration is accessible from the oxTrust administrator interface.</p>
+          <h1 id="uma">UMA<a class="headerlink" href="#uma" title="Permanent link">#</a></h1>
+<p>This section describes the adminisration of UMA in Gluu Server CE. The UMA administration is accessible from the oxTrust administrator interface.</p>
 <p><img alt="menu" src="../../img/uma/menu.png" /></p>
-<h2 id="61-resource-registration">6.1 Resource Registration<a class="headerlink" href="#61-resource-registration" title="Permanent link">#</a></h2>
+<h2 id="resource-registration">Resource Registration<a class="headerlink" href="#resource-registration" title="Permanent link">#</a></h2>
 <p>The resources protected by UMA must be registered in oxTrust. The following propterties describe a resource:</p>
 <ul>
 <li>name</li>
@@ -537,7 +529,7 @@
 <p>The properties of a resource is visible in this page. There are two additional buttons that allows the administrator to add specific resource or scope as well. By default, Gluu Server is shipped with SCIM resources protected by UMA.</p>
 <p><img alt="add-resource" src="../../img/uma/add-resource.png" /></p>
 <p><img alt="add-scope" src="../../img/uma/add-scope.png" /></p>
-<h2 id="62-scopes">6.2 Scopes<a class="headerlink" href="#62-scopes" title="Permanent link">#</a></h2>
+<h2 id="scopes">Scopes<a class="headerlink" href="#scopes" title="Permanent link">#</a></h2>
 <p>The scopes in UMA are bount to resource sets and used by policies to check whether the specified user has access to the resource. The scopes are described in JSON and has the following properties:</p>
 <ul>
 <li>name</li>
@@ -594,13 +586,13 @@ oxId: View
 oxIconUrl: http://seed.gluu.org/uma/icons/view_scope.png
 </code></pre>
 
-<h3 id="621-add-scope">6.2.1 Add Scope<a class="headerlink" href="#621-add-scope" title="Permanent link">#</a></h3>
+<h3 id="add-scope">Add Scope<a class="headerlink" href="#add-scope" title="Permanent link">#</a></h3>
 <p>This section defines the process of defining UMA scopes from oxTrust. The scopes are accessed from the <code>Scopes</code> page under <code>UMA</code> from the oxTrust menu.</p>
 <p><img alt="uma-scopes" src="../../img/uma/uma-scopes.png" /></p>
 <p>The search bar can be used to look for available scopes. New scopes are added by clicking on the <code>Add Scope Description</code> button which will bring up the interface shown below.</p>
 <p><img alt="uma-scopes" src="../../img/uma/scopes-add.png" /></p>
 <p>Additionally there is an option to add authorization policy with the new scope.</p>
-<h2 id="63-uma-policies">6.3 UMA Policies<a class="headerlink" href="#63-uma-policies" title="Permanent link">#</a></h2>
+<h2 id="uma-policies">UMA Policies<a class="headerlink" href="#uma-policies" title="Permanent link">#</a></h2>
 <p>UMA policies protect UMA Resources via scopes. Gluu Server evaluates all policies, identified by scopes, to grant access to resources. There are three (3) main properties of a policy:</p>
 <ol>
 <li>scopes: policy protects resources by scopes</li>
@@ -610,7 +602,7 @@ oxIconUrl: http://seed.gluu.org/uma/icons/view_scope.png
 <p>The following section outlines how to define UMA policies from the Custom Script menu. The Custom Script page is accessed from the Configuration Menu.</p>
 <p><img alt="custom-script-menu" src="../../img/oxtrust/custom-script-menu.png" />
 <img alt="auth-policy" src="../../img/uma/auth-policy.png" /></p>
-<h3 id="631-uma-policy-algorithm">6.3.1 UMA Policy Algorithm<a class="headerlink" href="#631-uma-policy-algorithm" title="Permanent link">#</a></h3>
+<h3 id="uma-policy-algorithm">UMA Policy Algorithm<a class="headerlink" href="#uma-policy-algorithm" title="Permanent link">#</a></h3>
 <p>The UMA Policy alrorithm has two rules that are followed. These rules must be followed while writing UMA policy using the custom script feature of Gluu Server.</p>
 <ul>
 <li>

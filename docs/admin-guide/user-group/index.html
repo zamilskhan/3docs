@@ -249,8 +249,8 @@
       
         
   <li>
-    <a class="" title="oxTrust Admin Interface" href="../">
-      oxTrust Admin Interface
+    <a class="" title="Administrating Gluu oxTrust UI" href="../">
+      Administrating Gluu oxTrust UI
     </a>
     
   </li>
@@ -495,15 +495,6 @@
       
         
   <li>
-    <a class="" title="Service Integration in Gluu CE" href="../integrate/">
-      Service Integration in Gluu CE
-    </a>
-    
-  </li>
-                  
-      
-        
-  <li>
     <a class="" title="Backup Gluu Server CE" href="../backup/">
       Backup Gluu Server CE
     </a>
@@ -561,54 +552,7 @@
       <article class="article">
         <div class="wrapper">
           
-          <div class="toc">
-<ul>
-<li><a href="#user-management-in-gluu-server">User Management in Gluu Server</a><ul>
-<li><a href="#local-user-management">Local User Management</a><ul>
-<li><a href="#people">People</a></li>
-</ul>
-</li>
-<li><a href="#groups">Groups</a></li>
-<li><a href="#cache-refresh">Cache Refresh</a><ul>
-<li><a href="#customer-backend-key-and-attributes">Customer Backend Key and Attributes</a></li>
-<li><a href="#source-backend-ldap-servers">Source Backend LDAP Servers</a></li>
-<li><a href="#inum-ldap-server">Inum LDAP Server</a></li>
-<li><a href="#attributes-mapping">Attributes Mapping</a></li>
-</ul>
-</li>
-<li><a href="#import-people-from-file">Import People from file</a><ul>
-<li><a href="#file-scructure">File Scructure</a></li>
-</ul>
-</li>
-<li><a href="#register-user">Register User</a><ul>
-<li><a href="#oxtrust-configuration">oxTrust Configuration</a></li>
-</ul>
-</li>
-<li><a href="#user-registration">User Registration</a></li>
-</ul>
-</li>
-<li><a href="#scim-20-user-adddelete">SCIM 2.0 User Add/Delete</a><ul>
-<li><a href="#add-user">Add User</a><ul>
-<li><a href="#required-parameters">Required Parameters</a></li>
-<li><a href="#json-string">JSON String</a></li>
-<li><a href="#user-object">User Object</a></li>
-</ul>
-</li>
-<li><a href="#delete-user">Delete User</a><ul>
-<li><a href="#required-parameter">Required Parameter</a></li>
-</ul>
-</li>
-<li><a href="#user-extensions">User Extensions</a></li>
-</ul>
-</li>
-<li><a href="#lock-user-in-gluu-server">Lock User in Gluu Server</a><ul>
-<li><a href="#create-custom-attribute">Create Custom Attribute</a></li>
-<li><a href="#script-installation">Script Installation</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<h1 id="user-management-in-gluu-server">User Management in Gluu Server<a class="headerlink" href="#user-management-in-gluu-server" title="Permanent link">#</a></h1>
+          <h1 id="user-management-in-gluu-server">User Management in Gluu Server<a class="headerlink" href="#user-management-in-gluu-server" title="Permanent link">#</a></h1>
 <p>To keep the Gluu Server up-to-date with the latest user claims, your
 organization can either "push" or "pull" identity data. In the "pull"
 mode, otherwise known as LDAP Synchronization or Cache Refresh, the Gluu
@@ -658,7 +602,7 @@ button. The flow is <em>Add Member --&gt; Search the name/email of the user
 <img alt="Add Member" src="../../img/admin-guide/user/admin_users_addmember.png" /></p>
 <h2 id="cache-refresh">Cache Refresh<a class="headerlink" href="#cache-refresh" title="Permanent link">#</a></h2>
 <p>Cache Refresh is the process of connecting an existing backend LDAP server, like Microsoft Active Directory, with the Gluu Server's local LDAP server. Synching people and attributes from a backend server into the Gluu Server speeds up authentication transactions. It is possible to perform attribute transformations, changing the name of attributes, or even using an interception script to change the values. Transformations are stored in the Gluu LDAP service. </p>
-<p><img alt="Cache Refresh Menu" src="../../img/admin-guide/user/admin_cache_menu.png" title="admin cache" /></p>
+<p><img alt="Cache Refresh Menu" src="../../img/admin-guide/user/admin_cache_menu.png" /></p>
 <ul>
 <li>
 <p><em>Last Run:</em> The date and time of the latest cache refresh cycle

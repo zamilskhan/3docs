@@ -1,5 +1,3 @@
-[TOC]
-
 # Overview
 [OpenID Connect](http://openid.net/connect) ("Connect") is a standard
 profile of OAuth2 which defines a protocol to enable a website or mobile

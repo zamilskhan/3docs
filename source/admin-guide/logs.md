@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Gluu Server Logs
 
 When it comes to troubleshooting issues in the Gluu Server--from service hiccups to outages--logs are the best place to start. 

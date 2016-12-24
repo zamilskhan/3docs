@@ -249,8 +249,8 @@
       
         
   <li>
-    <a class="" title="oxTrust Admin Interface" href="../">
-      oxTrust Admin Interface
+    <a class="" title="Administrating Gluu oxTrust UI" href="../">
+      Administrating Gluu oxTrust UI
     </a>
     
   </li>
@@ -618,15 +618,6 @@
       
         
   <li>
-    <a class="" title="Service Integration in Gluu CE" href="../integrate/">
-      Service Integration in Gluu CE
-    </a>
-    
-  </li>
-                  
-      
-        
-  <li>
     <a class="" title="Backup Gluu Server CE" href="../backup/">
       Backup Gluu Server CE
     </a>
@@ -684,121 +675,7 @@
       <article class="article">
         <div class="wrapper">
           
-          <div class="toc">
-<ul>
-<li><a href="#oxd">OXD</a><ul>
-<li><a href="#documentation">Documentation</a></li>
-<li><a href="#openid-connect-rp-in-centos">OpenID Connect RP in CentOS</a><ul>
-<li><a href="#basic-web-server-installation">Basic Web Server Installation</a></li>
-<li><a href="#apache-web-server">Apache Web Server</a></li>
-<li><a href="#ssl-configuration">SSL Configuration</a><ul>
-<li><a href="#configure-apache-to-use-ssl">Configure Apache to use SSL</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#configuration-of-mod_auth_openidc">Configuration of mod_auth_openidc</a><ul>
-<li><a href="#installation">Installation</a></li>
-<li><a href="#client-registration">Client Registration</a></li>
-<li><a href="#install-cgi-script">Install CGI script</a></li>
-<li><a href="#configuring-the-apache-virtualhost">Configuring the Apache VirtualHost</a></li>
-</ul>
-</li>
-<li><a href="#openid-connect-rp-in-centos_1">OpenID Connect RP in CentOS</a><ul>
-<li><a href="#installation_1">Installation</a></li>
-<li><a href="#add-epel-repository">Add EPEL Repository</a></li>
-<li><a href="#apache-web-server_1">Apache Web Server</a></li>
-<li><a href="#configure-ssl-module">Configure SSL Module</a></li>
-<li><a href="#authentication-module-mod_auth_openidc">Authentication Module (mod_auth_openidc)</a></li>
-<li><a href="#load-authentication-module">Load Authentication Module</a></li>
-</ul>
-</li>
-<li><a href="#client-registration_1">Client Registration</a><ul>
-<li><a href="#dynamic-client-registration">Dynamic Client Registration</a></li>
-<li><a href="#manual-client-registration">Manual Client Registration</a><ul>
-<li><a href="#getting-dn-from-client-id">Getting DN from Client ID</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#oxray">oxRay</a><ul>
-<li><a href="#overview">Overview</a></li>
-<li><a href="#deployment">Deployment</a></li>
-<li><a href="#deploying-war-file-using-maven">Deploying WAR file using Maven</a><ul>
-<li><a href="#using-liferay-plugin-sdk-with-ant">Using LifeRay Plugin SDK With Ant</a></li>
-<li><a href="#using-binary-from-repository">Using Binary From Repository</a></li>
-<li><a href="#client-registration_2">Client Registration</a><ul>
-<li><a href="#modifying-portalproperties">Modifying portal.properties</a></li>
-</ul>
-</li>
-<li><a href="#login-using-the-liferay-front-end">Login Using the LifeRay Front End</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#openid-connect-authentication-java">OpenID Connect Authentication Java</a><ul>
-<li><a href="#using-openid-connect-to-authenticate-a-person-in-java">Using OpenID Connect to authenticate a person in Java</a></li>
-<li><a href="#discovery">Discovery</a></li>
-<li><a href="#client-registration_3">Client Registration</a></li>
-<li><a href="#obtaining-the-id_token">Obtaining the id_token</a></li>
-<li><a href="#logout">Logout</a></li>
-</ul>
-</li>
-<li><a href="#using-openid-connect-from-javascript">Using OpenID Connect from JavaScript</a></li>
-<li><a href="#apache-saml">Apache SAML</a><ul>
-<li><a href="#configuring-apache-shibboleth-sp-in-centos">Configuring Apache Shibboleth SP in CentOS</a><ul>
-<li><a href="#system-preparation">System Preparation</a></li>
-<li><a href="#shibboleth-sp-installation">Shibboleth SP Installation</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#install-and-configure-httpd">Install and Configure httpd</a><ul>
-<li><a href="#installation_2">Installation</a><ul>
-<li><a href="#configuration">Configuration</a></li>
-<li><a href="#httpd-testing">Httpd Testing</a></li>
-<li><a href="#sp-key-certificate">SP Key Certificate</a></li>
-<li><a href="#shibboleth-sp-configuration">Shibboleth SP Configuration</a></li>
-<li><a href="#shibboleth-manual-configuration-one-physical-sp">Shibboleth Manual Configuration (one Physical SP):</a></li>
-</ul>
-</li>
-<li><a href="#super-quick-ubuntu-shib-apache-install">Super Quick Ubuntu Shib Apache Install</a><ul>
-<li><a href="#configure-apache">Configure Apache</a></li>
-</ul>
-</li>
-<li><a href="#configure-the-shibboleth-sp">Configure the Shibboleth SP</a><ul>
-<li><a href="#test">Test</a></li>
-</ul>
-</li>
-<li><a href="#troubleshooting">Troubleshooting</a></li>
-<li><a href="#iis-saml-configuration">IIS SAML Configuration</a><ul>
-<li><a href="#iis-configuration-in-windows-7">IIS Configuration in Windows 7</a></li>
-<li><a href="#isapi-filter-configuration">ISAPI Filter Configuration</a></li>
-</ul>
-</li>
-<li><a href="#shibboleth-sp-setup-in-windows-2008-r2-with-iis7">Shibboleth SP Setup in Windows 2008 R2 with IIS7</a><ul>
-<li><a href="#shibboleth-sp-25x-setup">Shibboleth SP 2.5.x Setup</a></li>
-<li><a href="#trust-relationship-in-idp">Trust Relationship in IdP</a></li>
-<li><a href="#sp-configuration">SP Configuration</a></li>
-<li><a href="#sso-testing">SSO Testing</a></li>
-</ul>
-</li>
-<li><a href="#configuring-apache-shibboleth-sp-in-windows">Configuring Apache Shibboleth SP in Windows</a><ul>
-<li><a href="#shibboleth-sp-installation_1">Shibboleth SP Installation</a></li>
-<li><a href="#apache-configuration">Apache Configuration</a><ul>
-<li><a href="#shibboleth-and-apache-configuration">Shibboleth and Apache Configuration</a></li>
-</ul>
-</li>
-<li><a href="#test-sp-installation-with-windows-and-apache">Test SP Installation with Windows and Apache</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<h1 id="oxd">OXD<a class="headerlink" href="#oxd" title="Permanent link">#</a></h1>
+          <h1 id="oxd">OXD<a class="headerlink" href="#oxd" title="Permanent link">#</a></h1>
 <p>oxd is a mediator, a service demon that listens on localhost, providing easy APIs that can be called by a web application to simplify using an external OAuth2 server for authentication or authorization. oxd is not a proxy--sometimes it makes API calls on behalf of an application, but other times it just forms the right URLs and returns them to the application. </p>
 <p>One significant advantage of using oxd over a native client library is that oxd consolidates the OAuth2 code in one package. If there are updates to the OAuth2 client code, you can update the oxd-server package, without changing the interface to the application.</p>
 <h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">#</a></h2>
@@ -2400,14 +2277,14 @@ below--you are done!
     </div>
     <div class="next">
       
-        <a href="../integrate/" title="Service Integration in Gluu CE">
+        <a href="../backup/" title="Backup Gluu Server CE">
           <span class="direction">
             Next
           </span>
           <div class="page">
             <div class="stretch">
               <div class="title">
-                Service Integration in Gluu CE
+                Backup Gluu Server CE
               </div>
             </div>
             <div class="button button-next" role="button" aria-label="Next">

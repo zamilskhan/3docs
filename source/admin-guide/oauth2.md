@@ -1,5 +1,3 @@
-[TOC]
-
 # Client Credentials Grant
 
 The Client Credentials Grant allows resource owner to use password

@@ -1,4 +1,3 @@
-[TOC]
 # ID Generation API Document
 This document outlines the API for ID Generation for Gluu Server.
 ## Path
