@@ -1,5 +1,4 @@
-
-### 2.5.1 Setup Prompt
+### Setup Prompt
 The `setup.py` script will bring up a prompt to provide information for certificate as well as the IP Address and the hostname for the Gluu Server. The prompt is given below.
 
 ```
@@ -16,11 +15,10 @@ Install oxAuth OAuth2 Authorization Server? [Yes] :
 Install oxTrust Admin UI? [Yes] :
 Install Gluu OpenDJ LDAP Server? [Yes] :
 Install Apache HTTPD Server [Yes] :
-Install Shibboleth SAML IDP? [Yes] :
-Install Asimba SAML Proxy? [Yes] :
-Install CAS? [Yes] :
-Install oxAuth RP? [Yes] :
-Install Passport? [Yes] :
+Install Shibboleth SAML IDP? [No] :
+Install Asimba SAML Proxy? [No] :
+Install CAS? [No] :
+Install oxAuth RP? [No] :
 ```
 
 It is recommended to use `hostname.domain` structure for hostname and refrain from using `127.x.x.x` for IP address. 
@@ -31,7 +29,7 @@ Make sure you remove or encrypt setup.properties.last It has the clear text pass
 !!! warning
     Use a FQDN (fully qualified domain name) as hostname and refrain from using 127.0.0.1 as IP address
 
-### 2.5.2 Script Command Line Options
+### Script Command Line Options
 The `setup.py` script can be used to configure your Gluu Server and to add initial data
 for oxAuth and oxTrust to start. If `setup.properties` is found
 in this folder, these properties will automatically be used instead of

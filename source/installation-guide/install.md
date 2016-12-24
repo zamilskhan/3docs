@@ -1,8 +1,8 @@
-# 2 Install Gluu Server
+# Install Gluu Server
 Gluu Server CE is shipped in packages prepared for Ubuntu, CentOS, RHEL and Debian. The package installation follows the general procedure of adding the repo followed by the addition of RPM GPG key and finally installing with the `apt-get` or `yum install` command.
 
-## 2.1 Ubuntu
-### 2.1.1 Ubuntu Server 14.04
+## Ubuntu
+### Ubuntu Server 14.04
 The following commands will install Gluu Server `chroot`
 
 |       Command Description     |               Trusty Commands         |
@@ -17,7 +17,7 @@ The following commands will install Gluu Server `chroot`
 
 Please see section 2.1.3 to complete installation.
 
-### 2.1.2 Ubuntu Server 16.04
+### Ubuntu Server 16.04
 
 The following commands will install Gluu Server `chroot`
 
@@ -33,7 +33,7 @@ The following commands will install Gluu Server `chroot`
 
 Please see section 2.1.3 to complete installation.
 
-### 2.1.3 Complete Installation
+### Complete Installation
 The setup is completed by running the setup script `setup.py` from the setup folder. The server must be running so that the administrator can log into the chroot environment and run the script.
 
 * Log into Gluu Server `chroot`
@@ -46,7 +46,7 @@ The setup is completed by running the setup script `setup.py` from the setup fol
 |       Run [Setup Script](./setup_py.md)        |cd /install/community-edition-setup/ <br/>./setup.py|
 |	Gluu Server Status	|/etc/init.d/gluu-server-2.4.4 status	|
 
-### 2.1.4 Uninstall Gluu Server
+### Uninstall Gluu Server
 Gluu Server uninstallation follows the same principle as package removal from Ubuntu. The server must be stopped to remove the package.
 
 |       Command Description     |               Trusty & Xenial Commands|
@@ -55,8 +55,8 @@ Gluu Server uninstallation follows the same principle as package removal from Ub
 |       Uninstall Gluu Server   |apt-get remove gluu-server-2.4.4       |
 |       Remove backup folder    |rm -rf /opt/gluu-server-2.4.4*         |
 
-## 2.2 CentOS
-### 2.2.1 CentOS 6.5
+## CentOS
+### CentOS 6.5
 
 The following commands will install Gluu Server `chroot`. The supported versions include 6.6,6.7 and 6.8
 
@@ -68,7 +68,7 @@ The following commands will install Gluu Server `chroot`. The supported versions
 |       Update/Clean Repo       |yum clean all                          |
 |       Install Gluu Server     |yum install gluu-server-2.4.4          |
 
-### 2.2.2 CentOS 7.2
+### CentOS 7.2
 The following commands will install Gluu Server `chroot`
 
 
@@ -80,7 +80,7 @@ The following commands will install Gluu Server `chroot`
 |       Update/Clean Repo       |yum clean all                          |
 |       Install Gluu Server     |yum install gluu-server-2.4.4          |
 
-### 2.2.3 Complete Installation
+### Complete Installation
 The setup is completed by running the setup script `setup.py` from the setup folder. The server must be running so that the administrator can log into the chroot environment and run the script. The commands differ in CentO 6.x and CentOS 7.2
 
 * Log into Gluu Server `chroot`
@@ -100,7 +100,7 @@ The setup is completed by running the setup script `setup.py` from the setup fol
 |       Run [Setup Script](./setup_py.md)        |cd /install/community-edition-setup/ <br/>./setup.py|
 |       Gluu Server Status      |/sbin/gluu-serverd-2.4.4 status	|
 
-### 2.2.4 Uninstall Gluu Server
+### Uninstall Gluu Server
 Gluu Server uninstallation follows the same principle as package removal from CentOS. The server must be stopped to remove the package.
 
 |       Command Description     |               CentOS 6.x              |
@@ -115,8 +115,8 @@ Gluu Server uninstallation follows the same principle as package removal from Ce
 |       Uninstall Gluu Server   |yum remove gluu-server-2.4.4           |
 |       Remove backup folder    |rm -rf /opt/gluu-server-2.4.4*         |
 
-## 2.3 Red Hat Enterprise Linux (RHEL)
-### 2.3.1 RHEL 6.5
+## Red Hat Enterprise Linux (RHEL)
+### RHEL 6.5
 The following commands will install Gluu Server `chroot`. The supported versions include 6.6,6.7 and 6.8
 
 |       Command Description     |               RHEL 6.x              |
@@ -127,7 +127,7 @@ The following commands will install Gluu Server `chroot`. The supported versions
 |       Update/Clean Repo       |yum clean all                          |
 |       Install Gluu Server     |yum install gluu-server-2.4.4          |
 
-### 2.3.2 RHEL 7.2
+### RHEL 7.2
 The following commands will install Gluu Server `chroot`
 
 
@@ -139,7 +139,7 @@ The following commands will install Gluu Server `chroot`
 |       Update/Clean Repo       |yum clean all                          |
 |       Install Gluu Server     |yum install gluu-server-2.4.4          |
 
-### 2.3.3 Complete Installation
+### Complete Installation
 The setup is completed by running the setup script `setup.py` from the setup folder. The commands are different in RHEL 6.x and RHEL 7
 
 * Log into Gluu Server `chroot`
@@ -157,7 +157,7 @@ The setup is completed by running the setup script `setup.py` from the setup fol
 |       Log into Gluu `chroot`  |/sbin/gluu-serverd-2.4.4 login         |
 |       Run [Setup Script](./setup_py.md)        |cd /install/community-edition-setup/ <br/>./setup.py|
 
-### 2.3.4 Uninstall Gluu Server
+### Uninstall Gluu Server
 Gluu Server uninstallation follows the same principle as package removal from RHEL. The sevrer must be stopped to remove the package.
 
 |       Command Description     |               RHEL 6.x                |
@@ -172,7 +172,7 @@ Gluu Server uninstallation follows the same principle as package removal from RH
 |       Uninstall Gluu Server   |yum remove gluu-server-2.4.4           |
 |       Remove backup folder    |rm -rf /opt/gluu-server-2.4.4*         |
 
-## 2.4 Debian 8 (Jessie)
+## Debian 8 (Jessie)
 The following commands will install Gluu Server `chroot`
 
 |       Command Description     |               Jessie Commands         |
@@ -182,7 +182,7 @@ The following commands will install Gluu Server `chroot`
 |       Update/Clean Repo       |apt-get update                         |
 |       Install Gluu Server     |apt-get install gluu-server-2.4.4      |
 
-### 2.4.1 Complete Installation
+### Complete Installation
 The setup is completed by running the setup script `setup.py` from the setup folder.
 * Log into Gluu Server `chroot`
 * Run the setup script
@@ -193,7 +193,7 @@ The setup is completed by running the setup script `setup.py` from the setup fol
 |       Log into Gluu `chroot`  |/etc/init.d/gluu-server-2.4.4 login    |
 |       Run [Setup Script](./setup_py.md)        |cd /install/community-edition-setup/ <br/>./setup.py|
 
-### 2.4.2 Uninstall Gluu Server
+### Uninstall Gluu Server
 Gluu Server uninstallation follows the same principle as package removal from Ubuntu. The server must be stopped to remove the package.
 
 |       Command Description     |               Jessie Commands         |

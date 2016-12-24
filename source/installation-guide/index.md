@@ -1,5 +1,4 @@
-
-# 1 Preparing VM for Gluu Server Installation
+# Preparing VM for Gluu Server Installation
 Gluu Server Community Edition (CE) resource allocation depends on the backend data size. The requirements below are a bare minimum for Gluu CE to function properly. It is strongly recommended to allocate more resource for bigger backend data size.
 
 |CPU Unit       |       RAM     |       Disk Space      | Processor Type|
@@ -11,7 +10,7 @@ Gluu Server Community Edition (CE) resource allocation depends on the backend da
 !!! note
     Insufficient memory may cause unexpected errors and bugs which will require adjusting the resources for a smooth performance.
 
-## 1.1 Port
+## Port
 The following ports open for the Gluu Server to run. Please keep the ports open before installing Gluu Server.
 
 |       Port Number     |       Protocol        |
@@ -19,11 +18,11 @@ The following ports open for the Gluu Server to run. Please keep the ports open 
 |       80              |       tcp             |
 |       443             |       tcp             |
 
-## 1.2 Tomcat Memory Heap
+## Tomcat Memory Heap
 
 The minimum recommended heap for tomcat server is 3GB for a test instance of Gluu Server Community Edition (CE). This estimate is based on the minumum RAM requirements. It is best to keep this ratio when tomcat memory is allocated in production environments as the size will depend on the available RAM; as an example, a 6GB tomcat memory heap in a production server with 8 GB ram is ideal for a small organization running Gluu CE.
 
-### 1.2.1 Alter Tomcat Memory Heap
+### Alter Tomcat Memory Heap
 
 The tomcat heap memory is set from the `setup.py` script prompt. 
 ![tomcat-prompt](../img/oxtrust/tomcat-prompt.png)
@@ -44,7 +43,7 @@ wrapper.java.initmemory=512
 wrapper.java.maxmemory=1536
 ```
 
-## 1.3 File Descriptor
+## File Descriptor
 Gluu recommends setting the `file descriptors` to 65k for Gluu Server CE. The following steps will help set the `file descriptor` limit.
 
 * Edit the `/etc/security/limits.conf` file.
@@ -70,21 +69,21 @@ ulimit -n unlimited
 ```
 * Restart your system.
 
-## 1.4 Cloud Specific Instructions
+## Cloud Specific Instructions
 
-### 1.4.1 Amazon AWS
+### Amazon AWS
 
 Amazon AWS provides a public and private IP address to its clouds. While
 running the `/install/community-edition-setup/setup.py` script, use the
 Private IP address.
 
-### 1.4.2 Microsoft Azure
+### Microsoft Azure
 
 Accessing the Gluu Server on Azure can be a little bit tricky because of
 the Public/Private IP. Azure assigns a new Public/Private IP
 addresses each time the server is started. 
 
-#### 1.4.2.1 Setting up VM
+#### Setting up VM
 1. Log into Windows Azure Administrative Panel
 
 2. Click on `Virtual Machines` tab, and click `Create a Virtual Machine` link
@@ -123,7 +122,7 @@ dropdown menu.
 11. SSH into the VM and install the Gluu Server. See our [Installation Guide](./install.md) for
     installation instructions.
 
-#### 1.4.2.2 Setup.py Configuration
+#### Setup.py Configuration
 This section describes what to put in the prompt when `setup.py` is run
 after installing Gluu Server.
 
@@ -137,7 +136,7 @@ after installing Gluu Server.
 
 * Now the chosen DNS name can be used to access the Gluu Server.
 
-### 1.4.3 Linode VM
+### Linode VM
 
 The Linode Virtual Machines (VM) use a custom kernel which is not supported by Gluu Server, therefore the kernel must be updated before Gluu Server can be installed in Linode VM. The following steps will guide you through kernel update in the Linode VM.
 
