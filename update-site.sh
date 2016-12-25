@@ -2,6 +2,9 @@
 mkdocs build
 rm -rf docs/
 mv site/ docs/
+echo -n "Enter task Performed >"
+read text
+echo "Entered Task: $text"
 git add -A
-git commit -m "updated site"
+git commit -m "updated site Chris - $text"
 git push origin master
