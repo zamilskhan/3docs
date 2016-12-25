@@ -23,7 +23,7 @@ pages:
         - 'Upgrade Gluu Server' : 'upgrade/index.md'
         - 'Patch Gluu Server' : 'upgrade/update.md'
 - Administration Guide:
-    - 'Gluu Server UI' : 'admin-guide/index.md'
+    - 'Gluu Server UI' : 'admin-guide/oxtrust-ui.md'
     - 'Authentication Protocols' : 'admin-guide/auth-protocol.md'
     - 'Authentication Management' : 'admin-guide/auth-management.md'
     - 'Configuring Multi-Factor Authentication' : 'admin-guide/multi-factor-auth.md'
