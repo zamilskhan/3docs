@@ -131,7 +131,7 @@ The following is an example of a GET request to the UMA configuration discovery 
     The UMA Response  may contain custom properties which are uniquely named for convenience and disguishing between standard & custom properties.
 
 [1]:http://kantarainitiative.org/confluence/display/uma/Charter "UMA Charter"
-[2]: ../index.md "Custom Scripts"
+[2]: ../oxtrust-ui.md "Custom Scripts"
 
 ## OAuth2.0 
 
@@ -177,7 +177,7 @@ String accessToken = response.getAccessToken();
 TokenType tokenType response.getTokenType(); // bearer
 ```
 
-[RO]: ./index.md#41-terminology "Resource Owner"
+[RO]: ./oxtrust-ui.md#41-terminology "Resource Owner"
 
 The message sent to the authorization server is
 
@@ -304,8 +304,8 @@ GAT: true
   "rpt": "sbjsbhs(/SSJHBSUSSJHVhjsgvhsgvshgsv"
 }|
 
-[GAT]: ./index.md#423-gluu-oauth2-access-management "Gluu Access Token"
-[AS]: ./index.md#41-terminology "Authorization Server"
+[GAT]: ./oxtrust-ui.md#423-gluu-oauth2-access-management "Gluu Access Token"
+[AS]: ./oxtrust-ui.md#41-terminology "Authorization Server"
 
 ## SCIM
 

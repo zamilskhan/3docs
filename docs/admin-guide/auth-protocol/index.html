@@ -586,7 +586,7 @@ Content-Type: application/jrd+json
 <p><img alt="image" src="http://kantarainitiative.org/confluence/download/attachments/17760302/UMA-logo.png" /></p>
 <p>UMA is an oAuth based protocol to "enable a resource owner to control the authorization of data sharing and other protected-resource access made between online services on the owner’s behalf or with the owner’s authorization by an autonomous requesting party"<a href="http://kantarainitiative.org/confluence/display/uma/Charter" title="UMA Charter">1</a>.</p>
 <h3 id="enterprise-uma">Enterprise UMA<a class="headerlink" href="#enterprise-uma" title="Permanent link">#</a></h3>
-<p>The Gluu Server implements UMA in a way that enables the protection of any web resource. Through the oxTrust interface, the server admin can write <a href="../.." title="Custom Scripts">custom authorization interception scripts</a> which may contain logic to grant (or forbid) access. The diagram below shows an overview of the UMA Authorization workflow.</p>
+<p>The Gluu Server implements UMA in a way that enables the protection of any web resource. Through the oxTrust interface, the server admin can write <a href="../oxtrust-ui.md" title="Custom Scripts">custom authorization interception scripts</a> which may contain logic to grant (or forbid) access. The diagram below shows an overview of the UMA Authorization workflow.</p>
 <p><img alt="overview" src="../../img/uma/overview.png" title="UMA Auth Overview" /></p>
 <h3 id="terminology_1">Terminology<a class="headerlink" href="#terminology_1" title="Permanent link">#</a></h3>
 <ul>
@@ -657,8 +657,8 @@ Content-Type: application/jrd+json
 </ul>
 <h3 id="workflows">Workflows<a class="headerlink" href="#workflows" title="Permanent link">#</a></h3>
 <h4 id="credentials-grant">Credentials Grant<a class="headerlink" href="#credentials-grant" title="Permanent link">#</a></h4>
-<p>The Client Credentials Grant allows <a href="./index.md#41-terminology" title="Resource Owner">RO</a> to use username and password as an authorization grant to obtain an access token. This flow is only encouraged when there is high degree of trust between <a href="./index.md#41-terminology" title="Resource Owner">RO</a> and the client and no other grant types are not available.</p>
-<p>Although this grant requires direct client access to the <a href="./index.md#41-terminology" title="Resource Owner">RO</a> credentials it is used for a single request for an access token. This grant type can eliminate the need for the client to store the <a href="./index.md#41-terminology" title="Resource Owner">RO</a> credentials for future use, by exchanging the credentials with a long-lived access token or refresh token.</p>
+<p>The Client Credentials Grant allows <a href="../oxtrust-ui/#41-terminology" title="Resource Owner">RO</a> to use username and password as an authorization grant to obtain an access token. This flow is only encouraged when there is high degree of trust between <a href="../oxtrust-ui/#41-terminology" title="Resource Owner">RO</a> and the client and no other grant types are not available.</p>
+<p>Although this grant requires direct client access to the <a href="../oxtrust-ui/#41-terminology" title="Resource Owner">RO</a> credentials it is used for a single request for an access token. This grant type can eliminate the need for the client to store the <a href="../oxtrust-ui/#41-terminology" title="Resource Owner">RO</a> credentials for future use, by exchanging the credentials with a long-lived access token or refresh token.</p>
 <p><img alt="client-credential-grant" src="../../img/oauth2/client-credentials-grant.png" /></p>
 <p>The steps of the flow are:</p>
 <ol>
@@ -729,12 +729,12 @@ TokenType tokenType response.getTokenType(); // bearer
 </tbody>
 </table>
 <h4 id="resource-owner-password-credential-grant">Resource Owner Password Credential Grant<a class="headerlink" href="#resource-owner-password-credential-grant" title="Permanent link">#</a></h4>
-<p>This grant allows the usage of <a href="./index.md#41-terminology" title="Resource Owner">RO</a> password credentials as an authorization grant to obtain an access token. This grant is encouraged in a high trust situation as well. The diagram below shows the flow</p>
+<p>This grant allows the usage of <a href="../oxtrust-ui/#41-terminology" title="Resource Owner">RO</a> password credentials as an authorization grant to obtain an access token. This grant is encouraged in a high trust situation as well. The diagram below shows the flow</p>
 <p><img alt="password-credential-grant" src="../../img/oauth2/password-credential-grant.png" /></p>
 <p>The steps of the flow are:
 1. User presents their credentials to the application in addition to a username and password.
 2. If the client credentials are successfully authenticated, an access token is returned to the client</p>
-<p>This flow should be sparingly used bacause the password for the <a href="./index.md#41-terminology" title="Resource Owner">RO</a> is exposed to the appilcation/client. It is recommended only for first-party "official"  applications released by the API provider, and not opened up to wider third-party developer communities. If a user is asked to toe their password into "official" applications, they may become acustomed to doing so and becom evulneralbe to phishing attempts by other apps. In order to mitigat this concern, developers and IT administrators should clearly educate their users how they should dertermine which apps are "official" and which are not.</p>
+<p>This flow should be sparingly used bacause the password for the <a href="../oxtrust-ui/#41-terminology" title="Resource Owner">RO</a> is exposed to the appilcation/client. It is recommended only for first-party "official"  applications released by the API provider, and not opened up to wider third-party developer communities. If a user is asked to toe their password into "official" applications, they may become acustomed to doing so and becom evulneralbe to phishing attempts by other apps. In order to mitigat this concern, developers and IT administrators should clearly educate their users how they should dertermine which apps are "official" and which are not.</p>
 <p>The following is an example showing the messages between the client and the authorization server, also the example shows code fragments using the oxAuth-Client.jar API to interact with the authorization server.</p>
 <pre><code>// Parameters
 String tokenUrl = &quot;https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/token&quot;;
@@ -806,9 +806,9 @@ String refreshToken = response.getRefreshToken(); // aba91bd9-aa10-4fca-952b-50a
 <h5 id="user-experience">User Experience<a class="headerlink" href="#user-experience" title="Permanent link">#</a></h5>
 <p>The user experience for this flow is identical to typical password-based access requests. The application asks the user for their username and password and the user provides the information. The application then makes either a server-side or client-side request to the API provider’s authorization server, without any user-facing interface changes. If the API provider does not issue a refresh_token and the issued access_token is short-lived, the application will likely store the username and password for future authentication attempts. Unfortunately, this defeats some of the benefit of this flow.</p>
 <h4 id="gluu-oauth2-access-management_1">Gluu OAuth2 Access Management<a class="headerlink" href="#gluu-oauth2-access-management_1" title="Permanent link">#</a></h4>
-<p>This flow uses Gluu Access Token (GAT) for access management. The flow needs a profile enabling a client to obtain a token from the <a href="./index.md#41-terminology" title="Authorization Server">AS</a> by explicitly specifyting the requested scopes. The diagram below shows the overview of the flow.</p>
+<p>This flow uses Gluu Access Token (GAT) for access management. The flow needs a profile enabling a client to obtain a token from the <a href="../oxtrust-ui/#41-terminology" title="Authorization Server">AS</a> by explicitly specifyting the requested scopes. The diagram below shows the overview of the flow.</p>
 <p><img alt="gat" src="../../img/oauth2/gat.png" /></p>
-<p><a href="./index.md#423-gluu-oauth2-access-management" title="Gluu Access Token">GAT</a> as a plain json object looks like the example below</p>
+<p><a href="../oxtrust-ui/#423-gluu-oauth2-access-management" title="Gluu Access Token">GAT</a> as a plain json object looks like the example below</p>
 <pre><code>{
     &quot;exp&quot;: 1256953732,
     &quot;iat&quot;: 1256912345,
@@ -818,7 +818,7 @@ String refreshToken = response.getRefreshToken(); // aba91bd9-aa10-4fca-952b-50a
 } 
 </code></pre>
 
-<p>The <a href="./index.md#423-gluu-oauth2-access-management" title="Gluu Access Token">GAT</a> is issued at the endpoint published at <code>https://&lt;hostname&gt;/.well-known/uma-configuration</code>. Please note that all requests/response to/from/between RP, [RS][], <a href="./index.md#41-terminology" title="Authorization Server">AS</a> must contain "<a href="./index.md#423-gluu-oauth2-access-management" title="Gluu Access Token">GAT</a>" HTTP header with <code>true</code> value. In this way <a href="./index.md#41-terminology" title="Authorization Server">AS</a> differentiantes calls from normal UMA.The example below shows a response with <a href="./index.md#423-gluu-oauth2-access-management" title="Gluu Access Token">GAT</a> value set to <code>true</code>.</p>
+<p>The <a href="../oxtrust-ui/#423-gluu-oauth2-access-management" title="Gluu Access Token">GAT</a> is issued at the endpoint published at <code>https://&lt;hostname&gt;/.well-known/uma-configuration</code>. Please note that all requests/response to/from/between RP, [RS][], <a href="../oxtrust-ui/#41-terminology" title="Authorization Server">AS</a> must contain "<a href="../oxtrust-ui/#423-gluu-oauth2-access-management" title="Gluu Access Token">GAT</a>" HTTP header with <code>true</code> value. In this way <a href="../oxtrust-ui/#41-terminology" title="Authorization Server">AS</a> differentiantes calls from normal UMA.The example below shows a response with <a href="../oxtrust-ui/#423-gluu-oauth2-access-management" title="Gluu Access Token">GAT</a> value set to <code>true</code>.</p>
 <pre><code>POST /gat HTTP/1.1
 Host: as.example.com
 Authorization: Bearer jwfLG53^sad$#f
