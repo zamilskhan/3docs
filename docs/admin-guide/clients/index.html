@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Configure and Manage OpenID Clients - Gluu Docs</title>
+      
+<link href="../../assets/stylesheets/font.css" rel="stylesheet">
+      
+      
+      
+    
+    <meta property="og:url" content="None">
+    <meta property="og:title" content="Gluu Docs">
+    <meta property="og:image" content="None/../../gluu.jpg">
+    <meta name="apple-mobile-web-app-title" content="Gluu Docs">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+      <link rel="apple-touch-icon" href="../../gluu.jpg">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/favicon-60feabe0e5.ico">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon-60feabe0e5.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../assets/fonts/icon.eot?52m981');
+      	src: url('../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../assets/stylesheets/application-f58e216493.css">
+    
+    <link rel="stylesheet" href="../../assets/stylesheets/zenburn-28d5b94970.css">
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto Sans:400,700|Source+Code+Pro">
+      <style>
+        body, input {
+          font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Source Code Pro', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+    <script src="../../assets/javascripts/modernizr-4a5cc7e01e.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class=" ">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                Administration Guide <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        Configure and Manage OpenID Clients
+      </div>
+    </div>
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" placeholder="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+
+  
+  <a href="https://github.com/GluuFederation/docs" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../../gluu.jpg">
+        </div>
+      
+      <div class="name">
+        <strong>Gluu Docs</strong><br>
+        version: 3.0.0
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      <ul class="repo">
+        
+        <li class="home">
+          <a href="/" title="Home">
+            <div class="home-image">
+            <i class="fa fa-home"></i> Doc Home</div>
+          </a>
+        </li>
+        
+        
+        
+        <li class="repo-download">
+          
+          <a href="https://github.com/GluuFederation/docs/archive/3.0.0.zip" target="_blank" title="Download" data-action="download">
+            <i class="icon icon-download"></i> Download
+          </a>
+        </li>
+        
+      </ul>
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Home" href="../..">
+      Home
+    </a>
+    
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Installation Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Preparing VM" href="../../installation-guide/">
+      Preparing VM
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Install Gluu Server" href="../../installation-guide/install/">
+      Install Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Setup Script Options" href="../../installation-guide/setup_py/">
+      Setup Script Options
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Cluster with CE" href="../../installation-guide/cluster/">
+      Cluster with CE
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Upgrade/Patch Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Upgrade Gluu Server" href="../../upgrade/">
+      Upgrade Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Patch Gluu Server" href="../../upgrade/update/">
+      Patch Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Administration Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Gluu Server UI" href="../">
+      Gluu Server UI
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Authentication Protocols" href="../auth-protocol/">
+      Authentication Protocols
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Authentication Management" href="../auth-management/">
+      Authentication Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Configuring Multi-Factor Authentication" href="../multi-factor-auth/">
+      Configuring Multi-Factor Authentication
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Manage & Configure Users" href="../user-group/">
+      Manage & Configure Users
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Log Management" href="../logs/">
+      Log Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="current" title="Configure and Manage OpenID Clients" href="./">
+      Configure and Manage OpenID Clients
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Register Client" href="#register-client">
+                <b>Register Client</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="Multi-Factor Authentication for Clients" href="#multi-factor-authentication-for-clients">
+                <b>Multi-Factor Authentication for Clients</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="Algorithm" href="#algorithm">
+                <b>Algorithm</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="Custom Client Registration" href="#custom-client-registration">
+                <b>Custom Client Registration</b>
+              </a>
+            </li>
+            
+          
+        </ul>
+      
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Configure and Manage SAML SSO" href="../saml/">
+      Configure and Manage SAML SSO
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="OAuth2 Grants" href="../oauth2/">
+      OAuth2 Grants
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="OpenID Connect" href="../openid-connect/">
+      OpenID Connect
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="UMA" href="../uma/">
+      UMA
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Attribute Management" href="../attribute/">
+      Attribute Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="SCIM protected by UMA" href="../scim-uma/">
+      SCIM protected by UMA
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Gluu Server APIs" href="../api/">
+      Gluu Server APIs
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="SCIM API Configuration" href="../scim/">
+      SCIM API Configuration
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Backup Gluu Server CE" href="../backup/">
+      Backup Gluu Server CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Custom Script in Gluu CE" href="../custom-script/">
+      Custom Script in Gluu CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Certificate Management" href="../certificate/">
+      Certificate Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Fine Tuning Gluu Server" href="../fine-tuning/">
+      Fine Tuning Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Troubleshooting & FAQ" href="../faq/">
+      Troubleshooting & FAQ
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <h1 id="openid-connect-client">OpenID Connect Client<a class="headerlink" href="#openid-connect-client" title="Permanent link">#</a></h1>
+<p><img alt="clientmenu" src="../../img/openid/clientmenu.png" /></p>
+<p>A client in OAuth2 could be either a website or mobile application.
+OpenID Connect has an API for <a href="http://openid.net/specs/openid-connect-registration-1_0.html">Dynamic Client
+Registration</a>
+which efficiently pushes the task to the application developer. If you
+do not want to write an application to register your client, there are a
+few web pages around that can do the job for you. Gluu publishes the
+<a href="https://ce-dev.gluu.org/oxauth-rp">oxAuth-RP</a> and there is also another in <a href="http://www.gluu.co/php-sample-rp">PHP
+RP</a>.</p>
+<p>A new client can be added by clicking the <strong>Add Client</strong> link.</p>
+<p><img alt="addclient" src="../../img/openid/addclient.png" /></p>
+<p>Available <strong>Clients</strong> can be seen by hitting the <strong>Search</strong> button
+leaving the search box empty.</p>
+<p><img alt="clientlist" src="../../img/openid/clientlist.png" /></p>
+<h3 id="register-client">Register Client<a class="headerlink" href="#register-client" title="Permanent link">#</a></h3>
+<p>Gluu Server Administrators can click on the <code>Add Client</code> button to register new clients. It is possible to dynamically register any client by calling the dynamic registration endpoint, but this section focuses on the manual registration of the client. The following screen appears when the <code>Add Client</code> button is clicked.</p>
+<p><img alt="add-client" src="../../img/openid/add-client.png" /></p>
+<ul>
+<li>
+<p><em>Client Name:</em> This contains the recognizable and unique display name
+  of the client. The name of the Client to be presented to the End-User.</p>
+</li>
+<li>
+<p><em>Client Secret:</em> This is the Data Encryption Standard scheme used by
+  Confidential Clients to authenticate to the token endpoint. The value for the secret can be inserted manually.</p>
+</li>
+<li>
+<p><em>Application Type:</em> There are two types of applications, Web and
+  Native.</p>
+<ul>
+<li>
+<p><em>Web:</em> The Dynamic Client Registration is the default for web. In this type the redirect_uri for implicit grant type must be a real
+hostname with HTTPS. This type is not approved any localhost or HTTP. The web application uses the authorization code flow for clients which
+can maintain a client secret between the uris and the authorization
+server.</p>
+</li>
+<li>
+<p><em>Native:</em> Custom uri for Native type application have to follow HTTP with localhost. This is suitable for a mobile app which cannot maintain the client secret between itself and the authorization server.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><em>Pre Authorization:</em> Allow pre-authorized Client Applications </p>
+</li>
+<li>
+<p><em>Logo URI:</em> The URL of the logo for the client application.
+  If present, the server will display this image to the End-User during approval.</p>
+</li>
+<li>
+<p><em>Client URI:</em> The URL of the home page of the client.</p>
+</li>
+<li>
+<p><em>Policy URI:</em> The URL of the Privacy policy.</p>
+</li>
+<li>
+<p><em>Terms of Service URI:</em> The URL to the Terms of Use of the Client.</p>
+</li>
+<li>
+<p><em>JWKS URI:</em> The URL for the Client's JSON Web Key Set.</p>
+</li>
+<li>
+<p><em>JWKS:</em> The value of  Client's JSON Web Key Set. The jwks_uri and jwks parameters MUST NOT be used together.</p>
+</li>
+</ul>
+<p><img alt="add-client1" src="../../img/openid/add-client1.png" /></p>
+<ul>
+<li>
+<p><em>Sector Identifier URI:</em> URL using the https scheme to be used in calculating Pseudonymous Identifiers by the OP.
+  The URL references a file with a single JSON array of redirect_uri values.</p>
+</li>
+<li>
+<p><em>Subject Type:</em> The subject type requested for responses to this Client.</p>
+</li>
+<li>
+<p><em>JWS alg Algorithm for signing the ID Token:</em> JWS alg algorithm for signing the ID Token issued to this Client.
+  See <a href="#algorithm">Algorithms section</a> for options.</p>
+</li>
+<li>
+<p><em>JWE alg Algorithm for encrypting the ID Token:</em> JWE alg algorithm for encrypting the ID Token issued to this Client.
+  See <a href="#algorithm">Algorithms section</a> for options.</p>
+</li>
+<li>
+<p><em>JWE enc Algorithm for encrypting the ID Token:</em> JWE enc algorithm for encrypting the ID Token issued to this Client.
+  See <a href="#algorithm">Algorithms section</a> for options.</p>
+</li>
+<li>
+<p><em>JWS alg Algorithm for signing the UserInfo Responses:</em> JWS alg algorithm for signing UserInfo Responses.
+  If this is specified, the response will be JWT serialized, and signed using JWS.
+  See <a href="#algorithm">Algorithms section</a> for options.</p>
+</li>
+<li>
+<p><em>JWS alg Algorithm for encrypting the UserInfo Responses:</em>  JWE alg algorithm for encrypting UserInfo Responses.
+  See <a href="#algorithm">Algorithms section</a> for options.</p>
+</li>
+</ul>
+<p><img alt="add-client2" src="../../img/openid/add-client2.png" /></p>
+<ul>
+<li>
+<p><em>JWE enc Algorithm for encrypting the UserInfo Responses:</em> JWE enc algorithm for encrypting UserInfo Responses. 
+  See <a href="#algorithm">Algorithms section</a> for options.</p>
+</li>
+<li>
+<p><em>JWS alg Algorithm for signing Request Objects:</em> JWS alg algorithm used for signing Request Objects sent to the OP.
+  This algorithm is used when the Request Object is passed by value (using the request parameter) and when it is
+  passed by reference (using the request_uri parameter).
+  The value none can be used.
+  See <a href="#algorithm">Algorithms section</a> for options.</p>
+</li>
+<li>
+<p><em>JWE alg Algorithm for encrypting Request Objects:</em> JWE alg algorithm the RP is declaring that it use for
+  encrypting Request Objects sent to the OP.
+  See <a href="#algorithm">Algorithms section</a> for options.</p>
+</li>
+<li>
+<p><em>JWE enc Algorithm for encrypting Request Objects:</em> JWE enc algorithm the RP is declaring that it may use for
+  encrypting Request Objects sent to the OP.
+  See <a href="#algorithm">Algorithms section</a> for options.</p>
+</li>
+<li>
+<p><em>Authentication method for the Token Endpoint:</em> Requested Client Authentication method for the Token Endpoint.
+  The options are client_secret_post, client_secret_basic, client_secret_jwt, private_key_jwt, and none.
+  If omitted, the default is client_secret_basic, the HTTP Basic Authentication Scheme.</p>
+</li>
+</ul>
+<p><img alt="add-client3" src="../../img/openid/add-client3.png" /></p>
+<ul>
+<li>
+<p><em>JWS alg Algorithm for Authentication method to Token Endpoint:</em> JWS alg algorithm used for signing the JWT
+  used to authenticate the Client at the Token Endpoint for the private_key_jwt and client_secret_jwt
+  authentication methods. The value none cannot be used.
+  See <a href="#algorithm">Algorithms section</a> for options.</p>
+</li>
+<li>
+<p><em>Default Maximum Authentication Age:</em> Specifies that the End-User must be actively authenticated if the End-User was
+  authenticated longer ago than the specified number of seconds.
+  If omitted, no default Maximum Authentication Age is specified.</p>
+</li>
+<li>
+<p><em>Require Auth Time:</em> Specifies whether the auth_time Claim in the ID Token is required.
+  If omitted, the default value is false.</p>
+</li>
+<li>
+<p><em>Persist Client Authorizations*:</em> Specifies whether to persist user authorizations.</p>
+</li>
+</ul>
+<p><img alt="add-client-bot" src="../../img/openid/add-client-bot.png" /></p>
+<ul>
+<li>
+<p><em>Initiate Login URI:</em> URI using the https scheme that a third party can use to initiate a login by the RP.</p>
+</li>
+<li>
+<p><em>Request URIs:</em> Array of request_uri values that are pre-registered by the RP for use at the OP.
+   The Server cache the contents of the files referenced by these URIs and not retrieve them at the time they are used in a request.</p>
+</li>
+<li>
+<p><em>Logout URIs:</em> Redirect logout URLs supplied by the RP to which it can request that the End-User's
+  User Agent be redirected using the post_logout_redirect_uri parameter after a logout has been performed.</p>
+</li>
+<li>
+<p><em>Logout Session Required*:</em> Specifies whether the RP requires that a sid (session ID) query parameter
+  be included to identify the RP session at the OP when the logout_uri is used.
+  If omitted, the default value is false.</p>
+</li>
+<li>
+<p><em>Client Secret Expires:</em> Time at which the client will expire or 0 if it will not expire.</p>
+</li>
+<li>
+<p><em>Add Login URI:</em> This option can be used to add the login URL.
+<img alt="add-login-uri" src="../../img/openid/add-login-uri.png" /></p>
+</li>
+<li>
+<p><em>Add Redirect Logout URI:</em> The logout request, if requires a redirection can be added here.
+<img alt="add-logout-uri" src="../../img/openid/add-logout-uri.png" /></p>
+</li>
+<li>
+<p><em>Add Scopes:</em> This option can be used to add the required scopes in the Gluu Server.
+<img alt="add-scope" src="../../img/openid/add-scope-in-client.png" />The available scopes can be listed by hitting the <em>Search</em> button, and
+  keeping the search phrase blank. Furthermore, from this the Gluu Server administrator can select the required scopes.</p>
+</li>
+<li>
+<p><em>Add Response Type:</em> There are three types of responses in the Gluu
+  Server and they are Code, Token and ID Token. The Gluu Server
+  Administrator can select all of them for testing purposes.
+<img alt="add-response-type" src="../../img/openid/add-response-type.png" /></p>
+</li>
+<li>
+<p><em>Add Grant Type:</em> There are 3 grant type available in this option <code>authorization_code, implicit, refresh_token</code>
+<img alt="add-grant-type" src="../../img/openid/add-grant-type.png" /></p>
+</li>
+<li>
+<p><em>Add Contact:</em> Use this option to add the email address for the Client contact</p>
+</li>
+<li>
+<p><em>Add Default ACR value:</em> The default ACR Value is defined through this option and it is used to include multi-factor authentication in registered clients. Please use this option to define which from of authentication to use for specific client. See section 3.3.2.1 for details.
+<img alt="add-default-acr" src="../../img/openid/add-default-acr.png" /></p>
+</li>
+<li>
+<p><em>Add Request URI:</em> Use this option to add the Request URI</p>
+</li>
+<li>
+<p><em>Add Logout URI:</em> Use this option to add the logout URI.</p>
+</li>
+</ul>
+<h3 id="multi-factor-authentication-for-clients">Multi-Factor Authentication for Clients<a class="headerlink" href="#multi-factor-authentication-for-clients" title="Permanent link">#</a></h3>
+<p>The <code>acr_values</code> parameter is used to specify the use of specific multi-factor authentication for each client. If a scenario is presented where different clients use different authentication mechanism, then the <code>acr_value</code> parameter is used to specify the choice. Out of the box, GLuu Server supports U2F, DUO, Basic, oxPush/SuperGluu, Google+ and internal LDAP authentication. While registering new clients, put the mode in <code>Add Default ACR value</code> to chosen mechanism. The authentication mechanism must be enabled in the <code>Custom Scripts</code> section as well.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Supported ACR Values in Client Registration: "u2f", "duo", "basic", "mt", "oxpush2", "gplus", "internal"</p>
+</div>
+<p>The values appear in order of preference and the successful authentication is sent as the acr claim value in the issued ID Token. The table below explains the acr values. Please click on the description to access the specific how-to guide for the ACR declared authentication.</p>
+<table>
+<thead>
+<tr>
+<th>ACR Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>u2f</td>
+<td><a href="../../multi-factor/u2f">FIDO U2F Device</a></td>
+</tr>
+<tr>
+<td>duo</td>
+<td><a href="../../multi-factor/duo">Duo soft-token authentication</a></td>
+</tr>
+<tr>
+<td>basic</td>
+<td>Username/Password authentication from LDAP Server</td>
+</tr>
+<tr>
+<td>oxpush2</td>
+<td><a href="../../multi-factor/oxpush2">Multi-factor authentication</a></td>
+</tr>
+<tr>
+<td>gplus</td>
+<td><a href="../../customize/social-login-google">Google+ authentication</a></td>
+</tr>
+<tr>
+<td>internal</td>
+<td>Use Gluu Server LDAP to authenticate users</td>
+</tr>
+</tbody>
+</table>
+<h3 id="algorithm">Algorithm<a class="headerlink" href="#algorithm" title="Permanent link">#</a></h3>
+<p>oxAuth supports various types of signature and encryption
+algorithms for authorizing request parameter passing, ID token signature
+and encryption, signing return responses, Encrypt User Info Endpoints
+etc.</p>
+<p><strong>Note:</strong> It is a good practice to implement ID Token Signatures with the RSA
+SHA-256 algorithm (algorithm value RS256). Additionally, oxAuth also
+supports other algorithms that are listed below.</p>
+<p><em>Available Signature Algorithms:</em> none, HS256, HS384, HS512, RS256, RS384, RS512, ES256, ES384, ES512.</p>
+<p><em>Encryption, Key Encryption Algorithms:</em> RSA1_5, RSA-OAEP, A128KW, A256KW.</p>
+<p><em>Block Encryption Algorithms:</em> A128CBC+HS256, A256CBC+HS612, A128GCM, A256GCM,</p>
+<h2 id="custom-client-registration">Custom Client Registration<a class="headerlink" href="#custom-client-registration" title="Permanent link">#</a></h2>
+<p>Using interception scripts you can customize client registration
+behavior. For example, by default oxAuth allows new clients to access to
+default scopes only. With a custom client registration interception
+script it is possible to allow access to more scopes. For instance, we
+can use <code>redirect_uri</code> to determine if we need to allow access to
+additional scopes or not.</p>
+<p>To access the interface for custom scripts in oxTrust, navigate to
+Configuration --&gt; Custom Scripts --&gt; Custom Client Registration.</p>
+<p><img alt="custom-script-menu" src="../../img/oxtrust/custom-script-menu.png" />
+<img alt="custom-client" src="../../img/openid/custom-client.png" /></p>
+<p>The script is <a href="../sample-client-registration-script.py">available here</a></p>
+          <aside class="copyright" role="note">
+           Built with 
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a> using
+            <a href="http://gitlab.testbird.io:8099/frontend/testbird-mkdocs-theme.git" target="_blank">
+              testBird-mkdocs-theme
+            </a> <br>
+            
+            Copyright &copy; 2016, Gluu, Inc.
+            
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../logs/" title="Log Management">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                Log Management
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../saml/" title="Configure and Manage SAML SSO">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                Configure and Manage SAML SSO
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../..';
+      var repo_id  = '';
+    </script>
+    <script src="../../assets/javascripts/application-ce3999cf34.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+  </body>
+</html>

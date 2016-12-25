@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Authentication Protocols - Gluu Docs</title>
+      
+<link href="../../assets/stylesheets/font.css" rel="stylesheet">
+      
+      
+      
+    
+    <meta property="og:url" content="None">
+    <meta property="og:title" content="Gluu Docs">
+    <meta property="og:image" content="None/../../gluu.jpg">
+    <meta name="apple-mobile-web-app-title" content="Gluu Docs">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+      <link rel="apple-touch-icon" href="../../gluu.jpg">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/favicon-60feabe0e5.ico">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon-60feabe0e5.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../assets/fonts/icon.eot?52m981');
+      	src: url('../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../assets/stylesheets/application-f58e216493.css">
+    
+    <link rel="stylesheet" href="../../assets/stylesheets/zenburn-28d5b94970.css">
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto Sans:400,700|Source+Code+Pro">
+      <style>
+        body, input {
+          font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Source Code Pro', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+    <script src="../../assets/javascripts/modernizr-4a5cc7e01e.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class=" ">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                Administration Guide <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        Authentication Protocols
+      </div>
+    </div>
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" placeholder="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+
+  
+  <a href="https://github.com/GluuFederation/docs" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../../gluu.jpg">
+        </div>
+      
+      <div class="name">
+        <strong>Gluu Docs</strong><br>
+        version: 3.0.0
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      <ul class="repo">
+        
+        <li class="home">
+          <a href="/" title="Home">
+            <div class="home-image">
+            <i class="fa fa-home"></i> Doc Home</div>
+          </a>
+        </li>
+        
+        
+        
+        <li class="repo-download">
+          
+          <a href="https://github.com/GluuFederation/docs/archive/3.0.0.zip" target="_blank" title="Download" data-action="download">
+            <i class="icon icon-download"></i> Download
+          </a>
+        </li>
+        
+      </ul>
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Home" href="../..">
+      Home
+    </a>
+    
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Installation Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Preparing VM" href="../../installation-guide/">
+      Preparing VM
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Install Gluu Server" href="../../installation-guide/install/">
+      Install Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Setup Script Options" href="../../installation-guide/setup_py/">
+      Setup Script Options
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Cluster with CE" href="../../installation-guide/cluster/">
+      Cluster with CE
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Upgrade/Patch Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Upgrade Gluu Server" href="../../upgrade/">
+      Upgrade Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Patch Gluu Server" href="../../upgrade/update/">
+      Patch Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Administration Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Gluu Server UI" href="../">
+      Gluu Server UI
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="current" title="Authentication Protocols" href="./">
+      Authentication Protocols
+    </a>
+    
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="SAML" href="#saml">
+                <b>SAML</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="OpenID Connect" href="#openid-connect">
+                <b>OpenID Connect</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="Terminology" href="#terminology">
+                  <font size=2><i>Terminology</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="Discovery" href="#discovery">
+                  <font size=2><i>Discovery</i></font>
+              </a>
+            </li>
+             
+          
+            <li class="anchor">
+              <a title="User-Managed Access (UMA)" href="#user-managed-access-uma">
+                <b>User-Managed Access (UMA)</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="Enterprise UMA" href="#enterprise-uma">
+                  <font size=2><i>Enterprise UMA</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="Terminology" href="#terminology_1">
+                  <font size=2><i>Terminology</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="UMA Workflow" href="#uma-workflow">
+                  <font size=2><i>UMA Workflow</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="Discovery" href="#discovery_1">
+                  <font size=2><i>Discovery</i></font>
+              </a>
+            </li>
+             
+          
+            <li class="anchor">
+              <a title="OAuth2.0" href="#oauth20">
+                <b>OAuth2.0</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="Terminology" href="#terminology_2">
+                  <font size=2><i>Terminology</i></font>
+              </a>
+            </li>
+             
+              <li class="anchor">
+              <a title="Workflows" href="#workflows">
+                  <font size=2><i>Workflows</i></font>
+              </a>
+            </li>
+             
+          
+            <li class="anchor">
+              <a title="SCIM" href="#scim">
+                <b>SCIM</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="Terminology" href="#terminology_3">
+                  <font size=2><i>Terminology</i></font>
+              </a>
+            </li>
+             
+          
+        </ul>
+      
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Authentication Management" href="../auth-management/">
+      Authentication Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Configuring Multi-Factor Authentication" href="../multi-factor-auth/">
+      Configuring Multi-Factor Authentication
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Manage & Configure Users" href="../user-group/">
+      Manage & Configure Users
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Log Management" href="../logs/">
+      Log Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Configure and Manage OpenID Clients" href="../clients/">
+      Configure and Manage OpenID Clients
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Configure and Manage SAML SSO" href="../saml/">
+      Configure and Manage SAML SSO
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="OAuth2 Grants" href="../oauth2/">
+      OAuth2 Grants
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="OpenID Connect" href="../openid-connect/">
+      OpenID Connect
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="UMA" href="../uma/">
+      UMA
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Attribute Management" href="../attribute/">
+      Attribute Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="SCIM protected by UMA" href="../scim-uma/">
+      SCIM protected by UMA
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Gluu Server APIs" href="../api/">
+      Gluu Server APIs
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="SCIM API Configuration" href="../scim/">
+      SCIM API Configuration
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Backup Gluu Server CE" href="../backup/">
+      Backup Gluu Server CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Custom Script in Gluu CE" href="../custom-script/">
+      Custom Script in Gluu CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Certificate Management" href="../certificate/">
+      Certificate Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Fine Tuning Gluu Server" href="../fine-tuning/">
+      Fine Tuning Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Troubleshooting & FAQ" href="../faq/">
+      Troubleshooting & FAQ
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+            <h1>Authentication Protocols</h1>
+          
+          <p>Gluu Server supports Security Assertion Markup Language (SAML) and OpenID Connect protocols to authenticate users against Service Providers (SPs) and Requesting Parties (RPs). There are two different flows of SAML known as outbound SAML and inbound SAML, both supported out-of-the-box in Gluu Server Community Edition (Gluu CE).</p>
+<h2 id="saml">SAML<a class="headerlink" href="#saml" title="Permanent link">#</a></h2>
+<p><img alt="image" src="https://www.oasis-open.org/committees/download.php/29723/draft-saml-logo-03.png" /></p>
+<p>Security Assertion Markup Language (SAML) is an authentication and authorization protocol that defines the transaction process for XML-encoded assertions about authentication, authorization and attributes. The protocol is goverened by <a href="https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf" title="SAML 2.0 Core">Security Assertion Markup Language Core
+(SAML) V2.0</a>. The goal of this protocol is to exchange authentication and authorization data between Service Providers (SP) and the Identity Provider (IDP).
+Gluu Server supports both inbound and outbound flow of SAML transaction. The oxTrutst administrator interface makes it easy to use SAML.</p>
+<p>Trust Relationships are the foundation on which SAML works. Gluu Server makes it easy to setup Trust Relationships from the oxTrust admin interface. There are two types of flow Gluu CE supports, inbound and outbound SAML.
+Trust Relationship creation is mandatory in both flows; however, the inbound flow also acts as a SAML proxy. The details about how to setup a Trust Relationship and how to setup SAML proxy follows later in this documentation. The image below is taken from wikipedia, showing a SAML transaction workflow.</p>
+<p><img alt="wikipedia image" src="https://upload.wikimedia.org/wikipedia/en/0/04/Saml2-browser-sso-redirect-post.png" /></p>
+<h2 id="openid-connect">OpenID Connect<a class="headerlink" href="#openid-connect" title="Permanent link">#</a></h2>
+<p><img alt="image" src="http://wiki.openid.net/f/openid-logo-wordmark.png" /></p>
+<p><a href="http://openid.net/connect" title="Connect">OpenID Connect</a> is a standard profile of OAuth2 which defines a protocol to enable any website, mobile application to verify the identity of the user accessing its resources through an authorization server or identity server. The protocol is API friendly and works through endpoints making it easy for applications to use it. </p>
+<p>OpenID Connect specification consists of different documents which outline different aspects of the protocol. The basic implementation requires the <a href="http://openid.net/specs/openid-connect-core-1_0.html" title="Core Specification">OpenID Connect Core Specification</a>. The figure below taken from the <a href="http://openid.net/" title="openid.net">OpenID Connect website</a> shows the overview of the protocol and the different parts of the specification.</p>
+<p><img alt="openid.net image" src="http://openid.net/wordpress-content/uploads/2014/02/OpenIDConnect-Map-4Feb2014.png" /></p>
+<h3 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">#</a></h3>
+<ul>
+<li>Claim: Information about the entity</li>
+<li>ID Token: JSON Web Token (JWT) that contains claims about the authentication</li>
+<li>Issuer: The authority that issues the claims</li>
+<li>OpenID Provider (OP): OAuth2.0 authorization server that authenticates user through claims to the Relying Party (RP)</li>
+<li>Relying Party (RP): OAuth 2.0 Client application that requires authentication and claims from an OpenID Provider(OP)</li>
+<li>UserInfo Endpoint: An URL using https that returns authorization for the user from the OP to the RP</li>
+</ul>
+<h3 id="discovery">Discovery<a class="headerlink" href="#discovery" title="Permanent link">#</a></h3>
+<p>OpenID Connect provides a simple mechanism to notify about the available endpoints. This is difined in the <a href="http://openid.net/specs/openid-connect-discovery-1_0.html &quot;OpenID Connect Discovery">OpenID Connect Discovery Specification</a>. </p>
+<p>In order for an OpenID Connect Relying Party (RP) to utilize OpenID Connect services for an End-User, the RP needs to know where the OpenID Provider is. OpenID Connect uses WebFinger to locate the OpenID Provider for an End-User.
+Once the OpenID Provider has been identified, the configuration information for the OP is retrieved from a well-known location as a JSON document, including its OAuth 2.0 endpoint locations.
+If you want to try a discovery request, you can make the following WebFinger request to discover the Issuer location:</p>
+<pre><code>GET /.well-known/webfinger?resource=https%3A%2F%2Fidp.gluu.org&amp;rel=http%3A%2F%2Fopenid.net%2Fspecs%2Fconnect%2F1.0%2Fissuer HTTP/1.1
+Host: idp.gluu.org
+
+HTTP/1.1 200
+Content-Type: application/jrd+json
+
+{
+    &quot;subject&quot;: &quot;https://idp.gluu.org&quot;,
+    &quot;links&quot;: [{
+        &quot;rel&quot;: &quot;http://openid.net/specs/connect/1.0/issuer&quot;,
+        &quot;href&quot;: &quot;https://idp.gluu.org&quot;
+    }]
+}
+</code></pre>
+
+<h2 id="user-managed-access-uma">User-Managed Access (UMA)<a class="headerlink" href="#user-managed-access-uma" title="Permanent link">#</a></h2>
+<p><img alt="image" src="http://kantarainitiative.org/confluence/download/attachments/17760302/UMA-logo.png" /></p>
+<p>UMA is an oAuth based protocol to "enable a resource owner to control the authorization of data sharing and other protected-resource access made between online services on the owner’s behalf or with the owner’s authorization by an autonomous requesting party"<a href="http://kantarainitiative.org/confluence/display/uma/Charter" title="UMA Charter">1</a>.</p>
+<h3 id="enterprise-uma">Enterprise UMA<a class="headerlink" href="#enterprise-uma" title="Permanent link">#</a></h3>
+<p>The Gluu Server implements UMA in a way that enables the protection of any web resource. Through the oxTrust interface, the server admin can write <a href="../.." title="Custom Scripts">custom authorization interception scripts</a> which may contain logic to grant (or forbid) access. The diagram below shows an overview of the UMA Authorization workflow.</p>
+<p><img alt="overview" src="../../img/uma/overview.png" title="UMA Auth Overview" /></p>
+<h3 id="terminology_1">Terminology<a class="headerlink" href="#terminology_1" title="Permanent link">#</a></h3>
+<ul>
+<li>Resource Server (RS): Where the resources are held. </li>
+<li>Authorization Server (AS): A server that governs access based on resource owner policies. </li>
+<li>Requesting Party (RP): An end-user, or a corporation or other legal person, that uses a client to seek access to a protected resource. The requesting party may or may not be the same party as the resource owner. </li>
+<li>Client: A web or native app that is used to access a digital resource. </li>
+<li>Protection API Token (PAT): An entity seeking protection API access MUST have the scope "uma_protection". An access token with at least this scope is called a protection API token (PAT) and an entity that can acquire an access token with this scope is by definition a resource server. </li>
+<li>Requesting Party Token (RPT): the token that a client presents to a resource server when trying to access a protected resource. </li>
+<li>Authorization API Token (AAT): An entity seeking authorization API access MUST have the scope "uma_authorization". An access token with at least this scope is called an authorization API token (AAT) and an entity that can acquire an access token with this scope is by definition a client.</li>
+</ul>
+<h3 id="uma-workflow">UMA Workflow<a class="headerlink" href="#uma-workflow" title="Permanent link">#</a></h3>
+<p>The complete workflow sequence is shown in the diagram below. However there are two different authorization workflow given below for authorization and authorization token.</p>
+<p><img alt="auth-complete" src="../../img/uma/auth-complete.png" title="UMA Complete Auth Workflow" /></p>
+<h4 id="authorization">Authorization<a class="headerlink" href="#authorization" title="Permanent link">#</a></h4>
+<p><img alt="auth" src="../../img/uma/auth.png" title="UMA Authorization Workflow" /></p>
+<h4 id="authorization-token">Authorization Token<a class="headerlink" href="#authorization-token" title="Permanent link">#</a></h4>
+<p><img alt="auth-token" src="../../img/uma/auth-token.png" title="UMA Authorization Token Workflow" /></p>
+<h3 id="discovery_1">Discovery<a class="headerlink" href="#discovery_1" title="Permanent link">#</a></h3>
+<p>Gluu Server CE provides an endpoint for discovering information about UMA Provider configuration. A resource server or client can perform an HTTP GET on <code>https://&lt;hostname&gt;/.well-known/uma-configuration</code> to retrieve a JSON object indicating the UMA Provider configuration.</p>
+<p>The following is an example of a GET request to the UMA configuration discovery endpoint:</p>
+<pre><code>{
+  &quot;version&quot;: &quot;1.0&quot;,
+  &quot;issuer&quot;: &quot;https://gluuserver.org&quot;,
+  &quot;pat_profiles_supported&quot;: [
+    &quot;bearer&quot;
+  ],
+  &quot;aat_profiles_supported&quot;: [
+    &quot;bearer&quot;
+  ],
+  &quot;rpt_profiles_supported&quot;: [
+    &quot;bearer&quot;
+  ],
+  &quot;pat_grant_types_supported&quot;: [
+    &quot;authorization_code&quot;
+  ],
+  &quot;aat_grant_types_supported&quot;: [
+    &quot;authorization_code&quot;
+  ],
+  &quot;claim_profiles_supported&quot;: [
+    &quot;openid&quot;
+  ],
+  &quot;dynamic_client_endpoint&quot;: &quot;https://gluuserver.org/oxauth/seam/resource/restv1/oxauth/register&quot;,
+  &quot;token_endpoint&quot;: &quot;https://gluuserver.org/oxauth/seam/resource/restv1/oxauth/token&quot;,
+  &quot;user_endpoint&quot;: &quot;https://gluuserver.org/oxauth/seam/resource/restv1/oxauth/authorize&quot;,
+  &quot;introspection_endpoint&quot;: &quot;https://gluuserver.org/oxauth/seam/resource/restv1/host/status&quot;,
+  &quot;resource_set_registration_endpoint&quot;: &quot;https://gluuserver.org/oxauth/seam/resource/restv1/host/rsrc&quot;,
+  &quot;permission_registration_endpoint&quot;: &quot;https://gluuserver.org/oxauth/seam/resource/restv1/host/rsrc_pr&quot;,
+  &quot;rpt_endpoint&quot;: &quot;https://gluuserver.org/oxauth/seam/resource/restv1/requester/rpt&quot;,
+  &quot;authorization_request_endpoint&quot;: &quot;https://gluuserver.org/oxauth/seam/resource/restv1/requester/perm&quot;,
+  &quot;scope_endpoint&quot;: &quot;https://gluuserver.org/oxauth/seam/resource/restv1/uma/scopes&quot;
+}
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The UMA Response  may contain custom properties which are uniquely named for convenience and disguishing between standard &amp; custom properties.</p>
+</div>
+<h2 id="oauth20">OAuth2.0<a class="headerlink" href="#oauth20" title="Permanent link">#</a></h2>
+<p><img alt="image" src="https://oauth.net/images/oauth-2-sm.png" /></p>
+<p>OAuth2.0 is the next version in the OAuth protocol focusing on simplicity with specific authorization flows for different platforms. The core specification is called the <a href="https://tools.ietf.org/html/rfc6749">OAuth 2.0 Authorization Framework</a>. OAuth introduces an authorization layer and separates the role of the client from the resource owner. The resource is accessed using access tokens instead of credentials.</p>
+<h3 id="terminology_2">Terminology<a class="headerlink" href="#terminology_2" title="Permanent link">#</a></h3>
+<ul>
+<li>Resource Owner (RO): Entity that owns and controls the access to any resource</li>
+<li>Resource Server (RS): Where the resources are held</li>
+<li>Client: Any application/web-site that requests access to the protected resource stored in any RS.</li>
+<li>Authorization Server: The server issuing access tokens to the client after successfully authenticating the resource owner and obtaining authorization</li>
+</ul>
+<h3 id="workflows">Workflows<a class="headerlink" href="#workflows" title="Permanent link">#</a></h3>
+<h4 id="credentials-grant">Credentials Grant<a class="headerlink" href="#credentials-grant" title="Permanent link">#</a></h4>
+<p>The Client Credentials Grant allows <a href="../#41-terminology" title="Resource Owner">RO</a> to use username and password as an authorization grant to obtain an access token. This flow is only encouraged when there is high degree of trust between <a href="../#41-terminology" title="Resource Owner">RO</a> and the client and no other grant types are not available.</p>
+<p>Although this grant requires direct client access to the <a href="../#41-terminology" title="Resource Owner">RO</a> credentials it is used for a single request for an access token. This grant type can eliminate the need for the client to store the <a href="../#41-terminology" title="Resource Owner">RO</a> credentials for future use, by exchanging the credentials with a long-lived access token or refresh token.</p>
+<p><img alt="client-credential-grant" src="../../img/oauth2/client-credentials-grant.png" /></p>
+<p>The steps of the flow are:</p>
+<ol>
+<li>The application requests an access token from the authorization server, authenticating the request with its client credentials.</li>
+<li>If the client credentials are successfully authenticated, an access token is returned to the client.</li>
+</ol>
+<p>This flow should be used when the resources of or any application/service are stored externally in cloud storages such as Google Storage or Amazon S3 which can be accessed using API. In this case the application needs to read and update these resources, but acting on behalf of the app itself rather than any individual user. The application can ask the OAuth authorization server for an access token directly, without the involvement of any end user.</p>
+<p>The following is an example showing the messages between the client and the authorization server, also the example shows code fragments using the oxAuth-Client.jar API to interact with the authorization server.</p>
+<pre><code>// Parameters
+String tokenUrl = &quot;https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/token&quot;;
+
+// Request
+TokenClient tokenClient = new TokenClient(tokenUrl);
+TokenResponse response = tokenClient.execClientCredentialsGrant(scope, clientId, clientSecret);
+
+int status response.getStatus(); // 200 if succeed
+String accessToken = response.getAccessToken();
+TokenType tokenType response.getTokenType(); // bearer
+</code></pre>
+
+<p>The message sent to the authorization server is</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST /oxauth/seam/resource/restv1/oxauth/token HTTP/1.1</td>
+</tr>
+<tr>
+<td>Host: seed.gluu.org</td>
+</tr>
+<tr>
+<td>Authorization: Basic QCExMTExITAwMDghRkY4MSEyRDM5OjYyMTNlOWI5LWM0NmQtNDAwOC04YWYxLTAzZjkxOGE4YWRlNA==</td>
+</tr>
+<tr>
+<td>Content-Type: application/x-www-form-urlencoded</td>
+</tr>
+<tr>
+<td>grant_type=client_credentials&amp;scope=storage</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Response upon successful authentication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTP/1.1 200</td>
+</tr>
+<tr>
+<td>Content-Type: application/json</td>
+</tr>
+<tr>
+<td>Cache-Control: no-store, private</td>
+</tr>
+<tr>
+<td>Pragma: no-cache</td>
+</tr>
+<tr>
+<td>{"access_token":"c769d7ff-c476-42ab-b531-fe2f60b2f5cc","token_type":"bearer","expires_in":3600}</td>
+</tr>
+</tbody>
+</table>
+<h4 id="resource-owner-password-credential-grant">Resource Owner Password Credential Grant<a class="headerlink" href="#resource-owner-password-credential-grant" title="Permanent link">#</a></h4>
+<p>This grant allows the usage of <a href="../#41-terminology" title="Resource Owner">RO</a> password credentials as an authorization grant to obtain an access token. This grant is encouraged in a high trust situation as well. The diagram below shows the flow</p>
+<p><img alt="password-credential-grant" src="../../img/oauth2/password-credential-grant.png" /></p>
+<p>The steps of the flow are:
+1. User presents their credentials to the application in addition to a username and password.
+2. If the client credentials are successfully authenticated, an access token is returned to the client</p>
+<p>This flow should be sparingly used bacause the password for the <a href="../#41-terminology" title="Resource Owner">RO</a> is exposed to the appilcation/client. It is recommended only for first-party "official"  applications released by the API provider, and not opened up to wider third-party developer communities. If a user is asked to toe their password into "official" applications, they may become acustomed to doing so and becom evulneralbe to phishing attempts by other apps. In order to mitigat this concern, developers and IT administrators should clearly educate their users how they should dertermine which apps are "official" and which are not.</p>
+<p>The following is an example showing the messages between the client and the authorization server, also the example shows code fragments using the oxAuth-Client.jar API to interact with the authorization server.</p>
+<pre><code>// Parameters
+String tokenUrl = &quot;https://seed.gluu.org/oxauth/seam/resource/restv1/oxauth/token&quot;;
+
+// Call the service
+TokenClient tokenClient = new TokenClient(tokenUrl);
+TokenResponse response = tokenClient.execResourceOwnerPasswordCredentialsGrant(username, password, scope, clientId, clientSecret);
+
+// Handle response
+int status = response.getStatus(); // 200 if succeed
+String accessToken = response.getAccessToken(); // 26d55e4b-6c61-40ea-9763-3282f5db0f0e
+TokenType tokenType = response.getTokenType(); // Enumeration: bearer
+String refreshToken = response.getRefreshToken(); // aba91bd9-aa10-4fca-952b-50a9a9afac28
+</code></pre>
+
+<p>The message sent to the authorization server is</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST /oxauth/seam/resource/restv1/oxauth/token HTTP/1.1</td>
+</tr>
+<tr>
+<td>Host: seed.gluu.org</td>
+</tr>
+<tr>
+<td>Authorization: Basic QCExMTExITAwMDghRkY4MSEyRDM5OjYyMTNlOWI5LWM0NmQtNDAwOC04YWYxLTAzZjkxOGE4YWRlNA==</td>
+</tr>
+<tr>
+<td>Content-Type: application/x-www-form-urlencoded</td>
+</tr>
+<tr>
+<td>grant_type=password&amp;scope=openid&amp;username=mike&amp;password=secret</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Response upon successful authentication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTP/1.1 200</td>
+</tr>
+<tr>
+<td>Content-Type: application/json</td>
+</tr>
+<tr>
+<td>Cache-Control: no-store, private</td>
+</tr>
+<tr>
+<td>Pragma: no-cache</td>
+</tr>
+<tr>
+<td>{"access_token":"26d55e4b-6c61-40ea-9763-3282f5db0f0e","token_type":"bearer","expires_in":3599,"refresh_token":"aba91bd9-aa10-4fca-952b-50a9a9afac28","scope":"openid","id_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc2VlZC5nbHV1Lm9yZyIsInVzZXJfaWQiOiJtaWtlIiwiYXVkIjoiQCExMTExITAwMDghRkY4MSEyRDM5IiwiZXhwIjoxMzM5MTk2ODgxMzAzLCJveEludW0iOiJAITExMTEhMDAwMCFENEU3Iiwib3hWYWxpZGF0aW9uVVJJIjoiaHR0cHM6XC9cL3NlZWQuZ2x1dS5vcmdcL294YXV0aFwvc2VhbVwvcmVzb3VyY2VcL3Jlc3R2MVwvb3hhdXRoXC9jaGVja19zZXNzaW9uIiwib3hPcGVuSURDb25uZWN0VmVyc2lvbiI6Im9wZW5pZGNvbm5lY3QtMS4wIn0.SzWfJsmlz62qTRw1lEJZ8PygY9eRupgmsbXLCQwPVDQ"}</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gluu-oauth2-access-management">Gluu OAuth2 Access Management<a class="headerlink" href="#gluu-oauth2-access-management" title="Permanent link">#</a></h4>
+<h5 id="security-properties">Security Properties<a class="headerlink" href="#security-properties" title="Permanent link">#</a></h5>
+<p>There are some security benefits to using this flow against authenticating API calls with a username and password (via HTTP Basic access authentication or similar) although the application has access to the resource owner's password. With Basic authentication, an application needs to have continuous access to the user’s password in order to make API calls. If the user wants to revoke the access of the client, he must change the password and re-enter the password in all the applications that are allowed access to the resource.</p>
+<p>However, if the OAuth Resource Owner Password flow is used, the application only needs access to the user’s credentials once: on first use when the credentials are exchanged for an access token. This means there’s no requirement for the app to store these credentials within the application or on the device, and revoking access is easy as well.</p>
+<h5 id="user-experience">User Experience<a class="headerlink" href="#user-experience" title="Permanent link">#</a></h5>
+<p>The user experience for this flow is identical to typical password-based access requests. The application asks the user for their username and password and the user provides the information. The application then makes either a server-side or client-side request to the API provider’s authorization server, without any user-facing interface changes. If the API provider does not issue a refresh_token and the issued access_token is short-lived, the application will likely store the username and password for future authentication attempts. Unfortunately, this defeats some of the benefit of this flow.</p>
+<h4 id="gluu-oauth2-access-management_1">Gluu OAuth2 Access Management<a class="headerlink" href="#gluu-oauth2-access-management_1" title="Permanent link">#</a></h4>
+<p>This flow uses Gluu Access Token (GAT) for access management. The flow needs a profile enabling a client to obtain a token from the <a href="../#41-terminology" title="Authorization Server">AS</a> by explicitly specifyting the requested scopes. The diagram below shows the overview of the flow.</p>
+<p><img alt="gat" src="../../img/oauth2/gat.png" /></p>
+<p><a href="../#423-gluu-oauth2-access-management" title="Gluu Access Token">GAT</a> as a plain json object looks like the example below</p>
+<pre><code>{
+    &quot;exp&quot;: 1256953732,
+    &quot;iat&quot;: 1256912345,
+    &quot;scopes&quot; : {
+       &quot;view&quot;, &quot;manage&quot;
+    }
+} 
+</code></pre>
+
+<p>The <a href="../#423-gluu-oauth2-access-management" title="Gluu Access Token">GAT</a> is issued at the endpoint published at <code>https://&lt;hostname&gt;/.well-known/uma-configuration</code>. Please note that all requests/response to/from/between RP, [RS][], <a href="../#41-terminology" title="Authorization Server">AS</a> must contain "<a href="../#423-gluu-oauth2-access-management" title="Gluu Access Token">GAT</a>" HTTP header with <code>true</code> value. In this way <a href="../#41-terminology" title="Authorization Server">AS</a> differentiantes calls from normal UMA.The example below shows a response with <a href="../#423-gluu-oauth2-access-management" title="Gluu Access Token">GAT</a> value set to <code>true</code>.</p>
+<pre><code>POST /gat HTTP/1.1
+Host: as.example.com
+Authorization: Bearer jwfLG53^sad$#f
+GAT: true
+
+{
+ &quot;scopes&quot;: [&quot;view&quot;, &quot;manage&quot;]
+}
+</code></pre>
+
+<p>The message sent to the authorization server is</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET /users/alice/album/photo.jpg HTTP/1.1</td>
+</tr>
+<tr>
+<td>Authorization: Bearer vF9dft4qmT</td>
+</tr>
+<tr>
+<td>Host: gluu.example.com</td>
+</tr>
+<tr>
+<td>GAT: true</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Response with <code>rpt</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTP/1.1 200 OK</td>
+</tr>
+<tr>
+<td>Content-Type: application/json</td>
+</tr>
+<tr>
+<td>GAT: true</td>
+</tr>
+<tr>
+<td>{</td>
+</tr>
+<tr>
+<td>"rpt": "sbjsbhs(/SSJHBSUSSJHVhjsgvhsgvshgsv"</td>
+</tr>
+<tr>
+<td>}</td>
+</tr>
+</tbody>
+</table>
+<h2 id="scim">SCIM<a class="headerlink" href="#scim" title="Permanent link">#</a></h2>
+<p>SCIM stands for System for Cross-domain Identity Management which is a specification to manage users in a cloud environment. Gluu Server supports SCIM version 1.0 and 2.0 out of the box. The following diagram shows the SCIM model from the <a href="http://www.simplecloud.info/">SCIM Website</a>.</p>
+<p><img alt="scim-model" src="../../img/scim/scim-model.png" /></p>
+<p>The SCIM Specifications are available from the SCIM Website. There are two specifications in SCIM 2.0:</p>
+<ol>
+<li><a href="https://tools.ietf.org/html/rfc7643">SCIM 2.0 Core Specifications</a></li>
+<li><a href="https://tools.ietf.org/html/rfc7644">SCIM 2.0 Protocol Specification</a></li>
+</ol>
+<h3 id="terminology_3">Terminology<a class="headerlink" href="#terminology_3" title="Permanent link">#</a></h3>
+<p>The SCIM specification defines some basic terms that are used in the document. The basic terms like attribute, [SP][] are same across all the protocols. A few confusing ones are listed below from the <a href="https://tools.ietf.org/html/rfc7643">SCIM 2.0 Specs</a>.</p>
+<ul>
+<li>
+<p>Resource:  An artifact that is managed by a service provider and that
+      contains one or more attributes, e.g., "User" or "Group".</p>
+</li>
+<li>
+<p>Resource Type:  A type of a resource that is managed by a service provider.  The
+      resource type defines the resource name, endpoint URL, schemas,
+      and other metadata that indicate where a resource is managed and
+      how it is composed, e.g., "User" or "Group".</p>
+</li>
+<li>
+<p>Schema: A collection of attribute definitions that describe the contents of an entire or partial resource, e.g.,
+      "urn:ietf:params:scim:schemas:core:2.0:User".</p>
+</li>
+</ul>
+<p>The details of the SCIM API are given later in this documentation.</p>
+          <aside class="copyright" role="note">
+           Built with 
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a> using
+            <a href="http://gitlab.testbird.io:8099/frontend/testbird-mkdocs-theme.git" target="_blank">
+              testBird-mkdocs-theme
+            </a> <br>
+            
+            Copyright &copy; 2016, Gluu, Inc.
+            
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../" title="Gluu Server UI">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                Gluu Server UI
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../auth-management/" title="Authentication Management">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                Authentication Management
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../..';
+      var repo_id  = '';
+    </script>
+    <script src="../../assets/javascripts/application-ce3999cf34.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+  </body>
+</html>

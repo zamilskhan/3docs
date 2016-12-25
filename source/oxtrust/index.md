@@ -35,7 +35,7 @@ Some basic information abouht the administrator interface is available in this p
 The configuration files are accessible from the administrator interface (oxTrust). There are three tabs under the `JSON Configuration` menu
 ![json-config-head](../img/oxtrust/json-config-head.png "JSON Configuration Headers")
 
-The oxtrust JSON configuration file is accessible from this tab and it can be edited from this page. The changes are updated by clicking on the `Update` button on the bottom of the page. 
+The oxtrust JSON configuration file is accessible from this tab and it can be edited from this page. The changes are updated by clicking on the `Update` button on the bottom of the page. The details of the file is given later in the [Reference Guide](../reference-guide/index.md).
 
 The oxAuth JSON configuration page gives easy access to the different endpoints used by Gluu Server CE. This page also contains the supported response, grants and algorithms among other information. The details will follow later on this documentation.
 
@@ -56,12 +56,12 @@ The details about the custom scripts are given later in this guide.
 Gluu Server CE is shiped with the feature to register users via the user-registration endpoint. The registry feature contains a Captcha which can be disabled from this page. Additionally it is possible to enable registration configuration from attributes.
 
 ### Attributes
-The attributes that are avalaible in the Gluu Server CE is found in this page. The administration can only see the active attributes when this page is accessed. The `Show All Attributes` button will show the inactive attributes too. Custom attributes can be added by clicking the `Add Attribute` button and filling up a simple form. 
+The attributes that are avalaible in the Gluu Server CE is found in this page. The administration can only see the active attributes when this page is accessed. The `Show All Attributes` button will show the inactive attributes too. Custom attributes can be added by clicking the `Add Attribute` button and filling up a simple form. This section is further explained in detail in other section under [User Management/attributes](/admin-guide/Users/attrb.md)
 
 ![attribute-head](../img/oxtrust/attribute-head.png)
 
 ### Cache Refresh
-Cache Refresh is the mechanism used by Gluu Server CE to import users from a backend LDAP/AD data source. The entire configuration is handled from this page. The `Cache Refresh` will notify the administrator of any problem with cache refresh the last time it was run. The frequency of cache refresh is also set from this page with the `Polling interval (minutes)` form. The key attributes, object class and the source attributes can be defined from the `Customer  BackendKey/Attributes` tab. The backend server address, bind DN and other information must go to the `Source Backend LDAP Servers` tab.
+Cache Refresh is the mechanism used by Gluu Server CE to import users from a backend LDAP/AD data source. The entire configuration is handled from this page. The `Cache Refresh` will notify the administrator of any problem with cache refresh the last time it was run. The frequency of cache refresh is also set from this page with the `Polling interval (minutes)` form. The key attributes, object class and the source attributes can be defined from the `Customer  BackendKey/Attributes` tab. The backend server address, bind DN and other information must go to the `Source Backend LDAP Servers` tab. The details about performing [cache refresh](/admin-guide/Users/cacherefresh.md) will follow later in this guide.
 
 ### Configure Log Viewer
 The logs for oxauth, oxtrust, cache refresh and the tomcat log can be configured from this tab. The log paths are given with the functionality to define any new log template with log file path.
@@ -101,7 +101,7 @@ UMA resources page also has a searchbar on the top of the page and can be used t
 ![uma-resources](../img/oxtrust/uma-resources.png)
 
 ## Users
-Users tab allows Gluu admin to do various task, including add admin, search users, Import users from file.
+Users tab allows Gluu admin to do various task, including add admin, search users, Cache Refresh, Import users from file, User registration,SCIM, and Lock user. This tab is detailed in [User Management](/admin-guide/Users/users.md)
 
 ## Personal
-Personal tab allows the individual person to view his basic profile and modify certain fields.
+Personal tab allows the individual person to view his basic profile and modify certain fields. This section is detailed under User Management in [Personal](/admin-guide/Users/personal.md)

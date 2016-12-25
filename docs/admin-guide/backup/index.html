@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Backup Gluu Server CE - Gluu Docs</title>
+      
+<link href="../../assets/stylesheets/font.css" rel="stylesheet">
+      
+      
+      
+    
+    <meta property="og:url" content="None">
+    <meta property="og:title" content="Gluu Docs">
+    <meta property="og:image" content="None/../../gluu.jpg">
+    <meta name="apple-mobile-web-app-title" content="Gluu Docs">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+      <link rel="apple-touch-icon" href="../../gluu.jpg">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/favicon-60feabe0e5.ico">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon-60feabe0e5.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../assets/fonts/icon.eot?52m981');
+      	src: url('../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../assets/stylesheets/application-f58e216493.css">
+    
+    <link rel="stylesheet" href="../../assets/stylesheets/zenburn-28d5b94970.css">
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto Sans:400,700|Source+Code+Pro">
+      <style>
+        body, input {
+          font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Source Code Pro', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+    <script src="../../assets/javascripts/modernizr-4a5cc7e01e.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class=" ">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                Administration Guide <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        Backup Gluu Server CE
+      </div>
+    </div>
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" placeholder="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+
+  
+  <a href="https://github.com/GluuFederation/docs" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../../gluu.jpg">
+        </div>
+      
+      <div class="name">
+        <strong>Gluu Docs</strong><br>
+        version: 3.0.0
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      <ul class="repo">
+        
+        <li class="home">
+          <a href="/" title="Home">
+            <div class="home-image">
+            <i class="fa fa-home"></i> Doc Home</div>
+          </a>
+        </li>
+        
+        
+        
+        <li class="repo-download">
+          
+          <a href="https://github.com/GluuFederation/docs/archive/3.0.0.zip" target="_blank" title="Download" data-action="download">
+            <i class="icon icon-download"></i> Download
+          </a>
+        </li>
+        
+      </ul>
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Home" href="../..">
+      Home
+    </a>
+    
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Installation Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Preparing VM" href="../../installation-guide/">
+      Preparing VM
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Install Gluu Server" href="../../installation-guide/install/">
+      Install Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Setup Script Options" href="../../installation-guide/setup_py/">
+      Setup Script Options
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Cluster with CE" href="../../installation-guide/cluster/">
+      Cluster with CE
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Upgrade/Patch Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Upgrade Gluu Server" href="../../upgrade/">
+      Upgrade Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Patch Gluu Server" href="../../upgrade/update/">
+      Patch Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Administration Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Gluu Server UI" href="../">
+      Gluu Server UI
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Authentication Protocols" href="../auth-protocol/">
+      Authentication Protocols
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Authentication Management" href="../auth-management/">
+      Authentication Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Configuring Multi-Factor Authentication" href="../multi-factor-auth/">
+      Configuring Multi-Factor Authentication
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Manage & Configure Users" href="../user-group/">
+      Manage & Configure Users
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Log Management" href="../logs/">
+      Log Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Configure and Manage OpenID Clients" href="../clients/">
+      Configure and Manage OpenID Clients
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Configure and Manage SAML SSO" href="../saml/">
+      Configure and Manage SAML SSO
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="OAuth2 Grants" href="../oauth2/">
+      OAuth2 Grants
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="OpenID Connect" href="../openid-connect/">
+      OpenID Connect
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="UMA" href="../uma/">
+      UMA
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Attribute Management" href="../attribute/">
+      Attribute Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="SCIM protected by UMA" href="../scim-uma/">
+      SCIM protected by UMA
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Gluu Server APIs" href="../api/">
+      Gluu Server APIs
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="SCIM API Configuration" href="../scim/">
+      SCIM API Configuration
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="current" title="Backup Gluu Server CE" href="./">
+      Backup Gluu Server CE
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Tar command to Back up Gluu Server" href="#tar-command-to-back-up-gluu-server">
+                <b>Tar command to Back up Gluu Server</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="Steps to Back up Gluu CE server using tar" href="#steps-to-back-up-gluu-ce-server-using-tar">
+                  <font size=2><i>Steps to Back up Gluu CE server using tar</i></font>
+              </a>
+            </li>
+             
+          
+            <li class="anchor">
+              <a title="Using Gluu Script to Back up Ldif of LDAP" href="#using-gluu-script-to-back-up-ldif-of-ldap">
+                <b>Using Gluu Script to Back up Ldif of LDAP</b>
+              </a>
+            </li>
+            
+              <li class="anchor">
+              <a title="Steps to Back up Gluu CE Server using Gluu Export Scripts" href="#steps-to-back-up-gluu-ce-server-using-gluu-export-scripts">
+                  <font size=2><i>Steps to Back up Gluu CE Server using Gluu Export Scripts</i></font>
+              </a>
+            </li>
+             
+          
+        </ul>
+      
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Custom Script in Gluu CE" href="../custom-script/">
+      Custom Script in Gluu CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Certificate Management" href="../certificate/">
+      Certificate Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Fine Tuning Gluu Server" href="../fine-tuning/">
+      Fine Tuning Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Troubleshooting & FAQ" href="../faq/">
+      Troubleshooting & FAQ
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <h1 id="how-to-back-up-gluu-ce-server">How to back up Gluu CE Server<a class="headerlink" href="#how-to-back-up-gluu-ce-server" title="Permanent link">#</a></h1>
+<p>Gluu CE Server Back up can be performed using below methods.</p>
+<ul>
+<li>Using tar command to tar the Gluu Server Folder from the Host OS</li>
+<li>Using Gluu provided export and import scripts to back up ldif of the LDAP.</li>
+</ul>
+<blockquote>
+<p>NOTE: In this documentation,'2.4.x' is referred to the existing installed version of Gluu CE Server. </p>
+</blockquote>
+<h2 id="tar-command-to-back-up-gluu-server">Tar command to Back up Gluu Server<a class="headerlink" href="#tar-command-to-back-up-gluu-server" title="Permanent link">#</a></h2>
+<h3 id="steps-to-back-up-gluu-ce-server-using-tar">Steps to Back up Gluu CE server using tar<a class="headerlink" href="#steps-to-back-up-gluu-ce-server-using-tar" title="Permanent link">#</a></h3>
+<pre><code>1. Stop the server using below command
+    a. #service gluu-server-2.4.x stop
+2. use tar command to take a back up
+    b. # tar cvf gluu244-backup.tar /opt/gluu-server-2.4.4/
+</code></pre>
+<h2 id="using-gluu-script-to-back-up-ldif-of-ldap">Using Gluu Script to Back up Ldif of LDAP<a class="headerlink" href="#using-gluu-script-to-back-up-ldif-of-ldap" title="Permanent link">#</a></h2>
+<h3 id="steps-to-back-up-gluu-ce-server-using-gluu-export-scripts">Steps to Back up Gluu CE Server using Gluu Export Scripts<a class="headerlink" href="#steps-to-back-up-gluu-ce-server-using-gluu-export-scripts" title="Permanent link">#</a></h3>
+<pre><code>1. Login to Gluu chroot
+    a. # service gluu-server-2.4.x login
+2. Fetch export script from Gluu 
+    b. wget https://raw.githubusercontent.com/GluuFederation/community-edition-setup/master/static/scripts/export24.py
+3. Change permission of the script
+    c. # chmod +x export24.py
+4. run the script
+    d. # ./export24.py
+</code></pre>
+<p>The export script will generate a directory called  backup_24  which will have all the data backed up from the current installation. Check the log file generated in the directory for any errors.</p>
+          <aside class="copyright" role="note">
+           Built with 
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a> using
+            <a href="http://gitlab.testbird.io:8099/frontend/testbird-mkdocs-theme.git" target="_blank">
+              testBird-mkdocs-theme
+            </a> <br>
+            
+            Copyright &copy; 2016, Gluu, Inc.
+            
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../scim/" title="SCIM API Configuration">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                SCIM API Configuration
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../custom-script/" title="Custom Script in Gluu CE">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                Custom Script in Gluu CE
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../..';
+      var repo_id  = '';
+    </script>
+    <script src="../../assets/javascripts/application-ce3999cf34.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+  </body>
+</html>

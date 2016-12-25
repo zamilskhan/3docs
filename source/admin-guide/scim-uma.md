@@ -4,7 +4,7 @@ A machine based authorization method is used to obtain the access tokens. SCIM/U
 into the Gluu Server CE and does not require any special package or installation. Please checkout 
 [Installation Guide](../installation-guide/index.md) for installation instructions.
 
-## Installation
+##Installation
 
 * Install Gluu Server CE following the [Installation Guide](../installation-guide/index.md) and 
 remember to install `Asimba` while running the setup script.  The setup script prepares the 

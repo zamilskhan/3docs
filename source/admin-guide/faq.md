@@ -1,7 +1,7 @@
 # FAQ
 ## General FAQ
 ### Logs
-When it comes to troubleshooting issues in the Gluu Server--from service hiccups to outages--your [server logs](./logs.md) are the best place to gather relevant information.
+When it comes to troubleshooting issues in the Gluu Server--from service hiccups to outages--your [server logs](/admin-guide/logmanagment.md) are the best place to gather relevant information.
 
 ### How to change the hostname/IP address/listening port of Gluu Server
 It is not recommended to change the hostname or IP address or the listening port of any installed Gluu Server instance. The hostname and the IP address is used in many settings stored in LDAP configuration entries, Apache/Jetty configuration and into the custom authentication script. It is strongly recommended to use a fresh install in a new VM. 
