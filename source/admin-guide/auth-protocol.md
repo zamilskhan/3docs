@@ -131,7 +131,7 @@ The following is an example of a GET request to the UMA configuration discovery 
     The UMA Response  may contain custom properties which are uniquely named for convenience and disguishing between standard & custom properties.
 
 [1]:http://kantarainitiative.org/confluence/display/uma/Charter "UMA Charter"
-[2]: ../oxtrust-ui.md "Custom Scripts"
+[2]: ./oxtrust-ui.md "Custom Scripts"
 
 ## OAuth2.0 
 
