@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Upgrade Gluu Server - Gluu Docs</title>
+      
+<link href="../assets/stylesheets/font.css" rel="stylesheet">
+      
+      
+      
+    
+    <meta property="og:url" content="None">
+    <meta property="og:title" content="Gluu Docs">
+    <meta property="og:image" content="None/../gluu.jpg">
+    <meta name="apple-mobile-web-app-title" content="Gluu Docs">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+      <link rel="apple-touch-icon" href="../gluu.jpg">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon-60feabe0e5.ico">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon-60feabe0e5.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../assets/fonts/icon.eot?52m981');
+      	src: url('../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../assets/stylesheets/application-f58e216493.css">
+    
+    <link rel="stylesheet" href="../assets/stylesheets/zenburn-28d5b94970.css">
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Noto Sans:400,700|Source+Code+Pro">
+      <style>
+        body, input {
+          font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Source Code Pro', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+    <script src="../assets/javascripts/modernizr-4a5cc7e01e.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class=" ">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                Upgrade/Patch Guide <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        Upgrade Gluu Server
+      </div>
+    </div>
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" placeholder="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+
+  
+  <a href="https://github.com/GluuFederation/docs" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="../gluu.jpg">
+        </div>
+      
+      <div class="name">
+        <strong>Gluu Docs</strong><br>
+        version: 3.0.0
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      <ul class="repo">
+        
+        <li class="home">
+          <a href="/" title="Home">
+            <div class="home-image">
+            <i class="fa fa-home"></i> Doc Home</div>
+          </a>
+        </li>
+        
+        
+        
+        <li class="repo-download">
+          
+          <a href="https://github.com/GluuFederation/docs/archive/3.0.0.zip" target="_blank" title="Download" data-action="download">
+            <i class="icon icon-download"></i> Download
+          </a>
+        </li>
+        
+      </ul>
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Home" href="..">
+      Home
+    </a>
+    
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Installation Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Preparing VM" href="../installation-guide/">
+      Preparing VM
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Install Gluu Server" href="../installation-guide/install/">
+      Install Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Setup Script Options" href="../installation-guide/setup_py/">
+      Setup Script Options
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Cluster with CE" href="../installation-guide/cluster/">
+      Cluster with CE
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Upgrade/Patch Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="current" title="Upgrade Gluu Server" href="./">
+      Upgrade Gluu Server
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Export the data from the current installation" href="#export-the-data-from-the-current-installation">
+                <b>Export the data from the current installation</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="Install the latest version of the Gluu server" href="#install-the-latest-version-of-the-gluu-server">
+                <b>Install the latest version of the Gluu server</b>
+              </a>
+            </li>
+            
+          
+            <li class="anchor">
+              <a title="Import your old data" href="#import-your-old-data">
+                <b>Import your old data</b>
+              </a>
+            </li>
+            
+          
+        </ul>
+      
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Patch Gluu Server" href="update/">
+      Patch Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+            
+  <li>
+    <span class="section">Administration Guide</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Gluu Server UI" href="../admin-guide/">
+      Gluu Server UI
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Authentication Protocols" href="../admin-guide/auth-protocol/">
+      Authentication Protocols
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Authentication Management" href="../admin-guide/auth-management/">
+      Authentication Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Configuring Multi-Factor Authentication" href="../admin-guide/multi-factor-auth/">
+      Configuring Multi-Factor Authentication
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Manage & Configure Users" href="../admin-guide/user-group/">
+      Manage & Configure Users
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Log Management" href="../admin-guide/logs/">
+      Log Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Configure and Manage OpenID Clients" href="../admin-guide/clients/">
+      Configure and Manage OpenID Clients
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Configure and Manage SAML SSO" href="../admin-guide/saml/">
+      Configure and Manage SAML SSO
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="OAuth2 Grants" href="../admin-guide/oauth2/">
+      OAuth2 Grants
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="OpenID Connect" href="../admin-guide/openid-connect/">
+      OpenID Connect
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="UMA" href="../admin-guide/uma/">
+      UMA
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Attribute Management" href="../admin-guide/attribute/">
+      Attribute Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="SCIM protected by UMA" href="../admin-guide/scim-uma/">
+      SCIM protected by UMA
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Gluu Server APIs" href="../admin-guide/api/">
+      Gluu Server APIs
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="SCIM API Configuration" href="../admin-guide/scim/">
+      SCIM API Configuration
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Backup Gluu Server CE" href="../admin-guide/backup/">
+      Backup Gluu Server CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Custom Script in Gluu CE" href="../admin-guide/custom-script/">
+      Custom Script in Gluu CE
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Certificate Management" href="../admin-guide/certificate/">
+      Certificate Management
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Fine Tuning Gluu Server" href="../admin-guide/fine-tuning/">
+      Fine Tuning Gluu Server
+    </a>
+    
+  </li>
+                  
+      
+        
+  <li>
+    <a class="" title="Troubleshooting & FAQ" href="../admin-guide/faq/">
+      Troubleshooting & FAQ
+    </a>
+    
+  </li>
+                  
+      
+    </ul>
+  </li>
+                  
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <h1 id="upgrading-gluu-server-ce">Upgrading Gluu Server CE<a class="headerlink" href="#upgrading-gluu-server-ce" title="Permanent link">#</a></h1>
+<p>Upgrading a Gluu Server is NOT a simple <code>apt-get upgrade</code>. The admin needs to explicitly install the version of the Gluu Server. It generally involves the following steps:</p>
+<ul>
+<li>Install new version</li>
+<li>Export the data from your current version</li>
+<li>Stop the current Gluu Server</li>
+<li>Start the new version of Gluu Server</li>
+<li>Import data into the new server</li>
+</ul>
+<p>Gluu provides the necessary <a href="https://github.com/GluuFederation/community-edition-setup/tree/master/static/scripts">scripts</a> to perform the import and export of the data in and out of the servers.</p>
+<blockquote>
+<p>NOTE: In this documentation we are specifying '2.4.x' as older version and '2.4.y' the latest one. </p>
+</blockquote>
+<h2 id="export-the-data-from-the-current-installation">Export the data from the current installation<a class="headerlink" href="#export-the-data-from-the-current-installation" title="Permanent link">#</a></h2>
+<pre><code># service gluu-server-2.4.x login
+
+# wget https://raw.githubusercontent.com/GluuFederation/community-edition-setup/master/static/scripts/export24.py
+
+# chmod +x export24.py
+
+# ./export24.py
+</code></pre>
+
+<p>The export script will generate a directory called <code>backup_24</code> which will have all the data backed up from the current installation.
+Check the log file generated in the directory for any errors.</p>
+<h2 id="install-the-latest-version-of-the-gluu-server">Install the latest version of the Gluu server<a class="headerlink" href="#install-the-latest-version-of-the-gluu-server" title="Permanent link">#</a></h2>
+<p>Stop the current version of the gluu-server.</p>
+<pre><code># service gluu-server-2.4.x stop
+</code></pre>
+
+<p>Consult the <a href="../installation-guide/">installation guide</a> of the respective distribution about how to install the Gluu Server using the package manager.
+Once the package manager has installed the version <code>2.4.y</code>, then:</p>
+<pre><code># cp -r /opt/gluu-server-2.4.x/root/backup_24/ /opt/gluu-server-2.4.y/root/
+
+# service gluu-server-2.4.y start
+
+# service gluu-server-2.4.y login
+
+# cp backup_24/setup.properties /install/community-edition-setup/
+
+# cd /install/community-edition-setup/
+
+# ./setup.py
+</code></pre>
+
+<p>Enter the required information for the setup and complete the installation.</p>
+<h2 id="import-your-old-data">Import your old data<a class="headerlink" href="#import-your-old-data" title="Permanent link">#</a></h2>
+<p>Go to the folder where you have the <code>backup_24</code> folder (if the above commands were followed, it is in /root/) and  get the necessary scripts.</p>
+<pre><code># cd ~
+
+# wget https://raw.githubusercontent.com/GluuFederation/community-edition-setup/master/static/scripts/import24.py
+
+# wget https://raw.githubusercontent.com/GluuFederation/community-edition-setup/master/ldif.py
+</code></pre>
+
+<p>Install the <code>python-pip</code> package using your package manager.</p>
+<pre><code># apt-get install python-pip
+
+or
+
+# yum -y install python-pip
+</code></pre>
+
+<p>Install the <code>json-merge</code> Python package and run the import script.</p>
+<pre><code># pip install jsonmerge
+
+# chmod +x import24.py
+
+# ./import24.py backup_24
+</code></pre>
+
+<p>Any error or warning will 4be displayed in the terminal or can be seen in the import log generated. Now the admin should be able to log into the oxTrust web-UI with the old admin credentials and see all previous data in place.</p>
+          <aside class="copyright" role="note">
+           Built with 
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a> using
+            <a href="http://gitlab.testbird.io:8099/frontend/testbird-mkdocs-theme.git" target="_blank">
+              testBird-mkdocs-theme
+            </a> <br>
+            
+            Copyright &copy; 2016, Gluu, Inc.
+            
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../installation-guide/cluster/" title="Cluster with CE">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                Cluster with CE
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="update/" title="Patch Gluu Server">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                Patch Gluu Server
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '..';
+      var repo_id  = '';
+    </script>
+    <script src="../assets/javascripts/application-ce3999cf34.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+  </body>
+</html>

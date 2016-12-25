@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+%:
+	dh $@ 
+override_dh_auto_build:
+		/usr/local/bin/virtualenv env
+		env/bin/pip install -r requirements.txt
+		env/bin/mkdocs build
+override_dh_auto_install:
+		mkdir -p debian/gluu-docs/usr/share/doc/gluu-docs
+		cp -r site/* debian/gluu-docs/usr/share/doc/gluu-docs
