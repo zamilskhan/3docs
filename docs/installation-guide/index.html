@@ -554,7 +554,7 @@
 <p>The minimum recommended heap for tomcat server is 3GB for a test instance of Gluu Server Community Edition (CE). This estimate is based on the minumum RAM requirements. It is best to keep this ratio when tomcat memory is allocated in production environments as the size will depend on the available RAM; as an example, a 6GB tomcat memory heap in a production server with 8 GB ram is ideal for a small organization running Gluu CE.</p>
 <h3 id="alter-tomcat-memory-heap">Alter Tomcat Memory Heap<a class="headerlink" href="#alter-tomcat-memory-heap" title="Permanent link">#</a></h3>
 <p>The tomcat heap memory is set from the <code>setup.py</code> script prompt. 
-<img alt="tomcat-prompt" src="../../img/oxtrust/tomcat-prompt.png" /></p>
+<img alt="tomcat-prompt" src="./../img/oxtrust/tomcat-prompt.png" /></p>
 <p>This property can also altered from the <code>/opt/tomcat/conf/gluuTomcatWrapper.conf</code> file inside the Gluu Server chroot container setting <code>wrapper.java.initmemory</code> and <code>wrapper.java.maxmemory</code> properties.
 Use the following command to open the gluuTomcatWrapper file</p>
 <pre><code># vi /opt/tomcat/conf/gluuTomcatWrapper.conf

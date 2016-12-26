@@ -3,8 +3,8 @@
 
     
     <url>
-     <loc>/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,42 +12,26 @@
     
         
     <url>
-     <loc>/installation-guide/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/installation-guide/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/installation-guide/install/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/installation-guide/install/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/installation-guide/setup_py/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/installation-guide/setup_py/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/installation-guide/cluster/</loc>
-     <lastmod>2016-12-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>/upgrade/</loc>
-     <lastmod>2016-12-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/upgrade/update/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/installation-guide/cluster/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -56,122 +40,138 @@
     
         
     <url>
-     <loc>/admin-guide/oxtrust-ui/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/upgrade/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/admin-guide/auth-protocol/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/upgrade/update/</loc>
+     <lastmod>2016-12-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/admin-guide/oxtrust-ui/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/admin-guide/auth-management/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/admin-guide/auth-protocol/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/admin-guide/multi-factor-auth/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/admin-guide/auth-management/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/admin-guide/user-group/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/admin-guide/multi-factor-auth/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/admin-guide/logs/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/admin-guide/user-group/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/admin-guide/clients/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/admin-guide/logs/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/admin-guide/saml/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/admin-guide/clients/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/admin-guide/oauth2/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/admin-guide/saml/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/admin-guide/openid-connect/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/admin-guide/oauth2/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/admin-guide/uma/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/admin-guide/openid-connect/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/admin-guide/attribute/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/admin-guide/uma/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/admin-guide/scim-uma/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/admin-guide/attribute/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/admin-guide/api/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/admin-guide/scim-uma/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/admin-guide/scim/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/admin-guide/api/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/admin-guide/backup/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/admin-guide/scim/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/admin-guide/custom-script/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/admin-guide/backup/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/admin-guide/certificate/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/admin-guide/custom-script/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/admin-guide/fine-tuning/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/admin-guide/certificate/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/admin-guide/faq/</loc>
-     <lastmod>2016-12-26</lastmod>
+     <loc>None/admin-guide/fine-tuning/</loc>
+     <lastmod>2016-12-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/admin-guide/faq/</loc>
+     <lastmod>2016-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
