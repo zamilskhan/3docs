@@ -1,41 +1,54 @@
 # Overview
-[OpenID Connect](http://openid.net/connect) ("Connect") is a standard
-profile of OAuth2 which defines a protocol to enable a website or mobile
-application to send a person to a domain for authentication and required
-attributes (e.g. email address, first name, last name, etc.). OpenID Connect
-also provides some of the plumbing around authentication to automate how
-this happens. If a person is visiting a website for the first time, the
-process that OpenID Connect defines is 100% bootstrapable by the
-website. This is really critical for Internet scalability. To visit
-someone's website, or to send someone an email, you do not need to get
-the system administrators involved. Connect provides the same type of
-scalable infrastructure for authentication and authorization, and promises to define a base level domain
-identification.
+OpenID Connect is an authentication layer built on OAuth 2.0. OpenID Connect is a specific implementation of OAuth 2.0 where the identity provider holds protected resources that a third-party application needs to access on behalf of a person. OpenID Connect allows relying parties to verify the identity of, and obtain information about a person requesting to access the applications protected resources. 
 
-## Jargon (taxonomy)
 
-If you are familiar with SAML, there are many parallels in OpenID
-Connect, but the jargon (or "taxonomy") is different. For example,
-instead of attributes, we have "user claims". Instead of Service
-Provider (SP), we have "client". Instead of Identity Provider (IdP), it
-is an OpenID Provider (OP).
+# Jargon
+In OpenID Connect the key entities include:
+
+
+
+
+
+- The *end user* (a.k.a. OAuth 2.0 resource owner) whose user information the application needs to access.
+
+The end user wants to login to an application using an existing account at an OpenID Connect identity provider (OP).
+
+- The *Relying Party (RP)* (a.k.a. OAuth 2.0 client) needs access to the end user's protected user information.
+
+For example, an online chat application needs to know who is accessing the application in order to present the correct user account and contacts. 
+
+- The *OpenID Provider (OP)* (a.k.a. OAuth 2.0 authorization server and also resource server) that holds the user information and grants access.
+
+The Gluu Server is an OpenID Provider. The OP holds information about the user and allows the end user or the organization (depending on configuration) to consent to providing the RP with access to user information. OpenID Connect defines a unique identification for an account (subject identifier + issuer identifier), and the RP can use this as a key to its own user profile. 
+
+The relying party can verify claims about the identity of the end user, and log the user out at the end of a session. OpenID Connect also makes it possible to discover the OpenID Provider for an end user, and to register relying party client applications dynamically. OpenID connect services are built on OAuth 2.0, JSON Web Token (JWT), WebFinger and Well-Known URIs.
+
+# OpenID Connect Support in the Gluu Server
+The Gluu Server is a [fully certified OpenID Connect Provider (OP)](http://openid.net/certification/). As an OpenID Provider, the Gluu Server enables OpenID Connect relying parties (clients) to discover its capabilities, handle both dynamic and static registration of relying parties, respond to relying party requests with authorization codes, access tokens, and user information according to the Authorization Code and Implicit flows of OpenID Connect, and manages sessions.
+
+## OpenID Connect Authorization Code Flow
+The OpenID Connect Authorization Code Flow specifies how the relying party interacts with the OpenID Provider based on use of the OAuth 2.0 authorization grant. 
+
+## OpenID Connect Implicit Flow
+The OpenID Connect Implicit Flow specifies how the relying party interacts with the OpenID Provider based on use of the OAuth 2.0 implicit grant. 
 
 ## Discovery 
 
-The first thing you want to know about any OAuth2 API is where are the
-endpoints (i.e. what are the uris where you call the APIs).
+The first thing you want to know about any OAuth 2.0 API is where the
+endpoints are (i.e. what are the URIs where you call the APIs).
 OpenID Connect provides a very simple mechanism to accomplish this: 
 [OpenID Connect Discovery](http://openid.net/specs/openid-connect-discovery-1_0.html).
 
 In order for an OpenID Connect Relying Party to utilize OpenID Connect
 services for an End-User, the RP needs to know where the OpenID Provider is.
-OpenID Connect uses WebFinger [WebFinger](http://en.wikipedia.org/wiki/WebFinger)
+OpenID Connect uses [WebFinger](http://en.wikipedia.org/wiki/WebFinger)
 to locate the OpenID Provider for an End-User.
 
 Once the OpenID Provider has been identified, the configuration information
 for the OP is retrieved from a well-known location as a JSON document,
 including its OAuth 2.0 endpoint locations.
 
+### Sample Discovery Request
 If you want to try a discovery request, you can make the following
 WebFinger request to discover the Issuer location:
 
@@ -57,7 +70,7 @@ Content-Type: application/jrd+json
 
 Using the Issuer location discovered, the OpenID Provider's configuration information can be retrieved.
 
-The RP makes the following request to the Issuer https://<domain>/.well-known/openid-configuration to obtain its
+The RP makes the following request to the Issuer `https://<domain>/.well-known/openid-configuration` to obtain its
 Configuration information:
 
 ```
@@ -283,10 +296,15 @@ _Encryption, Key Encryption Algorithms:_ RSA1_5, RSA-OAEP, A128KW, A256KW.
 
 _Block Encryption Algorithms:_ A128CBC+HS256, A256CBC+HS612, A128GCM, A256GCM,
 
+## OpenID Connect Relying Party Registration
+Relying parties can register with the Gluu Server both statically, by the Gluu Server admin, and dynamically, as specified by OpenID Connect Discovery. To allow dynamic registration, you register an initial OAuth 2.0 client that other relying parties can use to get access tokens for registration. You can also enable OpenID Connect relying parties to register dynamically without having to provide an access token. If dynamic registration is enabled, make sure to limit or throttle registrations as it could be used as a form of DDOS.
+
 ## Session management
 
-Logout is a catch-22. There is no perfect answer to logout that
-satisfies all the requirements of all the domains on the Internet. For
+OpenID Connect lets the relying party track whether the end user is logged in at the provider, and also initiate end user logout at the provider. The specification has the relying party monitor session state using an invisible iframe and communicate status using the HTML 5 postMessage API.
+
+However, be forewarned that there is no perfect answer to logout that
+satisfies all requirements for all domains on the Internet. For
 example, large OpenID Providers, like Google, need a totally stateless
 implementation--Google cannot track sessions on the server side for
 every browser on the Internet. But in smaller domains, server side
@@ -306,8 +324,8 @@ logout callbacks of the clients. This way, the browser could call the
 logout uris (not the server).
 
 The Gluu Server is very flexible, and supports both server side session
-management, and stateless session management. For server side business
-logout, the domain admin can use Custom Logout scripts. This can be
+management, and stateless session management. For server side
+logout, the domain admin can use [Custom Logout scripts](./custom-script.md#application-session-management). This can be
 useful to clean up sessions in a legacy SSO system (i.e. SiteMinder), or
 perhaps in a portal.
 
@@ -319,6 +337,7 @@ surprised by the behavior when you put your application into production.
 
   - Go to https://seed.gluu.org/oxauth-rp
   - Or deploy `oxAuth-rp.war`
+
 ### Authorization Endpoint
 
 #### Request Authorization and receive the Authorization Code and ID Token
@@ -376,3 +395,6 @@ surprised by the behavior when you put your application into production.
 
 ![](../img/admin-guide/openid/checksession.png "Screenshot of oxAuth-RP Check Session iFrame")
 
+# Implementing OpenID Connect in your application
+
+Use [oxd](https://oxd.gluu.org). 
