@@ -4,7 +4,6 @@ The administration interface (oxTrust) is accessible from the `hostname` provide
 ## Welcome Page
 The administrator is taken to the welcome page if the username and the password is correct. Some basic information about the VM/server is displayed in the welcome screen. The version is displayed on top followed by free memory,disk space. The health of the VM/server can be easily determined from the welcome page. There is a photo icon on the right hand top side of the page which can be used to navigate to the user-profile and logging out of Gluu Server CE.
 ![welcome-page.png](../img/oxtrust/welcome-page.png "Welcome to Gluu Server")
-
 The menu on the left side of the welcome page is used to navigate the admin interface for Gluu Server. The menu has separate buttons for SAML, OpenID Connect and UMA. The user-management menu is found under `Users` and the user-profile is under `Personal`.
 
 ## Configuration
